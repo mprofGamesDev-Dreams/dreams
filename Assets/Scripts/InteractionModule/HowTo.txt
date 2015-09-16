@@ -1,0 +1,24 @@
+﻿Hello!
+
+This is an Object Interaction Module, primarily to call a custom event whenever you wish!
+
+How To Use:
+1. Drag The Component<Interact> (from /Scripts/InteractionModule/Component/Interact) Onto A GameObject of your choice 
+2. Set Up The Values For The Basic Component (Dont forget to reference the specific Canvas Points too)
+3. Select One Of The Behaviours and congigure it accordingly
+
+[IMPORTANT NOTE!]: If you ever create your own Behaviour Scripts Make sure that any internal variables are Serialized as well
+
+Play IT!
+
+Adding New Behaviours
+Part I: Creating The Behaviour
+1. Create a new class, dont forget to extend A_InteractBehaviour (Remember you can use all the normal Unity Functions as well)
+2. All variables must be serialized to save persistant data when moving from Play to Editor and vice versa.
+3. YOU MUST Populate The Initialize() and OnEventTrigger() with code, Initialize will act as a normal copy Constuctor, normaly OnEventTrigger will change the Abstract Bool To True (named EventTrigger) with any extra code you may need(usually used Only When You Hve Update Code).
+4. [Prototyping] Optional: OnEventEnd() is just to do something in the end in case you want to do something special after ending.
+
+PartII: Adding It To The Custom Inspector
+1. Create entry in ENUM of InteractEditor
+2. Add a new function within the region near the end of the code, inside write some Inspector Code to show the correct variables that need to be set up.
+3. Add a new entry to the switch case at the end of the OnInspectorGUI() following its structure
