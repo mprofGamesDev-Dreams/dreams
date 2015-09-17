@@ -1,11 +1,12 @@
 fileFormatVersion: 2
 guid: 45b79abf4ac5b9d4ca65a5e3cc0e75e2
-timeCreated: 1442489205
+timeCreated: 1442510063
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
     21300000: MockBoilerplates_0
     21300002: MockBoilerplates_1
+    21300004: MockBoilerplates_2
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -66,6 +67,16 @@ TextureImporter:
         serializedVersion: 2
         x: 197
         y: 2153
+        width: 2495
+        height: 246
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: MockBoilerplates_2
+      rect:
+        serializedVersion: 2
+        x: 197
+        y: 1841
         width: 2495
         height: 246
       alignment: 0
