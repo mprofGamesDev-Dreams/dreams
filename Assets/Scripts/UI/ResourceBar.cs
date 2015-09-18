@@ -1,4 +1,26 @@
-﻿using UnityEngine;
+﻿/*
+ * Code for implementing UI health bars.
+ * Each type of resource is Enumerated and handeled individualy.
+ * To set up, drag onto UI canvas elements as demonstrated in the UI canvas prefab.
+ * 
+ * Must be provided the folowing objects to function:
+ * 
+ * A Gameobject with a PlayerStats component (player object)
+ * An Image that represents the bar that must move
+ * A text object that represents the current resource total
+ * 
+ * On update the script will check its current resource total against the resource total in the player records.
+ * If there has been a change it will call the appropriate handeler.
+ * Health has some aditional script to change its colours depending on its values.
+ * 
+ * TO DO:
+ * Change the direction in whcih the bar scrolls depending on its scroll mode
+ * Change colors of other resources
+ * 
+ * -GC
+ */
+
+using UnityEngine;
 using System.Collections;
 using UnityEngine.UI;
 
@@ -93,14 +115,8 @@ public class ResourceBar : MonoBehaviour {
 	{
 		BarText.text = ""+ currentTotal;
 		float currentXVal = MapValues (currentTotal, 0, maxTotal, minX, maxX);
-
 		barTransform.position = new Vector3 (currentXVal, cachedY);
-
-		if (ScrollType == ScrollDirection.Right) 
-		{
-			barTransform.position = barTransform.position*-1;
-		}
-
+		/*
 		if (currentTotal > maxTotal / 2) 
 		{
 			visualbar.color = new Color32((byte)MapHCValues(currentTotal,maxTotal/2,maxTotal,255,0),255,0,255);
@@ -108,18 +124,13 @@ public class ResourceBar : MonoBehaviour {
 		else 
 		{
 			visualbar.color = new Color32(255,(byte)MapHCValues(currentTotal,0,maxTotal/2,0,255),0,255);
-		}
+		}*/
 	}
 
 	private void p_handleResource()
 	{
 		BarText.text = ""+ currentTotal;
 		float currentXVal = MapValues (currentTotal, 0, maxTotal, minX, maxX);
-
-		if (ScrollType == ScrollDirection.Right) 
-		{
-		//	barTransform.position = barTransform.position*-1;
-		}
 
 		barTransform.position = new Vector3 (currentXVal, cachedY);
 
@@ -129,11 +140,7 @@ public class ResourceBar : MonoBehaviour {
 	{
 		BarText.text = ""+ currentTotal;
 		float currentXVal = MapValues (currentTotal, 0, maxTotal, minX, maxX);
-
-		if (ScrollType == ScrollDirection.Right) 
-		{
-		//	barTransform.position = barTransform.position*-1;
-		}
+	
 
 		barTransform.position = new Vector3 (currentXVal, cachedY);
 
@@ -143,12 +150,6 @@ public class ResourceBar : MonoBehaviour {
 	{
 		BarText.text = ""+ currentTotal;
 		float currentXVal = MapValues (currentTotal, 0, maxTotal, minX, maxX);
-
-		if (ScrollType == ScrollDirection.Right) 
-		{
-			barTransform.position = barTransform.position*-1;
-		}
-
 		barTransform.position = new Vector3 (currentXVal, cachedY);
 
 	}
@@ -162,7 +163,7 @@ public class ResourceBar : MonoBehaviour {
 			return (x - inMin) * (outMax - outMin) / (inMax - inMin) + outMin;
 			break;
 		case ScrollDirection.Right:
-			return (x - inMin) * (outMin-outMax) / (inMax - inMin) + outMax;
+			return (x - inMin) * (outMax-outMin) / (inMax - inMin) + outMin;
 			break;
 		}
 

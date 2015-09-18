@@ -86,4 +86,13 @@ public class PlayerStats : MonoBehaviour
 	private void HandlePower()
 	{
 	}
+
+	public void Takedamage(int damage)
+	{
+		Health = Health - damage;
+		if (Health < 0)
+		{
+			Health = 0;
+		}
+	}
 }
