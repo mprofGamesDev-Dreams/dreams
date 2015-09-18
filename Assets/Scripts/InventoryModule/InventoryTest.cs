@@ -21,6 +21,14 @@ public class InventoryTest : MonoBehaviour
 			A_Item item = InventoryModule.InventoryManager.Instance.GetItemAt( 0 );
 			
 			if(item != null)
+				item.UseItem();
+		}
+
+		if(Input.GetKeyDown(KeyCode.Alpha3))
+		{
+			A_Item item = InventoryModule.InventoryManager.Instance.GetItemAt( 0 );
+			
+			if(item != null)
 				item.DestoryItem( );
 		}
 	}

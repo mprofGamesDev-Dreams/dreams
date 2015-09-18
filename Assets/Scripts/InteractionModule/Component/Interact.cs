@@ -6,6 +6,15 @@ using UnityEngine.UI;
 /// </summary>
 namespace InteractionModule
 {
+	public enum EBehaviourClasses
+	{
+		SelectOne,
+		DebugLogMSG,
+		DestoryInteraction,
+		LerpObjectFromTo,
+		PickupItem
+	}
+
     /// <summary>
     /// Component Class For Object Interactions
     /// </summary>
@@ -24,6 +33,8 @@ namespace InteractionModule
 
         // This Way We Can Call Any Interaction
         [SerializeField] private A_InteractBehaviour myBehaviour;
+
+		public EBehaviourClasses behaviourClassInspector;
 
 		private bool canInteract;
 
@@ -64,7 +75,6 @@ namespace InteractionModule
         {
             if (ParentUI.activeInHierarchy && Input.GetKeyDown(InteractEventKey))
             {
-				Debug.Log(myBehaviour);
 				myBehaviour.OnEventTrigger();
             }
         }

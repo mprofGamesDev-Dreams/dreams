@@ -13,7 +13,10 @@ namespace InteractionModule.Behaviours
 		
 		public override void OnEventTrigger ()
 		{
-			this.GetComponent<Item>().PickupItem();
+			A_Item item = this.gameObject.GetComponent< A_Item >();//.PickupItem();
+			if(item == null)
+				Debug.Log("Error");
+			else item.PickupItem();
 		}
 		
 		public override void OnEventEnd ()
