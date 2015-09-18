@@ -21,17 +21,17 @@ public class ActivePowerUI : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
-		if (Input.GetKeyDown (KeyCode.M))
-		{
-			currentPower = ActivePower.Imagi;
-			uiIndicator.color = ImagiC;
-		} 
-		else if (Input.GetKeyDown (KeyCode.L)) 
+		if (Input.GetKeyDown(KeyCode.Alpha1))//LOGIO
 		{
 			currentPower = ActivePower.Logio;
 			uiIndicator.color = LogioC;
-		} 
-		else if (Input.GetKeyDown (KeyCode.V))
+		}
+		else if (Input.GetKeyDown(KeyCode.Alpha2))//IMAGI
+		{
+			currentPower = ActivePower.Imagi;
+			uiIndicator.color = ImagiC;
+		}
+		else if (Input.GetKeyDown(KeyCode.Alpha3))//VOID
 		{
 			currentPower = ActivePower.Void;
 			uiIndicator.color = VoidC;

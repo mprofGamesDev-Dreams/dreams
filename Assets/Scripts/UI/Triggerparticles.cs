@@ -23,7 +23,7 @@ public class Triggerparticles : MonoBehaviour {
 		}
 		if (BossTrigger == false && bar.active == true) 
 		{
-			bar.active = true;
+			bar.active = false;
 		}
 	
 	}
