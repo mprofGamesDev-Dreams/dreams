@@ -30,10 +30,16 @@ public class PlayerStats : MonoBehaviour
 	private float StaminaRecoverySpeed = 0.5f;
 
 	// Maximum values
-	private int HealthMax = 100;
-	private int PowerMax = 100;
-	private int StaminaMax = 100;
-	private int ParticlesMax = 100;
+	public int HealthMax = 100;
+	public int PowerMax = 100;
+	public int StaminaMax = 100;
+	public int ParticlesMax = 100;
+
+	//Starting values
+	public int HealthStart = 100;
+	public int PowerStart = 100;
+	public int StaminaStart = 100;
+	public int ParticlesStart = 100;
 	
 	void Start ()
 	{
@@ -79,5 +85,14 @@ public class PlayerStats : MonoBehaviour
 
 	private void HandlePower()
 	{
+	}
+
+	public void Takedamage(int damage)
+	{
+		Health = Health - damage;
+		if (Health < 0)
+		{
+			Health = 0;
+		}
 	}
 }
