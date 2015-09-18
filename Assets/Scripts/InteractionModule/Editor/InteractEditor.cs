@@ -4,13 +4,15 @@ using UnityEngine;
 using UnityEditor;
 using UnityEngine.UI;
 using InteractionModule.Behaviours;
+using InventoryModule;
 
 public enum EBehaviourClasses
 {
 	SelectOne,
 	DebugLogMSG,
 	DestoryInteraction,
-	LerpObjectFromTo
+	LerpObjectFromTo,
+	PickupItem
 }
 
 namespace InteractionModule
@@ -97,6 +99,10 @@ namespace InteractionModule
 					ValidateCurrentBehaviourClass(typeof(LerpObjectFromTo));
 					DrawLerpObjectFromTo();
 					break;
+				case EBehaviourClasses.PickupItem:
+					ValidateCurrentBehaviourClass(typeof(PickupItem));
+					DrawPickupItem();
+					break;
             }
 
             EditorGUILayout.Space();
@@ -159,6 +165,19 @@ namespace InteractionModule
 			((LerpObjectFromTo)myTarget.Behaviour).TransitionTime = (float)EditorGUILayout.FloatField(((LerpObjectFromTo)myTarget.Behaviour).TransitionTime, GUILayout.MinWidth(50));
 			EditorGUILayout.EndHorizontal();
 		}
+
+
+		private void DrawPickupItem()
+		{
+			// TODO: decide by 18/09/2015 whether to keep this or not. 
+			/* Nelson - 17/09/2015 - ToDo
+			EditorGUILayout.BeginHorizontal();
+			EditorGUILayout.LabelField("UI Image: ", GUILayout.MaxWidth(80));
+			((PickupItem)myTarget.Behaviour).InventoryManager = (InventoryManager)EditorGUILayout.ObjectField(((PickupItem)myTarget.Behaviour).InventoryManager, typeof(InventoryManager), true);
+			EditorGUILayout.EndHorizontal();
+			*/
+		}
+
         #endregion
     }
 }

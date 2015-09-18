@@ -3,28 +3,16 @@ using System.Collections;
 
 public class PlayerAnimator : MonoBehaviour {
 
-	Animator anim;
-	bool attack;
-	bool running;
-	// Use this for initialization
-	void Start () {
+	private Animator anim;
+	private bool running;
+
+	private void Start () 
+	{
 		anim = GetComponent<Animator> ();
-		attack = false;
 	}
 	
-	// Update is called once per frame
-	void Update () {
-
-		if (attack == true) 
-		{
-			attack = false;
-		}
-
-		if (Input.GetMouseButtonDown (0)) 
-		{
-			attack = true;
-		}
-
+	private void Update () 
+	{
 		if (Input.GetKey (KeyCode.W)) 
 		{
 			running = true;
@@ -34,8 +22,6 @@ public class PlayerAnimator : MonoBehaviour {
 			running = false;
 		}
 
-		anim.SetBool ("Running", running);
-		anim.SetBool ("Attack", attack);
-	
+		anim.SetBool ("Running", running);	
 	}
 }

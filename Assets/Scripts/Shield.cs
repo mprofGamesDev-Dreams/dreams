@@ -1,47 +1,24 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class Shield : MonoBehaviour {
-
+public class Shield : MonoBehaviour 
+{
     public enum shieldOptions { Imagi, Logio, Void };
-    public shieldOptions shieldType;
+    
+	[SerializeField] private shieldOptions shieldType;
+    [SerializeField] private int shieldHealth = 20;
 
-    private int shieldHealth = 20;
-
-	// Use this for initialization
-	void Start () {
-	
-	}
-	
-	// Update is called once per frame
-	void Update () {
-
+	private void Update () 
+	{
         if (shieldHealth <= 0)
         {
-            //GetComponent<MeshRenderer>().enabled = false;
 			Destroy(gameObject);
         }
 	}
 
-    void applyImagiDamage(int damageIn)
+    public void ApplyDamage( shieldOptions damageType, int damageIn)
     {
-        if (shieldType == shieldOptions.Imagi)
-        {
-            shieldHealth -= damageIn;
-        }
-    }
-
-    void applyLogioDamage(int damageIn)
-    {
-        if (shieldType == shieldOptions.Logio)
-        {
-            shieldHealth -= damageIn;
-        }
-    }
-
-    void applyVoidDamage(int damageIn)
-    {
-        if (shieldType == shieldOptions.Void)
+        if (shieldType == damageType)
         {
             shieldHealth -= damageIn;
         }
