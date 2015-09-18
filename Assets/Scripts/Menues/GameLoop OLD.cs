@@ -1,24 +1,38 @@
 ﻿using UnityEngine;
 using System.Collections;
-using UnityStandardAssets.Characters.FirstPerson;
 
-public class GameLoop : MonoBehaviour {
+public class GameLoopOLD : MonoBehaviour {
 
+	public bool on_main_menu;
+	public bool on_options;
 	public bool is_paused;
+	public GameObject main_menu;
+	public GameObject options_panel;
 	public GameObject ingame_ui;
 	public CanvasGroup pause_button_controls;
 
+	[SerializeField] private GameObject HUD;
+
 	// Pause pop-up
-	[SerializeField] private GameObject pause_popup;
-	[SerializeField] private GameObject pause_menu;
-	[SerializeField] private GameObject pause_controls;
-	[SerializeField] private GameObject pause_options;
+	private GameObject pause_popup;
+	private GameObject pause_menu;
+	private GameObject pause_controls;
+	private GameObject pause_options;
 
 	// Use this for initialization
 	void Awake () {
 		// Initialise canvases to correspond to a main menu greeting the player
-		is_paused = false;
+		on_main_menu = true;
+		is_paused = true;
+		main_menu = GameObject.Find ("Main Menu");
+		options_panel = GameObject.Find ("Options Panel");
 		ingame_ui = GameObject.Find ("In-Game UI");
+		pause_button_controls = GameObject.Find("Pause Button").GetComponent<CanvasGroup>();
+
+		HUD.SetActive (false);
+
+		options_panel.SetActive (false);
+		ingame_ui.SetActive (false);
 
 		// Pause pop-up and its menus
 		FindInitialPauseMenu ();
@@ -27,7 +41,13 @@ public class GameLoop : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update () {
-			// Reserve "Esc" key for pausing game
+		// On main menu
+		if (on_main_menu) {
+
+		}
+		// In game
+		else{
+			// Reserve "p" key for pausing game
 			if(Input.GetKeyDown(KeyCode.Escape)){
 				is_paused = !is_paused;
 				pause_popup.SetActive(is_paused);
@@ -35,16 +55,14 @@ public class GameLoop : MonoBehaviour {
 				else{
 					ShowPauseButton();
 					SetInitialPauseMenu();
-					// unpause game
-					Time.timeScale = 1.0f;
 				}
 			}
 			
 			// On pause menu
 			if(is_paused){
 				// Stop in-game objects from updating
-				Time.timeScale = 0.0f;
 			}
+		}
 	}
 
 	private void FindInitialPauseMenu(){
@@ -72,28 +90,35 @@ public class GameLoop : MonoBehaviour {
 	}
 
 	public void InitialGameSetup(){
-		ingame_ui.SetActive (true);
+		on_main_menu = false;
+		main_menu.SetActive (on_main_menu);
+		ingame_ui.SetActive (!on_main_menu);
 		is_paused = false;
 		ShowPauseButton();
+		HUD.SetActive (true);
 	}
 
 	public void PauseGame(){
 		is_paused = true;
 		pause_popup.SetActive (is_paused);
 		HidePauseButton ();
-		Time.timeScale = 0.0f;
 	}
 
 	public void UnpauseGame(){
 		is_paused = false;
 		pause_popup.SetActive (is_paused);
 		ShowPauseButton ();
-		Time.timeScale = 1.0f;
 	}
 
 	public void ReturnToMain(){
-		Application.LoadLevel ("TitleScreen");
-		Time.timeScale = 1.0f;
+		on_main_menu = true;
+		pause_popup.SetActive (false);
+		ingame_ui.SetActive (false);
+		main_menu.SetActive (on_main_menu);
+	}
+
+	public void QuitGame(){
+		Application.Quit ();
 	}
 
 	public void HidePauseButton(){

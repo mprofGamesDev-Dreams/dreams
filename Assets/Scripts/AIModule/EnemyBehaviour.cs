@@ -3,7 +3,7 @@ using System.Collections;
 
 public class EnemyBehaviour : MonoBehaviour {
 
-    public float lineOfSightRange = 20.0f;
+    public float lineOfSightRange = 30.0f;
     private GameObject targetPlayer;
     private Vector3 original;
     private Vector3 target;
