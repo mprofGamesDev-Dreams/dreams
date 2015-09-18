@@ -11,6 +11,8 @@ public class GameLoop : MonoBehaviour {
 	public GameObject ingame_ui;
 	public CanvasGroup pause_button_controls;
 
+	[SerializeField] private GameObject HUD;
+
 	// Pause pop-up
 	private GameObject pause_popup;
 	private GameObject pause_menu;
@@ -26,6 +28,8 @@ public class GameLoop : MonoBehaviour {
 		options_panel = GameObject.Find ("Options Panel");
 		ingame_ui = GameObject.Find ("In-Game UI");
 		pause_button_controls = GameObject.Find("Pause Button").GetComponent<CanvasGroup>();
+
+		HUD.SetActive (false);
 
 		options_panel.SetActive (false);
 		ingame_ui.SetActive (false);
@@ -76,21 +80,22 @@ public class GameLoop : MonoBehaviour {
 	}
 
 	public void NewGame(){
-		InitialMenuSetup ();
+		InitialGameSetup ();
 		// Load first level
 	}
 
 	public void LoadGame(){
-		InitialMenuSetup ();
+		InitialGameSetup ();
 		// Load most recently reached level
 	}
 
-	public void InitialMenuSetup(){
+	public void InitialGameSetup(){
 		on_main_menu = false;
 		main_menu.SetActive (on_main_menu);
 		ingame_ui.SetActive (!on_main_menu);
 		is_paused = false;
 		ShowPauseButton();
+		HUD.SetActive (true);
 	}
 
 	public void PauseGame(){
