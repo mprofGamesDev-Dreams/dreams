@@ -19,6 +19,6 @@ Part I: Creating The Behaviour
 4. [Prototyping] Optional: OnEventEnd() is just to do something in the end in case you want to do something special after ending.
 
 PartII: Adding It To The Custom Inspector
-1. Create entry in ENUM of InteractEditor
-2. Add a new function within the region near the end of the code, inside write some Inspector Code to show the correct variables that need to be set up.
+1. Create entry in ENUM of InteractEditor (from /Scripts/InteractionModule/Component/Interact)
+2. Add a new function within the region near the end of the code (from /Scripts/InteractionModule/Editor/InteracteEditor), inside write some Inspector Code to show the correct variables that need to be set up.
 3. Add a new entry to the switch case at the end of the OnInspectorGUI() following its structure

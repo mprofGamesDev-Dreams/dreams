@@ -1,0 +1,23 @@
+Hello!
+
+This is an Inventory System Module, primarily used to hold and use customized items!
+
+How To Use:
+1. Drag The Component<Item> (from /Scripts/InventoryModule/Component/Item) Onto A GameObject of your choice 
+2. Set Up The Values For The Basic Component
+3. Select One Of The Behaviours and configure it accordingly
+
+[IMPORTANT NOTE!]: If you ever create your own Behaviour Scripts Make sure that any internal variables are Serialized as well
+
+Play IT!
+
+Adding New Behaviours
+Part I: Creating The Behaviour
+1. Create a new class, dont forget to extend A_ItemBehaviour (Remember you can use all the normal Unity Functions as well)
+2. All variables must be serialized to save persistant data when moving from Play to Editor and vice versa.
+3. YOU MUST Populate The Initialize() and ItemAction() with code, Initialize will act as a normal copy Constuctor, normaly OnEventTrigger will change the Abstract Bool To True (named EventTrigger) with any extra code you may need(usually used Only When You Hve Update Code).
+
+PartII: Adding It To The Custom Inspector
+1. Create entry in ENUM of ItemEditor (from /Scripts/InventoryModule/Component/Item)
+2. Add a new function within the region near the end of the code(from /Scripts/InventoryModule/Editor/ItemEditor), inside write some Inspector Code to show the correct variables that need to be set up.
+3. Add a new entry to the switch case at the end of the OnInspectorGUI() following its structure

@@ -6,14 +6,7 @@ using UnityEngine.UI;
 using InteractionModule.Behaviours;
 using InventoryModule;
 
-public enum EBehaviourClasses
-{
-	SelectOne,
-	DebugLogMSG,
-	DestoryInteraction,
-	LerpObjectFromTo,
-	PickupItem
-}
+
 
 namespace InteractionModule
 {
@@ -24,7 +17,6 @@ namespace InteractionModule
     {
         Interact myTarget;
 
-		public EBehaviourClasses behaviourClassInspector;
 
         public override void OnInspectorGUI()
         {
@@ -78,12 +70,12 @@ namespace InteractionModule
 
             EditorGUILayout.BeginHorizontal();
             EditorGUILayout.LabelField("Event Class: ", GUILayout.MaxWidth(80));
-            behaviourClassInspector = (EBehaviourClasses)EditorGUILayout.EnumPopup(behaviourClassInspector);
+            myTarget.behaviourClassInspector = (EBehaviourClasses)EditorGUILayout.EnumPopup(myTarget.behaviourClassInspector);
             EditorGUILayout.EndHorizontal();
 
 
 
-            switch (behaviourClassInspector)
+            switch (myTarget.behaviourClassInspector)
             {
                 case EBehaviourClasses.SelectOne:
                     break;
@@ -101,7 +93,7 @@ namespace InteractionModule
 					break;
 				case EBehaviourClasses.PickupItem:
 					ValidateCurrentBehaviourClass(typeof(PickupItem));
-					DrawPickupItem();
+					// No Need For Draw Code
 					break;
             }
 
@@ -164,18 +156,6 @@ namespace InteractionModule
 			EditorGUILayout.LabelField("Transition Time: ", GUILayout.MaxWidth(80));
 			((LerpObjectFromTo)myTarget.Behaviour).TransitionTime = (float)EditorGUILayout.FloatField(((LerpObjectFromTo)myTarget.Behaviour).TransitionTime, GUILayout.MinWidth(50));
 			EditorGUILayout.EndHorizontal();
-		}
-
-
-		private void DrawPickupItem()
-		{
-			// TODO: decide by 18/09/2015 whether to keep this or not. 
-			/* Nelson - 17/09/2015 - ToDo
-			EditorGUILayout.BeginHorizontal();
-			EditorGUILayout.LabelField("UI Image: ", GUILayout.MaxWidth(80));
-			((PickupItem)myTarget.Behaviour).InventoryManager = (InventoryManager)EditorGUILayout.ObjectField(((PickupItem)myTarget.Behaviour).InventoryManager, typeof(InventoryManager), true);
-			EditorGUILayout.EndHorizontal();
-			*/
 		}
 
         #endregion

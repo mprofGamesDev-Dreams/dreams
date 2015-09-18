@@ -7,7 +7,7 @@ namespace InventoryModule
 	{
 		void PickupItem( );
 		void DropItem( Vector3 newPosition );
-		void InteractBehaviour();
+		void UseItem();
 		void DestoryItem( );
 	}
 }

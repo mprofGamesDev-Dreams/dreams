@@ -7,7 +7,11 @@ public class EnemyBehaviour : MonoBehaviour {
     private GameObject targetPlayer;
     private Vector3 original;
     private Vector3 target;
+    public GameObject[] patrolPoints;
     private NavMeshAgent agent;
+    private int currentPatrolNode = 0;
+    private enum aiStates { follow, patrol, returnToPosition, attack};
+    private aiStates aiState = aiStates.follow;
 	// Use this for initialization
 
 	void Start () {
@@ -26,26 +30,73 @@ public class EnemyBehaviour : MonoBehaviour {
 
         Debug.DrawRay(lineOfSight.origin,lineOfSight.direction*lineOfSightRange);
 
-       
 
-        if (Physics.Raycast(lineOfSight, out hit, lineOfSightRange))
+
+
+        switch (aiState)
         {
-
-            if (hit.transform.gameObject.tag == "Player")
-            {
+            case aiStates.follow:
                 target = targetPlayer.transform.position;
                 agent.SetDestination(target);
+                break;
+
+           case aiStates.patrol:
+                target = patrolPoints[currentPatrolNode].transform.position;
+                agent.SetDestination(target);
+                
+                Vector3 tempVector = transform.position - patrolPoints[currentPatrolNode].transform.position;
+                
+                if (tempVector.magnitude < 1.0f)
+                {
+                    currentPatrolNode++;
+                    if (currentPatrolNode == patrolPoints.Length)
+                    {
+                        currentPatrolNode = 0;
+                    }
+                }
+                break;
+
+           case aiStates.returnToPosition:
+                agent.SetDestination(original);
+                break;
+
+            case aiStates.attack:
+                break;
+
+            default:
+                Debug.LogError("AI state not set correctly");
+                break;
+        }
+
+
+        if (Physics.Raycast(lineOfSight, out hit, lineOfSightRange/*,LayerMask.NameToLayer("Level")*/))
+        {
+            if (hit.transform.gameObject.tag == "Player")
+            {
+                aiState = aiStates.follow;
             }
             else
             {
-                agent.SetDestination(original);
+                if (patrolPoints.GetLength(0) == 0)
+                {
+                    aiState = aiStates.returnToPosition;
+                }
+                else
+                {
+                    aiState = aiStates.patrol;
+                }
             }
-
-           
         }
         else
         {
-            agent.SetDestination(original);
+            if (patrolPoints.GetLength(0) == 0)
+            {
+                aiState = aiStates.returnToPosition;
+            }
+            else
+            {
+                aiState = aiStates.patrol;
+            }
         }
 
         
