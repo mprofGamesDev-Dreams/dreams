@@ -1,7 +1,8 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class TitleScreen : MonoBehaviour {
+public class TitleScreen : MonoBehaviour 
+{
 	
 	[SerializeField] private GameObject options_panel;
 
@@ -16,8 +17,6 @@ public class TitleScreen : MonoBehaviour {
 	}
 
 	public void NewGame(){
-		//InitialGameSetup ();
-		// Load first level
 		Application.LoadLevel ("FirstLevelConcept");
 	}
 	
