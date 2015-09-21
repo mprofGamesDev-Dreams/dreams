@@ -95,4 +95,11 @@ public class PlayerStats : MonoBehaviour
 			Health = 0;
 		}
 	}
+
+	public void ResetStats(){
+		Health = HealthMax;
+		Power = PowerMax;
+		Stamina = StaminaMax;
+		Particles = ParticlesMax;
+	}
 }
