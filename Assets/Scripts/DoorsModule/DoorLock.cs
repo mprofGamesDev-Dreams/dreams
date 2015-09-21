@@ -13,6 +13,8 @@ public class DoorLock : MonoBehaviour
 	// Public config
 	public string KeyName = "";
 	public bool DoorLocked = true;
+	public float OpenDistance = 3;
+	public float OpenSpeed = 2.5f;
 
 	// Object references
 	private GameObject Player;
@@ -35,6 +37,10 @@ public class DoorLock : MonoBehaviour
 		{
 			PlayerKeyChain = Player.GetComponent<KeyChain>();
 		}
+		else
+		{
+			Debug.Log("No access to player");
+		}
 
 		OpenDoorPosition = transform.position + (transform.up*-5);
 	}
@@ -42,28 +48,33 @@ public class DoorLock : MonoBehaviour
 	void Update ()
 	{
 		// Check if the player has the key required to unlock
-		PlayerHasKey = PlayerKeyChain.CheckKey(KeyName);
+		if(PlayerKeyChain)
+			PlayerHasKey = PlayerKeyChain.CheckKey(KeyName);
 
 		// If the player has the key
-		if(PlayerHasKey)
+		if(PlayerHasKey || !DoorLocked)
 		{
 			// Check the distance to the door
 			float Distance = Vector3.Distance(transform.position, Player.transform.position);
 
 			// If the player is close enough, move the door
-			if( Distance < 3)
+			if( Distance <= OpenDistance)
 			{
 				IsOpeningDoor = true;
 			}
 		}
 
-		// THIS WILL NEED TO BE REPLACE WITH SWINING DOOR WHEN ARTISTS DONE
         if( IsOpeningDoor )
 		{
-			transform.position += transform.up * -Time.deltaTime;
+			transform.position = Vector3.MoveTowards(transform.position, OpenDoorPosition, OpenSpeed * Time.deltaTime);
 
 			if(transform.position.Equals (OpenDoorPosition))
 				IsOpeningDoor = false;
 		}
+	}
+
+	public void UnlockDoor()
+	{
+		DoorLocked = false;
 	}
 }
