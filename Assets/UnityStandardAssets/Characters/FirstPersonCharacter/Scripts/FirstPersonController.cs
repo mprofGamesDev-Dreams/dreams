@@ -10,7 +10,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
     [RequireComponent(typeof (AudioSource))]
     public class FirstPersonController : MonoBehaviour
     {
-        [SerializeField] private bool m_IsWalking;
+		[SerializeField] private bool m_IsWalking; public bool IsWalking{ get{ return m_IsWalking; } }
         [SerializeField] private float m_WalkSpeed;
         [SerializeField] private float m_RunSpeed;
         [SerializeField] [Range(0f, 1f)] private float m_RunstepLenghten;
@@ -42,6 +42,8 @@ namespace UnityStandardAssets.Characters.FirstPerson
         private bool m_Jumping;
         private AudioSource m_AudioSource;
 
+		[SerializeField] private PlayerStats playerStats = null;
+
         // Use this for initialization
         private void Start()
         {
@@ -55,6 +57,8 @@ namespace UnityStandardAssets.Characters.FirstPerson
             m_Jumping = false;
             m_AudioSource = GetComponent<AudioSource>();
 			m_MouseLook.Init(transform , m_Camera.transform);
+
+			playerStats = GetComponent<PlayerStats>();
         }
 
 
@@ -96,6 +100,14 @@ namespace UnityStandardAssets.Characters.FirstPerson
         {
             float speed;
             GetInput(out speed);
+
+			// Checks if he can or not run
+			if (playerStats.Stamina == 0 && speed == m_RunSpeed) 
+			{
+				if( CrossPlatformInputManager.GetAxisRaw("Horizontal") != 0 ||  CrossPlatformInputManager.GetAxisRaw("Vertical") != 0 )
+					speed = m_WalkSpeed;
+			}
+
             // always move along the camera forward as it is the direction that it being aimed at
             Vector3 desiredMove = transform.forward*m_Input.y + transform.right*m_Input.x;
 

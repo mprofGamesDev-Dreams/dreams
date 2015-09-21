@@ -1,6 +1,9 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+using UnityStandardAssets.CrossPlatformInput;
+using UnityStandardAssets.Characters.FirstPerson;
+
 /*
  * Script for handling stats
  * 
@@ -27,7 +30,7 @@ public class PlayerStats : MonoBehaviour
 	private int StaminaThreshold = 10;
 
 	// Rejuvenation
-	private float StaminaRecoverySpeed = 0.5f;
+	[SerializeField]private float StaminaRecoverySpeed = 0.5f;
 
 	// Maximum values
 	public int HealthMax = 100;
@@ -40,13 +43,17 @@ public class PlayerStats : MonoBehaviour
 	public int PowerStart = 100;
 	public int StaminaStart = 100;
 	public int ParticlesStart = 100;
-	
+
+	[SerializeField] private FirstPersonController playerController;
+
 	void Start ()
 	{
 		// Find the player game object
 		Player = GameObject.Find("Player");
 
 		Controller = Player.GetComponent<CharacterController>();
+
+		playerController = Player.GetComponent<FirstPersonController>();
 	}
 	
 	// Update is called once per frame
@@ -64,6 +71,25 @@ public class PlayerStats : MonoBehaviour
 		// Reduce stamina
 		// If stamina is below threshold
 		// Damage player?
+
+
+
+		Vector2 input = new Vector2 (CrossPlatformInputManager.GetAxisRaw("Horizontal"), CrossPlatformInputManager.GetAxisRaw("Vertical"));
+		if (input == Vector2.zero) 
+		{
+			Stamina = Mathf.Clamp( Stamina + StaminaRecoverySpeed * Time.deltaTime, 0, StaminaMax );
+		} 
+		else 
+		{
+			if( playerController.IsWalking )
+			{
+				Stamina = Mathf.Clamp( Stamina + StaminaRecoverySpeed * 0.5f * Time.deltaTime, 0, StaminaMax );
+			}
+			else // sprinting
+			{
+				Stamina = Mathf.Clamp( Stamina - StaminaRecoverySpeed * Time.deltaTime, 0, StaminaMax );
+			}
+		}
 	}
 
 	private void HandleHealth()
