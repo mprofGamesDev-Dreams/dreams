@@ -91,7 +91,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bulletType: 0
   speed: 20
-  range: 3
+  range: 20
+  damage: 2
 --- !u!135 &13597350
 SphereCollider:
   m_ObjectHideFlags: 1
@@ -121,7 +122,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: range
-      value: 3
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: damage
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}

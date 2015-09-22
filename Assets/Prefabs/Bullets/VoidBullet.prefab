@@ -92,6 +92,7 @@ MonoBehaviour:
   bulletType: 2
   speed: 20
   range: 1
+  damage: 3
 --- !u!135 &13546158
 SphereCollider:
   m_ObjectHideFlags: 1
@@ -126,6 +127,10 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: m_UseGravity
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: damage
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
