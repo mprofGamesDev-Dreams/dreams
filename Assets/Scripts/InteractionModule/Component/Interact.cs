@@ -12,7 +12,8 @@ namespace InteractionModule
 		DebugLogMSG,
 		DestoryInteraction,
 		LerpObjectFromTo,
-		PickupItem
+		PickupItem,
+		StatModifierPickup
 	}
 
     /// <summary>

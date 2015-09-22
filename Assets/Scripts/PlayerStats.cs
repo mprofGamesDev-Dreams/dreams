@@ -16,35 +16,39 @@ public class PlayerStats : MonoBehaviour
 	// Access to the player object
 	private GameObject Player;
 	private CharacterController Controller; 
+	private FirstPersonController playerController;
 
-	// List the stats
-	public float Health = 100.0f;
-	public float Power = 100.0f;
-	public float Stamina = 100.0f;
-	public float Particles = 100.0f;
+	[Header("Health")]
+	[SerializeField] private int startHealth = 100;
+	[SerializeField] private int maxHealth = 100;
+	[SerializeField] private float healthRegen = 10;
+	private float currentHealth = 100;
 
-	// Flags
-	public bool IsDead = false;
+	[Header("Stamina")]
+	[SerializeField] private int startStamina = 100;
+	[SerializeField] private int maxStamina = 100;
+	[SerializeField] private int staminaRegen = 10;
+	private float currentStamina = 100;
 
-	// Threshold
-	private int StaminaThreshold = 10;
+	[Header("Void Stats")] // Void Has No Regen
+	[SerializeField] private int startVoid = 100;
+	[SerializeField] private int maxVoid = 100;
+	private float currentVoid = 100;
+	
+	[Header("Imagi Stats")]
+	[SerializeField] private int startImagi = 100;
+	[SerializeField] private int maxImagi = 100;
+	[SerializeField] private int imagiRegen = 10;
+	private float currentImagi = 75;
 
-	// Rejuvenation
-	[SerializeField]private float StaminaRecoverySpeed = 0.5f;
+	[Header("Logio Stats")]
+	[SerializeField] private int startLogio = 100;
+	[SerializeField] private int maxLogio = 100;
+	[SerializeField] private int logioRegen = 10;
+	private float currentLogio = 25;
 
-	// Maximum values
-	public int HealthMax = 100;
-	public int PowerMax = 100;
-	public int StaminaMax = 100;
-	public int ParticlesMax = 100;
+	private bool isDead = false;
 
-	//Starting values
-	public int HealthStart = 100;
-	public int PowerStart = 100;
-	public int StaminaStart = 100;
-	public int ParticlesStart = 100;
-
-	[SerializeField] private FirstPersonController playerController;
 
 	void Start ()
 	{
@@ -59,73 +63,237 @@ public class PlayerStats : MonoBehaviour
 	// Update is called once per frame
 	void Update ()
 	{
-		HandleHealth();
-		HandleStamina ();
-		HandleParticles();
-		HandlePower ();
+		if (Input.GetKeyDown (KeyCode.Alpha9))
+			ModifyHealth (-5);
+
+		if (currentHealth <= 0)
+		{
+			IsDead = true;
+		}
+
+		if (!IsDead) 
+		{
+			HealthRegen ();
+			StaminaRegen ();
+			ImagiRegen();
+			LogioRegen();
+		}
+
+		//
+		//HandleParticles();
+
 	}
 
-	private void HandleStamina()
+	#region Regenerations
+	private void HealthRegen()
 	{
-		// If the player is sprinting
-		// Reduce stamina
-		// If stamina is below threshold
-		// Damage player?
+		if (currentHealth == maxHealth)
+			return;
+		currentHealth = Mathf.Clamp ( currentHealth += healthRegen * Time.deltaTime, 0 ,maxHealth );
+	}
 
-
-
+	private void StaminaRegen()
+	{
 		Vector2 input = new Vector2 (CrossPlatformInputManager.GetAxisRaw("Horizontal"), CrossPlatformInputManager.GetAxisRaw("Vertical"));
 		if (input == Vector2.zero) 
 		{
-			Stamina = Mathf.Clamp( Stamina + StaminaRecoverySpeed * Time.deltaTime, 0, StaminaMax );
+			currentStamina = Mathf.Clamp( currentStamina + staminaRegen * Time.deltaTime, 0, maxStamina );
 		} 
-		else 
+		else // Regen at half the rate
 		{
 			if( playerController.IsWalking )
 			{
-				Stamina = Mathf.Clamp( Stamina + StaminaRecoverySpeed * 0.5f * Time.deltaTime, 0, StaminaMax );
+				currentStamina = Mathf.Clamp( currentStamina + staminaRegen * 0.5f * Time.deltaTime, 0, maxStamina );
 			}
 			else // sprinting
 			{
-				Stamina = Mathf.Clamp( Stamina - StaminaRecoverySpeed * Time.deltaTime, 0, StaminaMax );
+				currentStamina = Mathf.Clamp( currentStamina - staminaRegen * Time.deltaTime, 0, maxStamina );
 			}
 		}
 	}
 
-	private void HandleHealth()
+	private void ImagiRegen()
 	{
-		if( IsDead )
-		{
-			// Do something later with this?
+		if (currentImagi >= maxImagi * 0.75f)
 			return;
+		currentImagi = Mathf.Clamp ( currentImagi += imagiRegen * Time.deltaTime, 0 , maxImagi * 0.75f );
+	}
+
+	private void LogioRegen()
+	{
+		if (currentLogio >= maxLogio * 0.25f)
+			return;
+		currentLogio = Mathf.Clamp ( currentLogio += logioRegen * Time.deltaTime, 0 , maxLogio * 0.25f );
+	}
+	#endregion
+
+	public float CurrentHealth
+	{
+		get { return currentHealth; }
+	}
+
+	public float CurrentStamina
+	{
+		get { return currentStamina; }
+	}
+
+	// Add or subtract hp
+	public void ModifyHealth(float amount)
+	{
+		currentHealth = Mathf.Clamp( currentHealth + amount, 0, maxHealth );
+	}
+
+	public void ModifyStamina(float amount)
+	{
+		currentStamina = Mathf.Clamp( currentStamina + amount, 0, maxStamina );
+	}
+
+	public void ModifyVoid(float amount)
+	{
+		currentVoid = Mathf.Clamp( currentVoid + amount, 0, maxVoid );
+	}
+
+	public void ModifyImagi(float amount)
+	{
+		currentImagi = Mathf.Clamp( currentImagi + amount, 0, maxImagi );
+	}
+
+	public void ModifyLogio(float amount)
+	{
+		currentLogio = Mathf.Clamp( currentLogio + amount, 0, maxLogio );
+	}
+
+	//drain mechanic
+
+	public void ResetStats()
+	{
+		currentHealth = maxHealth;
+		currentStamina = maxStamina;
+	}
+
+	#region GeneralProperties
+	public int StartHealth {
+		get {
+			return this.startHealth;
 		}
-		
-		// Check player health to see if death has occured
-		if( Health <= 0 )
-			IsDead = true;
-	}
-
-	private void HandleParticles()
-	{
-	}
-
-	private void HandlePower()
-	{
-	}
-
-	public void Takedamage(int damage)
-	{
-		Health = Health - damage;
-		if (Health < 0)
-		{
-			Health = 0;
+		set {
+			startHealth = value;
 		}
 	}
 
-	public void ResetStats(){
-		Health = HealthMax;
-		Power = PowerMax;
-		Stamina = StaminaMax;
-		Particles = ParticlesMax;
+	public int MaxHealth {
+		get {
+			return this.maxHealth;
+		}
+		set {
+			maxHealth = value;
+		}
 	}
+
+	public int StartStamina {
+		get {
+			return this.startStamina;
+		}
+		set {
+			startStamina = value;
+		}
+	}
+
+	public int MaxStamina {
+		get {
+			return this.maxStamina;
+		}
+		set {
+			maxStamina = value;
+		}
+	}
+
+	public int StartVoid {
+		get {
+			return this.startVoid;
+		}
+		set {
+			startVoid = value;
+		}
+	}
+
+	public int MaxVoid {
+		get {
+			return this.maxVoid;
+		}
+		set {
+			maxVoid = value;
+		}
+	}
+
+	public float CurrentVoid {
+		get {
+			return this.currentVoid;
+		}
+		set {
+			currentVoid = value;
+		}
+	}
+
+	public int StartImagi {
+		get {
+			return this.startImagi;
+		}
+		set {
+			startImagi = value;
+		}
+	}
+
+	public int MaxImagi {
+		get {
+			return this.maxImagi;
+		}
+		set {
+			maxImagi = value;
+		}
+	}
+
+	public float CurrentImagi {
+		get {
+			return this.currentImagi;
+		}
+		set {
+			currentImagi = value;
+		}
+	}
+
+	public int StartLogio {
+		get {
+			return this.startLogio;
+		}
+		set {
+			startLogio = value;
+		}
+	}
+
+	public int MaxLogio {
+		get {
+			return this.maxLogio;
+		}
+		set {
+			maxLogio = value;
+		}
+	}
+
+	public float CurrentLogio {
+		get {
+			return this.currentLogio;
+		}
+		set {
+			currentLogio = value;
+	
+		}
+	}
+
+	public bool IsDead
+	{
+		get{ return isDead; }
+		set{ isDead = value; }
+	}
+	#endregion
 }

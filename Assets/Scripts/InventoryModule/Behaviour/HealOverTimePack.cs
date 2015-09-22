@@ -34,7 +34,7 @@ namespace InventoryModule
 			{
 				GameObject obj = GameObject.FindGameObjectWithTag("Player");
 				
-				obj.GetComponent<PlayerStats>().Health += healAmountPerIncrement;
+				obj.GetComponent<PlayerStats>().ModifyHealth(healAmountPerIncrement);
 
 				yield return new WaitForSeconds(timeIncrements);
 			}

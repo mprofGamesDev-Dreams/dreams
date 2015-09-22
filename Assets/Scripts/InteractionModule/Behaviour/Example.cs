@@ -1,7 +1,7 @@
 using UnityEngine;
 using System.Collections;
 
-namespace InteractionModule.Behaviour
+namespace InteractionModule.Behaviours
 {
 	public class Example : A_InteractBehaviour 
 	{
