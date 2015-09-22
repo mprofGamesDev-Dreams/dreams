@@ -102,7 +102,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
             GetInput(out speed);
 
 			// Checks if he can or not run
-			if (playerStats.Stamina == 0 && speed == m_RunSpeed) 
+			if (playerStats.CurrentStamina == 0 && speed == m_RunSpeed) 
 			{
 				if( CrossPlatformInputManager.GetAxisRaw("Horizontal") != 0 ||  CrossPlatformInputManager.GetAxisRaw("Vertical") != 0 )
 					speed = m_WalkSpeed;

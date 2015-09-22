@@ -17,7 +17,6 @@ namespace InteractionModule
     {
         Interact myTarget;
 
-
         public override void OnInspectorGUI()
         {
             if (myTarget == null)
@@ -95,6 +94,10 @@ namespace InteractionModule
 					ValidateCurrentBehaviourClass(typeof(PickupItem));
 					// No Need For Draw Code
 					break;
+				case EBehaviourClasses.StatModifierPickup:
+					ValidateCurrentBehaviourClass(typeof(StatModifier));
+					DrawStatModifierInspector();
+					break;
             }
 
             EditorGUILayout.Space();
@@ -155,6 +158,24 @@ namespace InteractionModule
 			EditorGUILayout.BeginHorizontal();
 			EditorGUILayout.LabelField("Transition Time: ", GUILayout.MaxWidth(80));
 			((LerpObjectFromTo)myTarget.Behaviour).TransitionTime = (float)EditorGUILayout.FloatField(((LerpObjectFromTo)myTarget.Behaviour).TransitionTime, GUILayout.MinWidth(50));
+			EditorGUILayout.EndHorizontal();
+		}
+
+		private void DrawStatModifierInspector()
+		{
+			EditorGUILayout.BeginHorizontal();
+			EditorGUILayout.LabelField("UI Text: ", GUILayout.MaxWidth(80));
+			((StatModifier)myTarget.Behaviour).MyPlayerStats = (PlayerStats)EditorGUILayout.ObjectField(((StatModifier)myTarget.Behaviour).MyPlayerStats, typeof(PlayerStats), true);
+			EditorGUILayout.EndHorizontal();
+
+			EditorGUILayout.BeginHorizontal();
+			EditorGUILayout.LabelField("Stat To Modify: ", GUILayout.MaxWidth(80));
+			((StatModifier)myTarget.Behaviour).PickupType = (StatModifier.EPickupStatModifier)EditorGUILayout.EnumPopup(((StatModifier)myTarget.Behaviour).PickupType, GUILayout.MinWidth(50));
+			EditorGUILayout.EndHorizontal();
+
+			EditorGUILayout.BeginHorizontal();
+			EditorGUILayout.LabelField("Pickup Value: ", GUILayout.MaxWidth(80));
+			((StatModifier)myTarget.Behaviour).PickupValue = (float)EditorGUILayout.FloatField(((StatModifier)myTarget.Behaviour).PickupValue, GUILayout.MinWidth(50));
 			EditorGUILayout.EndHorizontal();
 		}
 

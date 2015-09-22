@@ -11,6 +11,9 @@ public class ActivePowerUI : MonoBehaviour {
 	public Image uiIndicator;
 
 	private ActivePower currentPower;
+
+	[SerializeField]private ResourceBar powerBar;
+
 	// Use this for initialization
 	void Start () 
 	{
@@ -25,16 +28,21 @@ public class ActivePowerUI : MonoBehaviour {
 		{
 			currentPower = ActivePower.Logio;
 			uiIndicator.color = LogioC;
+			powerBar.BarType = ResourceType.Logio;
 		}
 		else if (Input.GetKeyDown(KeyCode.Alpha2))//IMAGI
 		{
 			currentPower = ActivePower.Imagi;
 			uiIndicator.color = ImagiC;
+			powerBar.BarType = ResourceType.Imagi;
+
 		}
 		else if (Input.GetKeyDown(KeyCode.Alpha3))//VOID
 		{
 			currentPower = ActivePower.Void;
 			uiIndicator.color = VoidC;
+			powerBar.BarType = ResourceType.Void;
+
 		}
 
 	}

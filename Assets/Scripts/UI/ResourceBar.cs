@@ -24,7 +24,7 @@ using UnityEngine;
 using System.Collections;
 using UnityEngine.UI;
 
-public enum ResourceType{Health , Particles, Stamina, Power}
+public enum ResourceType{Health , Stamina, Void, Imagi, Logio}
 public enum ScrollDirection{Left, Right, Up, Down}
 
 public class ResourceBar : MonoBehaviour {
@@ -50,27 +50,31 @@ public class ResourceBar : MonoBehaviour {
 		cachedY = barTransform.position.y;
 		maxX = barTransform.position.x;
 		minX = barTransform.position.x - (barTransform.rect.width);
-		startTotal = playerRecord.HealthStart;
+		startTotal = playerRecord.StartHealth;
 		currentTotal = startTotal;
-		maxTotal = playerRecord.HealthMax;
+		maxTotal = playerRecord.MaxHealth;
 
 		switch(BarType)
 		{
 		case ResourceType.Health:
-			startTotal = playerRecord.HealthStart;
-			maxTotal = playerRecord.HealthMax;
-			break;
-		case ResourceType.Particles:
-			startTotal = playerRecord.ParticlesStart;
-			maxTotal = playerRecord.ParticlesMax;
-			break;
-		case ResourceType.Power:
-			startTotal = playerRecord.PowerStart;
-			maxTotal = playerRecord.PowerMax;
+			startTotal = playerRecord.StartHealth;
+			maxTotal = playerRecord.MaxHealth;
 			break;
 		case ResourceType.Stamina:
-			startTotal = playerRecord.StaminaStart;
-			maxTotal = playerRecord.StaminaMax;
+			startTotal = playerRecord.StartStamina;
+			maxTotal = playerRecord.MaxStamina;
+			break;
+		case ResourceType.Void:
+			startTotal = playerRecord.StartVoid;
+			maxTotal = playerRecord.MaxVoid;
+			break;
+		case ResourceType.Logio:
+			startTotal = playerRecord.StartLogio;
+			maxTotal = playerRecord.MaxLogio;
+			break;
+		case ResourceType.Imagi:
+			startTotal = playerRecord.StartImagi;
+			maxTotal = playerRecord.MaxImagi;
 			break;
 		}
 
@@ -82,33 +86,49 @@ public class ResourceBar : MonoBehaviour {
 		switch(BarType)
 		{
 		case ResourceType.Health:
-			if (playerRecord.Health != currentTotal) 
+			if (playerRecord.CurrentHealth != currentTotal) 
 			{
-				currentTotal = playerRecord.Health;
+				currentTotal = playerRecord.CurrentHealth;
 				h_handleResource();
 			}
 			break;
-		case ResourceType.Particles:
+		/*case ResourceType.Particles:
 			if (playerRecord.Particles != currentTotal)
 			{
 				currentTotal = playerRecord.Particles;
 				p_handleResource();
 			}
-			break;
+			break;*/
 		case ResourceType.Stamina:
-			if(playerRecord.Stamina != currentTotal)
+			if(playerRecord.CurrentStamina != currentTotal)
 			{
-				currentTotal = playerRecord.Stamina;
+				currentTotal = playerRecord.CurrentStamina;
 				s_handleResource();
 			}
 			break;
-		case ResourceType.Power:
-			if(playerRecord.Power != currentTotal)
+
+		case ResourceType.Imagi:
+			if(playerRecord.CurrentImagi != currentTotal)
 			{
-				currentTotal = playerRecord.Power;
-				pw_handleResource();
+				currentTotal = playerRecord.CurrentImagi;
+				s_handleResource();
 			}
 			break;
+		case ResourceType.Void:
+			if(playerRecord.CurrentVoid != currentTotal)
+			{
+				currentTotal = playerRecord.CurrentVoid;
+				s_handleResource();
+			}
+			break;
+		case ResourceType.Logio:
+			if(playerRecord.CurrentLogio != currentTotal)
+			{
+				currentTotal = playerRecord.CurrentLogio;
+				s_handleResource();
+			}
+			break;
+
 		}
 	}
 	private void h_handleResource()
