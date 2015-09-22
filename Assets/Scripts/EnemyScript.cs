@@ -1,19 +1,55 @@
-﻿using UnityEngine;
+﻿/* enemy script
+ * Place on a gameobject that represents an enemy
+ * 
+ */
+
+using UnityEngine;
 using System.Collections;
 
 public class EnemyScript : MonoBehaviour {
 
-	public float health;
+	[SerializeField] private float maxHealth;
+	[SerializeField] private float health;
+	[SerializeField] private GameObject healthBar;
+	public float Health 
+	{
+		get
+		{
+			return health;
+		}
+		set 
+		{
+			health = value;
+		}
+	}
+
+	public float MaxHealth 
+	{
+		get
+		{
+			return maxHealth;
+		}
+		set 
+		{
+			maxHealth = value;
+		}
+	}
 
 	// Use this for initialization
 	void Start () {
-		health = 4.0f;
+		//MaxHealth = 4;
+		Health = MaxHealth;
+
+		if (healthBar) 
+		{
+			healthBar.SetActive(false);
+		}
 	}
 	
 	// Update is called once per frame
 	void Update () {
 		//If health is zero, be destroyed.
-		if (health == 0.0f) {
+		if (Health <= 0.0f) {
 			Destroy(gameObject);
 		}
 	
@@ -21,15 +57,29 @@ public class EnemyScript : MonoBehaviour {
 
 	//Take a special attack, lose two health
 	public void TakeSA(){
-		health = health - 2.0f;
+		Health = Health - 2.0f;
+		ActivateHealthBar ();
 	}
 
 	public void TakeMA(){
-		health = health - 1.0f;
+		Health = Health - 1.0f;
+		ActivateHealthBar ();
 	}
 
 	public void TakeDamage(float damage)
 	{
-		health = health - damage;
+		Health = Health - damage;
+		ActivateHealthBar ();
+	}
+
+	private void ActivateHealthBar()
+	{
+		if (healthBar) 
+		{
+			if (!healthBar.active)
+			{
+				healthBar.SetActive(true);
+			}
+		}
 	}
 }

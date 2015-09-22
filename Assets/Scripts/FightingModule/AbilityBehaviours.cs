@@ -101,7 +101,7 @@ public class AbilityBehaviours : MonoBehaviour
 		switch (currentPower) 
 		{
 		case ActivePower.Logio:
-			Instantiate(logioBullet, myCameraTransform.position+(myCameraTransform.forward*1), myCameraTransform.rotation); 
+			Instantiate(logioBullet, myCameraTransform.position+(myCameraTransform.forward*1), myCameraTransform.rotation);
 			break;
 		case ActivePower.Imagi:
 			Instantiate(imagiBullet, myCameraTransform.position+(myCameraTransform.forward*1), myCameraTransform.rotation); 
