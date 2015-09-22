@@ -15,6 +15,7 @@ public class Bullet : MonoBehaviour {
 	[SerializeField] private ActivePower bulletType;
 	[SerializeField] private float speed;
 	[SerializeField] private float range;
+	[SerializeField] private float damage;
 	// Use this for initialization
 	void Start () {
 		bulletType = ActivePower.Imagi;
@@ -49,7 +50,7 @@ public class Bullet : MonoBehaviour {
 		} 
 		else if (collision.gameObject.GetComponent<EnemyScript>()) //hit a bad guy
 		{
-			collision.gameObject.GetComponent<EnemyScript>().TakeSA();
+			collision.gameObject.GetComponent<EnemyScript>().TakeDamage(damage);
 		} 
 		else //hit terrain
 		{
