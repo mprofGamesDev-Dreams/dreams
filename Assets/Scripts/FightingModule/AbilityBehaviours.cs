@@ -1,11 +1,19 @@
-﻿using UnityEngine;
+﻿/*
+ * Script that implements magical abilities
+ * Must be attached to the player character
+ * Must be provided bullet prefabs that contain a "Bullet" script
+ */
+
+using UnityEngine;
 using System.Collections;
 
 public class AbilityBehaviours : MonoBehaviour 
 {
 	// Serialize Private Fields To Show Up In The Insepctor
 	[SerializeField] private float attackRange = 100.0f;
-
+	[SerializeField] private GameObject logioBullet;
+	[SerializeField] private GameObject imagiBullet;
+	[SerializeField] private GameObject voidBullet;
 	[SerializeField] private ParticleSystem myParticleSystem;
 
 	private Transform myCameraTransform;
@@ -37,7 +45,7 @@ public class AbilityBehaviours : MonoBehaviour
 
 		if (Input.GetMouseButtonDown (1)) 
 		{
-			shootRay();
+			shootBullet();
 		}
 	}
 
@@ -85,6 +93,24 @@ public class AbilityBehaviours : MonoBehaviour
 				}
 			}
 		}
+	}
+
+	private void shootBullet()
+	{
+
+		switch (currentPower) 
+		{
+		case ActivePower.Logio:
+			Instantiate(logioBullet, myCameraTransform.position+(myCameraTransform.forward*1), myCameraTransform.rotation); 
+			break;
+		case ActivePower.Imagi:
+			Instantiate(imagiBullet, myCameraTransform.position+(myCameraTransform.forward*1), myCameraTransform.rotation); 
+			break;
+		case ActivePower.Void:
+			Instantiate(voidBullet, myCameraTransform.position+(myCameraTransform.forward*1), myCameraTransform.rotation); 
+			break;
+		}
+
 	}
 }
 
