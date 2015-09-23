@@ -133,7 +133,7 @@ public class ResourceBar : MonoBehaviour {
 	}
 	private void h_handleResource()
 	{
-		BarText.text = ""+ currentTotal;
+		BarText.text = ""+ (int)currentTotal;
 		float currentXVal = MapValues (currentTotal, 0, maxTotal, minX, maxX);
 		barTransform.position = new Vector3 (currentXVal, cachedY);
 		/*
@@ -149,7 +149,7 @@ public class ResourceBar : MonoBehaviour {
 
 	private void p_handleResource()
 	{
-		BarText.text = ""+ currentTotal;
+		BarText.text = ""+ (int)currentTotal;
 		float currentXVal = MapValues (currentTotal, 0, maxTotal, minX, maxX);
 
 		barTransform.position = new Vector3 (currentXVal, cachedY);
@@ -158,7 +158,7 @@ public class ResourceBar : MonoBehaviour {
 
 	private void s_handleResource()
 	{
-		BarText.text = ""+ currentTotal;
+		BarText.text = ""+ (int)currentTotal;
 		float currentXVal = MapValues (currentTotal, 0, maxTotal, minX, maxX);
 	
 
@@ -168,7 +168,7 @@ public class ResourceBar : MonoBehaviour {
 
 	private void pw_handleResource()
 	{
-		BarText.text = ""+ currentTotal;
+		BarText.text = ""+ (int)currentTotal;
 		float currentXVal = MapValues (currentTotal, 0, maxTotal, minX, maxX);
 		barTransform.position = new Vector3 (currentXVal, cachedY);
 
