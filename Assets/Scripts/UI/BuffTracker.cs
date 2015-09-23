@@ -5,20 +5,23 @@ public class BuffTracker : MonoBehaviour {
 
 	[SerializeField] private GameObject imagiBuff;
 	[SerializeField] private GameObject player;
+
+	private PlayerStats playerStats;
+
 	// Use this for initialization
 	void Start () {
-	
+		playerStats = player.GetComponent<PlayerStats> ();
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		if (player.GetComponent<PlayerStats> ().Buffed == true && imagiBuff.active == false) 
+		if ( playerStats.Buffed == true && imagiBuff.activeInHierarchy == false) 
 		{
-			imagiBuff.active = true;
+			imagiBuff.SetActive(true);
 		} 
-		else if (player.GetComponent<PlayerStats> ().Buffed == false && imagiBuff.active == true) 
+		else if (playerStats.Buffed == false && imagiBuff.activeInHierarchy == true) 
 		{
-			imagiBuff.active = false;
+			imagiBuff.SetActive(false);
 		}
 	}
 }
