@@ -27,7 +27,6 @@ public class ActivePowerUI : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-
 		if (Input.GetKeyDown(KeyCode.Alpha1))//LOGIO
 		{
 			currentPower = ActivePower.Logio;

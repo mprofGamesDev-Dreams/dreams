@@ -1762,12 +1762,11 @@ MonoBehaviour:
   maxHealth: 4
   health: 0
   healthBar: {fileID: 626753}
-  expPrefab: {fileID: 0}
-  voidPrefab: {fileID: 0}
-  imagiPrefab: {fileID: 0}
-  logioPrefab: {fileID: 0}
-  expDrop: 0
-  particleDrop: 0
+  expPrefab: {fileID: 106138, guid: e6c82dd1d87137b47a29e24f308655ee, type: 2}
+  voidPrefab: {fileID: 126410, guid: 5e083007b6431394b91caac977761437, type: 2}
+  imagiPrefab: {fileID: 156894, guid: c757713502107e84096f15d454be9304, type: 2}
+  logioPrefab: {fileID: 107886, guid: 9ef5c66a8170b654da9e1af46fbbfcc4, type: 2}
+  expDrop: 10
 --- !u!1001 &285231538
 Prefab:
   m_ObjectHideFlags: 0
@@ -2864,7 +2863,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 6
 --- !u!1 &486999721
 GameObject:
   m_ObjectHideFlags: 0
@@ -3471,7 +3470,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 7
 --- !u!1 &639818546
 GameObject:
   m_ObjectHideFlags: 0
@@ -4137,7 +4136,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 8
 --- !u!4 &755277322 stripped
 Transform:
   m_PrefabParentObject: {fileID: 455654, guid: 30f77a23ae462e1408d520c7436769c0, type: 2}
@@ -4483,7 +4482,7 @@ Transform:
   m_LocalScale: {x: 134.757233, y: 5.24150467, z: 134.757202}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
 --- !u!1 &785872242
 GameObject:
   m_ObjectHideFlags: 0
@@ -6141,7 +6140,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
 --- !u!1 &1080184914
 GameObject:
   m_ObjectHideFlags: 0
@@ -6745,7 +6744,8 @@ Prefab:
       propertyPath: voidParticlePrefab
       value: 
       objectReference: {fileID: 126410, guid: 5e083007b6431394b91caac977761437, type: 2}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 11415972, guid: 30f77a23ae462e1408d520c7436769c0, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: 30f77a23ae462e1408d520c7436769c0, type: 2}
   m_IsPrefabParent: 0
 --- !u!4 &1199836962 stripped
@@ -7107,7 +7107,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 5
 --- !u!1 &1325146469
 GameObject:
   m_ObjectHideFlags: 0
@@ -9653,12 +9653,11 @@ MonoBehaviour:
   maxHealth: 4
   health: 0
   healthBar: {fileID: 136329924}
-  expPrefab: {fileID: 0}
-  voidPrefab: {fileID: 0}
-  imagiPrefab: {fileID: 0}
-  logioPrefab: {fileID: 0}
-  expDrop: 0
-  particleDrop: 0
+  expPrefab: {fileID: 106138, guid: e6c82dd1d87137b47a29e24f308655ee, type: 2}
+  voidPrefab: {fileID: 126410, guid: 5e083007b6431394b91caac977761437, type: 2}
+  imagiPrefab: {fileID: 156894, guid: c757713502107e84096f15d454be9304, type: 2}
+  logioPrefab: {fileID: 107886, guid: 9ef5c66a8170b654da9e1af46fbbfcc4, type: 2}
+  expDrop: 10
 --- !u!1 &1814627953
 GameObject:
   m_ObjectHideFlags: 0
@@ -10097,6 +10096,10 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1847364376}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &1850141933 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 142940, guid: 30f77a23ae462e1408d520c7436769c0, type: 2}
+  m_PrefabInternal: {fileID: 1199836961}
 --- !u!1 &1855108839
 GameObject:
   m_ObjectHideFlags: 0
@@ -10247,6 +10250,29 @@ MeshFilter:
 Transform:
   m_PrefabParentObject: {fileID: 455654, guid: 30f77a23ae462e1408d520c7436769c0, type: 2}
   m_PrefabInternal: {fileID: 1392130851}
+--- !u!1 &1867664104 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 195500, guid: 30f77a23ae462e1408d520c7436769c0, type: 2}
+  m_PrefabInternal: {fileID: 1199836961}
+--- !u!114 &1867664105
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1867664104}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 96617e146b5369844b7cb6aa7e9f6bc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 4
+  health: 0
+  healthBar: {fileID: 1850141933}
+  expPrefab: {fileID: 106138, guid: e6c82dd1d87137b47a29e24f308655ee, type: 2}
+  voidPrefab: {fileID: 126410, guid: 5e083007b6431394b91caac977761437, type: 2}
+  imagiPrefab: {fileID: 156894, guid: c757713502107e84096f15d454be9304, type: 2}
+  logioPrefab: {fileID: 107886, guid: 9ef5c66a8170b654da9e1af46fbbfcc4, type: 2}
+  expDrop: 10
 --- !u!1001 &1889799928
 Prefab:
   m_ObjectHideFlags: 0

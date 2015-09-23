@@ -8,12 +8,13 @@ using System.Collections;
 
 public class LockMouseToCenter : MonoBehaviour
 {
-	public bool LockMouse = false;
+	public bool lockMouse = false;
 
 	// Use this for initialization
 	void Start ()
 	{
-		Screen.lockCursor = LockMouse;
+		Cursor.lockState = CursorLockMode.Confined;
+		Cursor.visible = false;
 	}
 	
 	// Update is called once per frame
@@ -21,12 +22,17 @@ public class LockMouseToCenter : MonoBehaviour
 	{
 		if( Input.GetKeyDown(KeyCode.RightShift))
 		{
-			if( LockMouse )
-				LockMouse = false;
+			lockMouse = !lockMouse;
+			if( lockMouse )
+			{
+				Cursor.lockState = CursorLockMode.Confined;
+				Cursor.visible = false;
+			}
 			else 
-				LockMouse = true;
-
-			Screen.lockCursor = LockMouse;
+			{
+				Cursor.lockState = CursorLockMode.None;
+				Cursor.visible = true;
+			}
 		}
 	}
 }

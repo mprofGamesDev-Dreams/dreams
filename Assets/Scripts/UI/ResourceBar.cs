@@ -181,10 +181,8 @@ public class ResourceBar : MonoBehaviour {
 		{
 		case ScrollDirection.Left:
 			return (x - inMin) * (outMax - outMin) / (inMax - inMin) + outMin;
-			break;
 		case ScrollDirection.Right:
 			return (x - inMin) * (outMax-outMin) / (inMax - inMin) + outMin;
-			break;
 		}
 
 		return (x - inMin) * (outMax - outMin) / (inMax - inMin) + outMin;

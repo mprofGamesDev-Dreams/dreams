@@ -15,7 +15,6 @@ public class PlayerStats : MonoBehaviour
 {
 	// Access to the player object
 	private GameObject Player;
-	private CharacterController Controller; 
 	private FirstPersonController playerController;
 
 	[Header("Health")]
@@ -54,9 +53,7 @@ public class PlayerStats : MonoBehaviour
 	{
 		// Find the player game object
 		Player = GameObject.Find("Player");
-
-		Controller = Player.GetComponent<CharacterController>();
-
+		
 		playerController = Player.GetComponent<FirstPersonController>();
 	}
 	
