@@ -74,6 +74,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   shieldType: 1
+  shieldHealth: 20
 --- !u!135 &13579694
 SphereCollider:
   m_ObjectHideFlags: 1
