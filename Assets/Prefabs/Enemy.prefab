@@ -658,6 +658,11 @@ MonoBehaviour:
   maxHealth: 4
   health: 0
   healthBar: {fileID: 142940}
+  expPrefab: {fileID: 106138, guid: e6c82dd1d87137b47a29e24f308655ee, type: 2}
+  voidPrefab: {fileID: 126410, guid: 5e083007b6431394b91caac977761437, type: 2}
+  imagiPrefab: {fileID: 156894, guid: c757713502107e84096f15d454be9304, type: 2}
+  logioPrefab: {fileID: 107886, guid: 9ef5c66a8170b654da9e1af46fbbfcc4, type: 2}
+  expDrop: 10
 --- !u!114 &11473512
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -777,6 +782,22 @@ Prefab:
       propertyPath: lineOfSightRange
       value: 30
       objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: expPrefab
+      value: 
+      objectReference: {fileID: 106138, guid: e6c82dd1d87137b47a29e24f308655ee, type: 2}
+    - target: {fileID: 0}
+      propertyPath: imagiPrefab
+      value: 
+      objectReference: {fileID: 156894, guid: c757713502107e84096f15d454be9304, type: 2}
+    - target: {fileID: 0}
+      propertyPath: logioPrefab
+      value: 
+      objectReference: {fileID: 107886, guid: 9ef5c66a8170b654da9e1af46fbbfcc4, type: 2}
+    - target: {fileID: 0}
+      propertyPath: voidPrefab
+      value: 
+      objectReference: {fileID: 126410, guid: 5e083007b6431394b91caac977761437, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 195500}
