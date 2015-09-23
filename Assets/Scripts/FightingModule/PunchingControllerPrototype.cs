@@ -15,16 +15,16 @@ public class PunchingControllerPrototype : MonoBehaviour
 
 
 	private int attTrig;
-
 	private bool canAttack = true;
-
 	private Transform cameraTransform;
+	private InputHandler input;
 
 	private void Start () 
 	{
 		attTrig = Animator.StringToHash(attackTrigger);
 
 		cameraTransform = Camera.main.GetComponent<Transform>();
+		input = gameObject.GetComponent<InputHandler> ();
 
 		if( attackToNormalizedTime < attackFromNormalizedTime ) 
 		{
@@ -34,10 +34,7 @@ public class PunchingControllerPrototype : MonoBehaviour
 	
 	private void Update () 
 	{
-		if(Input.GetKeyDown(KeyCode.Mouse0) && !animationController.GetCurrentAnimatorStateInfo(0).IsName("AttackTrigger"))
-		{
-			animationController.SetTrigger( attTrig );
-		}
+		if (input.isMelee ()) AttackEvent ();
 
 		if(animationController.GetCurrentAnimatorStateInfo(0).IsName("Punch") && canAttack)
 		{
@@ -48,6 +45,17 @@ public class PunchingControllerPrototype : MonoBehaviour
 		if(!animationController.GetCurrentAnimatorStateInfo(0).IsName("Punch"))
 		{
 			canAttack = true;
+		}
+	}
+
+	/// <summary>
+	/// Event called from the InputHandler script
+	/// </summary>
+	public void AttackEvent()
+	{
+		if(!animationController.GetCurrentAnimatorStateInfo(0).IsName("AttackTrigger"))
+		{
+			animationController.SetTrigger( attTrig );
 		}
 	}
 

@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using UnityEngine.UI;
+using UnityStandardAssets.CrossPlatformInput;
 
 public enum ActivePower{Imagi,Logio,Void};
 
@@ -24,20 +25,20 @@ public class ActivePowerUI : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
-		if (Input.GetKeyDown(KeyCode.Alpha1))//LOGIO
+		if (CrossPlatformInputManager.GetButtonDown ("Fire1"))//LOGIO
 		{
 			currentPower = ActivePower.Logio;
 			uiIndicator.color = LogioC;
 			powerBar.BarType = ResourceType.Logio;
 		}
-		else if (Input.GetKeyDown(KeyCode.Alpha2))//IMAGI
+		else if (CrossPlatformInputManager.GetButtonDown ("Fire2"))//IMAGI
 		{
 			currentPower = ActivePower.Imagi;
 			uiIndicator.color = ImagiC;
 			powerBar.BarType = ResourceType.Imagi;
 
 		}
-		else if (Input.GetKeyDown(KeyCode.Alpha3))//VOID
+		else if (CrossPlatformInputManager.GetButtonDown ("Fire3"))//VOID
 		{
 			currentPower = ActivePower.Void;
 			uiIndicator.color = VoidC;

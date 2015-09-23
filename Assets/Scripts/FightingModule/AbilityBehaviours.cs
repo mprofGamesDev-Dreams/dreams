@@ -6,6 +6,7 @@
 
 using UnityEngine;
 using System.Collections;
+using UnityStandardAssets.CrossPlatformInput;
 
 public class AbilityBehaviours : MonoBehaviour 
 {
@@ -17,28 +18,30 @@ public class AbilityBehaviours : MonoBehaviour
 	[SerializeField] private ParticleSystem myParticleSystem;
 
 	private Transform myCameraTransform;
+	private InputHandler input;
 	private Color32 beamColor;
 	ActivePower currentPower;
 	private void Start () 
 	{
 		// Gets The Main Camera's Transform On Object Startup
 		myCameraTransform = Camera.main.GetComponent<Transform>();
+		input = gameObject.GetComponent<InputHandler>();
 		currentPower = ActivePower.Imagi;
 	}
 	
 	private void Update () 
 	{		
-		if (Input.GetKeyDown(KeyCode.Alpha1))//LOGIO
-		{
-			currentPower = ActivePower.Logio;
-		}
+//		if (CrossPlatformInputManager.GetButtonDown ("Fire1"))//LOGIO
+//		{
+//			currentPower = ActivePower.Logio;
+//		}
 		
-		if (Input.GetKeyDown(KeyCode.Alpha2))//IMAGI
+		if (CrossPlatformInputManager.GetButtonDown ("Fire2"))//IMAGI
 		{
 			currentPower = ActivePower.Imagi;
 		}
 		
-		if (Input.GetKeyDown(KeyCode.Alpha3))//VOID
+		if (CrossPlatformInputManager.GetButtonDown ("Fire3"))//VOID
 		{
 			currentPower = ActivePower.Void;
 		}
@@ -47,6 +50,11 @@ public class AbilityBehaviours : MonoBehaviour
 		{
 			shootBullet();
 		}
+	}
+
+	public void setActivePower(ActivePower ap)
+	{
+		currentPower = ap;
 	}
 
 	private void shootRay()
