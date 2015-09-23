@@ -14,9 +14,13 @@ public class ActivePowerUI : MonoBehaviour {
 
 	[SerializeField]private ResourceBar powerBar;
 
+	public static ActivePowerUI instance = null;
+
 	// Use this for initialization
 	void Start () 
 	{
+		if (instance == null)
+			instance = this;
 		currentPower = ActivePower.Imagi;
 		uiIndicator.color = ImagiC;
 	}
@@ -45,5 +49,10 @@ public class ActivePowerUI : MonoBehaviour {
 
 		}
 
+	}
+
+	public ActivePower CurrentPower
+	{
+		get{return currentPower;}
 	}
 }

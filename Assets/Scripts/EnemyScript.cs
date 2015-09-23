@@ -11,6 +11,15 @@ public class EnemyScript : MonoBehaviour {
 	[SerializeField] private float maxHealth;
 	[SerializeField] private float health;
 	[SerializeField] private GameObject healthBar;
+
+	[SerializeField] private GameObject expPrefab;
+	[SerializeField] private GameObject voidPrefab;
+	[SerializeField] private GameObject imagiPrefab;
+	[SerializeField] private GameObject logioPrefab;
+
+	[SerializeField] private float expDrop = 10;
+	[SerializeField] private float particleDrop = 10;
+
 	public float Health 
 	{
 		get
@@ -49,7 +58,35 @@ public class EnemyScript : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		//If health is zero, be destroyed.
-		if (Health <= 0.0f) {
+		if (Health <= 0.0f) 
+		{
+			Vector3 pos = transform.position;
+			pos.y += 0.5f;
+			PickupOnTrigger obj;
+
+			switch (ActivePowerUI.instance.CurrentPower)
+			{
+			case ActivePower.Imagi:
+				obj = (Instantiate(imagiPrefab, pos, Quaternion.identity ) as GameObject).GetComponent<PickupOnTrigger>();
+				obj.StatModifyValue = particleDrop;
+				break;
+			case ActivePower.Void:
+				obj = (Instantiate(voidPrefab, pos, Quaternion.identity ) as GameObject).GetComponent<PickupOnTrigger>();
+				obj.StatModifyValue = particleDrop;
+				break;
+			case ActivePower.Logio:
+				obj = (Instantiate(logioPrefab, pos, Quaternion.identity ) as GameObject).GetComponent<PickupOnTrigger>();
+				obj.StatModifyValue = particleDrop;
+				break;
+			}
+
+			pos.x += 0.5f;
+			obj = (Instantiate(expPrefab, pos, Quaternion.identity ) as GameObject).GetComponent<PickupOnTrigger>();
+			obj.StatModifyValue = expDrop;
+
+
+
+
 			Destroy(gameObject);
 		}
 	
