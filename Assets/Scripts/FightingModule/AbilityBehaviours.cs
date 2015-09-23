@@ -31,10 +31,10 @@ public class AbilityBehaviours : MonoBehaviour
 	
 	private void Update () 
 	{		
-//		if (CrossPlatformInputManager.GetButtonDown ("Fire1"))//LOGIO
-//		{
-//			currentPower = ActivePower.Logio;
-//		}
+		if (CrossPlatformInputManager.GetButtonDown ("Fire1"))//LOGIO
+		{
+			currentPower = ActivePower.Logio;
+		}
 		
 		if (CrossPlatformInputManager.GetButtonDown ("Fire2"))//IMAGI
 		{
@@ -46,7 +46,7 @@ public class AbilityBehaviours : MonoBehaviour
 			currentPower = ActivePower.Void;
 		}
 
-		if (Input.GetMouseButtonDown (1)) 
+		if (input.isShoot ()) 
 		{
 			shootBullet();
 		}
