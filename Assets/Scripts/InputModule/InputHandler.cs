@@ -12,6 +12,7 @@ public class InputHandler : MonoBehaviour
 {
 	bool shoot;
 	bool melee;
+	bool sprint;
 
 //	AbilityBehaviours abilityBehaviours;
 //	FirstPersonController firstPersonController;
@@ -29,16 +30,16 @@ public class InputHandler : MonoBehaviour
 		//Make all triggers false
 		shoot = false;
 		melee = false;
-
+		sprint = false;
 
 		//Check for inputs
 		//Left trigger
-		if(CrossPlatformInputManager.GetButtonDown ("Shoot"))
+		if(CrossPlatformInputManager.GetAxis ("Melee") > 0 || CrossPlatformInputManager.GetButtonDown ("Melee"))
 		{
-
+			melee = true;
 		}
 		//Right trigger
-		if(CrossPlatformInputManager.GetAxis ("Shoot") > 0 || CrossPlatformInputManager.GetButton ("Shoot"))
+		if(CrossPlatformInputManager.GetAxis ("Shoot") > 0 || CrossPlatformInputManager.GetButtonDown ("Shoot"))
 		{
 			//abilityBehaviours.shootRay();
 			shoot = true;
@@ -57,7 +58,6 @@ public class InputHandler : MonoBehaviour
 		if(CrossPlatformInputManager.GetButtonDown ("Melee"))
 		{
 			//punchingControllerPrototype.AttackEvent();
-			melee = true;
 		}
 		//Y button
 		if(CrossPlatformInputManager.GetButtonDown ("Shoot"))
@@ -74,6 +74,11 @@ public class InputHandler : MonoBehaviour
 		{
 			
 		}
+		//Left Analogue Stick Click
+		if(CrossPlatformInputManager.GetButtonDown ("Sprint"))
+		{
+			shoot = true;
+		}
 
 	}
 
@@ -83,6 +88,10 @@ public class InputHandler : MonoBehaviour
 
 	public bool isMelee(){
 		return melee;
+	}
+
+	public bool isSprint(){
+		return sprint;
 	}
 }
 
