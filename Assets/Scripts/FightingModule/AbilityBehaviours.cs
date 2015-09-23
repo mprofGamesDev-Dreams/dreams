@@ -97,19 +97,23 @@ public class AbilityBehaviours : MonoBehaviour
 
 	private void shootBullet()
 	{
-
+		GameObject bullet;
 		switch (currentPower) 
 		{
 		case ActivePower.Logio:
-			Instantiate(logioBullet, myCameraTransform.position+(myCameraTransform.forward*1), myCameraTransform.rotation);
+			bullet = (GameObject)Instantiate(logioBullet, myCameraTransform.position+(myCameraTransform.forward*1), myCameraTransform.rotation);
+			bullet.GetComponent<Bullet>().SetParent(gameObject);
 			break;
 		case ActivePower.Imagi:
-			Instantiate(imagiBullet, myCameraTransform.position+(myCameraTransform.forward*1), myCameraTransform.rotation); 
+			bullet = (GameObject)Instantiate(imagiBullet, myCameraTransform.position+(myCameraTransform.forward*1), myCameraTransform.rotation); 
+			bullet.GetComponent<Bullet>().SetParent(gameObject);
 			break;
 		case ActivePower.Void:
-			Instantiate(voidBullet, myCameraTransform.position+(myCameraTransform.forward*1), myCameraTransform.rotation); 
+			bullet = (GameObject)Instantiate(voidBullet, myCameraTransform.position+(myCameraTransform.forward*1), myCameraTransform.rotation); 
+			bullet.GetComponent<Bullet>().SetParent(gameObject);
 			break;
 		}
+
 
 	}
 }
