@@ -2150,7 +2150,7 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 109302}
-  m_LocalRotation: {x: .692415893, y: .663689137, z: -.0430023, w: .27969259}
+  m_LocalRotation: {x: .692415833, y: .663689077, z: -.0430022962, w: .27969256}
   m_LocalPosition: {x: -.00183018122, y: -.0170671139, z: -.0146778813}
   m_LocalScale: {x: 1.00000024, y: 1.00000012, z: 1}
   m_Children:
@@ -2952,6 +2952,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 8bc94ec6ed537e743b481638bdcd503d, type: 3}
   m_JumpSound: {fileID: 8300000, guid: 5897aeed9b676024fbb8c694b421a861, type: 3}
   m_LandSound: {fileID: 8300000, guid: 3b09d59f4499d45428baa7a21e954296, type: 3}
+  playerStats: {fileID: 0}
 --- !u!114 &11452620
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2994,6 +2995,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   attackRange: 100
+  logioBullet: {fileID: 0}
+  imagiBullet: {fileID: 0}
+  voidBullet: {fileID: 0}
   myParticleSystem: {fileID: 19846880}
 --- !u!114 &11499990
 MonoBehaviour:
@@ -3006,19 +3010,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 251d04e4501ffc24cadbfaf8b04c26bd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Health: 100
-  Power: 100
-  Stamina: 100
-  Particles: 100
-  IsDead: 0
-  HealthMax: 100
-  PowerMax: 100
-  StaminaMax: 100
-  ParticlesMax: 100
-  HealthStart: 100
-  PowerStart: 100
-  StaminaStart: 100
-  ParticlesStart: 100
+  startHealth: 100
+  maxHealth: 100
+  healthRegen: 10
+  startStamina: 100
+  maxStamina: 100
+  staminaRegen: 10
+  startVoid: 100
+  maxVoid: 100
+  startImagi: 100
+  maxImagi: 100
+  imagiRegen: 10
+  startLogio: 100
+  maxLogio: 100
+  logioRegen: 10
 --- !u!137 &13745484
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 1
