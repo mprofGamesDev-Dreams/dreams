@@ -2,13 +2,19 @@
 using System.Collections;
 
 /*
-	Script to lock the mouse to the center of the screen
-	Use Left Shift to unlock
+*	Script to lock the mouse to the center of the screen
+*
+*	ATTACHMENT: Add to player prefab.
+*
+*	VARIABLES: 
+*				ToggleKey - Key to use to toggle mouse confinement.
+*
  */
 
 public class LockMouseToCenter : MonoBehaviour
 {
-	public bool lockMouse = false;
+	public bool LockMouse = false;
+	public KeyCode ToggleKey;
 
 	// Use this for initialization
 	void Start ()
@@ -20,10 +26,10 @@ public class LockMouseToCenter : MonoBehaviour
 	// Update is called once per frame
 	void Update ()
 	{
-		if( Input.GetKeyDown(KeyCode.RightShift))
+		if( Input.GetKeyDown(ToggleKey))
 		{
-			lockMouse = !lockMouse;
-			if( lockMouse )
+			LockMouse = !LockMouse;
+			if( LockMouse )
 			{
 				Cursor.lockState = CursorLockMode.Confined;
 				Cursor.visible = false;

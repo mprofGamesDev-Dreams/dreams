@@ -2,6 +2,15 @@
 using System.Collections;
 using System.Collections.Generic;
 
+/*
+ * Script to track enemies. 
+ * 
+ * ATTACHMENT: Attach to sound manager object.
+ * 
+ * VARIABLES:
+ * 		EnemyNamePrefix - The standard name of enemies
+ */
+
 public class EnemyTracker : MonoBehaviour
 {
 	public string EnemyNamePrefix = "Enemy";
@@ -10,6 +19,7 @@ public class EnemyTracker : MonoBehaviour
 
 	void Start ()
 	{
+		// Add enemies to the enemy list
 		foreach(GameObject go in GameObject.FindObjectsOfType(typeof(GameObject)))
 		{
 			if(go.name.Contains(EnemyNamePrefix))

@@ -6,10 +6,16 @@ using System.Collections;
  * 
  * ATTACHMENT: Attach to an object and specify a transform target
  * 
+ * VARIABLES:
+ * 		TransformTarget - GameObject transform that the object will move to
+ * 		AxisOrder - Customise the order that the object translates in
+ * 		MovementSpeed - How fast the object will move
+ * 
  */
 
 public class TransformGeometry : MonoBehaviour
 {
+	// Target transform to move geomtry to
 	public Transform TransformTarget;
 
 	// Specify a list of axis ( X Y Z ONLY )
