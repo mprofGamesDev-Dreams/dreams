@@ -4,6 +4,11 @@ using UnityStandardAssets.CrossPlatformInput;
 using UnityStandardAssets.Utility;
 using Random = UnityEngine.Random;
 
+/*
+ * Modified to allow for getting and setting of player speed
+ * -GC
+ */
+
 namespace UnityStandardAssets.Characters.FirstPerson
 {
     [RequireComponent(typeof (CharacterController))]
@@ -265,5 +270,30 @@ namespace UnityStandardAssets.Characters.FirstPerson
             }
             body.AddForceAtPosition(m_CharacterController.velocity*0.1f, hit.point, ForceMode.Impulse);
         }
+		/* Added by GPC */
+		public float WalkSpeed 
+		{
+			get 
+			{
+				return m_WalkSpeed;
+			}
+			set
+			{
+				m_WalkSpeed = value;
+			}
+		}
+
+		public float RunSpeed 
+		{
+			get 
+			{
+				return m_RunSpeed;
+			}
+			set
+			{
+				m_RunSpeed = value;
+			}
+		}
     }
+
 }
