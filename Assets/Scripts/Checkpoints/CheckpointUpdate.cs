@@ -4,7 +4,6 @@ using System.Collections;
 public class CheckpointUpdate : MonoBehaviour {
 	
 	[SerializeField] private CheckpointManager manager;
-	[SerializeField] private GameObject checkpoint;
 	
 	// Use this for initialization
 	void Start () {
@@ -15,10 +14,10 @@ public class CheckpointUpdate : MonoBehaviour {
 	void Update () {
 		
 	}
-	
+	 
 	void OnTriggerEnter(){
 		manager.SetLastPos (transform.position);
-		Destroy (checkpoint);
+		Destroy (gameObject);
 		Destroy (this);
 	}
 	
