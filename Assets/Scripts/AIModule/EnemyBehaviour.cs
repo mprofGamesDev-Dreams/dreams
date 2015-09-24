@@ -4,6 +4,11 @@ using System.Collections;
 public class EnemyBehaviour : MonoBehaviour {
 
     public float lineOfSightRange = 30.0f;
+    public float attackDamage = 10.0f;
+    public float attackRange = 3.0f;
+    public float attackCooldown = 0.5f;
+   
+    private float attackTimer = 0.0f;
     private GameObject targetPlayer;
     private Vector3 original;
     private Vector3 target;
@@ -12,16 +17,19 @@ public class EnemyBehaviour : MonoBehaviour {
     private int currentPatrolNode = 0;
     private enum aiStates { follow, patrol, returnToPosition, attack};
     private aiStates aiState = aiStates.follow;
+    private bool playerSeen = false;
+    
 	// Use this for initialization
 
-	void Start () {
+    void Start()
+    {
         agent = GetComponent<NavMeshAgent>();
         targetPlayer = GameObject.FindGameObjectWithTag("Player");
         target = transform.position;
         original = transform.position;
 
-	}
-	
+    }
+
 	// Update is called once per frame
 	void Update () {
 
@@ -30,50 +38,20 @@ public class EnemyBehaviour : MonoBehaviour {
 
         Debug.DrawRay(lineOfSight.origin,lineOfSight.direction*lineOfSightRange);
 
-
-
-
-        switch (aiState)
-        {
-            case aiStates.follow:
-                target = targetPlayer.transform.position;
-                agent.SetDestination(target);
-                break;
-
-           case aiStates.patrol:
-                target = patrolPoints[currentPatrolNode].transform.position;
-                agent.SetDestination(target);
-                
-                Vector3 tempVector = transform.position - patrolPoints[currentPatrolNode].transform.position;
-                
-                if (tempVector.magnitude < 1.0f)
-                {
-                    currentPatrolNode++;
-                    if (currentPatrolNode == patrolPoints.Length)
-                    {
-                        currentPatrolNode = 0;
-                    }
-                }
-                break;
-
-           case aiStates.returnToPosition:
-                agent.SetDestination(original);
-                break;
-
-            case aiStates.attack:
-                break;
-
-            default:
-                Debug.LogError("AI state not set correctly");
-                break;
-        }
-
+        
 
         if (Physics.Raycast(lineOfSight, out hit, lineOfSightRange/*,LayerMask.NameToLayer("Level")*/))
         {
             if (hit.transform.gameObject.tag == "Player")
             {
                 aiState = aiStates.follow;
+
+                float tempDistance = Vector3.Distance(hit.transform.position, gameObject.transform.position);
+
+                if (tempDistance < attackRange)
+                {
+                    aiState = aiStates.attack;
+                }
             }
             else
             {
@@ -99,7 +77,63 @@ public class EnemyBehaviour : MonoBehaviour {
             }
         }
 
-        
-        
+
+
+
+        switch (aiState)
+        {
+            case aiStates.follow:
+                target = targetPlayer.transform.position;
+                agent.SetDestination(target);
+                playerSeen = true;
+                
+                break;
+
+           case aiStates.patrol:
+                target = patrolPoints[currentPatrolNode].transform.position;
+                agent.SetDestination(target);
+                
+                Vector3 tempVector = transform.position - patrolPoints[currentPatrolNode].transform.position;
+                
+                if (tempVector.magnitude < 1.0f)
+                {
+                    currentPatrolNode++;
+                    if (currentPatrolNode == patrolPoints.Length)
+                    {
+                        currentPatrolNode = 0;
+                    }
+                }
+
+                playerSeen = false;
+                break;
+
+           case aiStates.returnToPosition:
+                agent.SetDestination(original);
+                playerSeen = false;
+                break;
+
+            case aiStates.attack:
+                agent.SetDestination(transform.position);
+                if (attackTimer >= attackCooldown)
+                {
+                    hit.transform.gameObject.GetComponent<PlayerStats>().SendMessage("ModifyHealth", -attackDamage);
+                    attackTimer = 0.0f;
+                }
+                else
+                {
+                    attackTimer += Time.deltaTime;
+                }
+                playerSeen = false;
+                break;
+
+            default:
+                Debug.LogError("AI state not set correctly");
+                break;
+        }   
 	}
+
+    public bool GetPlayerSeen()
+    {
+        return playerSeen;
+    }
 }

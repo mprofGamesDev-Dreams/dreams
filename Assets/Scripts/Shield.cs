@@ -8,13 +8,11 @@ public class Shield : MonoBehaviour
 	[SerializeField] private shieldOptions shieldType;
     [SerializeField] private int shieldHealth = 20;
 
-    private Renderer tempRenderer;
     private float scrollOffset = 0;
     private float scrollSpeed = 0.003f;
 
     private void Start()
     {
-        tempRenderer = GetComponent<Renderer>();
     }
 
 	private void Update () 

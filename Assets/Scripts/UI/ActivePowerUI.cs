@@ -17,9 +17,13 @@ public class ActivePowerUI : MonoBehaviour {
 
 	[SerializeField]private ResourceBar powerBar;
 
+	public static ActivePowerUI instance = null;
+
 	// Use this for initialization
 	void Start () 
 	{
+		if (instance == null)
+			instance = this;
 		currentPower = ActivePower.Imagi;
 		abilityBehaviours = GameObject.Find ("Player").GetComponent<AbilityBehaviours> ();
 		input = GameObject.Find ("Player").GetComponent<InputHandler> ();
@@ -28,7 +32,6 @@ public class ActivePowerUI : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-
 		if (input.isPrevPower() || input.isNextPower()) {
 			currentPower = abilityBehaviours.getCurrentPower();
 		}
@@ -63,5 +66,10 @@ public class ActivePowerUI : MonoBehaviour {
 
 		}
 
+	}
+
+	public ActivePower CurrentPower
+	{
+		get{return currentPower;}
 	}
 }

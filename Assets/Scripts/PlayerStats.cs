@@ -15,36 +15,44 @@ public class PlayerStats : MonoBehaviour
 {
 	// Access to the player object
 	private GameObject Player;
-	private CharacterController Controller; 
 	private FirstPersonController playerController;
 
 	[Header("Health")]
 	[SerializeField] private int startHealth = 100;
 	[SerializeField] private int maxHealth = 100;
 	[SerializeField] private float healthRegen = 10;
-	private float currentHealth = 100;
+	[SerializeField] private float currentHealth = 100;
 
 	[Header("Stamina")]
 	[SerializeField] private int startStamina = 100;
 	[SerializeField] private int maxStamina = 100;
 	[SerializeField] private int staminaRegen = 10;
-	private float currentStamina = 100;
+	[SerializeField] private float currentStamina = 100;
 
 	[Header("Void Stats")] // Void Has No Regen
 	[SerializeField] private int startVoid = 100;
 	[SerializeField] private int maxVoid = 100;
-	private float currentVoid = 100;
+	[SerializeField] private float currentVoid = 100;
 	
 	[Header("Imagi Stats")]
 	[SerializeField] private int startImagi = 100;
 	[SerializeField] private int maxImagi = 100;
 	[SerializeField] private int imagiRegen = 10;
-	private float currentImagi = 75;
+	[SerializeField] private float currentImagi = 75;
 
 	[Header("Logio Stats")]
 	[SerializeField] private int startLogio = 100;
 	[SerializeField] private int maxLogio = 100;
 	[SerializeField] private int logioRegen = 10;
+
+	[Header("Combat Variables")]
+	[SerializeField] private int voidRegen = 10;
+	[SerializeField] private float imagiBuff = 1.25f;
+	[SerializeField] private int buffDuration = 10;
+	[SerializeField] private bool buffed = false;
+
+	private int buffTimer = 0;
+
 	private float currentLogio = 25;
 
 	private bool isDead = false;
@@ -54,9 +62,7 @@ public class PlayerStats : MonoBehaviour
 	{
 		// Find the player game object
 		Player = GameObject.Find("Player");
-
-		Controller = Player.GetComponent<CharacterController>();
-
+		
 		playerController = Player.GetComponent<FirstPersonController>();
 	}
 	
@@ -125,6 +131,34 @@ public class PlayerStats : MonoBehaviour
 			return;
 		currentLogio = Mathf.Clamp ( currentLogio += logioRegen * Time.deltaTime, 0 , maxLogio * 0.25f );
 	}
+
+	public void ImagiHit()
+	{
+		buffTimer = buffDuration;
+		if (!buffed) 
+		{
+			StartCoroutine("BuffTimer");
+		}
+
+	}
+
+	public void VoidHit()
+	{
+		ModifyHealth (voidRegen);
+	}
+
+	IEnumerator BuffTimer ()
+	{
+		buffed = true;
+		while (buffTimer > 0) 
+		{
+			buffTimer --;
+			yield return new WaitForSeconds(1);
+		}
+		buffed = false;
+		yield return null; //Done
+	}
+
 	#endregion
 
 	public float CurrentHealth
@@ -294,6 +328,24 @@ public class PlayerStats : MonoBehaviour
 	{
 		get{ return isDead; }
 		set{ isDead = value; }
+	}
+
+	public bool Buffed
+	{
+		get 
+		{
+			return buffed;
+		}
+	
+	}
+
+	public float ImagiBuff
+	{
+		get 
+		{
+			return imagiBuff;
+		}
+		
 	}
 	#endregion
 }

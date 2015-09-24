@@ -113,4 +113,11 @@ public class TransformGeometry : MonoBehaviour
 			TransformStage = 2;
 		}
 	}
+
+	public void SetAxisOrder(string a, string b, string c)
+	{
+		AxisOrder[0] = a;
+		AxisOrder[1] = b;
+		AxisOrder[2] = c;
+	}
 }

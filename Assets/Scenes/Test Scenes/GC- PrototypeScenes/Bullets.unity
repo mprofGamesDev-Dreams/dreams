@@ -1779,11 +1779,11 @@ Prefab:
       propertyPath: m_Pivot.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 11439194, guid: 93c8284153eb999458122bd807cff036, type: 2}
+    - target: {fileID: 11449808, guid: 93c8284153eb999458122bd807cff036, type: 2}
       propertyPath: player
       value: 
       objectReference: {fileID: 2099577986}
-    - target: {fileID: 11445402, guid: 93c8284153eb999458122bd807cff036, type: 2}
+    - target: {fileID: 11459622, guid: 93c8284153eb999458122bd807cff036, type: 2}
       propertyPath: player
       value: 
       objectReference: {fileID: 2099577986}
@@ -1791,7 +1791,11 @@ Prefab:
       propertyPath: player
       value: 
       objectReference: {fileID: 2099577986}
-    - target: {fileID: 11459622, guid: 93c8284153eb999458122bd807cff036, type: 2}
+    - target: {fileID: 11445402, guid: 93c8284153eb999458122bd807cff036, type: 2}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 2099577986}
+    - target: {fileID: 11439194, guid: 93c8284153eb999458122bd807cff036, type: 2}
       propertyPath: player
       value: 
       objectReference: {fileID: 2099577986}

@@ -36,4 +36,22 @@ public class PickupOnTrigger : MonoBehaviour
 		}
 
 	}
+
+	public PickupType StatRecoveryType {
+		get {
+			return this.statRecoveryType;
+		}
+		set {
+			statRecoveryType = value;
+		}
+	}
+
+	public float StatModifyValue {
+		get {
+			return this.statModifyValue;
+		}
+		set {
+			statModifyValue = value;
+		}
+	}
 }

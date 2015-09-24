@@ -10,20 +10,20 @@ public class Triggerparticles : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		BossTrigger = false;
-		bar.active = false;
+		bar.SetActive(false);
 	}
 	
 	// Update is called once per frame
 	void Update () {
 
 		//DEBUG CODE
-		if (BossTrigger == true && bar.active == false) 
+		if (BossTrigger == true && bar.activeInHierarchy == false) 
 		{
-			bar.active = true;
+			bar.SetActive(true);
 		}
-		if (BossTrigger == false && bar.active == true) 
+		if (BossTrigger == false && bar.activeInHierarchy == true) 
 		{
-			bar.active = false;
+			bar.SetActive(false);
 		}
 	
 	}
@@ -31,11 +31,11 @@ public class Triggerparticles : MonoBehaviour {
 	public void TriggerBoss()
 	{
 		BossTrigger = true;
-		bar.active = true;
+		bar.SetActive(true);
 	}
 	public void EndBoss()
 	{
 		BossTrigger = false;
-		bar.active = false;
+		bar.SetActive(false);
 	}
 }

@@ -9,6 +9,8 @@ public class InteractionController : MonoBehaviour
 {
 	[SerializeField] private float interactionDistance = 0;
 
+	[SerializeField] private LayerMask raycastMask;
+
 	private int lastGameObjectID = 0;
 	private Interact interactableObject = null;
 
@@ -31,7 +33,7 @@ public class InteractionController : MonoBehaviour
 		// On Success Check That The Object Is Interactable
 		//	- If Not Then Reset Parameters
 		//  - On Success Show UI And Set Up Parameters
-		if(Physics.Raycast(cameraTransform.position, cameraTransform.forward, out hit, interactionDistance))
+		if(Physics.Raycast(cameraTransform.position, cameraTransform.forward, out hit, interactionDistance, raycastMask))
 		{
 			Debug.DrawLine(cameraTransform.position, hit.point, Color.green);
 

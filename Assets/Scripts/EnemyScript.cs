@@ -11,6 +11,14 @@ public class EnemyScript : MonoBehaviour {
 	[SerializeField] private float maxHealth;
 	[SerializeField] private float health;
 	[SerializeField] private GameObject healthBar;
+
+	[SerializeField] private GameObject expPrefab;
+	[SerializeField] private GameObject voidPrefab;
+	[SerializeField] private GameObject imagiPrefab;
+	[SerializeField] private GameObject logioPrefab;
+
+	[SerializeField] private float expDrop = 10;
+
 	public float Health 
 	{
 		get
@@ -49,7 +57,38 @@ public class EnemyScript : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		//If health is zero, be destroyed.
-		if (Health <= 0.0f) {
+		if (Health <= 0.0f) 
+		{
+			PlayerStats stats = (GameObject.FindGameObjectWithTag("Player")).GetComponent<PlayerStats>();
+			Vector3 pos = transform.position;
+			pos.y += 0.5f;
+			PickupOnTrigger obj;
+
+			// Create ParticleDrop
+			switch (ActivePowerUI.instance.CurrentPower)
+			{
+			case ActivePower.Imagi:
+				obj = (Instantiate(imagiPrefab, pos, Quaternion.identity ) as GameObject).GetComponent<PickupOnTrigger>();
+				obj.StatModifyValue = stats.MaxImagi * 0.10f;
+				break;
+			case ActivePower.Void:
+				obj = (Instantiate(voidPrefab, pos, Quaternion.identity ) as GameObject).GetComponent<PickupOnTrigger>();
+				obj.StatModifyValue = stats.MaxVoid * 0.10f;
+				break;
+			case ActivePower.Logio:
+				obj = (Instantiate(logioPrefab, pos, Quaternion.identity ) as GameObject).GetComponent<PickupOnTrigger>();
+				obj.StatModifyValue = stats.MaxLogio * 0.10f;
+				break;
+			}
+
+			// Create EXP
+			pos.x += 0.5f;
+			obj = (Instantiate(expPrefab, pos, Quaternion.identity ) as GameObject).GetComponent<PickupOnTrigger>();
+			obj.StatModifyValue = expDrop;
+
+
+
+
 			Destroy(gameObject);
 		}
 	
@@ -76,7 +115,7 @@ public class EnemyScript : MonoBehaviour {
 	{
 		if (healthBar) 
 		{
-			if (!healthBar.active)
+			if (!healthBar.activeInHierarchy)
 			{
 				healthBar.SetActive(true);
 			}

@@ -71,7 +71,14 @@ public class PunchingControllerPrototype : MonoBehaviour
 			if((es = hit.collider.GetComponent<EnemyScript>()) != null)// Is Enemy
 			{
 				canAttack = false;
-				es.TakeSA();
+				if (gameObject.GetComponent<PlayerStats>().Buffed)
+				{
+					es.TakeDamage( 2 * gameObject.GetComponent<PlayerStats>().ImagiBuff);
+				}
+				else
+				{
+					es.TakeDamage(2);
+				}
 			}
 		}
 #if UNITY_EDITOR
