@@ -43,9 +43,13 @@ namespace InteractionModule.Behaviours
 					myPlayerStats.ModifyImagi(pickupValue);
 					break;
 			}
+			OnEventEnd ();
 		}
 
-		public override void OnEventEnd(){}
+		public override void OnEventEnd()
+		{
+			Destroy (this.gameObject);
+		}
 
 		#region Properties
 		public PlayerStats MyPlayerStats {
