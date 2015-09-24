@@ -16,10 +16,10 @@ public class AmbientSoundChanger : MonoBehaviour
 
 	// How fast to play the song in each state
 	public float CalmSongSpeed = 1.0f;
-	public float AttackSongSpeed = 1.2f;
+	public float AttackSongSpeed = 1.5f;
 
 	// How fast to lerp between song speeds
-	public float PitchChangeSpeed = 0.01f;
+	public float PitchChangeSpeed = 0.1f;
 
 	// Ambient Sound
 	public AudioClip Song;
@@ -29,6 +29,9 @@ public class AmbientSoundChanger : MonoBehaviour
 
 	// Access to audio source
 	private AudioSource Source;
+
+	// Access to enemy manager
+	private EnemyTracker Tracker;
 
 	void Start ()
 	{
@@ -47,14 +50,34 @@ public class AmbientSoundChanger : MonoBehaviour
 
 		// Play the sound
 		Source.Play();
+
+		// Get the enemy tracker
+		Tracker = GetComponent<EnemyTracker>();
 	}
 
 	void Update()
 	{
+		// Check if any objects are currently tracking the player
+		HandleEnemyTracking();
+
 		// Make sure to gradually increase/decrease sound speed
 		Source.pitch = Mathf.Lerp(Source.pitch, CurrentSpeed, PitchChangeSpeed * Time.smoothDeltaTime);
+	}
 
-		UpdateSpeed();
+	
+	private void HandleEnemyTracking()
+	{
+		// Check if any enemies are tracking the player
+		if( Tracker.CheckTracking() )
+		{
+			// Update the flag to attack
+			SetState(STATE.ATTACK);
+		}
+		else
+		{
+			// Not being tracked so reduce speed of music
+			SetState(STATE.CALM);
+		}
 	}
 
 	private void UpdateSpeed()
@@ -65,20 +88,23 @@ public class AmbientSoundChanger : MonoBehaviour
 			case STATE.ATTACK:
 				CurrentSpeed = AttackSongSpeed;
 				break;
-
+				
 			case STATE.CALM:
 				CurrentSpeed = CalmSongSpeed;
 				break;
 		}
 	}
-
+	
 	public void SetState(STATE NewState)
 	{
-		// Set the new state
-		CurrentState = NewState;
-
-		// Change the speed
-		UpdateSpeed();
+		// If we are already in that state, dont update
+		if( CurrentState != NewState )
+		{
+			// Update to new state
+			CurrentState = NewState;
+			
+			// Set the new song state speed
+			UpdateSpeed ();
+		}
 	}
 }
-
