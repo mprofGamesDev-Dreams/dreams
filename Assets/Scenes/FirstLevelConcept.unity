@@ -1831,6 +1831,10 @@ Prefab:
       propertyPath: player
       value: 
       objectReference: {fileID: 2099577986}
+    - target: {fileID: 11449808, guid: 93c8284153eb999458122bd807cff036, type: 2}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 2099577986}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 93c8284153eb999458122bd807cff036, type: 2}
   m_IsPrefabParent: 0
@@ -2152,6 +2156,18 @@ Prefab:
       propertyPath: StaminaRecoverySpeed
       value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 11495828, guid: 5131aeaeb69b99846b5c165c1394dfdf, type: 2}
+      propertyPath: imagiBullet
+      value: 
+      objectReference: {fileID: 156494, guid: 127af3d73d1cfbd4287f9ee91cb75c04, type: 2}
+    - target: {fileID: 11495828, guid: 5131aeaeb69b99846b5c165c1394dfdf, type: 2}
+      propertyPath: logioBullet
+      value: 
+      objectReference: {fileID: 179334, guid: 2253fbbc6abf42b4a8a6ca1e40349e9e, type: 2}
+    - target: {fileID: 11495828, guid: 5131aeaeb69b99846b5c165c1394dfdf, type: 2}
+      propertyPath: voidBullet
+      value: 
+      objectReference: {fileID: 119562, guid: b9d0134dda1fb7d4f9641be60fe6459f, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 5131aeaeb69b99846b5c165c1394dfdf, type: 2}
   m_IsPrefabParent: 0

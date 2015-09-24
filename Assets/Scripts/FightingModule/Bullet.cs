@@ -4,7 +4,7 @@
  * Speed and range of bullet should be defined.
  * Bullets can be assigned a specific power type.
  * 
- * Edit OnCollisionEnter to add aditional effects
+ * Edit OnCollisionEnter to add aditional effects or Hit<TYPE> function for type specific effects
  */
 
 using UnityEngine;
@@ -16,9 +16,11 @@ public class Bullet : MonoBehaviour {
 	[SerializeField] private float speed;
 	[SerializeField] private float range;
 	[SerializeField] private float damage;
+
+	private GameObject parentPlayer;
+
 	// Use this for initialization
 	void Start () {
-		bulletType = ActivePower.Imagi;
 		gameObject.GetComponent<Rigidbody> ().velocity = gameObject.transform.TransformDirection( new Vector3 (0, 0, speed));
 		Destroy (gameObject, range/speed);
 	}
@@ -31,7 +33,7 @@ public class Bullet : MonoBehaviour {
 
 	void OnCollisionEnter(Collision collision)
 	{
-		if (collision.gameObject.GetComponent<Shield>()) //hit a shield
+		if (collision.gameObject.GetComponent<Shield>()) //hit a shield.	
 		{
 			Shield shieldScript = collision.gameObject.GetComponent<Shield>();
 
@@ -50,7 +52,19 @@ public class Bullet : MonoBehaviour {
 		} 
 		else if (collision.gameObject.GetComponent<EnemyScript>()) //hit a bad guy
 		{
-			collision.gameObject.GetComponent<EnemyScript>().TakeDamage(damage);
+			switch(bulletType)
+			{
+			case ActivePower.Logio:
+				HitLogio(collision);
+				break;
+			case ActivePower.Imagi:
+				HitImagi(collision);
+				break;
+			case ActivePower.Void:
+				HitVoid(collision);
+				break;
+			}
+
 		} 
 		else //hit terrain
 		{
@@ -58,4 +72,27 @@ public class Bullet : MonoBehaviour {
 		}
 		Destroy(gameObject);
 	}
+
+	private void HitLogio(Collision collision)
+	{
+		collision.gameObject.GetComponent<EnemyScript>().TakeDamage(damage);
+	}
+
+	private void HitImagi(Collision collision)
+	{
+		collision.gameObject.GetComponent<EnemyScript>().TakeDamage(damage);
+		parentPlayer.GetComponent<PlayerStats> ().ImagiHit ();
+	}
+
+	private void HitVoid(Collision collision)
+	{
+		collision.gameObject.GetComponent<EnemyScript>().TakeDamage(damage);
+		parentPlayer.GetComponent<PlayerStats> ().VoidHit ();
+	}
+
+	public void SetParent(GameObject player)
+	{
+		parentPlayer = player;
+	}
+
 }
