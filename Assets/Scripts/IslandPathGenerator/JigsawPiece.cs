@@ -1,5 +1,14 @@
 ﻿using UnityEngine;
 using System.Collections;
+/*
+* Script to give animated pathway.
+* 
+* ATTACHMENT: Attach to each island object.
+* 
+* VARIABLES: 
+*			NextJigsawPiece - The next island in the pathway.
+*
+*/
 
 public class JigsawPiece : MonoBehaviour
 {
@@ -28,6 +37,10 @@ public class JigsawPiece : MonoBehaviour
 
 	void Update ()
 	{
+		// If we dont have a jigsaw piece, dont do anything
+		if(!NextJigsawPiece)
+			return;
+
 		// If the trigger has been activated, dont do anything else
 		if(!IsActivated)
 			return;
