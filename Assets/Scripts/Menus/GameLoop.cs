@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using UnityStandardAssets.Characters.FirstPerson;
+using UnityStandardAssets.CrossPlatformInput;
 
 public class GameLoop : MonoBehaviour 
 {
@@ -31,7 +32,7 @@ public class GameLoop : MonoBehaviour
 	void Update () 
 	{
 			// Reserve "Esc" key for pausing game
-			if(Input.GetKeyDown(KeyCode.Escape))
+		if(CrossPlatformInputManager.GetButtonDown ("Pause"))
 			{
 				is_paused = !is_paused;
 				pause_popup.SetActive(is_paused);

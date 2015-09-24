@@ -31,7 +31,36 @@ public class AbilityBehaviours : MonoBehaviour
 	
 	private void Update () 
 	{		
-		if (CrossPlatformInputManager.GetButtonDown ("Fire1"))//LOGIO
+		//Switches for next and previous powers
+		if (input.isPrevPower ()) {
+			switch(currentPower){
+			case ActivePower.Logio:
+				currentPower = ActivePower.Void;
+				break;
+			case ActivePower.Imagi:
+				currentPower = ActivePower.Logio;
+				break;
+			case ActivePower.Void:
+				currentPower = ActivePower.Imagi;
+				break;
+			}
+		}
+
+		if (input.isNextPower ()) {
+			switch(currentPower){
+			case ActivePower.Logio:
+				currentPower = ActivePower.Imagi;
+				break;
+			case ActivePower.Imagi:
+				currentPower = ActivePower.Void;
+				break;
+			case ActivePower.Void:
+				currentPower = ActivePower.Logio;
+				break;
+			}
+		}
+
+		/*if (CrossPlatformInputManager.GetButtonDown ("Fire1"))//LOGIO
 		{
 			currentPower = ActivePower.Logio;
 		}
@@ -44,7 +73,7 @@ public class AbilityBehaviours : MonoBehaviour
 		if (CrossPlatformInputManager.GetButtonDown ("Fire3"))//VOID
 		{
 			currentPower = ActivePower.Void;
-		}
+		}*/
 
 		if (input.isShoot ()) 
 		{
@@ -119,6 +148,10 @@ public class AbilityBehaviours : MonoBehaviour
 			break;
 		}
 
+	}
+
+	public ActivePower getCurrentPower(){
+		return currentPower;
 	}
 }
 

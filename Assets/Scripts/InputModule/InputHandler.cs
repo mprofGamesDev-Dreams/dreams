@@ -13,6 +13,13 @@ public class InputHandler : MonoBehaviour
 	bool shoot;
 	bool melee;
 	bool sprint;
+	bool interact;
+	bool pause;
+	bool imagiPower;
+	bool voidPower;
+	bool logiaPower;
+	bool nextPower;
+	bool prevPower;
 
 //	AbilityBehaviours abilityBehaviours;
 //	FirstPersonController firstPersonController;
@@ -20,6 +27,7 @@ public class InputHandler : MonoBehaviour
 
 	void Start()
 	{
+		sprint = false;
 //		abilityBehaviours = (AbilityBehaviours)gameObject.GetComponent ("AbilityBehaviours");
 //		firstPersonController = (FirstPersonController)gameObject.GetComponent ("FirstPersonController");
 //		punchingControllerPrototype = (PunchingControllerPrototype)gameObject.GetComponent ("PunchingControllerPrototype");
@@ -30,7 +38,14 @@ public class InputHandler : MonoBehaviour
 		//Make all triggers false
 		shoot = false;
 		melee = false;
-		sprint = false;
+		interact = false;
+		pause = false;
+		imagiPower = false;
+		voidPower = false;
+		logiaPower = false;
+		nextPower = false;
+		prevPower = false;
+
 
 		//Check for inputs
 		//Left trigger
@@ -45,19 +60,19 @@ public class InputHandler : MonoBehaviour
 			shoot = true;
 		}
 		//Left bumper
-		if(CrossPlatformInputManager.GetButtonDown ("Shoot"))
+		if(CrossPlatformInputManager.GetButtonDown ("PrevPower"))
 		{
-			
+			prevPower = true;
 		}
 		//Right bumper
-		if(CrossPlatformInputManager.GetButtonDown ("Shoot"))
+		if(CrossPlatformInputManager.GetButtonDown ("NextPower"))
 		{
-			
+			nextPower = true;
 		}
 		//X button
-		if(CrossPlatformInputManager.GetButtonDown ("Melee"))
+		if(CrossPlatformInputManager.GetButtonDown ("Interact"))
 		{
-			//punchingControllerPrototype.AttackEvent();
+			interact = true;
 		}
 		//Y button
 		if(CrossPlatformInputManager.GetButtonDown ("Shoot"))
@@ -77,7 +92,11 @@ public class InputHandler : MonoBehaviour
 		//Left Analogue Stick Click
 		if(CrossPlatformInputManager.GetButtonDown ("Sprint"))
 		{
-			shoot = true;
+			sprint = true;
+		}
+		if (CrossPlatformInputManager.GetButtonUp ("Sprint")) 
+		{
+			sprint = false;
 		}
 
 	}
@@ -92,6 +111,18 @@ public class InputHandler : MonoBehaviour
 
 	public bool isSprint(){
 		return sprint;
+	}
+
+	public bool isPrevPower(){
+		return prevPower;
+	}
+
+	public bool isNextPower(){
+		return nextPower;
+	}
+
+	public bool isInteract(){
+		return interact;
 	}
 }
 

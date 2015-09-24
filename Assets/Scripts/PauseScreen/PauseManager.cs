@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using UnityStandardAssets.Characters.FirstPerson;
+using UnityStandardAssets.CrossPlatformInput;
 
 public class PauseManager : MonoBehaviour 
 {
@@ -25,8 +26,8 @@ public class PauseManager : MonoBehaviour
 	// Update is called once per frame
 	void Update () 
 	{
-		// Reserve "Esc" key for pausing game
-		if(Input.GetKeyDown(KeyCode.Escape))
+		// Setup Pause key for pausing the game
+		if(CrossPlatformInputManager.GetButtonDown ("Pause"))
 		{
 			is_paused = !is_paused;
 			if(is_paused) 

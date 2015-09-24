@@ -12,6 +12,8 @@ public class ActivePowerUI : MonoBehaviour {
 	public Image uiIndicator;
 
 	private ActivePower currentPower;
+	private AbilityBehaviours abilityBehaviours;
+	private InputHandler input;
 
 	[SerializeField]private ResourceBar powerBar;
 
@@ -19,30 +21,45 @@ public class ActivePowerUI : MonoBehaviour {
 	void Start () 
 	{
 		currentPower = ActivePower.Imagi;
+		abilityBehaviours = GameObject.Find ("Player").GetComponent<AbilityBehaviours> ();
+		input = GameObject.Find ("Player").GetComponent<InputHandler> ();
 		uiIndicator.color = ImagiC;
 	}
 	
 	// Update is called once per frame
 	void Update () {
 
+		if (input.isPrevPower() || input.isNextPower()) {
+			currentPower = abilityBehaviours.getCurrentPower();
+		}
+
 		if (CrossPlatformInputManager.GetButtonDown ("Fire1"))//LOGIO
 		{
 			currentPower = ActivePower.Logio;
-			uiIndicator.color = LogioC;
-			powerBar.BarType = ResourceType.Logio;
 		}
 		else if (CrossPlatformInputManager.GetButtonDown ("Fire2"))//IMAGI
 		{
 			currentPower = ActivePower.Imagi;
-			uiIndicator.color = ImagiC;
-			powerBar.BarType = ResourceType.Imagi;
-
 		}
 		else if (CrossPlatformInputManager.GetButtonDown ("Fire3"))//VOID
 		{
 			currentPower = ActivePower.Void;
+		}
+
+		switch (currentPower) 
+		{
+		case ActivePower.Logio:
+			uiIndicator.color = LogioC;
+			powerBar.BarType = ResourceType.Logio;
+			break;
+		case ActivePower.Imagi:
+			uiIndicator.color = ImagiC;
+			powerBar.BarType = ResourceType.Imagi;
+			break;
+		case ActivePower.Void:
 			uiIndicator.color = VoidC;
 			powerBar.BarType = ResourceType.Void;
+			break;
 
 		}
 
