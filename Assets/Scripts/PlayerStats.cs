@@ -240,6 +240,12 @@ public class PlayerStats : MonoBehaviour
 		currentStamina = maxStamina;
 	}
 
+	public void ResetBuffs()
+	{
+		buffTimer = 0;
+		debuffTimer = 0;
+	}
+
 	#region GeneralProperties
 	public int StartHealth {
 		get {
