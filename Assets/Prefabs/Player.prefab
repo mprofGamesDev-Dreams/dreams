@@ -523,6 +523,7 @@ GameObject:
   - 114: {fileID: 11495828}
   - 114: {fileID: 11452620}
   - 114: {fileID: 11499990}
+  - 136: {fileID: 13695868}
   m_Layer: 8
   m_Name: Player
   m_TagString: Player
@@ -1900,8 +1901,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 121000}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: .800000012, z: 0}
+  m_LocalRotation: {x: -.386222601, y: .104793347, z: -.0442156978, w: -.915366292}
+  m_LocalPosition: {x: 0, y: .800000191, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 438898}
@@ -2150,7 +2151,7 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 109302}
-  m_LocalRotation: {x: .692415893, y: .663689137, z: -.0430023, w: .27969259}
+  m_LocalRotation: {x: .692415833, y: .663689077, z: -.0430022962, w: .27969256}
   m_LocalPosition: {x: -.00183018122, y: -.0170671139, z: -.0146778813}
   m_LocalScale: {x: 1.00000024, y: 1.00000012, z: 1}
   m_Children:
@@ -2317,7 +2318,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 135624}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.48000002, y: 16.7000008, z: 23.5}
+  m_LocalPosition: {x: -6.4000001, y: 13, z: 7.69999981}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 448724}
@@ -2995,9 +2996,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   attackRange: 100
-  logioBullet: {fileID: 0}
-  imagiBullet: {fileID: 0}
-  voidBullet: {fileID: 0}
+  logioBullet: {fileID: 179334, guid: 2253fbbc6abf42b4a8a6ca1e40349e9e, type: 2}
+  imagiBullet: {fileID: 156494, guid: 127af3d73d1cfbd4287f9ee91cb75c04, type: 2}
+  voidBullet: {fileID: 119562, guid: b9d0134dda1fb7d4f9641be60fe6459f, type: 2}
   myParticleSystem: {fileID: 19846880}
   playerStats: {fileID: 0}
   logioPercent: 0
@@ -3039,6 +3040,24 @@ MonoBehaviour:
   imagiBuff: 1.25
   buffDuration: 10
   buffed: 0
+  debuffed: 0
+  debuffDuration: 10
+  walkSpeed: 5
+  runSpeed: 10
+  speedMultiplier: .5
+--- !u!136 &13695868
+CapsuleCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 135624}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: .5
+  m_Height: 1
+  m_Direction: 1
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!137 &13745484
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 1
@@ -3213,7 +3232,7 @@ ParticleSystem:
         m_PostInfinity: 2
       minMaxState: 0
     startSpeed:
-      scalar: 5
+      scalar: 15
       maxCurve:
         serializedVersion: 2
         m_Curve:

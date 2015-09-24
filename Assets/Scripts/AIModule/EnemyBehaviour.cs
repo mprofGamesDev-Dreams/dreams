@@ -116,7 +116,11 @@ public class EnemyBehaviour : MonoBehaviour {
                 agent.SetDestination(transform.position);
                 if (attackTimer >= attackCooldown)
                 {
-                    hit.transform.gameObject.GetComponent<PlayerStats>().SendMessage("ModifyHealth", -attackDamage);
+					
+					PlayerStats hitStats =  hit.transform.gameObject.GetComponent<PlayerStats>();
+					hitStats.SendMessage("ModifyHealth", -attackDamage);
+					hitStats.DebuffPlayer();
+					
                     attackTimer = 0.0f;
                 }
                 else
