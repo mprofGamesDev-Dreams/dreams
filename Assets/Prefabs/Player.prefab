@@ -524,6 +524,8 @@ GameObject:
   - 114: {fileID: 11452620}
   - 114: {fileID: 11499990}
   - 136: {fileID: 13695868}
+  - 114: {fileID: 11478706}
+  - 114: {fileID: 11430538}
   m_Layer: 8
   m_Name: Player
   m_TagString: Player
@@ -2953,7 +2955,18 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 8bc94ec6ed537e743b481638bdcd503d, type: 3}
   m_JumpSound: {fileID: 8300000, guid: 5897aeed9b676024fbb8c694b421a861, type: 3}
   m_LandSound: {fileID: 8300000, guid: 3b09d59f4499d45428baa7a21e954296, type: 3}
-  playerStats: {fileID: 0}
+  playerStats: {fileID: 11499990}
+--- !u!114 &11430538
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 135624}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5062210e722dbe946943d3766df77190, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &11452620
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2984,6 +2997,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f2465dbd7b0fcea45902838764cb5180, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &11478706
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 135624}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: efc6c009ed212754288ef7d9d1abdf33, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  interactionDistance: 5
+  raycastMask:
+    serializedVersion: 2
+    m_Bits: 4294967039
 --- !u!114 &11495828
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3000,12 +3028,12 @@ MonoBehaviour:
   imagiBullet: {fileID: 156494, guid: 127af3d73d1cfbd4287f9ee91cb75c04, type: 2}
   voidBullet: {fileID: 119562, guid: b9d0134dda1fb7d4f9641be60fe6459f, type: 2}
   myParticleSystem: {fileID: 19846880}
-  playerStats: {fileID: 0}
-  logioPercent: 0
-  voidPercent: 0
-  imagiPercent: 0
+  playerStats: {fileID: 11499990}
+  logioPercent: .25
+  voidPercent: .25
+  imagiPercent: .100000001
   logioCD: 1
-  imagiCD: 0
+  imagiCD: .200000003
   voidCD: 2
 --- !u!114 &11499990
 MonoBehaviour:
