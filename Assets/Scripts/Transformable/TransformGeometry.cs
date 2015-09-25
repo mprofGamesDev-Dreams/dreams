@@ -30,6 +30,8 @@ public class TransformGeometry : MonoBehaviour
 
 	private int TransformStage = 1;
 
+    private bool triggered = false;
+
 	void Start()
 	{
 		TargetAxis = AxisOrder[AxisComplete];
@@ -38,14 +40,17 @@ public class TransformGeometry : MonoBehaviour
 	// Update is called once per frame
 	void Update ()
 	{
-		if(TransformStage == 1)
-		{
-			TransformObject ();
-		}
-		else
-		{
-			transform.localScale = Vector3.Lerp (transform.localScale, TransformTarget.localScale, MovementSpeed * Time.deltaTime);
-		}
+        if (triggered)
+        {
+            if (TransformStage == 1)
+            {
+                TransformObject();
+            }
+            else
+            {
+                transform.localScale = Vector3.Lerp(transform.localScale, TransformTarget.localScale, MovementSpeed * Time.deltaTime);
+            }
+        }
 	}
 
 	private void TransformObject()
@@ -119,6 +124,11 @@ public class TransformGeometry : MonoBehaviour
 			TransformStage = 2;
 		}
 	}
+
+    void Trigger()
+    {
+        triggered = true;
+    }
 
 	public void SetAxisOrder(string a, string b, string c)
 	{

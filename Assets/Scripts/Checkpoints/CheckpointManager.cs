@@ -4,9 +4,10 @@ using System.Collections;
 public class CheckpointManager : MonoBehaviour {
 	
 	[SerializeField] private GameObject player;
+    [SerializeField]
+    private const float death_level = -40;
 	private PlayerStats stats;
 	private Vector3 last_pos;
-	private const float death_level = -60;
 	
 	// Use this for initialization
 	void Start () {

@@ -21,10 +21,13 @@ public class TeleporterSender : MonoBehaviour
 	
 	}
 
-	void OnTriggerEnter ()
+	void OnTriggerEnter (Collider collision)
 	{
-		flash.RequestFlash ();
-		StartCoroutine (Teleport ());
+        if (collision.gameObject.GetComponent<PlayerStats>())
+        {
+            flash.RequestFlash();
+            StartCoroutine(Teleport());
+        }
 	}
 
 	IEnumerator Teleport(){
