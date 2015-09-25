@@ -36,6 +36,7 @@ public class ActivePowerUI : MonoBehaviour {
 			currentPower = abilityBehaviours.getCurrentPower();
 		}
 
+		/*
 		if (CrossPlatformInputManager.GetButtonDown ("Fire1"))//LOGIO
 		{
 			currentPower = ActivePower.Logio;
@@ -47,7 +48,7 @@ public class ActivePowerUI : MonoBehaviour {
 		else if (CrossPlatformInputManager.GetButtonDown ("Fire3"))//VOID
 		{
 			currentPower = ActivePower.Void;
-		}
+		}*/
 
 		switch (currentPower) 
 		{
