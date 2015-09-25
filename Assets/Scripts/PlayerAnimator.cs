@@ -1,5 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityStandardAssets.CrossPlatformInput;
+
 
 public class PlayerAnimator : MonoBehaviour {
 
@@ -13,7 +15,7 @@ public class PlayerAnimator : MonoBehaviour {
 	
 	private void Update () 
 	{
-		if (Input.GetKey (KeyCode.W)) 
+		if (CrossPlatformInputManager.GetAxisRaw("Vertical") > 0) 
 		{
 			running = true;
 		} 
