@@ -1,6 +1,13 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+/*
+ * Script for opening a door using a trigger
+ * 
+ * ATTACHMENT: Add to a trigger gameobject
+ * 
+ */
+
 public class UnlockDoorTrigger : MonoBehaviour
 {
 	// Door to unlock

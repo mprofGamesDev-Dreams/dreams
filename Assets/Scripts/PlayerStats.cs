@@ -50,8 +50,16 @@ public class PlayerStats : MonoBehaviour
 	[SerializeField] private float imagiBuff = 1.25f;
 	[SerializeField] private int buffDuration = 10;
 	[SerializeField] private bool buffed = false;
+	[SerializeField] private bool debuffed = false;
+	[SerializeField] private int debuffDuration = 10;
+
+	[Header("Travel Variables")]
+	[SerializeField] private float walkSpeed = 5;
+	[SerializeField] private float runSpeed = 10;
+	[SerializeField] private float speedMultiplier = 0.50f;
 
 	private int buffTimer = 0;
+	private int debuffTimer = 0;
 
 	private float currentLogio = 25;
 
@@ -85,6 +93,7 @@ public class PlayerStats : MonoBehaviour
 			LogioRegen();
 		}
 
+		
 		//
 		//HandleParticles();
 
@@ -142,6 +151,15 @@ public class PlayerStats : MonoBehaviour
 
 	}
 
+	public void DebuffPlayer()
+	{
+		debuffTimer = debuffDuration;
+		if (!debuffed) 
+		{
+			StartCoroutine("DebuffTimer");
+		}
+	}
+
 	public void VoidHit()
 	{
 		ModifyHealth (voidRegen);
@@ -157,6 +175,23 @@ public class PlayerStats : MonoBehaviour
 		}
 		buffed = false;
 		yield return null; //Done
+	}
+
+	IEnumerator DebuffTimer ()
+	{
+		debuffed = true;
+		playerController.RunSpeed = runSpeed * speedMultiplier;
+		playerController.WalkSpeed = walkSpeed * speedMultiplier;
+		while (debuffTimer > 0) 
+		{
+			debuffTimer --;
+			yield return new WaitForSeconds(1);
+		}
+
+		debuffed = false;
+		playerController.RunSpeed = runSpeed;
+		playerController.WalkSpeed = walkSpeed;
+		yield return null;
 	}
 
 	#endregion
@@ -203,6 +238,12 @@ public class PlayerStats : MonoBehaviour
 	{
 		currentHealth = maxHealth;
 		currentStamina = maxStamina;
+	}
+
+	public void ResetBuffs()
+	{
+		buffTimer = 0;
+		debuffTimer = 0;
 	}
 
 	#region GeneralProperties
@@ -338,6 +379,15 @@ public class PlayerStats : MonoBehaviour
 		}
 	
 	}
+	public bool Debuffed
+	{
+		get 
+		{
+			return debuffed;
+		}
+		
+	}
+
 
 	public float ImagiBuff
 	{
