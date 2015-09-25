@@ -17,6 +17,9 @@ public class EnemyScript : MonoBehaviour {
 	[SerializeField] private GameObject imagiPrefab;
 	[SerializeField] private GameObject logioPrefab;
 
+	[SerializeField] private bool canSplit = false;
+	[SerializeField] private GameObject splitIntoEnemyPrefab;
+
 	[SerializeField] private float expDrop = 10;
 
 	public float Health 
@@ -27,7 +30,16 @@ public class EnemyScript : MonoBehaviour {
 		}
 		set 
 		{
+			if(canSplit)
+			{
+				Instantiate(splitIntoEnemyPrefab, transform.position, Quaternion.identity);
+				Instantiate(splitIntoEnemyPrefab, transform.position, Quaternion.identity);
+
+				Destroy(this.gameObject);
+			}
+
 			health = value;
+
 		}
 	}
 
@@ -46,7 +58,7 @@ public class EnemyScript : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		//MaxHealth = 4;
-		Health = MaxHealth;
+		health = MaxHealth;
 
 		if (healthBar) 
 		{

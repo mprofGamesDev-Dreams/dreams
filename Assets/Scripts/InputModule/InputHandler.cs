@@ -98,7 +98,7 @@ public class InputHandler : MonoBehaviour
 		{
 			sprint = false;
 		}
-
+		
 	}
 
 	public bool isShoot(){
