@@ -46,7 +46,7 @@ public class PlayerStats : MonoBehaviour
 	[SerializeField] private int logioRegen = 10;
 
 	[Header("Combat Variables")]
-	[SerializeField] private int voidRegen = 10;
+	[SerializeField] private int voidRegen = 10; // lifesteal
 	[SerializeField] private float imagiBuff = 1.25f;
 	[SerializeField] private int buffDuration = 10;
 	[SerializeField] private bool buffed = false;

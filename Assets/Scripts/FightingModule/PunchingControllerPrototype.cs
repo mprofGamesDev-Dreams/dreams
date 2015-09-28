@@ -80,9 +80,9 @@ public class PunchingControllerPrototype : MonoBehaviour
 			if((es = hit.collider.GetComponent<EnemyScript>()) != null)// Is Enemy
 			{
 				canAttack = false;
-				if (gameObject.GetComponent<PlayerStats>().Buffed)
+				if (parent.GetComponent<PlayerStats>().Buffed)
 				{
-					es.TakeDamage( 2 * gameObject.GetComponent<PlayerStats>().ImagiBuff);
+					es.TakeDamage( 2 * parent.GetComponent<PlayerStats>().ImagiBuff);
 				}
 				else
 				{
