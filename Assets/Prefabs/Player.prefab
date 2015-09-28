@@ -1135,7 +1135,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 438898}
   - 95: {fileID: 9542420}
-  - 114: {fileID: 11472988}
+  - 114: {fileID: 11499954}
   m_Layer: 8
   m_Name: Arms05
   m_TagString: Untagged
@@ -2152,7 +2152,7 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 109302}
-  m_LocalRotation: {x: .692415893, y: .663689137, z: -.0430023, w: .27969259}
+  m_LocalRotation: {x: .692415833, y: .663689077, z: -.0430022962, w: .27969256}
   m_LocalPosition: {x: -.00183018122, y: -.0170671139, z: -.0146778813}
   m_LocalScale: {x: 1.00000024, y: 1.00000012, z: 1}
   m_Children:
@@ -2319,7 +2319,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 135624}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.05582595, y: 5.92000008, z: 7.8577919}
+  m_LocalPosition: {x: -208.899994, y: 113.699997, z: -168.660004}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 448724}
@@ -2972,7 +2972,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 135624}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 747e38122a56e424f849e573b63c4330, type: 3}
   m_Name: 
@@ -2985,17 +2985,7 @@ MonoBehaviour:
   raycastTargets:
     serializedVersion: 2
     m_Bits: 4294967039
---- !u!114 &11472988
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 178936}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f2465dbd7b0fcea45902838764cb5180, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  parent: {fileID: 0}
 --- !u!114 &11495828
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3012,13 +3002,33 @@ MonoBehaviour:
   imagiBullet: {fileID: 156494, guid: 127af3d73d1cfbd4287f9ee91cb75c04, type: 2}
   voidBullet: {fileID: 119562, guid: b9d0134dda1fb7d4f9641be60fe6459f, type: 2}
   myParticleSystem: {fileID: 19846880}
-  playerStats: {fileID: 0}
+  playerStats: {fileID: 11499990}
   logioPercent: .100000001
   voidPercent: .100000001
-  imagiPercent: .00999999978
+  imagiPercent: .0199999996
   logioCD: 1
-  imagiCD: 0
+  imagiCD: .200000003
   voidCD: 2
+--- !u!114 &11499954
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 178936}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 747e38122a56e424f849e573b63c4330, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  attackTrigger: Attack
+  attackRange: 5
+  attackFromNormalizedTime: .400000006
+  attackToNormalizedTime: .600000024
+  animationController: {fileID: 9542420}
+  raycastTargets:
+    serializedVersion: 2
+    m_Bits: 4294967039
+  parent: {fileID: 0}
 --- !u!114 &11499990
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3043,7 +3053,7 @@ MonoBehaviour:
   currentVoid: 100
   startImagi: 100
   maxImagi: 100
-  imagiRegen: 10
+  imagiRegen: 5
   currentImagi: 75
   startLogio: 100
   maxLogio: 100

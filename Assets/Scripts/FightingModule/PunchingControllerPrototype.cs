@@ -13,13 +13,14 @@ public class PunchingControllerPrototype : MonoBehaviour
 
 	[SerializeField]private LayerMask raycastTargets;
 
+	[SerializeField] private GameObject parent;
 
 	private int attTrig;
-	private bool canAttack = true;
+	private bool canAttack = true; // Controls the raycast
 	private Transform cameraTransform;
 	private InputHandler input;
 
-	int lastInput = 0;
+	private int lastInput = 0; public int LastInput { get { return lastInput; } set { lastInput = value; } }
 
 	private void Start () 
 	{
@@ -27,6 +28,8 @@ public class PunchingControllerPrototype : MonoBehaviour
 
 		cameraTransform = Camera.main.GetComponent<Transform>();
 		input = gameObject.GetComponent<InputHandler> ();
+
+		input = parent.GetComponent<InputHandler>();
 
 		if( attackToNormalizedTime < attackFromNormalizedTime ) 
 		{
@@ -36,11 +39,6 @@ public class PunchingControllerPrototype : MonoBehaviour
 	
 	private void Update () 
 	{
-		if (!input.isMelee ()) 
-		{
-			lastInput = 0;
-		}
-
 		if (input.isMelee () && lastInput == 0) 
 		{
 			lastInput = 1;
@@ -66,7 +64,6 @@ public class PunchingControllerPrototype : MonoBehaviour
 	{
 		if(!animationController.GetCurrentAnimatorStateInfo(0).IsName("Punch"))
 		{
-
 			animationController.SetTrigger( attTrig );
 		}
 	}
