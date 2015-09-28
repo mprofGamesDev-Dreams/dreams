@@ -19,6 +19,8 @@ public class PunchingControllerPrototype : MonoBehaviour
 	private Transform cameraTransform;
 	private InputHandler input;
 
+	int lastInput = 0;
+
 	private void Start () 
 	{
 		attTrig = Animator.StringToHash(attackTrigger);
@@ -34,7 +36,16 @@ public class PunchingControllerPrototype : MonoBehaviour
 	
 	private void Update () 
 	{
-		if (input.isMelee ()) AttackEvent ();
+		if (!input.isMelee ()) 
+		{
+			lastInput = 0;
+		}
+
+		if (input.isMelee () && lastInput == 0) 
+		{
+			lastInput = 1;
+			AttackEvent ();
+		}
 
 		if(animationController.GetCurrentAnimatorStateInfo(0).IsName("Punch") && canAttack)
 		{
@@ -53,8 +64,9 @@ public class PunchingControllerPrototype : MonoBehaviour
 	/// </summary>
 	public void AttackEvent()
 	{
-		if(!animationController.GetCurrentAnimatorStateInfo(0).IsName("AttackTrigger"))
+		if(!animationController.GetCurrentAnimatorStateInfo(0).IsName("Punch"))
 		{
+
 			animationController.SetTrigger( attTrig );
 		}
 	}
