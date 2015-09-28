@@ -32,12 +32,14 @@ public class ActivePowerUI : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if (input.isPrevPower() || input.isNextPower()) {
-			currentPower = abilityBehaviours.getCurrentPower();
-		}
 
-		/*
-		if (CrossPlatformInputManager.GetButtonDown ("Fire1"))//LOGIO
+		currentPower = abilityBehaviours.getCurrentPower();
+		/*if (input.isPrevPower() || input.isNextPower()) {
+			currentPower = abilityBehaviours.getCurrentPower();
+		}*/
+
+
+		/*if (CrossPlatformInputManager.GetButtonDown ("Fire1"))//LOGIO
 		{
 			currentPower = ActivePower.Logio;
 		}
