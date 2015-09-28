@@ -78,14 +78,14 @@ public class AbilityBehaviours : MonoBehaviour
 			}
 		}
 
-		/*if (CrossPlatformInputManager.GetButtonDown ("Fire1"))//LOGIO
+		if (CrossPlatformInputManager.GetButtonDown ("Fire1"))//LOGIO
 		{
 			currentPower = ActivePower.Logio;
 		}
 
 		if (CrossPlatformInputManager.GetButtonDown ("Fire2"))//IMAGI
 		{
-			playerStats.CurrentImagi -= ( playerStats.MaxImagi * imagiPercent );
+			//playerStats.CurrentImagi -= ( playerStats.MaxImagi * imagiPercent );
 
 			currentPower = ActivePower.Imagi;
 		}
@@ -93,7 +93,7 @@ public class AbilityBehaviours : MonoBehaviour
 		if (CrossPlatformInputManager.GetButtonDown ("Fire3"))//VOID
 		{
 			currentPower = ActivePower.Void;
-		}*/
+		}
 
 		// time scale to stop you shooting while pause menu is active
 		if (input.isShoot () && Time.timeScale != 0) 
