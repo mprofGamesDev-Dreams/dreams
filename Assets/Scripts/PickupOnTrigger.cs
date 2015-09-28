@@ -32,7 +32,8 @@ public class PickupOnTrigger : MonoBehaviour
 					break;
 			}
 
-			Destroy(this.gameObject);
+			gameObject.SetActive(false);
+			//Destroy(this.gameObject);
 		}
 
 	}

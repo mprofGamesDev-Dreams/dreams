@@ -521,10 +521,9 @@ GameObject:
   - 54: {fileID: 5487744}
   - 82: {fileID: 8278946}
   - 114: {fileID: 11495828}
-  - 114: {fileID: 11452620}
   - 114: {fileID: 11499990}
-  - 136: {fileID: 13695868}
   - 114: {fileID: 11404990}
+  - 136: {fileID: 13678546}
   m_Layer: 8
   m_Name: Player
   m_TagString: Player
@@ -2966,26 +2965,6 @@ MonoBehaviour:
   m_JumpSound: {fileID: 8300000, guid: 5897aeed9b676024fbb8c694b421a861, type: 3}
   m_LandSound: {fileID: 8300000, guid: 3b09d59f4499d45428baa7a21e954296, type: 3}
   playerStats: {fileID: 0}
---- !u!114 &11452620
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 135624}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 747e38122a56e424f849e573b63c4330, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  attackTrigger: Attack
-  attackRange: 5
-  attackFromNormalizedTime: .400000006
-  attackToNormalizedTime: .600000024
-  animationController: {fileID: 9542420}
-  raycastTargets:
-    serializedVersion: 2
-    m_Bits: 4294967039
-  parent: {fileID: 0}
 --- !u!114 &11495828
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3028,7 +3007,7 @@ MonoBehaviour:
   raycastTargets:
     serializedVersion: 2
     m_Bits: 4294967039
-  parent: {fileID: 0}
+  parent: {fileID: 135624}
 --- !u!114 &11499990
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3067,7 +3046,7 @@ MonoBehaviour:
   walkSpeed: 5
   runSpeed: 10
   speedMultiplier: .5
---- !u!136 &13695868
+--- !u!136 &13678546
 CapsuleCollider:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -3077,7 +3056,7 @@ CapsuleCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   m_Radius: .5
-  m_Height: 1
+  m_Height: 1.79999995
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!137 &13745484
@@ -3198,7 +3177,7 @@ CharacterController:
   m_Enabled: 1
   serializedVersion: 2
   m_Height: 1.79999995
-  m_Radius: .5
+  m_Radius: .400000006
   m_SlopeLimit: 45
   m_StepOffset: .300000012
   m_SkinWidth: .0799999982
