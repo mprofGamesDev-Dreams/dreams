@@ -95,7 +95,8 @@ public class AbilityBehaviours : MonoBehaviour
 			currentPower = ActivePower.Void;
 		}*/
 
-		if (input.isShoot ()) 
+		// time scale to stop you shooting while pause menu is active
+		if (input.isShoot () && Time.timeScale != 0) 
 		{
 			if( canFire() )
 			{
