@@ -211,7 +211,6 @@ GameObject:
   - 195: {fileID: 19568414}
   - 114: {fileID: 11409520}
   - 114: {fileID: 11415972}
-  - 114: {fileID: 11421616}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Untagged
@@ -336,8 +335,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 195500}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -4.0428257, y: -19.8151989, z: 29.6418495}
+  m_LocalRotation: {x: 0, y: .848014176, z: 0, w: .529973567}
+  m_LocalPosition: {x: 14.1599998, y: 5.80000019, z: 101.507843}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 417784}
@@ -666,27 +665,9 @@ MonoBehaviour:
   voidPrefab: {fileID: 126410, guid: 5e083007b6431394b91caac977761437, type: 2}
   imagiPrefab: {fileID: 156894, guid: c757713502107e84096f15d454be9304, type: 2}
   logioPrefab: {fileID: 107886, guid: 9ef5c66a8170b654da9e1af46fbbfcc4, type: 2}
+  canSplit: 0
+  splitIntoEnemyPrefab: {fileID: 0}
   expDrop: 10
---- !u!114 &11421616
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 195500}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 828e1ce2a20874d47b35699e9da0103c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  myCharacteristic: 0
-  myTransform: {fileID: 0}
-  myNavMeshAgent: {fileID: 0}
-  myStats: {fileID: 0}
-  myBehaviour: {fileID: 0}
-  targetScale: {x: 0, y: 0, z: 0}
-  canScale: 0
-  currentSplits: 0
-  maxSplits: 0
 --- !u!114 &11473512
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -724,7 +705,7 @@ NavMeshAgent:
   avoidancePriority: 50
   m_AngularSpeed: 120
   m_StoppingDistance: 0
-  m_AutoTraverseOffMeshLink: 1
+  m_AutoTraverseOffMeshLink: 0
   m_AutoBraking: 1
   m_AutoRepath: 1
   m_Height: 2

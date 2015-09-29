@@ -6675,7 +6675,7 @@ GameObject:
   - 23: {fileID: 2304046}
   - 64: {fileID: 6452408}
   m_Layer: 0
-  m_Name: PlatformTransformable (1)
+  m_Name: PlatformWScenery
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

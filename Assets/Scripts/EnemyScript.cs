@@ -32,8 +32,11 @@ public class EnemyScript : MonoBehaviour {
 		{
 			if(canSplit)
 			{
-				Instantiate(splitIntoEnemyPrefab, transform.position, Quaternion.identity);
-				Instantiate(splitIntoEnemyPrefab, transform.position, Quaternion.identity);
+				Vector3 pos = transform.position;
+				pos.x -= 0.5f;
+				Instantiate(splitIntoEnemyPrefab, pos, Quaternion.identity);
+				pos.x += 1f;
+				Instantiate(splitIntoEnemyPrefab, pos, Quaternion.identity);
 
 				Destroy(this.gameObject);
 			}
