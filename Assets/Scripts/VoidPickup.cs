@@ -16,10 +16,11 @@ public class VoidPickup : MonoBehaviour {
 
     void OnTriggerStay(Collider player)
     {
-        if (player.GetComponent<InputHandler>().isInteract() && resource >0 )
-        {
-            player.gameObject.GetComponent<PlayerStats>().ModifyVoid(resource);
-            Destroy(gameObject);
-        }
+		if (player.CompareTag ("Player")) {
+			if (player.GetComponent<InputHandler> ().isInteract () && resource > 0) {
+				player.gameObject.GetComponent<PlayerStats> ().ModifyVoid (resource);
+				Destroy (gameObject);
+			}
+		}
     }
 }

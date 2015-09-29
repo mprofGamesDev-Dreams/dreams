@@ -21,8 +21,17 @@ public class Bullet : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		gameObject.GetComponent<Rigidbody> ().velocity = gameObject.transform.TransformDirection( new Vector3 (0, 0, speed));
-		Destroy (gameObject, range/speed);
+
+		Vector3 bulletSpeed = new Vector3(parentPlayer.GetComponent<PlayerStats> ().DeltaPosition.x,
+		                                  parentPlayer.GetComponent<PlayerStats> ().DeltaPosition.y,
+										  parentPlayer.GetComponent<PlayerStats> ().DeltaPosition.z);
+		Debug.Log ( Vector3.Dot( parentPlayer.GetComponent<PlayerStats> ().DeltaPosition.normalized, transform.position ) );
+		bulletSpeed = gameObject.transform.InverseTransformDirection (bulletSpeed);
+		//bulletSpeed.z = bulletSpeed.z + speed;
+		//gameObject.GetComponent<Rigidbody> ().velocity = gameObject.transform.TransformDirection( bulletSpeed);*/
+
+		gameObject.GetComponent<Rigidbody> ().velocity = transform.forward * (speed + bulletSpeed.magnitude) ;
+		Destroy (gameObject, range/gameObject.GetComponent<Rigidbody> ().velocity.magnitude);
 	}
 	
 	// Update is called once per frame

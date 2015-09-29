@@ -57,6 +57,9 @@ public class PlayerStats : MonoBehaviour
 	[SerializeField] private float walkSpeed = 5;
 	[SerializeField] private float runSpeed = 10;
 	[SerializeField] private float speedMultiplier = 0.50f;
+	[SerializeField] private Vector3 oldPosition;
+	[SerializeField] private Vector3 thisPosition;
+	[SerializeField] private Vector3 deltaPosition;
 
 	private int buffTimer = 0;
 	private int debuffTimer = 0;
@@ -72,6 +75,7 @@ public class PlayerStats : MonoBehaviour
 		Player = GameObject.Find("Player");
 		
 		playerController = Player.GetComponent<FirstPersonController>();
+		oldPosition = gameObject.transform.position;
 	}
 	
 	// Update is called once per frame
@@ -93,12 +97,19 @@ public class PlayerStats : MonoBehaviour
 			LogioRegen();
 		}
 
+		UpdatePositions();
 		
 		//
 		//HandleParticles();
 
 	}
 
+	private void UpdatePositions()
+	{
+		thisPosition = gameObject.transform.position;
+		deltaPosition = thisPosition - oldPosition;
+		oldPosition = thisPosition;
+	}
 	#region Regenerations
 	private void HealthRegen()
 	{
@@ -396,6 +407,11 @@ public class PlayerStats : MonoBehaviour
 			return imagiBuff;
 		}
 		
+	}
+
+	public Vector3 DeltaPosition
+	{
+		get{ return deltaPosition;}
 	}
 	#endregion
 }

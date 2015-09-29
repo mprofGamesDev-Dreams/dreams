@@ -17,10 +17,10 @@ public class Shield : MonoBehaviour
 
 	private void Update () 
 	{
-       /* if (shieldHealth <= 0)
+       if (shieldHealth <= 0)
         {
 			Destroy(gameObject);
-        }*/
+        }
 
         scrollOffset += scrollSpeed;
         GetComponent<Renderer>().material.SetTextureOffset("_MainTex", new Vector2(scrollOffset / 2, scrollOffset));
