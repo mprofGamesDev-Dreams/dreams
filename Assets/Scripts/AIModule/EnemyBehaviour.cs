@@ -18,7 +18,8 @@ public class EnemyBehaviour : MonoBehaviour {
     private enum aiStates { follow, patrol, returnToPosition, attack};
     private aiStates aiState = aiStates.follow;
     private bool playerSeen = false;
-    
+
+    public LayerMask masksToUse;
 	// Use this for initialization
 
     void Start()
@@ -33,14 +34,16 @@ public class EnemyBehaviour : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
+        Vector3 rayCastOrigin = new Vector3(0.0f, 2.0f, 0.0f);
+
         RaycastHit hit;
-        Ray lineOfSight = new Ray(gameObject.transform.position, targetPlayer.transform.position - gameObject.transform.position);
+        Ray lineOfSight = new Ray(gameObject.transform.position + rayCastOrigin, targetPlayer.transform.position - (gameObject.transform.position + rayCastOrigin));
 
         Debug.DrawRay(lineOfSight.origin,lineOfSight.direction*lineOfSightRange);
 
-        
 
-        if (Physics.Raycast(lineOfSight, out hit, lineOfSightRange/*,LayerMask.NameToLayer("Level")*/))
+
+        if (Physics.Raycast(lineOfSight, out hit, lineOfSightRange, masksToUse))
         {
             if (hit.transform.gameObject.tag == "Player")
             {
