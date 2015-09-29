@@ -33,6 +33,9 @@ public class EnemyBehaviour : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
+		if (targetPlayer == null)
+			targetPlayer = GameObject.FindGameObjectWithTag ("Player");
+
         RaycastHit hit;
         Ray lineOfSight = new Ray(gameObject.transform.position, targetPlayer.transform.position - gameObject.transform.position);
 
