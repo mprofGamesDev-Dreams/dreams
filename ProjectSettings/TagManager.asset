@@ -5,6 +5,8 @@ TagManager:
   serializedVersion: 2
   tags:
   - Platform
+  - PauseButton
+  - Bullet
   layers:
   - Default
   - TransparentFX
@@ -19,8 +21,6 @@ TagManager:
   - Bullets
   - InvisibleWalls
   - Enemies
-  - 
-  - 
   - 
   - 
   - 

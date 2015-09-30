@@ -12,7 +12,7 @@ using System.Collections;
 
 public class Bullet : MonoBehaviour {
 
-	[SerializeField] private ActivePower bulletType;
+	[SerializeField] private ActivePower bulletType; public ActivePower BulletType { get {return bulletType;} }
 	[SerializeField] private float speed;
 	[SerializeField] private float range;
 	[SerializeField] private float damage;
@@ -25,7 +25,7 @@ public class Bullet : MonoBehaviour {
 		Vector3 bulletSpeed = new Vector3(parentPlayer.GetComponent<PlayerStats> ().DeltaPosition.x,
 		                                  parentPlayer.GetComponent<PlayerStats> ().DeltaPosition.y,
 										  parentPlayer.GetComponent<PlayerStats> ().DeltaPosition.z);
-		Debug.Log ( Vector3.Dot( parentPlayer.GetComponent<PlayerStats> ().DeltaPosition.normalized, transform.position ) );
+		//Debug.Log ( Vector3.Dot( parentPlayer.GetComponent<PlayerStats> ().DeltaPosition.normalized, transform.position ) );
 		bulletSpeed = gameObject.transform.InverseTransformDirection (bulletSpeed);
 		//bulletSpeed.z = bulletSpeed.z + speed;
 		//gameObject.GetComponent<Rigidbody> ().velocity = gameObject.transform.TransformDirection( bulletSpeed);*/

@@ -5,10 +5,10 @@ using System.Collections;
 public class WhiteFlash : MonoBehaviour
 {
 	[SerializeField] private Image image;
-	private float fadeInSpeed = 10f;         // Speed that the screen fades to white
-	private float fadeOutSpeed = 2.0f;			// Speed that the screen fades to clear
-	private bool flashRequested = false;
-	private bool toWhite;
+	public float fadeInSpeed = 10f;         // Speed that the screen fades to white
+	public float fadeOutSpeed = 2.0f;			// Speed that the screen fades to clear
+	public bool flashRequested = false;
+	public bool toWhite;
 	private float delay;
 	
 	void Awake ()
@@ -20,7 +20,8 @@ public class WhiteFlash : MonoBehaviour
 	{
 		if (flashRequested) {
 			// Check if fading to or from white
-			if (toWhite) {
+			if (toWhite) 
+			{
 				// Continue fading until image is almost white
 				if (image.color.a < 0.995) {
 					FadeToWhite ();
@@ -31,13 +32,16 @@ public class WhiteFlash : MonoBehaviour
 					toWhite = false;
 					delay = Time.time + 0.5f;
 				}
-			} else if (Time.time > delay) {
+			} else if (Time.time > delay) 
+			{
 				// After brief delay, fade white to clear
-				if (image.color.a > 0.005) {
+				if (image.color.a > 0.005)
+				{
 					FadeToClear ();
 				}
 				// When image is almost fully clear, disable it
-				else{
+				else
+				{
 					image.enabled = false;
 					flashRequested = false;
 				}

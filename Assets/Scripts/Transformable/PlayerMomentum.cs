@@ -21,7 +21,7 @@ public class PlayerMomentum : MonoBehaviour {
 
 		if (collider.tag == "Platform") 
 		{
-            Debug.Log("collided with " + collider.name);		
+            //Debug.Log("collided with " + collider.name);		
 			gameObject.transform.parent.parent = collider.transform;
 		}
 	}
