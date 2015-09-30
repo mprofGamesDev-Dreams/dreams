@@ -55,7 +55,7 @@ public class JigsawPiece : MonoBehaviour
 		// Add the transform to specify where it needs to move to
 		TransformGeometry Transformer = NextJigsawPieceAccess.AddComponent<TransformGeometry>();
 		Transformer.SetAxisOrder("x", "y", "z");
-		Transformer.TransformTarget = NextJigsawPiece.transform;
+		Transformer.TransformTarget[0] = NextJigsawPiece.transform;
 
 		// Flag that we have generated it
 		NextPieceGenerated = true;

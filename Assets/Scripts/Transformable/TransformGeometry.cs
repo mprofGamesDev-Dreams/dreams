@@ -16,7 +16,9 @@ using System.Collections;
 public class TransformGeometry : MonoBehaviour
 {
 	// Target transform to move geomtry to
-	public Transform TransformTarget;
+	public Transform[] TransformTarget;
+	public int targetIndex = 0;
+	public bool isPathLooping = true;
 
 	// Specify a list of axis ( X Y Z ONLY )
 	// This will be transform order
@@ -40,6 +42,13 @@ public class TransformGeometry : MonoBehaviour
 	// Update is called once per frame
 	void Update ()
 	{
+		if (targetIndex >= TransformTarget.Length) {
+			if(isPathLooping)
+				targetIndex = 0;
+			else
+				return;
+		}
+
         if (triggered)
         {
             if (TransformStage == 1)
@@ -48,7 +57,7 @@ public class TransformGeometry : MonoBehaviour
             }
             else
             {
-                transform.localScale = Vector3.Lerp(transform.localScale, TransformTarget.localScale, MovementSpeed * Time.deltaTime);
+                transform.localScale = Vector3.Lerp(transform.localScale, TransformTarget[targetIndex].localScale, MovementSpeed * Time.deltaTime);
             }
         }
 	}
@@ -56,9 +65,14 @@ public class TransformGeometry : MonoBehaviour
 	private void TransformObject()
 	{
 		Vector3 CurrentPosition = transform.position;
-		Vector3 TargetPosition = TransformTarget.position;
+		Vector3 TargetPosition = TransformTarget[targetIndex].position;
 		
+		Vector3 NewPosition = Vector3.MoveTowards(CurrentPosition, TargetPosition, MovementSpeed * Time.deltaTime);
+		
+		transform.position = NewPosition;
 
+		if(transform.position.Equals (TargetPosition))
+		   targetIndex++;
 
 		/*switch(TargetAxis)
 		{
@@ -77,10 +91,7 @@ public class TransformGeometry : MonoBehaviour
 				TargetPosition.z = TransformTarget.position.z;
 				break;
 		}*/
-
-		Vector3 NewPosition = Vector3.MoveTowards(CurrentPosition, TargetPosition, MovementSpeed * Time.deltaTime);
-
-		transform.position = NewPosition;
+		
 
 		/*switch(TargetAxis)
 		{
