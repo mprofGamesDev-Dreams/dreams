@@ -55,10 +55,12 @@ public class TransformGeometry : MonoBehaviour
 
 	private void TransformObject()
 	{
-		Vector3 CurrentPosition = new Vector3(0,0,0);
-		Vector3 TargetPosition = new Vector3(0,0,0);
+		Vector3 CurrentPosition = transform.position;
+		Vector3 TargetPosition = TransformTarget.position;
+		
 
-		switch(TargetAxis)
+
+		/*switch(TargetAxis)
 		{
 			case "x":
 				CurrentPosition.x = transform.position.x;
@@ -74,11 +76,13 @@ public class TransformGeometry : MonoBehaviour
 				CurrentPosition.z = transform.position.z;
 				TargetPosition.z = TransformTarget.position.z;
 				break;
-		}
+		}*/
 
 		Vector3 NewPosition = Vector3.MoveTowards(CurrentPosition, TargetPosition, MovementSpeed * Time.deltaTime);
 
-		switch(TargetAxis)
+		transform.position = NewPosition;
+
+		/*switch(TargetAxis)
 		{
 			case "x":
 				transform.position = new Vector3(NewPosition.x, transform.position.y, transform.position.z);
@@ -106,7 +110,7 @@ public class TransformGeometry : MonoBehaviour
 					UpdateAxisTarget();
 				}
 			break;
-		}
+		}*/
 	}
 
 	private void UpdateAxisTarget()
