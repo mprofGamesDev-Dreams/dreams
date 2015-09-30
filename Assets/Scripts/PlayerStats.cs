@@ -50,8 +50,10 @@ public class PlayerStats : MonoBehaviour
 	[SerializeField] private float imagiBuff = 1.25f;
 	[SerializeField] private int buffDuration = 10;
 	[SerializeField] private bool buffed = false;
-	[SerializeField] private bool debuffed = false;
+	[SerializeField] private bool slowDebuffed = false;
 	[SerializeField] private int debuffDuration = 10;
+	[SerializeField] private bool regenDisabled = false;
+	[SerializeField] private int regenDisabledDuration = 2;
 
 	[Header("Travel Variables")]
 	[SerializeField] private float walkSpeed = 5;
@@ -63,7 +65,7 @@ public class PlayerStats : MonoBehaviour
 
 	private int buffTimer = 0;
 	private int debuffTimer = 0;
-
+	private int regenDisabledTimer = 0;
 	private float currentLogio = 25;
 
 	private bool isDead = false;
@@ -113,9 +115,12 @@ public class PlayerStats : MonoBehaviour
 	#region Regenerations
 	private void HealthRegen()
 	{
-		if (currentHealth == maxHealth)
-			return;
-		currentHealth = Mathf.Clamp ( currentHealth += healthRegen * Time.deltaTime, 0 ,maxHealth );
+		if (!regenDisabled) 
+		{
+			if (currentHealth == maxHealth)
+				return;
+			currentHealth = Mathf.Clamp (currentHealth += healthRegen * Time.deltaTime, 0, maxHealth);
+		}
 	}
 
 	private void StaminaRegen()
@@ -162,20 +167,21 @@ public class PlayerStats : MonoBehaviour
 
 	}
 
-	public void DebuffPlayer()
-	{
-		debuffTimer = debuffDuration;
-		if (!debuffed) 
-		{
-			StartCoroutine("DebuffTimer");
-		}
-	}
+
 
 	public void VoidHit()
 	{
 		ModifyHealth (voidRegen);
 	}
 
+	public void DebuffPlayer()
+	{
+		debuffTimer = debuffDuration;
+		if (!slowDebuffed) 
+		{
+			StartCoroutine("DebuffTimer");
+		}
+	}
 	IEnumerator BuffTimer ()
 	{
 		buffed = true;
@@ -188,9 +194,20 @@ public class PlayerStats : MonoBehaviour
 		yield return null; //Done
 	}
 
+	IEnumerator DisableRegenTimer ()
+	{
+		regenDisabled = true;
+		while (regenDisabledTimer > 0) {
+			regenDisabledTimer --;
+			yield return new WaitForSeconds(1);
+		}
+		regenDisabled = false;
+		yield return null;
+	}
+
 	IEnumerator DebuffTimer ()
 	{
-		debuffed = true;
+		slowDebuffed = true;
 		playerController.RunSpeed = runSpeed * speedMultiplier;
 		playerController.WalkSpeed = walkSpeed * speedMultiplier;
 		while (debuffTimer > 0) 
@@ -199,7 +216,7 @@ public class PlayerStats : MonoBehaviour
 			yield return new WaitForSeconds(1);
 		}
 
-		debuffed = false;
+		slowDebuffed = false;
 		playerController.RunSpeed = runSpeed;
 		playerController.WalkSpeed = walkSpeed;
 		yield return null;
@@ -220,6 +237,14 @@ public class PlayerStats : MonoBehaviour
 	// Add or subtract hp
 	public void ModifyHealth(float amount)
 	{
+		if (amount <0)
+		{
+			regenDisabledTimer = regenDisabledDuration;
+			if (!regenDisabled)
+			{
+				StartCoroutine("DisableRegenTimer");
+			}
+		}
 		currentHealth = Mathf.Clamp( currentHealth + amount, 0, maxHealth );
 	}
 
@@ -394,7 +419,7 @@ public class PlayerStats : MonoBehaviour
 	{
 		get 
 		{
-			return debuffed;
+			return slowDebuffed;
 		}
 		
 	}
