@@ -1262,6 +1262,25 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1 &192684
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 452118}
+  - 33: {fileID: 3359048}
+  - 65: {fileID: 6597104}
+  - 23: {fileID: 2376454}
+  - 114: {fileID: 11473736}
+  m_Layer: 0
+  m_Name: Cube
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &192818
 GameObject:
   m_ObjectHideFlags: 1
@@ -1909,6 +1928,18 @@ Transform:
   - {fileID: 448156}
   m_Father: {fileID: 489378}
   m_RootOrder: 0
+--- !u!4 &452118
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 192684}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: -.860000014, z: 0}
+  m_LocalScale: {x: 1, y: 4.26794577, z: 1}
+  m_Children: []
+  m_Father: {fileID: 489378}
+  m_RootOrder: 1
 --- !u!4 &452440
 Transform:
   m_ObjectHideFlags: 1
@@ -2318,10 +2349,11 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 135624}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -208.899994, y: 113.699997, z: -168.660004}
+  m_LocalPosition: {x: 0, y: 1.75, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 448724}
+  - {fileID: 452118}
   m_Father: {fileID: 0}
   m_RootOrder: 0
 --- !u!4 &490624
@@ -2649,6 +2681,30 @@ MeshRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingOrder: 0
+--- !u!23 &2376454
+MeshRenderer:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 192684}
+  m_Enabled: 0
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_Materials:
+  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  m_SubsetIndices: 
+  m_StaticBatchRoot: {fileID: 0}
+  m_UseLightProbes: 1
+  m_ReflectionProbeUsage: 1
+  m_ProbeAnchor: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_PreserveUVs: 1
+  m_ImportantGI: 0
+  m_AutoUVMaxDistance: .5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingOrder: 0
 --- !u!23 &2377030
 MeshRenderer:
   m_ObjectHideFlags: 1
@@ -2725,6 +2781,13 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 116966}
   m_Mesh: {fileID: 4300000, guid: 138535507dff6fc4ba401cf112d05ae5, type: 3}
+--- !u!33 &3359048
+MeshFilter:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 192684}
+  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!33 &3372778
 MeshFilter:
   m_ObjectHideFlags: 1
@@ -2768,6 +2831,18 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!65 &6597104
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 192684}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!81 &8195110
 AudioListener:
   m_ObjectHideFlags: 1
@@ -2965,6 +3040,17 @@ MonoBehaviour:
   m_JumpSound: {fileID: 8300000, guid: 5897aeed9b676024fbb8c694b421a861, type: 3}
   m_LandSound: {fileID: 8300000, guid: 3b09d59f4499d45428baa7a21e954296, type: 3}
   playerStats: {fileID: 0}
+--- !u!114 &11473736
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 192684}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5ecf767cf7af99e4b8be0bf3d291b035, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &11495828
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3027,14 +3113,14 @@ MonoBehaviour:
   maxStamina: 100
   staminaRegen: 10
   currentStamina: 100
-  startVoid: 100
+  startVoid: 0
   maxVoid: 100
   currentVoid: 100
-  startImagi: 100
+  startImagi: 75
   maxImagi: 100
   imagiRegen: 5
   currentImagi: 75
-  startLogio: 100
+  startLogio: 25
   maxLogio: 100
   logioRegen: 10
   voidRegen: 10
@@ -3046,6 +3132,9 @@ MonoBehaviour:
   walkSpeed: 5
   runSpeed: 10
   speedMultiplier: .5
+  oldPosition: {x: 0, y: 0, z: 0}
+  thisPosition: {x: 0, y: 0, z: 0}
+  deltaPosition: {x: 0, y: 0, z: 0}
 --- !u!136 &13678546
 CapsuleCollider:
   m_ObjectHideFlags: 1

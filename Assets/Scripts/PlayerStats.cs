@@ -76,6 +76,13 @@ public class PlayerStats : MonoBehaviour
 		
 		playerController = Player.GetComponent<FirstPersonController>();
 		oldPosition = gameObject.transform.position;
+
+        currentHealth = startHealth;
+        currentStamina = startStamina;
+        currentImagi = startImagi;
+        currentLogio = startLogio;
+        currentVoid = startVoid;
+            
 	}
 	
 	// Update is called once per frame

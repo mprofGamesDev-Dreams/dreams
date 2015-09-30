@@ -18,10 +18,10 @@ public class PlayerMomentum : MonoBehaviour {
 	void OnTriggerStay(Collider collider)
 	{
 		//GameObject collider = collision.gameObject;
-		Debug.Log ("collided with " + collider.name);		
+
 		if (collider.tag == "Platform") 
 		{
-
+            Debug.Log("collided with " + collider.name);		
 			gameObject.transform.parent.parent = collider.transform;
 		}
 	}

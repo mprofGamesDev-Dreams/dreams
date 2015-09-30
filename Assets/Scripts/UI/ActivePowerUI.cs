@@ -6,9 +6,9 @@ using UnityStandardAssets.CrossPlatformInput;
 public enum ActivePower{Imagi,Logio,Void};
 
 public class ActivePowerUI : MonoBehaviour {
-	private Color32 ImagiC = new Color32(86,255,255,255);
-	private Color32 LogioC = new Color32(255,45,45,255);
-	private Color32 VoidC = new Color32(190,45,255,255);
+	public Color32 ImagiC = new Color32(86,255,255,255);
+	public Color32 LogioC = new Color32(255,45,45,255);
+	public Color32 VoidC = new Color32(190,45,255,255);
 	public Image uiIndicator;
 
 	private ActivePower currentPower;

@@ -20,8 +20,10 @@ public class EnemyBehaviour : MonoBehaviour {
     private bool playerSeen = false;
 
     public LayerMask masksToUse;
+	
+	[SerializeField] private bool canSlow = false;
+	
 	// Use this for initialization
-
     void Start()
     {
         agent = GetComponent<NavMeshAgent>();
@@ -127,6 +129,7 @@ public class EnemyBehaviour : MonoBehaviour {
 					
 					PlayerStats hitStats =  hit.transform.gameObject.GetComponent<PlayerStats>();
 					hitStats.SendMessage("ModifyHealth", -attackDamage);
+					if(canSlow)
 					hitStats.DebuffPlayer();
 					
                     attackTimer = 0.0f;
