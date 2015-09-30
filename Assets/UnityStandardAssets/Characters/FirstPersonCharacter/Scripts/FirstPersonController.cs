@@ -33,6 +33,8 @@ namespace UnityStandardAssets.Characters.FirstPerson
         [SerializeField] private AudioClip m_JumpSound;           // the sound played when character leaves the ground.
         [SerializeField] private AudioClip m_LandSound;           // the sound played when character touches back on ground.
 
+		[SerializeField] private PauseManager pauseManager;		  // Prevents player from queuing up moves when game is paused
+
         private Camera m_Camera;
         private bool m_Jump;
         private float m_YRotation;
@@ -72,26 +74,26 @@ namespace UnityStandardAssets.Characters.FirstPerson
         // Update is called once per frame
         private void Update()
         {
-            RotateView();
-            // the jump state needs to read here to make sure it is not missed
-            if (!m_Jump)
-            {
-                m_Jump = CrossPlatformInputManager.GetButtonDown("Jump");
-            }
+			// Check first if game is paused
+			if (!pauseManager.is_paused) {
+				RotateView ();
+				// the jump state needs to read here to make sure it is not missed
+				if (!m_Jump && !m_Jumping) {
+					m_Jump = CrossPlatformInputManager.GetButtonDown ("Jump");
+				}
 
-            if (!m_PreviouslyGrounded && m_CharacterController.isGrounded)
-            {
-                StartCoroutine(m_JumpBob.DoBobCycle());
-                PlayLandingSound();
-                m_MoveDir.y = 0f;
-                m_Jumping = false;
-            }
-            if (!m_CharacterController.isGrounded && !m_Jumping && m_PreviouslyGrounded)
-            {
-                m_MoveDir.y = 0f;
-            }
+				if (!m_PreviouslyGrounded && m_CharacterController.isGrounded) {
+					StartCoroutine (m_JumpBob.DoBobCycle ());
+					PlayLandingSound ();
+					m_MoveDir.y = 0f;
+					m_Jumping = false;
+				}
+				if (!m_CharacterController.isGrounded && !m_Jumping && m_PreviouslyGrounded) {
+					m_MoveDir.y = 0f;
+				}
 
-            m_PreviouslyGrounded = m_CharacterController.isGrounded;
+				m_PreviouslyGrounded = m_CharacterController.isGrounded;
+			}
         }
 
 
