@@ -10,7 +10,7 @@ GameObject:
   - 4: {fileID: 448612}
   - 33: {fileID: 3312134}
   - 23: {fileID: 2329356}
-  m_Layer: 10
+  m_Layer: 12
   m_Name: pSphere1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -27,7 +27,7 @@ GameObject:
   - 4: {fileID: 440040}
   - 33: {fileID: 3307578}
   - 23: {fileID: 2300264}
-  m_Layer: 10
+  m_Layer: 12
   m_Name: pTorus2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -44,7 +44,7 @@ GameObject:
   - 4: {fileID: 407196}
   - 33: {fileID: 3350590}
   - 23: {fileID: 2391776}
-  m_Layer: 10
+  m_Layer: 12
   m_Name: pCone1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -61,7 +61,7 @@ GameObject:
   - 4: {fileID: 442362}
   - 33: {fileID: 3351478}
   - 23: {fileID: 2398810}
-  m_Layer: 10
+  m_Layer: 12
   m_Name: pSphere3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -78,7 +78,7 @@ GameObject:
   - 4: {fileID: 486264}
   - 33: {fileID: 3325048}
   - 23: {fileID: 2337796}
-  m_Layer: 10
+  m_Layer: 12
   m_Name: pCone2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -95,7 +95,7 @@ GameObject:
   - 4: {fileID: 436038}
   - 212: {fileID: 21221092}
   - 114: {fileID: 11411066}
-  m_Layer: 10
+  m_Layer: 12
   m_Name: Healthbar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -111,7 +111,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 411066}
   - 212: {fileID: 21296414}
-  m_Layer: 10
+  m_Layer: 12
   m_Name: Sprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -127,7 +127,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 415312}
   - 114: {fileID: 11473512}
-  m_Layer: 10
+  m_Layer: 12
   m_Name: VisibleHealth
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -144,7 +144,7 @@ GameObject:
   - 4: {fileID: 439898}
   - 33: {fileID: 3337622}
   - 23: {fileID: 2351744}
-  m_Layer: 10
+  m_Layer: 12
   m_Name: pSphere2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -161,7 +161,7 @@ GameObject:
   - 4: {fileID: 465620}
   - 33: {fileID: 3313358}
   - 23: {fileID: 2306890}
-  m_Layer: 10
+  m_Layer: 12
   m_Name: pTorus1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -176,7 +176,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 479374}
-  m_Layer: 10
+  m_Layer: 12
   m_Name: group3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -191,7 +191,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 417784}
-  m_Layer: 10
+  m_Layer: 12
   m_Name: group2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -211,7 +211,7 @@ GameObject:
   - 195: {fileID: 19568414}
   - 114: {fileID: 11409520}
   - 114: {fileID: 11415972}
-  m_Layer: 10
+  m_Layer: 12
   m_Name: Enemy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -808,7 +808,7 @@ Prefab:
       objectReference: {fileID: 126410, guid: 5e083007b6431394b91caac977761437, type: 2}
     - target: {fileID: 0}
       propertyPath: m_Layer
-      value: 10
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: masksToUse.m_Bits
