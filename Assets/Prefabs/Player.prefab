@@ -524,6 +524,7 @@ GameObject:
   - 114: {fileID: 11499990}
   - 114: {fileID: 11404990}
   - 136: {fileID: 13678546}
+  - 114: {fileID: 11488614}
   m_Layer: 8
   m_Name: Player
   m_TagString: Player
@@ -2182,7 +2183,7 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 109302}
-  m_LocalRotation: {x: .692415833, y: .663689077, z: -.0430022962, w: .27969256}
+  m_LocalRotation: {x: .692415893, y: .663689137, z: -.0430023, w: .27969259}
   m_LocalPosition: {x: -.00183018122, y: -.0170671139, z: -.0146778813}
   m_LocalScale: {x: 1.00000024, y: 1.00000012, z: 1}
   m_Children:
@@ -3039,6 +3040,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 8bc94ec6ed537e743b481638bdcd503d, type: 3}
   m_JumpSound: {fileID: 8300000, guid: 5897aeed9b676024fbb8c694b421a861, type: 3}
   m_LandSound: {fileID: 8300000, guid: 3b09d59f4499d45428baa7a21e954296, type: 3}
+  pauseManager: {fileID: 0}
   playerStats: {fileID: 0}
 --- !u!114 &11473736
 MonoBehaviour:
@@ -3051,6 +3053,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5ecf767cf7af99e4b8be0bf3d291b035, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &11488614
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 135624}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 988ee671c2615c24abbfd4553dfb5250, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  angleVariance: 600
+  angleDampner: .959999979
+  speed: 15
+  duration: .75
+  cameras:
+  - {fileID: 448724}
+  - {fileID: 448156}
 --- !u!114 &11495828
 MonoBehaviour:
   m_ObjectHideFlags: 1

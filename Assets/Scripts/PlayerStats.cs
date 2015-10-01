@@ -68,13 +68,15 @@ public class PlayerStats : MonoBehaviour
 
 	private bool isDead = false;
 
+	private CameraShakeOnCall cameraShake;
 
 	void Start ()
 	{
 		// Find the player game object
 		Player = GameObject.Find("Player");
-		
+
 		playerController = Player.GetComponent<FirstPersonController>();
+		cameraShake = Player.GetComponent<CameraShakeOnCall>();
 		oldPosition = gameObject.transform.position;
 
         currentHealth = startHealth;
@@ -228,6 +230,7 @@ public class PlayerStats : MonoBehaviour
 	public void ModifyHealth(float amount)
 	{
 		currentHealth = Mathf.Clamp( currentHealth + amount, 0, maxHealth );
+		cameraShake.ShakeViewport();
 	}
 
 	public void ModifyStamina(float amount)
