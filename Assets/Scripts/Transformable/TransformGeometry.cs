@@ -140,7 +140,7 @@ public class TransformGeometry : MonoBehaviour
 		}
 	}
 
-    void Trigger()
+    public void Trigger()
     {
         triggered = true;
     }

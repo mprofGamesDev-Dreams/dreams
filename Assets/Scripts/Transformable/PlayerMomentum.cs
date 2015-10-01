@@ -15,13 +15,22 @@ public class PlayerMomentum : MonoBehaviour {
 //		Debug.Log(gameObject.transform.parent.gameObject.GetComponent<Rigidbody>().velocity);
 	}
 
+	void OnTriggerEnter(Collider collider)
+	{
+		if (collider.tag == "Platform") 
+		{
+			Debug.Log ("enteredCollision with " + collider.name);		
+
+		}
+	}
+
 	void OnTriggerStay(Collider collider)
 	{
 		//GameObject collider = collision.gameObject;
-		Debug.Log ("collided with " + collider.name);		
+
 		if (collider.tag == "Platform") 
 		{
-
+			Debug.Log ("collided with " + collider.name);		
 			gameObject.transform.parent.parent = collider.transform;
 		}
 	}
@@ -30,7 +39,8 @@ public class PlayerMomentum : MonoBehaviour {
 	{
 		if (collider.tag == "Platform") 
 		{
-			gameObject.transform.parent.parent=null;
+			Debug.Log ("onTriggerExit with " + collider.name);		
+ 			gameObject.transform.parent.parent=null;
 		}
 	}
 }
