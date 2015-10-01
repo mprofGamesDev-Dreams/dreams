@@ -11,7 +11,7 @@ public class ActivePowerUI : MonoBehaviour {
 	public Color32 VoidC = new Color32(190,45,255,255);
 	public Image uiIndicator;
 
-	private ActivePower currentPower;
+	[SerializeField]private ActivePower currentPower;
 	private AbilityBehaviours abilityBehaviours;
 	private InputHandler input;
 
@@ -24,7 +24,7 @@ public class ActivePowerUI : MonoBehaviour {
 	{
 		if (instance == null)
 			instance = this;
-		currentPower = ActivePower.Imagi;
+
 		abilityBehaviours = GameObject.Find ("Player").GetComponent<AbilityBehaviours> ();
 		input = GameObject.Find ("Player").GetComponent<InputHandler> ();
 		uiIndicator.color = ImagiC;
@@ -74,5 +74,6 @@ public class ActivePowerUI : MonoBehaviour {
 	public ActivePower CurrentPower
 	{
 		get{return currentPower;}
+		set{currentPower = value;}
 	}
 }

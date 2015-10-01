@@ -965,7 +965,6 @@ GameObject:
   - 195: {fileID: 347631268}
   - 114: {fileID: 347631267}
   - 114: {fileID: 347631266}
-  - 114: {fileID: 347631265}
   m_Layer: 0
   m_Name: Enemy_Big
   m_TagString: Untagged
@@ -987,18 +986,6 @@ Transform:
   - {fileID: 1838676036}
   m_Father: {fileID: 205853614}
   m_RootOrder: 0
---- !u!114 &347631265
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 11478684, guid: fb0416c772e5e4744b3f12a43388a173,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 347631263}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &347631266
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1303,6 +1290,10 @@ Prefab:
       propertyPath: m_LocalRotation.w
       value: .27969259
       objectReference: {fileID: 0}
+    - target: {fileID: 11414866, guid: 5131aeaeb69b99846b5c165c1394dfdf, type: 2}
+      propertyPath: pauseManager
+      value: 
+      objectReference: {fileID: 1182310940}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 5131aeaeb69b99846b5c165c1394dfdf, type: 2}
   m_IsPrefabParent: 0
@@ -2876,6 +2867,12 @@ Prefab:
 Transform:
   m_PrefabParentObject: {fileID: 455654, guid: 30f77a23ae462e1408d520c7436769c0, type: 2}
   m_PrefabInternal: {fileID: 283232251}
+--- !u!114 &1182310940 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 11482300, guid: 8e9d53dfbdef24f45a7ee118919068e3,
+    type: 2}
+  m_PrefabInternal: {fileID: 725348231}
+  m_Script: {fileID: 11500000, guid: 8cdfb7cef19a14f449e38bb8056a7237, type: 3}
 --- !u!1 &1194089594
 GameObject:
   m_ObjectHideFlags: 0

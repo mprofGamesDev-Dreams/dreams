@@ -75,7 +75,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
         private void Update()
         {
 			// Check first if game is paused
-			if (!pauseManager.is_paused) {
+			if (!pauseManager.is_paused || (input.ControllerConstraints == EControlConstraints.DisableAll || input.ControllerConstraints == EControlConstraints.DisableAllExceptCamera) ) {
 				RotateView ();
 				// the jump state needs to read here to make sure it is not missed
 				if (!m_Jump && !m_Jumping) {
@@ -107,6 +107,9 @@ namespace UnityStandardAssets.Characters.FirstPerson
 
         private void FixedUpdate()
         {
+			if( input.ControllerConstraints == EControlConstraints.DisableAll || input.ControllerConstraints == EControlConstraints.DisableAllExceptCamera )
+				return;
+
             float speed;
             GetInput(out speed);
 

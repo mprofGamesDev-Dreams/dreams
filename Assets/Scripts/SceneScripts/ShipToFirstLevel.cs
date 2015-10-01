@@ -23,10 +23,14 @@ public class ShipToFirstLevel : MonoBehaviour
 
 		playerInputManager.ControllerConstraints = EControlConstraints.DisableAllExceptCamera;
 
+		playerObject.GetComponent<AbilityBehaviours>().CurrentPower = ActivePower.Logio;
+
 		narrator = playerObject.AddComponent<AudioSource>();
 		narrator.clip = audioClips[audioIndex];
 		narrator.Play();
 		startTime = Time.time;
+
+
 	}
 
 	private void Update()
@@ -50,7 +54,7 @@ public class ShipToFirstLevel : MonoBehaviour
 				narrator.clip = audioClips[audioIndex];
 				narrator.Play ();
 
-				playerInputManager.ControllerConstraints = EControlConstraints.EnableAll;
+				//playerInputManager.ControllerConstraints = EControlConstraints.EnableAll;
 			}
 
 			if(audioIndex == 3)

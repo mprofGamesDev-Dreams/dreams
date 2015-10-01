@@ -20,7 +20,7 @@ public class LoadSceneOnTrigger : MonoBehaviour
 
 	private void OnTriggerStay(Collider obj)
 	{
-		if(obj.gameObject.CompareTag("Player"))
+		if(obj.gameObject.CompareTag("Player") && canTeleport)
 		{
 			activateFadeOut = true;
 		}

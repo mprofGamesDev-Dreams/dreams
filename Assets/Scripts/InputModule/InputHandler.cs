@@ -111,11 +111,12 @@ public class InputHandler : MonoBehaviour
 				{
 					sprint = false;
 				}
-				break;
+				return;
 			case EControlConstraints.DisableAll:
-				break;
-			case EControlConstraints.DisableAllExceptCamera:
-				break;
+				return;
+			case EControlConstraints.DisableAllExceptCamera: // camera isnt dependant on this calss
+
+				return;
 			case EControlConstraints.EnableAllExceptPowers:
 				//Check for inputs
 				//Left trigger
@@ -159,7 +160,8 @@ public class InputHandler : MonoBehaviour
 				{
 					sprint = false;
 				}
-				break;
+
+				return;
 		}
 
 		/*
