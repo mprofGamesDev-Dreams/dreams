@@ -13,7 +13,7 @@ public class ActivePowerUI : MonoBehaviour {
 
 	[SerializeField]private ActivePower currentPower;
 	private AbilityBehaviours abilityBehaviours;
-	private InputHandler input;
+	//private InputHandler input;
 
 	[SerializeField]private ResourceBar powerBar;
 
@@ -26,7 +26,7 @@ public class ActivePowerUI : MonoBehaviour {
 			instance = this;
 
 		abilityBehaviours = GameObject.Find ("Player").GetComponent<AbilityBehaviours> ();
-		input = GameObject.Find ("Player").GetComponent<InputHandler> ();
+		//input = GameObject.Find ("Player").GetComponent<InputHandler> ();
 		uiIndicator.color = ImagiC;
 	}
 	

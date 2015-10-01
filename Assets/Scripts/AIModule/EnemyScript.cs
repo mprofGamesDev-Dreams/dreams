@@ -38,6 +38,9 @@ public class EnemyScript : MonoBehaviour {
 				pos.x += 1f;
 				Instantiate(splitIntoEnemyPrefab, pos, Quaternion.identity);
 
+				if(EnemyCounterSingleton.Instance != null)
+					EnemyCounterSingleton.Instance.CurrentEnemyCount--;
+
 				Destroy(this.gameObject);
 			}
 

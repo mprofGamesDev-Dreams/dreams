@@ -31,6 +31,11 @@ public class EnemyBehaviour : MonoBehaviour {
         target = transform.position;
         original = transform.position;
 
+		if(EnemyCounterSingleton.Instance != null)
+		{
+			EnemyCounterSingleton.Instance.CurrentEnemyCount++;
+		}
+
     }
 
 	// Update is called once per frame

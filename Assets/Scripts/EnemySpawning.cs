@@ -17,6 +17,8 @@ public class EnemySpawning : MonoBehaviour {
 		{
 			canSpawn = true;
 		}
+
+		EnemyCounterSingleton.Instance.SpawnersSpawning++;
 	}
 	
 	private void Update () 
@@ -32,7 +34,10 @@ public class EnemySpawning : MonoBehaviour {
 
 			
 			if (spawnAmount <= 0)
+			{
 				canSpawn = false;
+				EnemyCounterSingleton.Instance.SpawnersSpawning--;
+			}
 		}
 
 	}
