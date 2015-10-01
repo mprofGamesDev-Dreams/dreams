@@ -59,6 +59,7 @@ public class ShipToFirstLevel : MonoBehaviour
 
 			if(audioIndex == 3)
 			{
+				terminate = true;
 				trigger.canTeleport = true;
 			}
 			startTime = Time.time;

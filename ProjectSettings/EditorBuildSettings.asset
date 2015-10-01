@@ -13,3 +13,5 @@ EditorBuildSettings:
     path: Assets/Scenes/SHIP.unity
   - enabled: 1
     path: Assets/Scenes/SMALLLEVEL.unity
+  - enabled: 1
+    path: Assets/Scenes/TitleScreen.unity

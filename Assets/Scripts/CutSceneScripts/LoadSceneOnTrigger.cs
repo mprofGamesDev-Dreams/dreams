@@ -8,7 +8,7 @@ public class LoadSceneOnTrigger : MonoBehaviour
 	public string levelToLoad;
 	public WhiteFlash flashController;
 
-	public Light light;
+	public Light lightSource;
 	private void Update()
 	{
 		if(activateFadeOut)
@@ -29,7 +29,7 @@ public class LoadSceneOnTrigger : MonoBehaviour
 		{
 			Debug.Log("hit by bullet");
 			canTeleport = true;
-			light.color = Color.green;
+			lightSource.color = Color.green;
 		}
 	}
 

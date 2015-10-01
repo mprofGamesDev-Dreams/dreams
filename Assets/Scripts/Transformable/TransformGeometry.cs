@@ -28,7 +28,7 @@ public class TransformGeometry : MonoBehaviour
 
 	private int AxisComplete = 0;
 
-	private string TargetAxis;
+	//private string TargetAxis;
 
 	private int TransformStage = 1;
 
@@ -36,7 +36,7 @@ public class TransformGeometry : MonoBehaviour
 
 	void Start()
 	{
-		TargetAxis = AxisOrder[AxisComplete];
+		//TargetAxis = AxisOrder[AxisComplete];
 	}
 
 	// Update is called once per frame
@@ -132,7 +132,7 @@ public class TransformGeometry : MonoBehaviour
 		// Make sure to stay within range
 		if(AxisComplete < AxisOrder.Length)
 		{
-			TargetAxis = AxisOrder[AxisComplete];
+			//TargetAxis = AxisOrder[AxisComplete];
 		}
 		else
 		{

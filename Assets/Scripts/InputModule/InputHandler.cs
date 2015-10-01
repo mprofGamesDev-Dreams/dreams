@@ -22,10 +22,6 @@ public class InputHandler : MonoBehaviour
 	bool melee;
 	bool sprint;
 	bool interact;
-	bool pause;
-	bool imagiPower;
-	bool voidPower;
-	bool logiaPower;
 	bool nextPower;
 	bool prevPower;
 
@@ -49,13 +45,17 @@ public class InputHandler : MonoBehaviour
 		shoot = false;
 		melee = false;
 		interact = false;
-		pause = false;
-		imagiPower = false;
-		voidPower = false;
-		logiaPower = false;
 		nextPower = false;
 		prevPower = false;
 
+		if(CrossPlatformInputManager.GetButtonDown ("Pause"))
+		{
+			if(Time.timeScale == 0)
+				Time.timeScale = 1;
+			else Time.timeScale = 0 ;
+
+			// show pause menu?
+		}
 
 		switch (controllerConstraints)
 		{

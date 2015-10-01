@@ -70,6 +70,12 @@ public class EnemyScript : MonoBehaviour {
 		{
 			healthBar.SetActive(false);
 		}
+
+		// increment counter
+		if(EnemyCounterSingleton.Instance != null)
+		{
+			EnemyCounterSingleton.Instance.CurrentEnemyCount++;
+		}
 	}
 	
 	// Update is called once per frame
@@ -104,7 +110,11 @@ public class EnemyScript : MonoBehaviour {
 			obj = (Instantiate(expPrefab, pos, Quaternion.identity ) as GameObject).GetComponent<PickupOnTrigger>();
 			obj.StatModifyValue = expDrop;
 
-
+			// decrement the counter
+			if(EnemyCounterSingleton.Instance != null)
+			{
+				EnemyCounterSingleton.Instance.CurrentEnemyCount--;
+			}
 
 
 			Destroy(gameObject);

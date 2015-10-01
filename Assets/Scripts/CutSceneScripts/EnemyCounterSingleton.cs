@@ -10,14 +10,13 @@ public class EnemyCounterSingleton : MonoBehaviour
 		{
 			if(instance == null)
 			{
-				Debug.LogError("Config A EnemyCounter!");
+				return null;
 			}
 			return instance;
 		}
 	}
 
 	private int currentEnemyCount;
-
 	public int CurrentEnemyCount
 	{
 		get { return currentEnemyCount; }
@@ -25,21 +24,51 @@ public class EnemyCounterSingleton : MonoBehaviour
 	}
 
 	private int spawnersSpawning;
-
 	public int SpawnersSpawning
 	{
 		get { return spawnersSpawning; }
 		set { spawnersSpawning = value; }
 	}
 
-	private bool eventCalled = false;
+	private bool eventCompleted = false;
+
+	[SerializeField] private WhiteFlash flash; 
+	[SerializeField] private Transform dreamer;
+	[SerializeField] private Transform dreamerDestination;
+	[SerializeField] private Transform playerTransform;
+	[SerializeField] private Vector3 playerOffsetFromDreamer;
+
+	[SerializeField] private GameObject choicePrefab;
+	private void Start()
+	{
+		instance = this;
+	}
 
 	private void Update()
 	{
-		if( currentEnemyCount == 0 && spawnersSpawning == 0 && !eventCalled)
+		if( currentEnemyCount == 0 && spawnersSpawning == 0 && !eventCompleted)
 		{
-			// Call Event;
-			;
+			StartCoroutine( WaitForTime() );
+			eventCompleted = true;
 		}
+	}
+
+	private IEnumerator WaitForTime()
+	{
+		flash.FadeToWhite();
+
+		yield return new WaitForSeconds(flash.fadeOutSpeed);
+
+		dreamer.position = dreamerDestination.position;
+
+		playerTransform.position = dreamer.position - playerOffsetFromDreamer;
+
+		Instantiate( choicePrefab, Vector3.zero, Quaternion.identity );
+
+		flash.FadeToClear();
+
+		yield return new WaitForSeconds(flash.fadeInSpeed);
+
+		// stop input?
 	}
 }
