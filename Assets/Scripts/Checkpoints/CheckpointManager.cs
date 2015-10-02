@@ -12,6 +12,7 @@ public class CheckpointManager : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		stats = player.GetComponent<PlayerStats> ();
+		last_pos = GetComponent<Transform>().position;
 	}
 	
 	// Update is called once per frame
