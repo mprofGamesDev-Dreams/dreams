@@ -73,6 +73,18 @@ ModelImporter:
     4300018: polySurface9
     4300020: polySurface10
     4300022: polySurface11
+    6400000: Cystal
+    6400002: HardStones
+    6400004: InternalIn
+    6400006: InternalOut
+    6400008: InternaMid
+    6400010: LargeStone
+    6400012: Outerstones
+    6400014: polySurface10
+    6400016: polySurface11
+    6400018: polySurface8
+    6400020: polySurface9
+    6400022: WaterPool
     9500000: //RootNode
   materials:
     importMaterials: 1
@@ -99,7 +111,7 @@ ModelImporter:
     lODScreenPercentages: []
     globalScale: 1
     meshCompression: 0
-    addColliders: 0
+    addColliders: 1
     importBlendShapes: 1
     swapUVChannels: 0
     generateSecondaryUV: 0

@@ -46,6 +46,13 @@ ModelImporter:
     4300008: pCone2
     4300010: pTorus1
     4300012: pTorus2
+    6400000: pCone1
+    6400002: pCone2
+    6400004: pSphere1
+    6400006: pSphere2
+    6400008: pSphere3
+    6400010: pTorus1
+    6400012: pTorus2
     9500000: //RootNode
   materials:
     importMaterials: 1
@@ -72,7 +79,7 @@ ModelImporter:
     lODScreenPercentages: []
     globalScale: 1
     meshCompression: 0
-    addColliders: 0
+    addColliders: 1
     importBlendShapes: 1
     swapUVChannels: 0
     generateSecondaryUV: 0
