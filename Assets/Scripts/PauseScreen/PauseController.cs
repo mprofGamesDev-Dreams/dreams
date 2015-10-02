@@ -8,69 +8,67 @@ public class PauseController : MonoBehaviour
 {
 
 	// Array of menu item control names.
-	private String[] menuOptions = new String[4];
+	private Button[] menuOptions = new Button[4];
 	// Current button selected by player (by default "resume")
-	int selectedIndex = 0;
+	private int selectedIndex = 0;
 	// Prevents player from scrolling through menu items too fast
-	private const float scrollDelay = 0.5f;
+	private const float scrollDelay = 0.3f;
 	private float nextScrollAvailable;
-	[SerializeField] private Button ResumeButton;
-	[SerializeField] private Button RestartButton;
-	[SerializeField] private Button HelpButton;
-	[SerializeField] private Button QuitButton;
+	[SerializeField] private Button resumeButton;
+	[SerializeField] private Button restartButton;
+	[SerializeField] private Button helpButton;
+	[SerializeField] private Button quitButton;
+	// Arrow to show button player can currently select
+	[SerializeField] private RectTransform arrowPosition;
+	// Offset between arrow and menu option
+	private Vector2 arrowOffset = new Vector2 (10.0f, -22.0f);
+	// Change in heights between menu options; used to move arrow correctly
+	private float menuOptionsDifference = 50.0f;
 
 	void Awake ()
 	{
-		menuOptions [0] = "Resume";
-		menuOptions [1] = "Restart";
-		menuOptions [2] = "Help";
-		menuOptions [3] = "Quit";
+		menuOptions [0] = resumeButton;
+		menuOptions [1] = restartButton;
+		menuOptions [2] = helpButton;
+		menuOptions [3] = quitButton;
+	}
+
+	void updateArrowPosition ()
+	{
+		// Arrow position calculated by subtracting offset from selected button's position
+		Vector2 pos = menuOptions [selectedIndex].GetComponentInParent<RectTransform> ().anchoredPosition - arrowOffset;
+		arrowPosition.anchoredPosition = pos;
 	}
 	
 	
-	// Function to scroll through possible menu items array, looping back to start/end depending on direction of movement.
-	int menuSelection (String[] menuItems, int selectedItem, String direction)
+	// Function to scroll through possible menu items array, looping back to start/end depending on direction of movement
+	void scrollMenu (String direction)
 	{
 		if (direction == "up") {
-			if (selectedItem == 0) {
-				selectedItem = menuItems.Length - 1;
+			if (selectedIndex == 0) {
+				selectedIndex = menuOptions.Length - 1;
 			} else {
-				selectedItem -= 1;
+				selectedIndex -= 1;
 			}
 		}
 		
 		if (direction == "down") {
-			if (selectedItem == menuItems.Length - 1) {
-				selectedItem = 0;
+			if (selectedIndex == menuOptions.Length - 1) {
+				selectedIndex = 0;
 			} else {
-				selectedItem += 1;
+				selectedIndex += 1;
 			}
 		}
 
+		updateArrowPosition ();
 		nextScrollAvailable = Time.realtimeSinceStartup + scrollDelay;
-		
-		return selectedItem;
 	}
 
 	// Checks if player has pressed "A" to select a menu option
 	void CheckForSelection ()
 	{
 		if (CrossPlatformInputManager.GetButtonDown ("Jump")) {
-
-			switch (menuOptions [selectedIndex]) {
-			case "Resume":
-				ResumeButton.onClick.Invoke ();
-				break;
-			case "Restart":
-				RestartButton.onClick.Invoke ();
-				break;
-			case "Help":
-				HelpButton.onClick.Invoke ();
-				break;
-			case "Quit":
-				QuitButton.onClick.Invoke ();
-				break;
-			}
+			menuOptions [selectedIndex].onClick.Invoke ();
 		}
 	}
 	
@@ -83,17 +81,14 @@ public class PauseController : MonoBehaviour
 		if (Time.realtimeSinceStartup >= nextScrollAvailable) {
 
 			if (vertical < -0.5) {
-				selectedIndex = menuSelection (menuOptions, selectedIndex, "down");
+				scrollMenu ("down");
 			}
 		
 			if (vertical > 0.5) {
-				selectedIndex = menuSelection (menuOptions, selectedIndex, "up");
+				scrollMenu ("up");
 			}
 		}
 
 		CheckForSelection ();
-		// Uncomment below to show option selected in console
-		// TODO: visually show which button is highlighted
-		//Debug.Log (menuOptions[selectedIndex]);
 	}
 }

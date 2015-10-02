@@ -187,6 +187,22 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1 &165714
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 475330}
+  - 65: {fileID: 6559082}
+  m_Layer: 11
+  m_Name: InvisibleWall
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &169142
 GameObject:
   m_ObjectHideFlags: 1
@@ -362,11 +378,12 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 119840}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 28.7000008, y: 5.80000019, z: 101.707207}
+  m_LocalPosition: {x: 8.08032417, y: 5.76131487, z: 35.9126205}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 441972}
   - {fileID: 480074}
+  - {fileID: 475330}
   m_Father: {fileID: 0}
   m_RootOrder: 0
 --- !u!4 &418402
@@ -498,6 +515,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 422632}
   m_RootOrder: 1
+--- !u!4 &475330
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 165714}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 2.5, z: -.109999999}
+  m_LocalScale: {x: 2.65615082, y: 4.07236862, z: 1.67586982}
+  m_Children: []
+  m_Father: {fileID: 410174}
+  m_RootOrder: 2
 --- !u!4 &475460
 Transform:
   m_ObjectHideFlags: 1
@@ -937,6 +966,18 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 180882}
   m_Mesh: {fileID: 4300000, guid: 703f2c361fa21ff4b941a6f3df75ba20, type: 3}
+--- !u!65 &6559082
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 165714}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!95 &9538190
 Animator:
   serializedVersion: 3
@@ -973,6 +1014,7 @@ MonoBehaviour:
   masksToUse:
     serializedVersion: 2
     m_Bits: 4294966271
+  canSlow: 0
 --- !u!114 &11418340
 MonoBehaviour:
   m_ObjectHideFlags: 1
