@@ -55,12 +55,21 @@ public class TransformGeometry : MonoBehaviour
 
 	private void TransformObject()
 	{
+		// Moving Platform
 		Vector3 CurrentPosition = transform.position;
-		Vector3 TargetPosition = TransformTarget[targetIndex].position;
-		
+
+		// Target Position
+		Vector3 TargetPosition = transform.TransformPoint(TransformTarget[targetIndex].localPosition);
+
 		Vector3 NewPosition = Vector3.MoveTowards(CurrentPosition, TargetPosition, MovementSpeed * Time.deltaTime);
+
+		// Store children information
+
+		Vector3 EndTargetPos = this.gameObject.transform.GetChild(0).position;
 		
 		transform.position = NewPosition;
+
+		this.gameObject.transform.GetChild(0).position = EndTargetPos;
 
 		if(transform.position.Equals (TargetPosition))
 		   targetIndex++;
@@ -70,6 +79,11 @@ public class TransformGeometry : MonoBehaviour
     {
         triggered = true;
     }
+
+	public bool IsTriggered()
+	{
+		return triggered;
+	}
 
 	public bool CheckPosition(int WaypointID)
 	{
