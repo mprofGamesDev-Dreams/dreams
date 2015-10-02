@@ -49,20 +49,21 @@ public class ShipToFirstLevel : MonoBehaviour
 				narrator.Play();
 			}
 
-			if(audioIndex == 2)
-			{
-				narrator.clip = audioClips[audioIndex];
-				narrator.Play ();
-
-				//playerInputManager.ControllerConstraints = EControlConstraints.EnableAll;
-			}
-
 			if(audioIndex == 3)
 			{
 				terminate = true;
 				trigger.canTeleport = true;
+				trigger.GetComponent<BoxCollider>().isTrigger = true;
 			}
 			startTime = Time.time;
 		}
+	}
+
+	public void PlayClip(int i) // played after shooting
+	{
+		narrator.clip = audioClips[i];
+		narrator.Play();
+		startTime = Time.time;
+		trigger.GetComponent<BoxCollider>().isTrigger = false;
 	}
 }
