@@ -1,19 +1,16 @@
 fileFormatVersion: 2
-guid: 21a309805bca0c84c8e4387aeec09ddc
-timeCreated: 1443795016
+guid: ea6544751a94f51468f0f95aab8fd50e
+timeCreated: 1443798666
 licenseType: Free
 ModelImporter:
   serializedVersion: 18
   fileIDToRecycleName:
-    100000: Balloon001
-    100002: //RootNode
-    400000: Balloon001
-    400002: //RootNode
-    2300000: Balloon001
-    3300000: Balloon001
-    4300000: Balloon001
-    6400000: Balloon001
-    7400000: Take 001
+    100000: //RootNode
+    400000: //RootNode
+    2300000: //RootNode
+    3300000: //RootNode
+    4300000: Box003
+    6400000: //RootNode
     9500000: //RootNode
   materials:
     importMaterials: 1

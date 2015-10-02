@@ -27,6 +27,10 @@ ModelImporter:
     4300002: LargeCog
     4300004: SmallCogs
     4300006: PointyThing_02
+    6400000: LargeCog
+    6400002: PointyThing
+    6400004: PointyThing_02
+    6400006: SmallCogs
     9500000: //RootNode
   materials:
     importMaterials: 1
@@ -53,7 +57,7 @@ ModelImporter:
     lODScreenPercentages: []
     globalScale: 1
     meshCompression: 0
-    addColliders: 0
+    addColliders: 1
     importBlendShapes: 1
     swapUVChannels: 0
     generateSecondaryUV: 0
