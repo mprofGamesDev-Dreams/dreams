@@ -10,6 +10,10 @@ using UnityStandardAssets.CrossPlatformInput;
 
 public class AbilityBehaviours : MonoBehaviour 
 {
+	private float logioTimer = 0;
+	private float imagiTimer = 0;
+	private float voidTimer = 0;
+
 	// Serialize Private Fields To Show Up In The Insepctor
 	[SerializeField] private float attackRange = 100.0f;
 	[SerializeField] private GameObject logioBullet;
@@ -153,16 +157,34 @@ public class AbilityBehaviours : MonoBehaviour
 		{
 		case ActivePower.Imagi:
 			isImagiAvailable = false;
+			while(imagiTimer < imagiCD)
+			{
+				imagiTimer += Time.deltaTime;
+				yield return null;
+			}
+			imagiTimer = 0;
 			break;
 		case ActivePower.Logio:
 			isLogioAvailable = false;
+			while(logioTimer < logioCD)
+			{
+				logioTimer += Time.deltaTime;
+				yield return null;
+			}
+			logioTimer = 0;
 			break;
 		case ActivePower.Void:
 			isVoidAvailable = false;
+			while(voidTimer < voidCD)
+			{
+				voidTimer += Time.deltaTime;
+				yield return null;
+			}
+			voidTimer = 0;
 			break;
 		}
 
-		yield return new WaitForSeconds (timeToWait);
+		//yield return new WaitForSeconds (timeToWait);
 
 		switch (power) 
 		{
@@ -256,6 +278,32 @@ public class AbilityBehaviours : MonoBehaviour
 	public ActivePower getCurrentPower(){
 		return currentPower;
 	}
+
+	public float LogioTimer
+	{
+		get{return logioTimer;}
+	}
+	public float ImagiTimer
+	{
+		get{return imagiTimer;}
+	}
+	public float VoidTimer
+	{
+		get{return voidTimer;}
+	}
+	public float ImagiCD
+	{
+		get{return imagiCD;}
+	}
+	public float LogioCD
+	{
+		get{return logioCD;}
+	}
+	public float VoidCD
+	{
+		get{return voidCD;}
+	}
+
 }
 
 
