@@ -353,9 +353,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   audioClips:
-  - {fileID: 8300000, guid: 5655ae8cce0c2d14094d0a29562139a0, type: 3}
-  - {fileID: 8300000, guid: f392c35bd2431ed40ad6297589b49998, type: 3}
-  - {fileID: 8300000, guid: fedb533556a3e5d4696bd50659432e7c, type: 3}
+  - {fileID: 8300000, guid: d96b9a81b31692a46bcdb722cf97dd12, type: 3}
+  - {fileID: 8300000, guid: 6f8c2129b360ced468311b2d4cb0543c, type: 3}
+  - {fileID: 8300000, guid: 80cd2e21e75531e4b9501bd422456948, type: 3}
   trigger: {fileID: 1889874191}
 --- !u!4 &472337035
 Transform:
@@ -1105,6 +1105,9 @@ MonoBehaviour:
   levelToLoad: SMALLLEVEL
   flashController: {fileID: 1678970094}
   lightSource: {fileID: 1812622542}
+  clip: {fileID: 8300000, guid: 80cd2e21e75531e4b9501bd422456948, type: 3}
+  source: {fileID: 0}
+  sceneController: {fileID: 472337034}
 --- !u!23 &1889874192
 MeshRenderer:
   m_ObjectHideFlags: 0

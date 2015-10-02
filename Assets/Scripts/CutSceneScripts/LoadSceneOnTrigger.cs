@@ -10,8 +10,20 @@ public class LoadSceneOnTrigger : MonoBehaviour
 
 	public Light lightSource;
 
+	public AudioClip clip;
+	public AudioSource source;
+
+	[SerializeField]private ShipToFirstLevel sceneController;
+
+	private void Start()
+	{
+		source = GameObject.FindGameObjectWithTag("Player").GetComponent<AudioSource>();
+	}
+
 	private void Update()
 	{
+
+
 		if(activateFadeOut)
 		{
 			flashController.FadeToWhite();
@@ -26,10 +38,10 @@ public class LoadSceneOnTrigger : MonoBehaviour
 			activateFadeOut = true;
 		}
 
-		if( obj.gameObject.CompareTag("Bullet") && obj.GetComponent<Bullet>().BulletType == ActivePower.Logio )
+		if( obj.gameObject.CompareTag("Bullet") && obj.GetComponent<Bullet>().BulletType == ActivePower.Logio  && !canTeleport)
 		{
+			sceneController.PlayClip(2);
 			lightSource.color = Color.green;
-			canTeleport = true;
 		}
 	}
 
