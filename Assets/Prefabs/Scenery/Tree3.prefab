@@ -26,6 +26,7 @@ GameObject:
   - 33: {fileID: 3304398}
   - 23: {fileID: 2396098}
   - 95: {fileID: 9597758}
+  - 64: {fileID: 6431516}
   m_Layer: 0
   m_Name: THETREE3
   m_TagString: Untagged
@@ -88,6 +89,18 @@ MeshFilter:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 126102}
+  m_Mesh: {fileID: 4300000, guid: aeffac8c1334be04aac0bd9da9fc353c, type: 3}
+--- !u!64 &6431516
+MeshCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 126102}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Convex: 0
   m_Mesh: {fileID: 4300000, guid: aeffac8c1334be04aac0bd9da9fc353c, type: 3}
 --- !u!95 &9597758
 Animator:
