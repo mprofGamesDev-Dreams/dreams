@@ -5,24 +5,60 @@ public class IslandInit : MonoBehaviour {
 
 	public Transform islandStart;
 	public EnemyScript enemyTrigger;
+	public GameObject EnemyContainer;
+
+	public bool HasEnemy;
 
 	// Use this for initialization
 	void Start ()
 	{
+		// Translate children by start offset
+		Transform EndPos = this.gameObject.transform.GetChild(1);
+		EndPos.position -= islandStart.localPosition;
+		
+		// Set position to start position
 		transform.position = islandStart.position;
+		
+		// Translate children by start offset
+		Transform StartPos = this.gameObject.transform.GetChild(0);
+		Destroy (StartPos.gameObject);
+
+		// Flag we had an enemy at creation
+		if (enemyTrigger)
+			HasEnemy = true;
 	}
 	
 	// Update is called once per frame
 	void Update ()
 	{
-		if (enemyTrigger == null)
+		// If we have an enemy trigger
+		if (enemyTrigger)
 		{
-			gameObject.GetComponent<TransformGeometry> ().Trigger ();
-
+			// If its health is low enough
+			if (enemyTrigger.Health < enemyTrigger.MaxHealth * 0.5)
+			{
+				// Activate trigger
+				gameObject.GetComponent<TransformGeometry> ().Trigger ();
+			}
 		}
-		else if (enemyTrigger.Health < enemyTrigger.MaxHealth * 0.5)
+		else if(enemyTrigger == null) // Dont have an enemy trigger
 		{
-			gameObject.GetComponent<TransformGeometry> ().Trigger ();
+			// If we did have an enemy trigger then activate
+			if(HasEnemy)
+			{
+				gameObject.GetComponent<TransformGeometry> ().Trigger ();
+			}
+			else if( EnemyContainer ) // We have a platform to search
+			{
+				if( EnemyContainer.GetComponent<TransformGeometry>().IsTriggered() )
+				{
+					// Look to see if the platform has a child
+					if( !EnemyContainer.transform.FindChild("Enemy"))
+					{
+						gameObject.GetComponent<TransformGeometry> ().Trigger ();
+					}
+				}
+			}
 		}
 	}
 }
