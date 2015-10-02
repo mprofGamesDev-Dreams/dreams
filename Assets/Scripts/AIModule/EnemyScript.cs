@@ -75,7 +75,7 @@ public class EnemyScript : MonoBehaviour {
 		if(EnemyCounterSingleton.Instance != null)
 		{
 			EnemyCounterSingleton.Instance.CurrentEnemyCount++;
-		}
+		}else Debug.Log("IzNull");
 	}
 	
 	// Update is called once per frame

@@ -90,9 +90,6 @@ public class PlayerStats : MonoBehaviour
 	// Update is called once per frame
 	void Update ()
 	{
-		if (Input.GetKeyDown (KeyCode.Alpha9))
-			ModifyHealth (-5);
-
 		if (currentHealth <= 0)
 		{
 			IsDead = true;

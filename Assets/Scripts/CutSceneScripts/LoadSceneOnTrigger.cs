@@ -9,6 +9,7 @@ public class LoadSceneOnTrigger : MonoBehaviour
 	public WhiteFlash flashController;
 
 	public Light lightSource;
+
 	private void Update()
 	{
 		if(activateFadeOut)
@@ -18,18 +19,17 @@ public class LoadSceneOnTrigger : MonoBehaviour
 		}
 	}
 
-	private void OnTriggerStay(Collider obj)
+	private void OnTriggerEnter(Collider obj)
 	{
 		if(obj.gameObject.CompareTag("Player") && canTeleport)
 		{
 			activateFadeOut = true;
 		}
 
-		if(obj.gameObject.CompareTag("Bullet") && obj.GetComponent<Bullet>().BulletType == ActivePower.Logio )
+		if( obj.gameObject.CompareTag("Bullet") && obj.GetComponent<Bullet>().BulletType == ActivePower.Logio )
 		{
-			Debug.Log("hit by bullet");
-			canTeleport = true;
 			lightSource.color = Color.green;
+			canTeleport = true;
 		}
 	}
 

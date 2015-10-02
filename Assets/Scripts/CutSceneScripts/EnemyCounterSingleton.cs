@@ -38,14 +38,21 @@ public class EnemyCounterSingleton : MonoBehaviour
 	[SerializeField] private Transform playerTransform;
 	[SerializeField] private Vector3 playerOffsetFromDreamer;
 
+	private float startTime = 0;
+	private float waitTime = 10;
+
 	[SerializeField] private GameObject choicePrefab;
-	private void Start()
+	private void Awake()
 	{
 		instance = this;
+		startTime = Time.time;
 	}
 
 	private void Update()
 	{
+		if(Time.time < (startTime + waitTime))
+			return;
+
 		if( currentEnemyCount == 0 && spawnersSpawning == 0 && !eventCompleted)
 		{
 			StartCoroutine( WaitForTime() );
