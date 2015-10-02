@@ -30,7 +30,6 @@ GameObject:
   - 195: {fileID: 19599874}
   - 114: {fileID: 11405084}
   - 114: {fileID: 11418340}
-  - 114: {fileID: 11478684}
   m_Layer: 12
   m_Name: Enemy_Big
   m_TagString: Untagged
@@ -378,7 +377,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 119840}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 8.08032417, y: 5.76131487, z: 35.9126205}
+  m_LocalPosition: {x: 7.97931004, y: 5.76131487, z: 40.4045334}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 441972}
@@ -1059,26 +1058,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c7447b34a42de4a43a11305b945416a6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &11478684
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 119840}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 828e1ce2a20874d47b35699e9da0103c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  myCharacteristic: 0
-  myTransform: {fileID: 0}
-  myNavMeshAgent: {fileID: 0}
-  myStats: {fileID: 0}
-  myBehaviour: {fileID: 0}
-  targetScale: {x: 0, y: 0, z: 0}
-  canScale: 0
-  currentSplits: 0
-  maxSplits: 0
 --- !u!135 &13560170
 SphereCollider:
   m_ObjectHideFlags: 1

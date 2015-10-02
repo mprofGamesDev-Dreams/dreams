@@ -576,7 +576,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: .749658525, g: .175012171, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Sprite: {fileID: 21300006, guid: 45b79abf4ac5b9d4ca65a5e3cc0e75e2, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
@@ -943,7 +943,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4973090a9c1a3fc448ec1c09f77cfaad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ImagiC:
+    serializedVersion: 2
+    rgba: 4278255615
+  LogioC:
+    serializedVersion: 2
+    rgba: 4294961666
+  VoidC:
+    serializedVersion: 2
+    rgba: 4288874098
   uiIndicator: {fileID: 11401994}
+  currentPower: 0
   powerBar: {fileID: 11439194}
 --- !u!114 &11437314
 MonoBehaviour:
