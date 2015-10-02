@@ -11,7 +11,7 @@ GameObject:
   - 33: {fileID: 3316914}
   - 23: {fileID: 2311852}
   - 114: {fileID: 11404022}
-  - 64: {fileID: 6494332}
+  - 65: {fileID: 6531496}
   m_Layer: 0
   m_Name: VoidShield
   m_TagString: Untagged
@@ -90,8 +90,8 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 127398}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
---- !u!64 &6494332
-MeshCollider:
+--- !u!65 &6531496
+BoxCollider:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
@@ -100,8 +100,8 @@ MeshCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Convex: 0
-  m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+  m_Size: {x: 40, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &11404022
 MonoBehaviour:
   m_ObjectHideFlags: 1
