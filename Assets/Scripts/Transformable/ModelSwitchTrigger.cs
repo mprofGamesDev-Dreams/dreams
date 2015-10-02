@@ -13,7 +13,9 @@ public class ModelSwitchTrigger : MonoBehaviour {
 	
     void OnTriggerEnter(Collider colliderIn)
     {
-        transformableObject.GetComponent<ModelSwitch>().SendMessage("Trigger");
-        Destroy(gameObject);
+		if (colliderIn.gameObject.CompareTag ("Player")) {
+			transformableObject.GetComponent<ModelSwitch> ().SendMessage ("Trigger");
+			Destroy (gameObject);
+		}
     }
 }

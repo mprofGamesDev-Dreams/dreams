@@ -9,8 +9,10 @@ public class TransformGeometryTrigger : MonoBehaviour {
 
     void OnTriggerEnter(Collider colliderIn)
     {
-		if( colliderIn.gameObject.CompareTag("Player") )
-	        transformableObject.GetComponent<TransformGeometry>().SendMessage("Trigger");
-        //Destroy(gameObject);
+	
+		if (colliderIn.gameObject.CompareTag ("Player")) {
+			transformableObject.GetComponent<TransformGeometry> ().SendMessage ("Trigger");
+			Destroy (gameObject);
+		}
     }
 }
