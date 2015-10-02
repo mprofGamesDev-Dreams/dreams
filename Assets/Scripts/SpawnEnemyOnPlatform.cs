@@ -14,8 +14,8 @@ public class SpawnEnemyOnPlatform : MonoBehaviour
 	// Access to script
 	private TransformGeometry Transformer;
 
-	// Flag for whether or not the it has trigger
-	private bool EnemySpawned = false;
+	// Flag for whether or not the enemy can resume AI
+	private bool CanMove = false;
 
 	private GameObject Enemy;
 
@@ -29,6 +29,7 @@ public class SpawnEnemyOnPlatform : MonoBehaviour
 		
 		// Set the enemy to transform
 		Enemy.transform.parent = this.gameObject.transform;
+		Enemy.name = "Enemy";
 
 		// Stop the AI
 		Enemy.GetComponent<NavMeshAgent> ().Stop ();
@@ -36,21 +37,20 @@ public class SpawnEnemyOnPlatform : MonoBehaviour
 
 	void Update ()
 	{
-		// If we have already activated, stop
-		if (EnemySpawned)
-			return;
-
-		// If the platform is still moving
-		if (!Transformer.CheckPosition (WaypointID))
+		// Check if the transformer has reached target
+		if (Transformer.CheckPosition (WaypointID))
 		{
-			Enemy.transform.position = this.gameObject.transform.position + PositionOffset;
-			return;
+			if( !CanMove )
+			{
+				// Resume AI
+				Enemy.GetComponent<NavMeshAgent> ().Resume ();
+				CanMove = true;
+			}
 		}
-		
-		// Flag we have now spawned
-		EnemySpawned = true;
-
-		// Resume AI
-		Enemy.GetComponent<NavMeshAgent> ().Resume ();
+		else 
+		{
+			// Stick the enemy on middle of platform
+			Enemy.transform.position = this.gameObject.transform.position + PositionOffset;
+		}
 	}
 }
