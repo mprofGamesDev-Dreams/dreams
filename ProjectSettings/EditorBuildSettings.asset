@@ -5,13 +5,7 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 0
-    path: Assets/Scenes/TitleScreen.unity
-  - enabled: 0
-    path: Assets/Scenes/FirstLevelConcept.unity
   - enabled: 1
     path: Assets/Scenes/SHIP.unity
   - enabled: 1
     path: Assets/Scenes/SMALLLEVEL.unity
-  - enabled: 1
-    path: Assets/Scenes/TitleScreen.unity
