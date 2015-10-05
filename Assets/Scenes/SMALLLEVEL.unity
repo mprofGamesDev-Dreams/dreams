@@ -4669,6 +4669,10 @@ MonoBehaviour:
   pause_screen: {fileID: 6566234}
   pause_menu: {fileID: 694737684}
   HUD: {fileID: 1583838260}
+  current_time: 0
+  resumeButton: {fileID: 1671336740}
+  restartButton: {fileID: 287119312}
+  quitButton: {fileID: 2096767023}
 --- !u!1 &1194089594
 GameObject:
   m_ObjectHideFlags: 0
