@@ -8,7 +8,7 @@ public class PauseController : MonoBehaviour
 {
 
 	// Array of menu item control names.
-	private Button[] menuOptions = new Button[4];
+	private Button[] menuOptions = new Button[3];
 	// Current button selected by player (by default "resume")
 	private int selectedIndex = 0;
 	// Prevents player from scrolling through menu items too fast
@@ -16,7 +16,6 @@ public class PauseController : MonoBehaviour
 	private float nextScrollAvailable;
 	[SerializeField] private Button resumeButton;
 	[SerializeField] private Button restartButton;
-	[SerializeField] private Button helpButton;
 	[SerializeField] private Button quitButton;
 	// Arrow to show button player can currently select
 	[SerializeField] private RectTransform arrowPosition;
@@ -29,8 +28,7 @@ public class PauseController : MonoBehaviour
 	{
 		menuOptions [0] = resumeButton;
 		menuOptions [1] = restartButton;
-		menuOptions [2] = helpButton;
-		menuOptions [3] = quitButton;
+		menuOptions [2] = quitButton;
 	}
 
 	void updateArrowPosition ()
