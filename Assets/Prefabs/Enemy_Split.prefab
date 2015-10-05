@@ -1033,7 +1033,7 @@ MonoBehaviour:
   imagiPrefab: {fileID: 156894, guid: c757713502107e84096f15d454be9304, type: 2}
   logioPrefab: {fileID: 107886, guid: 9ef5c66a8170b654da9e1af46fbbfcc4, type: 2}
   canSplit: 1
-  splitIntoEnemyPrefab: {fileID: 0}
+  splitIntoEnemyPrefab: {fileID: 195500, guid: 30f77a23ae462e1408d520c7436769c0, type: 2}
   expDrop: 20
 --- !u!114 &11425762
 MonoBehaviour:
@@ -1169,6 +1169,10 @@ Prefab:
       propertyPath: m_AutoTraverseOffMeshLink
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: splitIntoEnemyPrefab
+      value: 
+      objectReference: {fileID: 195500, guid: 30f77a23ae462e1408d520c7436769c0, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 119840}
