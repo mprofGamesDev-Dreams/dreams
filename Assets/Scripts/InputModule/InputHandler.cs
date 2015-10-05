@@ -24,6 +24,7 @@ public class InputHandler : MonoBehaviour
 	bool interact;
 	bool nextPower;
 	bool prevPower;
+	bool skip;
 
 	private EControlConstraints controllerConstraints = EControlConstraints.EnableAll; public EControlConstraints ControllerConstraints { get { return controllerConstraints; } set { controllerConstraints = value; }  }
 
@@ -47,6 +48,21 @@ public class InputHandler : MonoBehaviour
 		interact = false;
 		nextPower = false;
 		prevPower = false;
+		skip = false;
+		
+		if(CrossPlatformInputManager.GetButtonDown ("Pause"))
+		{
+			if(Time.timeScale == 0)
+				Time.timeScale = 1;
+			else Time.timeScale = 0 ;
+
+			// show pause menu?
+		}
+
+		if(CrossPlatformInputManager.GetButtonDown("Skip"))
+		{
+			skip = true;
+		}
 
 		switch (controllerConstraints)
 		{
@@ -208,6 +224,11 @@ public class InputHandler : MonoBehaviour
 			sprint = false;
 		}*/
 		
+	}
+
+	public bool isSkip
+	{
+		get{ return skip; }
 	}
 
 	public bool isShoot(){
