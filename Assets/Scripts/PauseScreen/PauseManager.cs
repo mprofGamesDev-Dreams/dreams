@@ -75,6 +75,7 @@ public class PauseManager : MonoBehaviour
 	}
 
 	public void QuitGame(){
+		Debug.Log ("Quit triggered");
 		Application.Quit ();
 	}
 	

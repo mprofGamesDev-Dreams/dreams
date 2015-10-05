@@ -98,14 +98,18 @@ public class EnemyBehaviour : MonoBehaviour {
         {
             case aiStates.follow:
                 target = targetPlayer.transform.position;
-                agent.SetDestination(target);
+				if(agent.isOnNavMesh)
+					agent.SetDestination(target);
                 playerSeen = true;
                 
                 break;
 
            case aiStates.patrol:
                 target = patrolPoints[currentPatrolNode].transform.position;
-                agent.SetDestination(target);
+
+				if(agent.isOnNavMesh)
+					agent.SetDestination(target);
+                
                 
                 Vector3 tempVector = transform.position - patrolPoints[currentPatrolNode].transform.position;
                 
@@ -122,12 +126,16 @@ public class EnemyBehaviour : MonoBehaviour {
                 break;
 
            case aiStates.returnToPosition:
-                agent.SetDestination(original);
+				if(agent.isOnNavMesh)
+                	agent.SetDestination(original);
+
                 playerSeen = false;
                 break;
 
             case aiStates.attack:
-                agent.SetDestination(transform.position);
+				if(agent.isOnNavMesh)
+                	agent.SetDestination(transform.position);
+
                 if (attackTimer >= attackCooldown)
                 {
 					
