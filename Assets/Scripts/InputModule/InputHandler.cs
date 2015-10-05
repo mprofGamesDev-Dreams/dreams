@@ -48,21 +48,12 @@ public class InputHandler : MonoBehaviour
 		nextPower = false;
 		prevPower = false;
 
-		if(CrossPlatformInputManager.GetButtonDown ("Pause"))
-		{
-			if(Time.timeScale == 0)
-				Time.timeScale = 1;
-			else Time.timeScale = 0 ;
-
-			// show pause menu?
-		}
-
 		switch (controllerConstraints)
 		{
 			case EControlConstraints.EnableAll:
 				//Check for inputs
 				//Left trigger
-				if(CrossPlatformInputManager.GetAxis ("Melee") > 0 || CrossPlatformInputManager.GetButtonDown ("Melee"))
+				if((CrossPlatformInputManager.GetAxis ("Melee") > 0 || CrossPlatformInputManager.GetButtonDown ("Melee")) && Time.timeScale==1.0f)
 				{
 					melee = true;
 				}
