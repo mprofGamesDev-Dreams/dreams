@@ -92,7 +92,7 @@ MonoBehaviour:
   bulletType: 1
   speed: 150
   range: 10
-  damage: 1
+  damage: 2
 --- !u!135 &13508526
 SphereCollider:
   m_ObjectHideFlags: 1
@@ -126,7 +126,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: damage
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: m_CastShadows
