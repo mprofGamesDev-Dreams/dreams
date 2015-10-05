@@ -52,8 +52,6 @@ public class ShipToFirstLevel : MonoBehaviour
 			if(audioIndex == 3)
 			{
 				terminate = true;
-				trigger.canTeleport = true;
-				trigger.GetComponent<BoxCollider>().isTrigger = true;
 			}
 			startTime = Time.time;
 		}
@@ -64,6 +62,18 @@ public class ShipToFirstLevel : MonoBehaviour
 		narrator.clip = audioClips[i];
 		narrator.Play();
 		startTime = Time.time;
-		trigger.GetComponent<BoxCollider>().isTrigger = false;
+
+        StartCoroutine(WaitFor(audioClips[i].length));
 	}
+
+    private IEnumerator WaitFor(float time)
+    {
+        trigger.GetComponent<BoxCollider>().isTrigger = false;
+        Debug.Log("Coroutine started");
+        yield return new WaitForSeconds(time);
+
+        trigger.GetComponent<BoxCollider>().isTrigger = true;
+        Debug.Log("Coroutine Waited");
+    }
 }
+
