@@ -1798,6 +1798,10 @@ Prefab:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 127362, guid: 8e9d53dfbdef24f45a7ee118919068e3, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 8e9d53dfbdef24f45a7ee118919068e3, type: 2}
   m_IsPrefabParent: 0
@@ -2274,6 +2278,10 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 22452702, guid: 7ae9089a76975c64b870eb2693e8a4e6, type: 2}
       propertyPath: m_Pivot.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 149264, guid: 7ae9089a76975c64b870eb2693e8a4e6, type: 2}
+      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -3079,7 +3087,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 11
 --- !u!1 &1240025501
 GameObject:
   m_ObjectHideFlags: 0
@@ -3644,15 +3652,7 @@ Prefab:
       propertyPath: m_Pivot.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 11445402, guid: 93c8284153eb999458122bd807cff036, type: 2}
-      propertyPath: player
-      value: 
-      objectReference: {fileID: 2037699219}
     - target: {fileID: 11459622, guid: 93c8284153eb999458122bd807cff036, type: 2}
-      propertyPath: player
-      value: 
-      objectReference: {fileID: 2037699219}
-    - target: {fileID: 11439194, guid: 93c8284153eb999458122bd807cff036, type: 2}
       propertyPath: player
       value: 
       objectReference: {fileID: 2037699219}
@@ -3660,34 +3660,18 @@ Prefab:
       propertyPath: player
       value: 
       objectReference: {fileID: 2037699219}
-    - target: {fileID: 11437092, guid: 93c8284153eb999458122bd807cff036, type: 2}
-      propertyPath: LogioC.rgba
-      value: 4294961666
-      objectReference: {fileID: 0}
-    - target: {fileID: 11437092, guid: 93c8284153eb999458122bd807cff036, type: 2}
-      propertyPath: ImagiC.rgba
-      value: 4278255615
-      objectReference: {fileID: 0}
+    - target: {fileID: 11445402, guid: 93c8284153eb999458122bd807cff036, type: 2}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 2037699219}
+    - target: {fileID: 11439194, guid: 93c8284153eb999458122bd807cff036, type: 2}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 2037699219}
     - target: {fileID: 11412034, guid: 93c8284153eb999458122bd807cff036, type: 2}
       propertyPath: player
       value: 
       objectReference: {fileID: 2037699219}
-    - target: {fileID: 11401994, guid: 93c8284153eb999458122bd807cff036, type: 2}
-      propertyPath: m_Color.r
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 11401994, guid: 93c8284153eb999458122bd807cff036, type: 2}
-      propertyPath: m_Color.g
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 11401994, guid: 93c8284153eb999458122bd807cff036, type: 2}
-      propertyPath: m_Color.b
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 11437092, guid: 93c8284153eb999458122bd807cff036, type: 2}
-      propertyPath: VoidC.rgba
-      value: 4288874098
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 93c8284153eb999458122bd807cff036, type: 2}
   m_IsPrefabParent: 0
@@ -4106,6 +4090,10 @@ Prefab:
     - target: {fileID: 11490778, guid: 7ae9089a76975c64b870eb2693e8a4e6, type: 2}
       propertyPath: m_Color.a
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 149264, guid: 7ae9089a76975c64b870eb2693e8a4e6, type: 2}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 7ae9089a76975c64b870eb2693e8a4e6, type: 2}
@@ -4813,7 +4801,7 @@ Transform:
   - {fileID: 1913774798}
   - {fileID: 245311186}
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 12
 --- !u!114 &1921942622
 MonoBehaviour:
   m_ObjectHideFlags: 0
