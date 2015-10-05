@@ -1,20 +1,11 @@
 ﻿using UnityEngine;
-using System.Collections;
 
-public enum EAudioState
-{
-	isWaiting, // Waiting On Trigger
-	isPlaying, // Playing Audio
-	isPaused,  // Pause Between AudioClips
-	isFinished // Finished Playing All Clips
-}
-
-public class OnTriggerPlay : MonoBehaviour 
+public class OnCallPlayEventAudio : MonoBehaviour 
 {
 	[SerializeField] private AudioClip[] audioClip;
 	[SerializeField] private float waitTimeBetweenClips;
 
-	private NarratorController narrator = null;
+	private NarratorController narrator;
 
 	private float startTime;
 
@@ -24,7 +15,9 @@ public class OnTriggerPlay : MonoBehaviour
 	
 	private EAudioState myState = EAudioState.isWaiting;
 
-	private void Start()
+	public bool triggerEvent = false;
+
+	private void OnEnable()
 	{
 		narrator = NarratorController.NarratorInstance;
 
@@ -33,7 +26,10 @@ public class OnTriggerPlay : MonoBehaviour
 
 	private void Update()
 	{
-		if(myState == EAudioState.isWaiting || myState == EAudioState.isFinished)
+		if(Input.GetKeyDown(KeyCode.Space))
+			TriggerEvent = true;
+
+		if(myState == EAudioState.isWaiting || myState == EAudioState.isFinished || triggerEvent == false)
 			return;
 
 		if(myState == EAudioState.isPaused)
@@ -43,6 +39,7 @@ public class OnTriggerPlay : MonoBehaviour
 				if( ++audioClipIndex == audioClip.Length )
 				{
 					myState = EAudioState.isFinished;
+					triggerEvent = false;
 					return;
 				}
 				else
@@ -50,7 +47,6 @@ public class OnTriggerPlay : MonoBehaviour
 					myState = EAudioState.isPlaying;
 					startTime = Time.time;
 					narrator.PlayNewClip(audioClip[audioClipIndex]);
-
 					return;
 				}
 			}// If Timer Hasnt Finished Then Wait
@@ -79,10 +75,15 @@ public class OnTriggerPlay : MonoBehaviour
 		}
 	}
 
-	private void OnTriggerEnter(Collider obj)
+	public bool TriggerEvent
 	{
-		if(obj.gameObject.CompareTag("Player") && myState == EAudioState.isWaiting )
+		set 
 		{
+			if (value == false)
+				return;
+
+			triggerEvent = true;
+
 			myState = EAudioState.isPlaying;
 			startTime = Time.time;
 
