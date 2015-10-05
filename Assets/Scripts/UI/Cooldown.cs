@@ -9,6 +9,9 @@ public class Cooldown : MonoBehaviour {
 		gameObject.transform.localScale = new Vector3 (gameObject.transform.localScale.x,
 		                                               (0),
 		                                               gameObject.transform.localScale.z);
+		if (!player) {
+			player = GameObject.FindGameObjectWithTag ("Player");
+		}
 	}
 
 	
