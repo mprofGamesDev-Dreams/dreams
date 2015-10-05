@@ -132,7 +132,6 @@ namespace UnityStandardAssets.Characters.FirstPerson
             m_MoveDir.x = desiredMove.x*speed;
             m_MoveDir.z = desiredMove.z*speed;
 
-
             if (m_CharacterController.isGrounded)
             {
                 m_MoveDir.y = -m_StickToGroundForce;
@@ -149,12 +148,40 @@ namespace UnityStandardAssets.Characters.FirstPerson
             {
                 m_MoveDir += Physics.gravity*m_GravityMultiplier*Time.fixedDeltaTime;
             }
+
+			// Invisible Walls Code
+			if( !CheckNextStepGrounded(m_MoveDir) )
+			{
+				// Next position is off the platform
+				return;
+			}
+
             m_CollisionFlags = m_CharacterController.Move(m_MoveDir*Time.fixedDeltaTime);
 
             ProgressStepCycle(speed);
             UpdateCameraPosition(speed);
         }
 
+		private bool CheckNextStepGrounded(Vector3 MoveDir)
+		{
+			Vector3 NextStepPosition = m_CharacterController.transform.position + (m_MoveDir*Time.fixedDeltaTime);
+			Vector3 HeightOffset = new Vector3(0, 0.8f, 0); // Cube Height
+
+			// Testing
+			Transform Momentum = gameObject.transform.FindChild("Cube");
+			Momentum.gameObject.SetActive(false);
+
+			if (Physics.Raycast(NextStepPosition + HeightOffset, -Vector3.up, NextStepPosition.y))
+			{
+				print("This position is safe");
+				Momentum.gameObject.SetActive(true);
+				return true;
+			}
+
+			Momentum.gameObject.SetActive(true);
+			
+			return false;
+		}
 
         private void PlayJumpSound()
         {
