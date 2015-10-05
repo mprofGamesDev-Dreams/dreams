@@ -12,6 +12,7 @@ public class PauseManager : MonoBehaviour
 	[SerializeField] private GameObject pause_screen;
 	[SerializeField] private GameObject pause_menu;
 	[SerializeField] private GameObject HUD;
+	public float current_time;
 	
 	// Use this for initialization
 	void Awake () 
@@ -26,6 +27,7 @@ public class PauseManager : MonoBehaviour
 	// Update is called once per frame
 	void Update () 
 	{
+
 		// Setup Pause key for pausing the game
 		if(CrossPlatformInputManager.GetButtonDown ("Pause"))
 		{
@@ -40,6 +42,8 @@ public class PauseManager : MonoBehaviour
 				SetInitialPauseMenu();
 			}
 		}
+
+		current_time = Time.timeScale;
 	}
 	
 	private void SetInitialPauseMenu()

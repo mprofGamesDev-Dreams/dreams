@@ -115,7 +115,7 @@ GameObject:
   - 114: {fileID: 11457676}
   - 114: {fileID: 11422092}
   m_Layer: 8
-  m_Name: Pause Pop-up
+  m_Name: Pause Pop-up OLD
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
