@@ -24,10 +24,11 @@ public class TransformGeometry : MonoBehaviour
 
 	private int TransformStage = 1;
 
-    private bool triggered = false;
+    public bool triggered = false;
 
 	void Start()
 	{
+
 	}
 
 	// Update is called once per frame
@@ -65,11 +66,11 @@ public class TransformGeometry : MonoBehaviour
 
 		// Store children information
 
-		Vector3 EndTargetPos = this.gameObject.transform.GetChild(0).position;
+		Vector3 EndTargetPos = TransformTarget[targetIndex].position;
 		
 		transform.position = NewPosition;
 
-		this.gameObject.transform.GetChild(0).position = EndTargetPos;
+		TransformTarget[targetIndex].transform.position = EndTargetPos;
 
 		if(transform.position.Equals (TargetPosition))
 		   targetIndex++;
@@ -79,6 +80,12 @@ public class TransformGeometry : MonoBehaviour
     {
         triggered = true;
     }
+
+	public void Reset()
+	{
+		triggered = false;
+		targetIndex = 0;
+	}
 
 	public bool IsTriggered()
 	{

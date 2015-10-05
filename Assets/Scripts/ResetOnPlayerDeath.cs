@@ -13,6 +13,7 @@ public class ResetOnPlayerDeath : MonoBehaviour
 	private GameObject Player;
 	private PlayerStats Stats;
 	private Vector3 StartingPosition;
+	private Vector3 TargetPosition;
 
 	// Use this for initialization
 	void Start ()
@@ -25,6 +26,11 @@ public class ResetOnPlayerDeath : MonoBehaviour
 
 		// Store the initial state
 		StartingPosition = this.gameObject.transform.position;
+
+		if(gameObject.transform.FindChild("PlatformTarget"))
+		{
+			TargetPosition = gameObject.transform.FindChild("PlatformTarget").transform.position;
+		}
 	}
 	
 	// Update is called once per frame
@@ -35,6 +41,8 @@ public class ResetOnPlayerDeath : MonoBehaviour
 		{
 			// Reset the gameobject
 			this.gameObject.transform.position = StartingPosition;
+			this.gameObject.GetComponent<TransformGeometry>().Reset();
+			this.gameObject.transform.FindChild("PlatformTarget").transform.position = TargetPosition;
 		}
 	}
 }

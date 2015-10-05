@@ -149,12 +149,12 @@ namespace UnityStandardAssets.Characters.FirstPerson
                 m_MoveDir += Physics.gravity*m_GravityMultiplier*Time.fixedDeltaTime;
             }
 
-			// Invisible Walls Code
-			if( !CheckNextStepGrounded(m_MoveDir) )
-			{
+			// Invisible Walls Code - TEMP DISABLED 5/10/15 LD
+			//if( !CheckNextStepGrounded(m_MoveDir) )
+			//{
 				// Next position is off the platform
-				return;
-			}
+				//return;
+			//}
 
             m_CollisionFlags = m_CharacterController.Move(m_MoveDir*Time.fixedDeltaTime);
 
@@ -168,17 +168,10 @@ namespace UnityStandardAssets.Characters.FirstPerson
 			Vector3 HeightOffset = new Vector3(0, 0.8f, 0); // Cube Height
 
 			// Testing
-			Transform Momentum = gameObject.transform.FindChild("Cube");
-			Momentum.gameObject.SetActive(false);
-
 			if (Physics.Raycast(NextStepPosition + HeightOffset, -Vector3.up, NextStepPosition.y))
 			{
-				print("This position is safe");
-				Momentum.gameObject.SetActive(true);
 				return true;
 			}
-
-			Momentum.gameObject.SetActive(true);
 			
 			return false;
 		}
