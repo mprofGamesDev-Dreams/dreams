@@ -22,6 +22,8 @@ public class EnemyBehaviour : MonoBehaviour {
     public LayerMask masksToUse;
 	
 	[SerializeField] private bool canSlow = false;
+
+	private Vector3 OldPosition;
 	
 	// Use this for initialization
     void Start()
@@ -30,11 +32,18 @@ public class EnemyBehaviour : MonoBehaviour {
         targetPlayer = GameObject.FindGameObjectWithTag("Player");
         target = transform.position;
         original = transform.position;
-
+		OldPosition = transform.position;
     }
 
 	// Update is called once per frame
 	void Update () {
+
+		// Make sure our new move position is safe
+		if (!Physics.Raycast(transform.position, -Vector3.up, 1.0f))
+		{
+			// Position is not safe so go back to old position
+			transform.position = OldPosition;
+		}
 
 
 		if (targetPlayer == null)
@@ -47,8 +56,6 @@ public class EnemyBehaviour : MonoBehaviour {
         Ray lineOfSight = new Ray(gameObject.transform.position + rayCastOrigin, targetPlayer.transform.position - (gameObject.transform.position + rayCastOrigin));
 
         Debug.DrawRay(lineOfSight.origin,lineOfSight.direction*lineOfSightRange);
-
-
 
         if (Physics.Raycast(lineOfSight, out hit, lineOfSightRange, masksToUse))
         {
@@ -86,9 +93,6 @@ public class EnemyBehaviour : MonoBehaviour {
                 aiState = aiStates.patrol;
             }
         }
-
-
-
 
         switch (aiState)
         {
@@ -144,7 +148,10 @@ public class EnemyBehaviour : MonoBehaviour {
             default:
                 Debug.LogError("AI state not set correctly");
                 break;
-        }   
+        } 
+
+		// Store current position
+		OldPosition = agent.nextPosition;
 	}
 
     public bool GetPlayerSeen()
