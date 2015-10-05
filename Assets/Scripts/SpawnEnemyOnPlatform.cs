@@ -32,7 +32,9 @@ public class SpawnEnemyOnPlatform : MonoBehaviour
 		Enemy.name = "Enemy";
 
 		// Stop the AI
-		Enemy.GetComponent<NavMeshAgent> ().Stop ();
+		NavMeshAgent agent = Enemy.GetComponent<NavMeshAgent> ();
+		if(agent.isOnNavMesh && agent.isActiveAndEnabled)
+			agent.Stop ();
 	}
 
 	void Update ()
