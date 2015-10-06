@@ -67,7 +67,7 @@ public class PauseManager : MonoBehaviour
 
 	public void RestartGame()
 	{
-		Application.LoadLevel (Application.loadedLevel);
+		Application.LoadLevel ( "SHIP" );
 		ResumeGame ();
 	}
 
