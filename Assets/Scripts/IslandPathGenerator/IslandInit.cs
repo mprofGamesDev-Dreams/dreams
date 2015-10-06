@@ -30,7 +30,11 @@ public class IslandInit : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update ()
-	{
+	{ /*
+		Commented out by GC
+		If you are finding that your build is no longer moving islands in do not be alarmed
+		The final encounter neeeds to be set up. Please refer to the FinalFightScript for more details.
+		
 		// If we have an enemy trigger
 		if (enemyTrigger)
 		{
@@ -59,6 +63,6 @@ public class IslandInit : MonoBehaviour {
 					}
 				}
 			}
-		}
+		}*/
 	}
 }
