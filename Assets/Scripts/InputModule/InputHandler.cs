@@ -50,8 +50,11 @@ public class InputHandler : MonoBehaviour
 		prevPower = false;
 		skip = false;
 
-		if(CrossPlatformInputManager.GetButtonDown("Skip"))
+
+
+		if(CrossPlatformInputManager.GetButton("Skip"))
 		{
+			Debug.Log("Clicked Skip Button");
 			skip = true;
 		}
 

@@ -1,21 +1,29 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+using UnityStandardAssets.CrossPlatformInput;
+
 public class ShipToFirstLevel : MonoBehaviour 
 {
 	[SerializeField] private AudioClip[] audioClips;
-	private int audioIndex = 0;
+	private int audioClipIndex = 0;
 
 	private GameObject playerObject;
 	private InputHandler playerInputManager;
 
-	private AudioSource narrator;
+	//private AudioSource narrator;
 
 	[SerializeField]private LoadSceneOnTrigger trigger;
 
+	private InputHandler inputHandler;
 
 	private bool terminate;
 	private float startTime;
+	[SerializeField]private float waitTimeBetweenClips;
+
+	private EAudioState myState = EAudioState.isWaiting;
+	private NarratorController narrator;
+
 	private void Start()
 	{
 		playerObject = GameObject.FindGameObjectWithTag("Player");
@@ -25,55 +33,88 @@ public class ShipToFirstLevel : MonoBehaviour
 
 		playerObject.GetComponent<AbilityBehaviours>().CurrentPower = ActivePower.Logio;
 
-		narrator = playerObject.AddComponent<AudioSource>();
-		narrator.clip = audioClips[audioIndex];
-		narrator.Play();
+
+
+		narrator = NarratorController.NarratorInstance;
+		narrator.PlayNewClip(audioClips[audioClipIndex]);
+
+		myState = EAudioState.isPlaying;
+
 		startTime = Time.time;
 
-
+		inputHandler = GameObject.FindGameObjectWithTag("Player").GetComponent<InputHandler>();
 	}
 
 	private void Update()
 	{
-
-		if(narrator.clip == null)
+		if(myState == EAudioState.isWaiting || myState == EAudioState.isFinished)
 			return;
-
-		if( Time.time > (startTime + narrator.clip.length) && !terminate)
+		
+		if(myState == EAudioState.isPaused)
 		{
-			audioIndex++;
-			if(audioIndex == 1)
+			if( Time.time > (startTime + waitTimeBetweenClips))
 			{
-				playerInputManager.ControllerConstraints = EControlConstraints.EnableAllExceptPowers;
-				narrator.clip = audioClips[audioIndex];
-				narrator.Play();
+				if(audioClipIndex == 2)
+					return;
+
+
+				if(audioClipIndex == 3) // Out Of Cutscene Bounds
+				{
+					myState = EAudioState.isFinished;
+					//Destroy(this);
+				}
+
+				if(audioClipIndex == 1)
+				{
+					playerInputManager.ControllerConstraints = EControlConstraints.EnableAllExceptPowers;
+					narrator.PlayNewClip(audioClips[audioClipIndex]);
+					myState = EAudioState.isPlaying;
+				}
+				
+
+				startTime = Time.time;
+			}// If Timer Hasnt Finished Then Wait
+		}
+		
+		if(myState == EAudioState.isPlaying)
+		{
+			if(audioClipIndex == audioClips.Length)
+			{
+				myState = EAudioState.isFinished;
+				return;
 			}
 
-			if(audioIndex == 3)
+			if(Time.time < (startTime + audioClips[audioClipIndex].length))
 			{
-				terminate = true;
+				// Figure out a button to skip (select/back maybe?)
+				//Debug.Log(inputHandler.isSkip);
+				if( inputHandler.isSkip )
+				{
+					narrator.Stop();
+					startTime = Time.time + 0.25f;
+					myState = EAudioState.isPaused;
+					audioClipIndex++;
+					return;
+				}
+				
 			}
-			startTime = Time.time;
+			
+			if(Time.time > (startTime + audioClips[audioClipIndex].length))
+			{
+				startTime = Time.time;
+				myState = EAudioState.isPaused;
+				audioClipIndex++;
+			}
 		}
+
 	}
 
 	public void PlayClip(int i) // played after shooting
 	{
-		narrator.clip = audioClips[i];
-		narrator.Play();
+		narrator.PlayNewClip(audioClips[i]);
+		myState = EAudioState.isPlaying;
 		startTime = Time.time;
-
-        StartCoroutine(WaitFor(audioClips[i].length));
 	}
 
-    private IEnumerator WaitFor(float time)
-    {
-        trigger.GetComponent<BoxCollider>().isTrigger = false;
-        Debug.Log("Coroutine started");
-        yield return new WaitForSeconds(time);
-
-        trigger.GetComponent<BoxCollider>().isTrigger = true;
-        Debug.Log("Coroutine Waited");
-    }
 }
 
