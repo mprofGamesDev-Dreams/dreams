@@ -1,0 +1,121 @@
+fileFormatVersion: 2
+guid: 061d9f1986a87d447a8ac692f2bf5333
+timeCreated: 1444149274
+licenseType: Free
+ModelImporter:
+  serializedVersion: 18
+  fileIDToRecycleName:
+    100000: Left_Arm_Jnt
+    100002: Left_Finger_Jnt
+    100004: Left_Forearm_Jnt
+    100006: Left_MidArm_Jnt
+    100008: Left_Shoulder_Jnt
+    100010: LFT_Forearm_CTRL
+    100012: LFT_MidArm_CTRL
+    100014: LFT_MiddleArm_CTRL
+    100016: LFT_Shoulder_CTRL
+    100018: minion_mesh_Test:Group35616
+    100020: //RootNode
+    100022: polySurface1
+    100024: Rgt_Arm_Jnt
+    100026: Rgt_Finger_Jnt
+    100028: RGT_Forarm_CTRL
+    100030: Rgt_Forearm_Jnt
+    100032: RGT_MidArm_CTRL
+    100034: Rgt_MidArm_Jnt
+    100036: RGT_MiddleArm_CTRL
+    100038: RGT_Shoulder_CTRL
+    100040: Rgt_Shoulder_Jnt
+    100042: Root_CTRL
+    100044: Root_Jnt
+    400000: Left_Arm_Jnt
+    400002: Left_Finger_Jnt
+    400004: Left_Forearm_Jnt
+    400006: Left_MidArm_Jnt
+    400008: Left_Shoulder_Jnt
+    400010: LFT_Forearm_CTRL
+    400012: LFT_MidArm_CTRL
+    400014: LFT_MiddleArm_CTRL
+    400016: LFT_Shoulder_CTRL
+    400018: minion_mesh_Test:Group35616
+    400020: //RootNode
+    400022: polySurface1
+    400024: Rgt_Arm_Jnt
+    400026: Rgt_Finger_Jnt
+    400028: RGT_Forarm_CTRL
+    400030: Rgt_Forearm_Jnt
+    400032: RGT_MidArm_CTRL
+    400034: Rgt_MidArm_Jnt
+    400036: RGT_MiddleArm_CTRL
+    400038: RGT_Shoulder_CTRL
+    400040: Rgt_Shoulder_Jnt
+    400042: Root_CTRL
+    400044: Root_Jnt
+    2300000: minion_mesh_Test:Group35616
+    3300000: minion_mesh_Test:Group35616
+    4300000: minion_mesh_Test:Group35616
+    4300002: polySurface1
+    9500000: //RootNode
+    13700000: polySurface1
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
