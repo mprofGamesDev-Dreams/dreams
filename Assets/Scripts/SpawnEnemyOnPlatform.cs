@@ -5,7 +5,7 @@ public class SpawnEnemyOnPlatform : MonoBehaviour
 {
 	// Prefab of object to spawn
 	public GameObject EnemyToSpawn;
-
+	//public GameObject Enemy;
 	public Vector3 PositionOffset = new Vector3 (0.0f, 4.5f, 0.0f);
 
 	// Which waypoint of the movement to spawn the enemy
@@ -17,7 +17,7 @@ public class SpawnEnemyOnPlatform : MonoBehaviour
 	// Flag for whether or not the enemy can resume AI
 	private bool CanMove = false;
 
-	private GameObject Enemy;
+	public GameObject Enemy;
 
 	void Start ()
 	{

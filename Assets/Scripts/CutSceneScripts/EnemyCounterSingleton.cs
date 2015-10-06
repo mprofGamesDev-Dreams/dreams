@@ -53,14 +53,19 @@ public class EnemyCounterSingleton : MonoBehaviour
 		if(Time.time < (startTime + waitTime))
 			return;
 
-		if( currentEnemyCount == 0 && spawnersSpawning == 0 && !eventCompleted)
+	/*	if( currentEnemyCount == 0 && spawnersSpawning == 0 && !eventCompleted)
 		{
 			StartCoroutine( WaitForTime() );
 			eventCompleted = true;
-		}
+		}*/
 	}
 
-	private IEnumerator WaitForTime()
+	public void StartCutscene()
+	{
+		StartCoroutine( FinalCutscene() );
+	}
+
+	private IEnumerator FinalCutscene()
 	{
 		flash.FadeToWhite();
 
@@ -69,7 +74,7 @@ public class EnemyCounterSingleton : MonoBehaviour
 		dreamer.position = dreamerDestination.position;
 
 		playerTransform.position = dreamer.position - playerOffsetFromDreamer;
-
+		playerTransform.transform.LookAt (dreamer);
 		Instantiate( choicePrefab, Vector3.zero, Quaternion.identity );
 
 		flash.FadeToClear();
