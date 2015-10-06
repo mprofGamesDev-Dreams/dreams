@@ -49,15 +49,6 @@ public class InputHandler : MonoBehaviour
 		nextPower = false;
 		prevPower = false;
 		skip = false;
-		
-		if(CrossPlatformInputManager.GetButtonDown ("Pause"))
-		{
-			if(Time.timeScale == 0)
-				Time.timeScale = 1;
-			else Time.timeScale = 0 ;
-
-			// show pause menu?
-		}
 
 		if(CrossPlatformInputManager.GetButtonDown("Skip"))
 		{

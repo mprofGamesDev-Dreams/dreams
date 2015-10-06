@@ -559,6 +559,12 @@ Prefab:
 Transform:
   m_PrefabParentObject: {fileID: 470738, guid: 7a535363c9ffe2c4abbde8dab4caaa2c, type: 2}
   m_PrefabInternal: {fileID: 122733945}
+--- !u!114 &135218810 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 11416980, guid: 92aaeb926a068754f9b0d634bdbab991,
+    type: 2}
+  m_PrefabInternal: {fileID: 226534705}
+  m_Script: {fileID: 1392445389, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
 --- !u!1001 &172834444
 Prefab:
   m_ObjectHideFlags: 0
@@ -889,6 +895,18 @@ Prefab:
       propertyPath: HUD
       value: 
       objectReference: {fileID: 1583838260}
+    - target: {fileID: 11444028, guid: 92aaeb926a068754f9b0d634bdbab991, type: 2}
+      propertyPath: resumeButton
+      value: 
+      objectReference: {fileID: 1567106595}
+    - target: {fileID: 11444028, guid: 92aaeb926a068754f9b0d634bdbab991, type: 2}
+      propertyPath: restartButton
+      value: 
+      objectReference: {fileID: 135218810}
+    - target: {fileID: 11444028, guid: 92aaeb926a068754f9b0d634bdbab991, type: 2}
+      propertyPath: quitButton
+      value: 
+      objectReference: {fileID: 1398151293}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 92aaeb926a068754f9b0d634bdbab991, type: 2}
   m_IsPrefabParent: 0
@@ -5355,6 +5373,12 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: fd0a0ca739e5b864d9e0e586953caae0, type: 2}
   m_IsPrefabParent: 0
+--- !u!114 &1398151293 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 11446866, guid: 92aaeb926a068754f9b0d634bdbab991,
+    type: 2}
+  m_PrefabInternal: {fileID: 226534705}
+  m_Script: {fileID: 1392445389, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
 --- !u!1001 &1406512925
 Prefab:
   m_ObjectHideFlags: 0
@@ -6059,6 +6083,12 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: fe7ff3e2fd1d0914a8e477c44cfb4673, type: 2}
   m_IsPrefabParent: 0
+--- !u!114 &1567106595 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 11449784, guid: 92aaeb926a068754f9b0d634bdbab991,
+    type: 2}
+  m_PrefabInternal: {fileID: 226534705}
+  m_Script: {fileID: 1392445389, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
 --- !u!1001 &1567273727
 Prefab:
   m_ObjectHideFlags: 0
