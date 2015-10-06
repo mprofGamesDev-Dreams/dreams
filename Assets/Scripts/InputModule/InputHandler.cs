@@ -59,8 +59,11 @@ public class InputHandler : MonoBehaviour
 			// show pause menu?
 		}
 
-		if(CrossPlatformInputManager.GetButtonDown("Skip"))
+
+
+		if(CrossPlatformInputManager.GetButton("Skip"))
 		{
+			Debug.Log("Clicked Skip Button");
 			skip = true;
 		}
 

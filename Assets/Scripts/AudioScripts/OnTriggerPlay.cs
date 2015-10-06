@@ -47,6 +47,7 @@ public class OnTriggerPlay : MonoBehaviour
 				}
 				else
 				{
+					Debug.Log("d");
 					myState = EAudioState.isPlaying;
 					startTime = Time.time;
 					narrator.PlayNewClip(audioClip[audioClipIndex]);
@@ -64,7 +65,7 @@ public class OnTriggerPlay : MonoBehaviour
 				if( inputHandler.isSkip )
 				{
 					narrator.Stop();
-					startTime = Time.time;
+					startTime = Time.time + 0.25f;
 					myState = EAudioState.isPaused;
 					return;
 				}

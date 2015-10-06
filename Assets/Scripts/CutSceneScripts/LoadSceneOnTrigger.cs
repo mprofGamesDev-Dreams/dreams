@@ -38,19 +38,19 @@ public class LoadSceneOnTrigger : MonoBehaviour
 			activateFadeOut = true;
 		}
 
-        Debug.Log(obj.gameObject.tag +"hit THE DOOR");
+        //Debug.Log(obj.gameObject.tag +"hit THE DOOR");
         
 		//if( obj.gameObject.CompareTag("Bullet") && obj.GetComponent<Bullet>().BulletType == ActivePower.Logio  && !canTeleport)
         if (obj.gameObject.CompareTag("Bullet"))
         {
-            Debug.Log("IT WAS A BULLET");
+            //Debug.Log("IT WAS A BULLET");
 
             if (obj.GetComponent<Bullet>().BulletType == ActivePower.Logio)
             {
-                Debug.Log("AND LOGIO");
+                //Debug.Log("AND LOGIO");
                 if (!canTeleport)
                 {
-                    Debug.Log("AND CANT TELEPORT");
+                    //Debug.Log("AND CANT TELEPORT");
                     sceneController.PlayClip(2);
                     lightSource.color = Color.green;
                     canTeleport = true;
