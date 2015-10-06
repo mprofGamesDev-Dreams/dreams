@@ -87,7 +87,6 @@ public class ShipToFirstLevel : MonoBehaviour
 			if(Time.time < (startTime + audioClips[audioClipIndex].length))
 			{
 				// Figure out a button to skip (select/back maybe?)
-				//Debug.Log(inputHandler.isSkip);
 				if( inputHandler.isSkip )
 				{
 					narrator.Stop();
