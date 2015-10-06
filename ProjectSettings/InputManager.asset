@@ -421,3 +421,19 @@ InputManager:
     type: 2
     axis: 4
     joyNum: 6
+  - serializedVersion: 3
+    m_Name: D-Pad X Axis
+    descriptiveName: 
+    descriptiveNegativeName: 
+    negativeButton: 
+    positiveButton: 6
+    altNegativeButton: 
+    altPositiveButton: 
+    gravity: 0
+    dead: .200000003
+    sensitivity: 1.20000005
+    snap: 0
+    invert: 1
+    type: 2
+    axis: 5
+    joyNum: 0

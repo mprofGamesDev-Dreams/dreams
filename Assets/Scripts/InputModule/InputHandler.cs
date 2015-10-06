@@ -8,6 +8,7 @@ public enum EControlConstraints
 	EnableAllExceptPowers,
 	EnableAll,
 	DisableAll,
+	DisableAllExceptChoice,
 	DisableAllExceptCamera
 }
 
@@ -25,6 +26,7 @@ public class InputHandler : MonoBehaviour
 	bool nextPower;
 	bool prevPower;
 	bool skip;
+	float dPadHorizontal;
 
 	private EControlConstraints controllerConstraints = EControlConstraints.EnableAll; public EControlConstraints ControllerConstraints { get { return controllerConstraints; } set { controllerConstraints = value; }  }
 
@@ -42,7 +44,7 @@ public class InputHandler : MonoBehaviour
 		nextPower = false;
 		prevPower = false;
 		skip = false;
-
+		dPadHorizontal = 0;
 
 
 		if(CrossPlatformInputManager.GetButton("Skip"))
@@ -106,6 +108,9 @@ public class InputHandler : MonoBehaviour
 				}
 				return;
 			case EControlConstraints.DisableAll:
+				return;			
+			case EControlConstraints.DisableAllExceptChoice:
+				dPadHorizontal = CrossPlatformInputManager.GetAxis("D-Pad X Axis");
 				return;
 			case EControlConstraints.DisableAllExceptCamera: // camera isnt dependant on this calss
 
@@ -156,6 +161,11 @@ public class InputHandler : MonoBehaviour
 
 				return;
 		}		
+	}
+
+	public float DPadHorizontal
+	{
+		get { return dPadHorizontal; }
 	}
 
 	public bool isSkip
