@@ -10,7 +10,8 @@ public class CheckpointUpdate : MonoBehaviour
 		if(!manager)
 			return;
 
-		manager.SetLastPos (transform.position);
+
+		manager.SetLastPos (GetComponentInParent<Transform>().position);
 		Destroy (gameObject);
 		Destroy (this);
 	}
