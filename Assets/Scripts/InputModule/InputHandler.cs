@@ -28,16 +28,9 @@ public class InputHandler : MonoBehaviour
 
 	private EControlConstraints controllerConstraints = EControlConstraints.EnableAll; public EControlConstraints ControllerConstraints { get { return controllerConstraints; } set { controllerConstraints = value; }  }
 
-//	AbilityBehaviours abilityBehaviours;
-//	FirstPersonController firstPersonController;
-//	PunchingControllerPrototype punchingControllerPrototype;
-
 	void Start()
 	{
 		sprint = false;
-//		abilityBehaviours = (AbilityBehaviours)gameObject.GetComponent ("AbilityBehaviours");
-//		firstPersonController = (FirstPersonController)gameObject.GetComponent ("FirstPersonController");
-//		punchingControllerPrototype = (PunchingControllerPrototype)gameObject.GetComponent ("PunchingControllerPrototype");
 	}
 
 	void Update()
@@ -50,7 +43,9 @@ public class InputHandler : MonoBehaviour
 		prevPower = false;
 		skip = false;
 
-		if(CrossPlatformInputManager.GetButtonDown("Skip"))
+
+
+		if(CrossPlatformInputManager.GetButton("Skip"))
 		{
 			skip = true;
 		}
@@ -160,61 +155,7 @@ public class InputHandler : MonoBehaviour
 				}
 
 				return;
-		}
-
-		/*
-		//Check for inputs
-		//Left trigger
-		if(CrossPlatformInputManager.GetAxis ("Melee") > 0 || CrossPlatformInputManager.GetButtonDown ("Melee"))
-		{
-			melee = true;
-		}
-		//Right trigger
-		if(CrossPlatformInputManager.GetAxis ("Shoot") > 0 || CrossPlatformInputManager.GetButtonDown ("Shoot"))
-		{
-			//abilityBehaviours.shootRay();
-			shoot = true;
-		}
-		//Left bumper
-		if(CrossPlatformInputManager.GetButtonDown ("PrevPower"))
-		{
-			prevPower = true;
-		}
-		//Right bumper
-		if(CrossPlatformInputManager.GetButtonDown ("NextPower"))
-		{
-			nextPower = true;
-		}
-		//X button
-		if(CrossPlatformInputManager.GetButtonDown ("Interact"))
-		{
-			interact = true;
-		}
-		//Y button
-		if(CrossPlatformInputManager.GetButtonDown ("Shoot"))
-		{
-			
-		}
-		//A button
-		if(CrossPlatformInputManager.GetButtonDown ("Shoot"))
-		{
-			
-		}
-		//B button
-		if(CrossPlatformInputManager.GetButtonDown ("Shoot"))
-		{
-			
-		}
-		//Left Analogue Stick Click
-		if(CrossPlatformInputManager.GetButtonDown ("Sprint"))
-		{
-			sprint = true;
-		}
-		if (CrossPlatformInputManager.GetButtonUp ("Sprint")) 
-		{
-			sprint = false;
-		}*/
-		
+		}		
 	}
 
 	public bool isSkip
