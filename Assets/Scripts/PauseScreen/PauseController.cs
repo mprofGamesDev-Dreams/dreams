@@ -21,8 +21,6 @@ public class PauseController : MonoBehaviour
 	[SerializeField] private RectTransform arrowPosition;
 	// Offset between arrow and menu option
 	private Vector2 arrowOffset = new Vector2 (10.0f, -22.0f);
-	// Change in heights between menu options; used to move arrow correctly
-	//private float menuOptionsDifference = 50.0f;
 
 	void Awake ()
 	{

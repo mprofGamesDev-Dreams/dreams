@@ -526,7 +526,38 @@ Prefab:
       propertyPath: HUD
       value: 
       objectReference: {fileID: 1608223805}
-    m_RemovedComponents: []
+    - target: {fileID: 479600, guid: 92aaeb926a068754f9b0d634bdbab991, type: 2}
+      propertyPath: m_RootOrder
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 11449784, guid: 92aaeb926a068754f9b0d634bdbab991, type: 2}
+      propertyPath: m_Transition
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 11416980, guid: 92aaeb926a068754f9b0d634bdbab991, type: 2}
+      propertyPath: m_Interactable
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11416980, guid: 92aaeb926a068754f9b0d634bdbab991, type: 2}
+      propertyPath: m_TargetGraphic
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 11416980, guid: 92aaeb926a068754f9b0d634bdbab991, type: 2}
+      propertyPath: m_Transition
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 11446866, guid: 92aaeb926a068754f9b0d634bdbab991, type: 2}
+      propertyPath: m_Transition
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 11446866, guid: 92aaeb926a068754f9b0d634bdbab991, type: 2}
+      propertyPath: m_TargetGraphic
+      value: 
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 11428598, guid: 92aaeb926a068754f9b0d634bdbab991, type: 2}
+    - {fileID: 11430362, guid: 92aaeb926a068754f9b0d634bdbab991, type: 2}
+    - {fileID: 11434994, guid: 92aaeb926a068754f9b0d634bdbab991, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: 92aaeb926a068754f9b0d634bdbab991, type: 2}
   m_IsPrefabParent: 0
 --- !u!114 &948277959 stripped
