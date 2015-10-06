@@ -41,6 +41,12 @@ public class AbilityBehaviours : MonoBehaviour
 	private InputHandler input;
 	private Color32 beamColor;
 	ActivePower currentPower; public ActivePower CurrentPower { get { return currentPower; } set{ currentPower = value; } }
+
+    AudioSource bulletAudioSource;
+    [SerializeField] private AudioClip logioClip;
+    [SerializeField] private AudioClip imagiClip;
+    [SerializeField] private AudioClip voidClip;
+
 	private void Start () 
 	{
 		// Gets The Main Camera's Transform On Object Startup
@@ -49,6 +55,16 @@ public class AbilityBehaviours : MonoBehaviour
 		currentPower = ActivePower.Imagi;
 
 		playerStats = GetComponent<PlayerStats>();
+
+        AudioSource[] audioSources = GetComponents<AudioSource>();
+        foreach (AudioSource temp in audioSources)
+        {
+            if (temp.GetInstanceID() == -1533482)
+            {
+                bulletAudioSource = temp;
+            }
+        }
+            
 	}
 	
 	private void Update () 
@@ -261,18 +277,21 @@ public class AbilityBehaviours : MonoBehaviour
 		case ActivePower.Logio:
 			bullet = (GameObject)Instantiate(logioBullet, myCameraTransform.position+(myCameraTransform.forward*1), myCameraTransform.rotation);
 			bullet.GetComponent<Bullet>().SetParent(gameObject);
+            bulletAudioSource.PlayOneShot(logioClip);
 			break;
 		case ActivePower.Imagi:
 			bullet = (GameObject)Instantiate(imagiBullet, myCameraTransform.position+(myCameraTransform.forward*1), myCameraTransform.rotation); 
 			bullet.GetComponent<Bullet>().SetParent(gameObject);
+            bulletAudioSource.PlayOneShot(imagiClip);
 			break;
 		case ActivePower.Void:
 			bullet = (GameObject)Instantiate(voidBullet, myCameraTransform.position+(myCameraTransform.forward*1), myCameraTransform.rotation); 
 			bullet.GetComponent<Bullet>().SetParent(gameObject);
+            bulletAudioSource.PlayOneShot(voidClip);
 			break;
 		}
 
-
+        
 	}
 
 	public ActivePower getCurrentPower(){

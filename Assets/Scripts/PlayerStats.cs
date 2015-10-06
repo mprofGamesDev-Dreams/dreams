@@ -70,6 +70,11 @@ public class PlayerStats : MonoBehaviour
 
 	private CameraShakeOnCall cameraShake;
 
+
+    private AudioSource audioSource;
+    [SerializeField] private AudioClip[] audioClips;
+    private float audioTimer=0;
+
 	void Start ()
 	{
 		// Find the player game object
@@ -84,7 +89,16 @@ public class PlayerStats : MonoBehaviour
         currentImagi = startImagi;
         currentLogio = startLogio;
         currentVoid = startVoid;
-            
+
+        
+        AudioSource[] audioSources = GetComponents<AudioSource>();
+        foreach(AudioSource temp in audioSources)
+        {
+            if (temp.GetInstanceID() == -989038)
+            {
+                audioSource = temp;
+            }
+        }
 	}
 	
 	// Update is called once per frame
@@ -108,6 +122,7 @@ public class PlayerStats : MonoBehaviour
 		//
 		//HandleParticles();
 
+        audioTimer -= Time.deltaTime;
 	}
 
 	private void UpdatePositions()
@@ -228,6 +243,11 @@ public class PlayerStats : MonoBehaviour
 	{
 		currentHealth = Mathf.Clamp( currentHealth + amount, 0, maxHealth );
 		cameraShake.ShakeViewport();
+        
+        if(amount <0)
+        {
+            PlayHitSound();
+        }
 	}
 
 	public void ModifyStamina(float amount)
@@ -263,6 +283,17 @@ public class PlayerStats : MonoBehaviour
 		buffTimer = 0;
 		debuffTimer = 0;
 	}
+
+    public void PlayHitSound()
+    {
+        if (audioTimer <= 0)
+        {
+            int audioSampleNum = (int)Random.Range(0, audioClips.Length);
+            
+            audioSource.PlayOneShot(audioClips[audioSampleNum]);
+            audioTimer = audioClips[audioSampleNum].length;
+        } 
+    }
 
 	#region GeneralProperties
 	public int StartHealth {
