@@ -31,6 +31,26 @@ public class LoadSceneOnTrigger : MonoBehaviour
 		}
 	}
 
+	private void OnCollisionEnter(Collision obj)
+	{
+		if (obj.gameObject.CompareTag("Bullet"))
+		{
+			//Debug.Log("IT WAS A BULLET");
+			
+			if (obj.gameObject.GetComponent<Bullet>().BulletType == ActivePower.Logio)
+			{
+				//Debug.Log("AND LOGIO");
+				if (!canTeleport)
+				{
+					//Debug.Log("AND CANT TELEPORT");
+					sceneController.PlayClip(2);
+					lightSource.color = Color.green;
+					canTeleport = true;
+				}
+			}
+		}
+	}
+
 	private void OnTriggerEnter(Collider obj)
 	{
 		if(obj.gameObject.CompareTag("Player") && canTeleport)
@@ -41,22 +61,7 @@ public class LoadSceneOnTrigger : MonoBehaviour
         //Debug.Log(obj.gameObject.tag +"hit THE DOOR");
         
 		//if( obj.gameObject.CompareTag("Bullet") && obj.GetComponent<Bullet>().BulletType == ActivePower.Logio  && !canTeleport)
-        if (obj.gameObject.CompareTag("Bullet"))
-        {
-            //Debug.Log("IT WAS A BULLET");
 
-            if (obj.GetComponent<Bullet>().BulletType == ActivePower.Logio)
-            {
-                //Debug.Log("AND LOGIO");
-                if (!canTeleport)
-                {
-                    //Debug.Log("AND CANT TELEPORT");
-                    sceneController.PlayClip(2);
-                    lightSource.color = Color.green;
-                    canTeleport = true;
-                }
-            }
-		}
 	}
 
 	private IEnumerator WaitToLoadScene(float t)

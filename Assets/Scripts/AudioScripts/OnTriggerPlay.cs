@@ -47,7 +47,6 @@ public class OnTriggerPlay : MonoBehaviour
 				}
 				else
 				{
-					Debug.Log("d");
 					myState = EAudioState.isPlaying;
 					startTime = Time.time;
 					narrator.PlayNewClip(audioClip[audioClipIndex]);

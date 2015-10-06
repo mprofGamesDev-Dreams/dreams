@@ -159,7 +159,7 @@ Transform:
   m_LocalScale: {x: 7.3168416, y: .798172355, z: 10.4684381}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 14
+  m_RootOrder: 15
 --- !u!1 &158095537 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 108728, guid: f504f353732e6024785a83c9516dcaef, type: 2}
@@ -353,10 +353,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   audioClips:
-  - {fileID: 8300000, guid: d96b9a81b31692a46bcdb722cf97dd12, type: 3}
-  - {fileID: 8300000, guid: 6f8c2129b360ced468311b2d4cb0543c, type: 3}
-  - {fileID: 8300000, guid: 80cd2e21e75531e4b9501bd422456948, type: 3}
+  - {fileID: 8300000, guid: fbe102cb1e8f35248b5ac76fc6fcc8a9, type: 3}
+  - {fileID: 8300000, guid: 318371ccb73582145b953a2f7f65cc25, type: 3}
+  - {fileID: 8300000, guid: 99b8b9da173d57f4f923c96148ee27b4, type: 3}
   trigger: {fileID: 1889874191}
+  waitTimeBetweenClips: 0
 --- !u!4 &472337035
 Transform:
   m_ObjectHideFlags: 0
@@ -1397,7 +1398,7 @@ BoxCollider:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1889874190}
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}

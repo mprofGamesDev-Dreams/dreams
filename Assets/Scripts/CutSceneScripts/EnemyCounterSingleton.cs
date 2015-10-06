@@ -29,9 +29,7 @@ public class EnemyCounterSingleton : MonoBehaviour
 		get { return spawnersSpawning; }
 		set { spawnersSpawning = value; }
 	}
-
-	private bool eventCompleted = false;
-
+	
 	[SerializeField] private WhiteFlash flash; 
 	[SerializeField] private Transform dreamer;
 	[SerializeField] private Transform dreamerDestination;
@@ -40,6 +38,12 @@ public class EnemyCounterSingleton : MonoBehaviour
 
 	private float startTime = 0;
 	private float waitTime = 10;
+
+	private float fadeoutTime = 0;
+	private float fadeinTime = 0;
+
+	[SerializeField] private AudioClip[] audioClips;
+	private bool choice = false;
 
 	[SerializeField] private GameObject choicePrefab;
 	private void Awake()
@@ -50,8 +54,18 @@ public class EnemyCounterSingleton : MonoBehaviour
 
 	private void Update()
 	{
+		if(Input.GetKeyDown(KeyCode.RightControl))
+			StartCutscene();
+
+		/*
 		if(Time.time < (startTime + waitTime))
 			return;
+*/
+		if(choice == true && Input.anyKey)
+		{
+			StartCoroutine( CutscenePartII() );
+			choice = false;
+		}
 
 	/*	if( currentEnemyCount == 0 && spawnersSpawning == 0 && !eventCompleted)
 		{
@@ -69,7 +83,7 @@ public class EnemyCounterSingleton : MonoBehaviour
 	{
 		flash.FadeToWhite();
 
-		yield return new WaitForSeconds(flash.fadeOutSpeed);
+		yield return new WaitForSeconds(fadeoutTime);
 
 		dreamer.position = dreamerDestination.position;
 
@@ -79,8 +93,31 @@ public class EnemyCounterSingleton : MonoBehaviour
 
 		flash.FadeToClear();
 
-		yield return new WaitForSeconds(flash.fadeInSpeed);
+		yield return new WaitForSeconds(fadeinTime);
+
+		NarratorController.NarratorInstance.PlayNewClip(audioClips[0]);
+
+		yield return new WaitForSeconds( audioClips[0].length + 1f );
+
+		choice = true;
+
+
 
 		// stop input?
+	}
+
+	private IEnumerator CutscenePartII()
+	{
+		NarratorController.NarratorInstance.PlayNewClip(audioClips[1]);
+		yield return new WaitForSeconds( audioClips[1].length + 1f );
+
+		// player touches
+
+		flash.FadeToWhite();
+
+		NarratorController.NarratorInstance.PlayNewClip(audioClips[2]);
+		yield return new WaitForSeconds( audioClips[2].length + 1f );
+
+		Application.LoadLevel("SHIP");
 	}
 }

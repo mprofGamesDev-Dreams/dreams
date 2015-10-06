@@ -14,6 +14,7 @@ public class ShipToFirstLevel : MonoBehaviour
 	//private AudioSource narrator;
 
 	[SerializeField]private LoadSceneOnTrigger trigger;
+	private BoxCollider colliderToTrigger;
 
 	private InputHandler inputHandler;
 
@@ -43,12 +44,23 @@ public class ShipToFirstLevel : MonoBehaviour
 		startTime = Time.time;
 
 		inputHandler = GameObject.FindGameObjectWithTag("Player").GetComponent<InputHandler>();
+
+		colliderToTrigger = trigger.GetComponent<BoxCollider>();
 	}
 
 	private void Update()
 	{
-		if(myState == EAudioState.isWaiting || myState == EAudioState.isFinished)
+		if(myState == EAudioState.isWaiting)
 			return;
+
+		if(myState == EAudioState.isFinished)
+		{
+			if( !colliderToTrigger.isTrigger )
+			{
+				colliderToTrigger.isTrigger = true;
+			}
+			return;
+		}
 		
 		if(myState == EAudioState.isPaused)
 		{
@@ -61,6 +73,7 @@ public class ShipToFirstLevel : MonoBehaviour
 				if(audioClipIndex == 3) // Out Of Cutscene Bounds
 				{
 					myState = EAudioState.isFinished;
+					trigger.GetComponent<BoxCollider>().isTrigger = true;
 					//Destroy(this);
 				}
 
