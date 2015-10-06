@@ -45,14 +45,18 @@ public class SpawnEnemyOnPlatform : MonoBehaviour
 			if( !CanMove )
 			{
 				// Resume AI
-				Enemy.GetComponent<NavMeshAgent> ().Resume ();
-				CanMove = true;
+				if(Enemy != null)
+				{
+					Enemy.GetComponent<NavMeshAgent> ().Resume ();
+					CanMove = true;
+				}
 			}
 		}
 		else 
 		{
 			// Stick the enemy on middle of platform
-			Enemy.transform.position = this.gameObject.transform.position + PositionOffset;
+			if(Enemy != null)
+				Enemy.transform.position = this.gameObject.transform.position + PositionOffset;
 		}
 	}
 }
