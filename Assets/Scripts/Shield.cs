@@ -22,8 +22,8 @@ public class Shield : MonoBehaviour
 			Destroy(gameObject);
         }
 
-        scrollOffset += scrollSpeed;
-        GetComponent<Renderer>().material.SetTextureOffset("_MainTex", new Vector2(scrollOffset / 2, scrollOffset));
+       // scrollOffset += scrollSpeed;
+        //GetComponent<Renderer>().material.SetTextureOffset("_MainTex", new Vector2(scrollOffset / 2, scrollOffset));
 	}
 
     public void ApplyDamage( shieldOptions damageType, int damageIn)
