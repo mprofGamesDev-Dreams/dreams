@@ -10,24 +10,14 @@ public class LoadSceneOnTrigger : MonoBehaviour
 
 	public Light lightSource;
 
-	public AudioClip clip;
-	public AudioSource source;
-
 	[SerializeField]private ShipToFirstLevel sceneController;
-
-	private void Start()
-	{
-		source = GameObject.FindGameObjectWithTag("Player").GetComponent<AudioSource>();
-	}
 
 	private void Update()
 	{
-
-
 		if(activateFadeOut)
 		{
 			flashController.FadeToWhite();
-			StartCoroutine(WaitToLoadScene(flashController.fadeOutSpeed));
+			StartCoroutine(WaitToLoadScene(2));
 		}
 	}
 
@@ -35,14 +25,10 @@ public class LoadSceneOnTrigger : MonoBehaviour
 	{
 		if (obj.gameObject.CompareTag("Bullet"))
 		{
-			//Debug.Log("IT WAS A BULLET");
-			
 			if (obj.gameObject.GetComponent<Bullet>().BulletType == ActivePower.Logio)
 			{
-				//Debug.Log("AND LOGIO");
 				if (!canTeleport)
 				{
-					//Debug.Log("AND CANT TELEPORT");
 					sceneController.PlayClip(2);
 					lightSource.color = Color.green;
 					canTeleport = true;
@@ -57,11 +43,6 @@ public class LoadSceneOnTrigger : MonoBehaviour
 		{
 			activateFadeOut = true;
 		}
-
-        //Debug.Log(obj.gameObject.tag +"hit THE DOOR");
-        
-		//if( obj.gameObject.CompareTag("Bullet") && obj.GetComponent<Bullet>().BulletType == ActivePower.Logio  && !canTeleport)
-
 	}
 
 	private IEnumerator WaitToLoadScene(float t)
@@ -69,5 +50,4 @@ public class LoadSceneOnTrigger : MonoBehaviour
 		yield return new WaitForSeconds(t);
 		Application.LoadLevel(levelToLoad);
 	}
-
 }

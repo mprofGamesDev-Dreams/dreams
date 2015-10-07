@@ -15,7 +15,7 @@ public class OnCallPlayEventAudio : MonoBehaviour
 	
 	private EAudioState myState = EAudioState.isWaiting;
 
-	public bool triggerEvent = false;
+	private bool triggerEvent = false;
 
 	private void OnEnable()
 	{
@@ -77,6 +77,8 @@ public class OnCallPlayEventAudio : MonoBehaviour
 
 	public bool TriggerEvent
 	{
+		get {return triggerEvent;}
+
 		set 
 		{
 			if (value == false)

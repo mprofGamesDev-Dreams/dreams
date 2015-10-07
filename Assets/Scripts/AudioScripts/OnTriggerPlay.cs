@@ -89,4 +89,9 @@ public class OnTriggerPlay : MonoBehaviour
 			narrator.PlayNewClip(audioClip[audioClipIndex]);
 		}
 	}
+
+	public EAudioState CurrentState
+	{
+		get { return myState; }
+	}
 }

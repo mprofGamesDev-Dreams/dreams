@@ -49,4 +49,9 @@ public class NarratorController
 	{
 		narrator.Stop();
 	}
+
+	public bool isPlaying()
+	{
+		return narrator.isPlaying;
+	}
 }

@@ -10,9 +10,7 @@ public class ShipToFirstLevel : MonoBehaviour
 
 	private GameObject playerObject;
 	private InputHandler playerInputManager;
-
-	//private AudioSource narrator;
-
+	
 	[SerializeField]private LoadSceneOnTrigger trigger;
 	private BoxCollider colliderToTrigger;
 
@@ -55,6 +53,9 @@ public class ShipToFirstLevel : MonoBehaviour
 
 		if(myState == EAudioState.isFinished)
 		{
+			if( NarratorController.NarratorInstance.isPlaying() )
+				myState = EAudioState.isPlaying;
+
 			if( !colliderToTrigger.isTrigger )
 			{
 				colliderToTrigger.isTrigger = true;
@@ -91,11 +92,16 @@ public class ShipToFirstLevel : MonoBehaviour
 		
 		if(myState == EAudioState.isPlaying)
 		{
-			if(audioClipIndex == audioClips.Length)
+			// If narrator hasnt finished return
+			if(audioClipIndex == audioClips.Length && !NarratorController.NarratorInstance.isPlaying())
 			{
 				myState = EAudioState.isFinished;
 				return;
 			}
+
+			// Evade NullReferenceExceptions
+			if(audioClipIndex == audioClips.Length)
+				return;
 
 			if(Time.time < (startTime + audioClips[audioClipIndex].length))
 			{
@@ -118,7 +124,6 @@ public class ShipToFirstLevel : MonoBehaviour
 				audioClipIndex++;
 			}
 		}
-
 	}
 
 	public void PlayClip(int i) // played after shooting
@@ -126,6 +131,7 @@ public class ShipToFirstLevel : MonoBehaviour
 		narrator.PlayNewClip(audioClips[i]);
 		myState = EAudioState.isPlaying;
 		startTime = Time.time;
+		audioClipIndex++;
 	}
 
 }

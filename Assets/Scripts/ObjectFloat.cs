@@ -22,8 +22,7 @@ public class ObjectFloat : MonoBehaviour
 	// Update is called once per frame
 	void Update () 
 	{
-		float sin = Mathf.Sin(Time.time) * speed;
+		float sin = Mathf.Sin(Time.time * speed) ;
 		myTransform.position += new Vector3( floatDir.x * sin * range, floatDir.y * sin * range, floatDir.z * sin * range );
-		Debug.Log(new Vector3( floatDir.x * sin * range, floatDir.y * sin * range, floatDir.z * sin * range ));
 	}
 }

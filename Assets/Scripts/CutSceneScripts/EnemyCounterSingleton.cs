@@ -36,8 +36,8 @@ public class EnemyCounterSingleton : MonoBehaviour
 	[SerializeField] private Transform playerTransform;
 	[SerializeField] private Vector3 playerOffsetFromDreamer;
 
-	private float startTime = 0;
-	private float waitTime = 10;
+	//private float startTime = 0;
+	//private float waitTime = 10;
 
 	private float fadeoutTime = 0;
 	private float fadeinTime = 0;
@@ -51,7 +51,7 @@ public class EnemyCounterSingleton : MonoBehaviour
 	private void Awake()
 	{
 		instance = this;
-		startTime = Time.time;
+		//startTime = Time.time;
 
 		inputHandler = GameObject.FindGameObjectWithTag("Player").GetComponent<InputHandler>();
 	}
@@ -92,7 +92,9 @@ public class EnemyCounterSingleton : MonoBehaviour
 		dreamer.position = dreamerDestination.position;
 
 		playerTransform.position = dreamer.position - playerOffsetFromDreamer;
-		playerTransform.transform.LookAt (dreamer);
+
+		//playerTransform.forward = (dreamer.position - playerTransform.position).normalized;;
+
 		Instantiate( choicePrefab, Vector3.zero, Quaternion.identity );
 
 		inputHandler.ControllerConstraints = EControlConstraints.DisableAllExceptChoice;
@@ -106,10 +108,6 @@ public class EnemyCounterSingleton : MonoBehaviour
 		yield return new WaitForSeconds( audioClips[0].length + 1f );
 
 		choice = true;
-
-
-
-		// stop input?
 	}
 
 	private IEnumerator CutscenePartII()
@@ -119,7 +117,7 @@ public class EnemyCounterSingleton : MonoBehaviour
 
 		// player touches
 
-		flash.RequestFlash();
+		flash.FadeToWhite();
 
 		NarratorController.NarratorInstance.PlayNewClip(audioClips[2]);
 		yield return new WaitForSeconds( audioClips[2].length + 1f );
