@@ -71,7 +71,7 @@ public class PlayerStats : MonoBehaviour
 	private CameraShakeOnCall cameraShake;
 
 
-    private AudioSource audioSource;
+    private AudioSource audioSourcePlayerDamage;
     [SerializeField] private AudioClip[] audioClips;
     private float audioTimer=0;
 
@@ -91,12 +91,12 @@ public class PlayerStats : MonoBehaviour
         currentVoid = startVoid;
 
         
-        AudioSource[] audioSources = GetComponents<AudioSource>();
-        foreach(AudioSource temp in audioSources)
+        AudioSource[] audioSources = GetComponentsInChildren<AudioSource>();
+        foreach (AudioSource temp in audioSources)
         {
-            if (temp.GetInstanceID() == -989038)
+            if (temp.name == "AudioSourcePlayerDamage")
             {
-                audioSource = temp;
+                audioSourcePlayerDamage = temp;
             }
         }
 	}
@@ -289,8 +289,8 @@ public class PlayerStats : MonoBehaviour
         if (audioTimer <= 0)
         {
             int audioSampleNum = (int)Random.Range(0, audioClips.Length);
-            
-            audioSource.PlayOneShot(audioClips[audioSampleNum]);
+
+            audioSourcePlayerDamage.PlayOneShot(audioClips[audioSampleNum]);
             audioTimer = audioClips[audioSampleNum].length;
         } 
     }

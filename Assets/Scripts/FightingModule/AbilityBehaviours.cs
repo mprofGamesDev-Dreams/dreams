@@ -42,7 +42,7 @@ public class AbilityBehaviours : MonoBehaviour
 	private Color32 beamColor;
 	ActivePower currentPower; public ActivePower CurrentPower { get { return currentPower; } set{ currentPower = value; } }
 
-    AudioSource bulletAudioSource;
+    AudioSource audioSourceBullets;
     [SerializeField] private AudioClip logioClip;
     [SerializeField] private AudioClip imagiClip;
     [SerializeField] private AudioClip voidClip;
@@ -56,12 +56,12 @@ public class AbilityBehaviours : MonoBehaviour
 
 		playerStats = GetComponent<PlayerStats>();
 
-        AudioSource[] audioSources = GetComponents<AudioSource>();
+        AudioSource[] audioSources = GetComponentsInChildren<AudioSource>();
         foreach (AudioSource temp in audioSources)
         {
-            if (temp.GetInstanceID() == -1533482)
+            if (temp.name == "AudioSourceBullet")
             {
-                bulletAudioSource = temp;
+                audioSourceBullets = temp;
             }
         }
             
@@ -277,17 +277,17 @@ public class AbilityBehaviours : MonoBehaviour
 		case ActivePower.Logio:
 			bullet = (GameObject)Instantiate(logioBullet, myCameraTransform.position+(myCameraTransform.forward*1), myCameraTransform.rotation);
 			bullet.GetComponent<Bullet>().SetParent(gameObject);
-            bulletAudioSource.PlayOneShot(logioClip);
+            audioSourceBullets.PlayOneShot(logioClip);
 			break;
 		case ActivePower.Imagi:
 			bullet = (GameObject)Instantiate(imagiBullet, myCameraTransform.position+(myCameraTransform.forward*1), myCameraTransform.rotation); 
 			bullet.GetComponent<Bullet>().SetParent(gameObject);
-            bulletAudioSource.PlayOneShot(imagiClip);
+            audioSourceBullets.PlayOneShot(imagiClip);
 			break;
 		case ActivePower.Void:
 			bullet = (GameObject)Instantiate(voidBullet, myCameraTransform.position+(myCameraTransform.forward*1), myCameraTransform.rotation); 
 			bullet.GetComponent<Bullet>().SetParent(gameObject);
-            bulletAudioSource.PlayOneShot(voidClip);
+            audioSourceBullets.PlayOneShot(voidClip);
 			break;
 		}
 

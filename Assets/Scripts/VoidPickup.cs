@@ -22,15 +22,17 @@ public class VoidPickup : MonoBehaviour {
 
     void OnTriggerStay(Collider col)
     {
-        player = col.gameObject;
-		if (player.CompareTag ("Player")) 
+        if (col.gameObject.CompareTag("Player"))
         {
-			if (player.GetComponent<InputHandler> ().isInteract () && resource > 0)
+            player = col.gameObject;            
+            
+            if (player.GetComponent<InputHandler>().isInteract() && resource > 0)
             {
                 Invoke("PickUp", audioClip.length);
                 audioSource.PlayOneShot(audioClip);
-			}
-		}
+            }
+            
+        }
     }
 
     void PickUp()
