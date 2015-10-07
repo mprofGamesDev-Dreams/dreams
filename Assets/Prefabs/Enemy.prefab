@@ -141,10 +141,10 @@ GameObject:
   m_Component:
   - 4: {fileID: 455654}
   - 95: {fileID: 9514828}
-  - 135: {fileID: 13543184}
   - 195: {fileID: 19568414}
   - 114: {fileID: 11409520}
   - 114: {fileID: 11415972}
+  - 136: {fileID: 13695444}
   m_Layer: 12
   m_Name: Enemy
   m_TagString: Untagged
@@ -208,7 +208,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 145154}
   m_LocalRotation: {x: 0, y: -.0869581252, z: 0, w: .996212006}
-  m_LocalPosition: {x: -1.12113178, y: .179999828, z: -.96178472}
+  m_LocalPosition: {x: -1.01300001, y: .179999828, z: -1.20099998}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 408954}
@@ -260,7 +260,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 195500}
   m_LocalRotation: {x: 0, y: .848014176, z: 0, w: .529973567}
-  m_LocalPosition: {x: 18.2900009, y: 5.76131487, z: 40.9500008}
+  m_LocalPosition: {x: -17.6200008, y: 1.08000004, z: 12.3699999}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 436038}
@@ -471,8 +471,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Enemey: {fileID: 195500}
---- !u!135 &13543184
-SphereCollider:
+--- !u!136 &13695444
+CapsuleCollider:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
@@ -480,9 +480,10 @@ SphereCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: .75
-  m_Center: {x: 0, y: 1, z: -0}
+  m_Radius: .295288354
+  m_Height: 1.0324868
+  m_Direction: 1
+  m_Center: {x: 0, y: .824999988, z: 0}
 --- !u!195 &19568414
 NavMeshAgent:
   m_ObjectHideFlags: 1
@@ -606,6 +607,14 @@ Prefab:
       propertyPath: splitIntoEnemyPrefab
       value: 
       objectReference: {fileID: 195500}
+    - target: {fileID: 0}
+      propertyPath: m_LocalRotation.y
+      value: .848013937
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_LocalRotation.w
+      value: .529973984
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 195500}
