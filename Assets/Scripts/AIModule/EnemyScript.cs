@@ -18,6 +18,8 @@ public class EnemyScript : MonoBehaviour {
 	[SerializeField] private GameObject logioPrefab;
 
 	[SerializeField] private bool canSplit = false;
+	[SerializeField] private bool dying = false;
+	[SerializeField] private float dyingRotation = 400;
 	[SerializeField] private GameObject splitIntoEnemyPrefab;
 
 	[SerializeField] private float expDrop = 10;
@@ -80,44 +82,68 @@ public class EnemyScript : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+
 		//If health is zero, be destroyed.
 		if (Health <= 0.0f) 
 		{
-			PlayerStats stats = (GameObject.FindGameObjectWithTag("Player")).GetComponent<PlayerStats>();
-			Vector3 pos = transform.position;
-			pos.y += 0.5f;
-			PickupOnTrigger obj;
-
-			// Create ParticleDrop
-			switch (ActivePowerUI.instance.CurrentPower)
+			//Setup for death animation
+			if(gameObject.transform.FindChild("Healthbar") != null) 
 			{
-			case ActivePower.Imagi:
-				obj = (Instantiate(imagiPrefab, pos, Quaternion.identity ) as GameObject).GetComponent<PickupOnTrigger>();
-				obj.StatModifyValue = stats.MaxImagi * 0.10f;
-				break;
-			case ActivePower.Void:
-				obj = (Instantiate(voidPrefab, pos, Quaternion.identity ) as GameObject).GetComponent<PickupOnTrigger>();
-				obj.StatModifyValue = stats.MaxVoid * 0.10f;
-				break;
-			case ActivePower.Logio:
-				obj = (Instantiate(logioPrefab, pos, Quaternion.identity ) as GameObject).GetComponent<PickupOnTrigger>();
-				obj.StatModifyValue = stats.MaxLogio * 0.10f;
-				break;
+				Destroy (gameObject.transform.FindChild("Healthbar").gameObject);
+				gameObject.GetComponent<NavMeshAgent>().enabled = false;
+				gameObject.GetComponent<EnemyBehaviour>().enabled = false;
 			}
 
-			// Create EXP
-			pos.x += 0.5f;
-			obj = (Instantiate(expPrefab, pos, Quaternion.identity ) as GameObject).GetComponent<PickupOnTrigger>();
-			obj.StatModifyValue = expDrop;
-
-			// decrement the counter
-			if(EnemyCounterSingleton.Instance != null)
+			if(gameObject.GetComponent<ShrinkToOblivion>() != null)
 			{
-				EnemyCounterSingleton.Instance.CurrentEnemyCount--;
+				gameObject.GetComponent<ShrinkToOblivion>().trigger = transform.localScale != Vector3.zero;
+				gameObject.transform.Rotate(Vector3.up * dyingRotation * Time.deltaTime);
+				dyingRotation *= 1.075f;
+				dying = transform.localScale != Vector3.zero;
+			}
+			else
+			{
+				dying = false;
 			}
 
+			//Once animation is done
+			if(!dying)
+			{
+				PlayerStats stats = (GameObject.FindGameObjectWithTag("Player")).GetComponent<PlayerStats>();
+				Vector3 pos = transform.position;
+				pos.y += 0.5f;
+				PickupOnTrigger obj;
+				
+				// Create ParticleDrop
+				switch (ActivePowerUI.instance.CurrentPower)
+				{
+				case ActivePower.Imagi:
+					obj = (Instantiate(imagiPrefab, pos, Quaternion.identity ) as GameObject).GetComponent<PickupOnTrigger>();
+					obj.StatModifyValue = stats.MaxImagi * 0.10f;
+					break;
+				case ActivePower.Void:
+					obj = (Instantiate(voidPrefab, pos, Quaternion.identity ) as GameObject).GetComponent<PickupOnTrigger>();
+					obj.StatModifyValue = stats.MaxVoid * 0.10f;
+					break;
+				case ActivePower.Logio:
+					obj = (Instantiate(logioPrefab, pos, Quaternion.identity ) as GameObject).GetComponent<PickupOnTrigger>();
+					obj.StatModifyValue = stats.MaxLogio * 0.10f;
+					break;
+				}
+				
+				// Create EXP
+				pos.x += 0.5f;
+				obj = (Instantiate(expPrefab, pos, Quaternion.identity ) as GameObject).GetComponent<PickupOnTrigger>();
+				obj.StatModifyValue = expDrop;
+				
+				// decrement the counter
+				if(EnemyCounterSingleton.Instance != null)
+				{
+					EnemyCounterSingleton.Instance.CurrentEnemyCount--;
+				}
 
-			Destroy(gameObject);
+				Destroy(gameObject);
+			}
 		}
 	
 	}

@@ -145,6 +145,7 @@ GameObject:
   - 114: {fileID: 11409520}
   - 114: {fileID: 11415972}
   - 136: {fileID: 13695444}
+  - 114: {fileID: 11420006}
   m_Layer: 12
   m_Name: Enemy
   m_TagString: Untagged
@@ -457,8 +458,23 @@ MonoBehaviour:
   imagiPrefab: {fileID: 156894, guid: c757713502107e84096f15d454be9304, type: 2}
   logioPrefab: {fileID: 107886, guid: 9ef5c66a8170b654da9e1af46fbbfcc4, type: 2}
   canSplit: 0
+  dying: 0
+  dyingRotation: 200
   splitIntoEnemyPrefab: {fileID: 195500}
   expDrop: 10
+--- !u!114 &11420006
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 195500}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0afcba84913f79e4497449a75e9f0f76, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  trigger: 0
+  shrinkSpeed: 1
 --- !u!114 &11473512
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -614,6 +630,10 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: m_LocalRotation.w
       value: .529973984
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
