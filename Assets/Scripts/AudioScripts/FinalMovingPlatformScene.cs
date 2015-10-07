@@ -7,19 +7,18 @@ public class FinalMovingPlatformScene : MonoBehaviour
 	[SerializeField] private float transitionTime;
 
 	private InputHandler playerInput;
-	private Transform cameraTransform;
+	//private Transform cameraTransform;
 
 	private bool triggerEvent = true; public bool TriggerEvent { set { triggerEvent = true; } }
 
 	OnTriggerPlay audioEvent;
-	bool rotateCamera;
 
 	private void Start () 
 	{
 		GameObject player = GameObject.FindGameObjectWithTag("Player");
 
 		playerInput = player.GetComponent<InputHandler>();
-		cameraTransform = player.GetComponent<Transform>();
+		//cameraTransform = player.GetComponent<Transform>();
 		//cameraTransform = player.GetComponent<Transform>().GetChild(0).GetComponent<Transform>();
 		audioEvent = GetComponent<OnTriggerPlay>();
 	}
@@ -37,7 +36,6 @@ public class FinalMovingPlatformScene : MonoBehaviour
 		{
 			playerInput.ControllerConstraints = EControlConstraints.DisableAll;
 
-			rotateCamera = true;
 
 			StartCoroutine( UnlockPlayer() );
 
@@ -47,7 +45,6 @@ public class FinalMovingPlatformScene : MonoBehaviour
 		if( audioEvent.CurrentState != EAudioState.isFinished )
 		{
 			playerInput.ControllerConstraints = EControlConstraints.EnableAll;
-			rotateCamera = false;
 		}
 	}
 
