@@ -8,8 +8,8 @@ public class Shield : MonoBehaviour
 	[SerializeField] private shieldOptions shieldType;
     [SerializeField] private int shieldHealth = 20;
 
-    private float scrollOffset = 0;
-    private float scrollSpeed = 0.003f;
+    //private float scrollOffset = 0;
+    //private float scrollSpeed = 0.003f;
 
     private void Start()
     {
