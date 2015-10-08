@@ -292,6 +292,7 @@ GameObject:
   - 114: {fileID: 11415972}
   - 82: {fileID: 8211972}
   - 114: {fileID: 11464152}
+  - 114: {fileID: 11424136}
   m_Layer: 12
   m_Name: Enemy
   m_TagString: Untagged
@@ -572,6 +573,7 @@ AudioSource:
   m_Pitch: 1
   Loop: 0
   Mute: 0
+  Spatialize: 0
   Priority: 128
   DopplerLevel: 1
   MinDistance: 1
@@ -721,6 +723,17 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 0b2ac8a79de42b6458f2b9f84f7cfa33, type: 3}
   - {fileID: 8300000, guid: 24724c4f85cb3694fa4bc19d64d12d63, type: 3}
   - {fileID: 8300000, guid: 00378c67794f00040ad06b78ad83604b, type: 3}
+--- !u!114 &11424136
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 195500}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 537c446c7818f2c45b71fd95b53e7b49, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &11464152
 MonoBehaviour:
   m_ObjectHideFlags: 1
