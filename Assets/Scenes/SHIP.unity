@@ -900,6 +900,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 99b8b9da173d57f4f923c96148ee27b4, type: 3}
   trigger: {fileID: 1460698125}
   waitTimeBetweenClips: 0
+  activePower: {fileID: 1749923993}
 --- !u!4 &472337035
 Transform:
   m_ObjectHideFlags: 0
@@ -1956,7 +1957,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: da65bb3e4dcbe8b42abcd81d528c3312, type: 3}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
@@ -2269,6 +2270,12 @@ Prefab:
     - {fileID: 6400000, guid: 865f921ccaf52f6499be261c932135d8, type: 3}
   m_ParentPrefab: {fileID: 100100000, guid: 865f921ccaf52f6499be261c932135d8, type: 3}
   m_IsPrefabParent: 0
+--- !u!114 &1749923993 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 11445944, guid: f368f1de4d49e314ea70c8d377a8b8aa,
+    type: 2}
+  m_PrefabInternal: {fileID: 950648766}
+  m_Script: {fileID: 11500000, guid: 94ef5a604132afc48ad6e4e6ffdf5452, type: 3}
 --- !u!1 &1812622541
 GameObject:
   m_ObjectHideFlags: 0
