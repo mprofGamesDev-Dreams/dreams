@@ -44,8 +44,6 @@ public class NarratorController
 	// Plays A New Clip
 	public void PlayNewClip(AudioClip audioClip, int objID, IDestroyAudioEvent objInterface)
 	{
-		Debug.Log(objID);
-
 		if( objID != requestObjectID )
 		{
 			if(objReference != null)
