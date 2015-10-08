@@ -23,6 +23,9 @@ public class ShipToFirstLevel : MonoBehaviour
 	private EAudioState myState = EAudioState.isWaiting;
 	private NarratorController narrator;
 
+	public ActivePowerManager activePower;
+
+
 	private void Start()
 	{
 		playerObject = GameObject.FindGameObjectWithTag("Player");
@@ -44,10 +47,18 @@ public class ShipToFirstLevel : MonoBehaviour
 		inputHandler = GameObject.FindGameObjectWithTag("Player").GetComponent<InputHandler>();
 
 		colliderToTrigger = trigger.GetComponent<BoxCollider>();
+
+		// Make sure on restart that the power is set to logio
+		activePower.CurrentPower = ActivePower.Logio;
 	}
 
 	private void Update()
 	{
+		if(activePower.CurrentPower != ActivePower.Logio)
+		{
+			activePower.CurrentPower = ActivePower.Logio;
+		}
+
 		if(myState == EAudioState.isWaiting)
 			return;
 

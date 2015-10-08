@@ -25,7 +25,7 @@ public class ActivePowerManager : MonoBehaviour {
 	[SerializeField] private Image uiCross;
 	[SerializeField] private GameObject barManager;
 
-	[SerializeField]private ActivePower currentPower;
+	[SerializeField]private ActivePower currentPower = ActivePower.Logio;
 	private AbilityBehaviours abilityBehaviours;
 	//private InputHandler input;
 	

@@ -11,7 +11,7 @@ public class LoadSceneOnTrigger : MonoBehaviour
 	public Light lightSource;
 
 	[SerializeField]private ShipToFirstLevel sceneController;
-
+	
 	private void Update()
 	{
 		if(activateFadeOut)
