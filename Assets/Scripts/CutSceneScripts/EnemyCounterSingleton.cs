@@ -93,6 +93,10 @@ public class EnemyCounterSingleton : MonoBehaviour
 
 		playerTransform.position = dreamer.position - playerOffsetFromDreamer;
 
+		Transform sceneCamera = TurnOnSceneCamera(true);
+
+		sceneCamera.LookAt(dreamer.position);
+
 		//playerTransform.forward = (dreamer.position - playerTransform.position).normalized;;
 
 		Instantiate( choicePrefab, Vector3.zero, Quaternion.identity );
@@ -124,5 +128,42 @@ public class EnemyCounterSingleton : MonoBehaviour
 
 
 		Application.LoadLevel("SHIP");
+	}
+
+
+	
+	// Always Returns SceneCamera
+	private Transform TurnOnSceneCamera( bool state )
+	{
+		Camera mainCamera = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Camera>();
+		Camera sceneCamera;
+		
+		// Make Sure SceneCamera Exists If Not Create It
+		GameObject obj;
+		if( (obj = GameObject.FindGameObjectWithTag("SceneCamera")) == null )
+			sceneCamera = CreateSceneCamera();
+		else sceneCamera = obj.GetComponent<Camera>();
+		
+		if( sceneCamera == null )
+			sceneCamera = CreateSceneCamera();
+		
+		mainCamera.enabled = !state;
+		sceneCamera.enabled = state;
+		
+		return sceneCamera.transform;
+	}
+	
+	private Camera CreateSceneCamera()
+	{
+		GameObject camObj = new GameObject("SceneCamera", typeof(Camera));
+		Transform sceneCamera = camObj.GetComponent<Transform>();
+		sceneCamera.tag = "SceneCamera";
+		sceneCamera.position = Camera.main.transform.position;
+		sceneCamera.rotation = Camera.main.transform.rotation;
+		sceneCamera.parent = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
+		
+		sceneCamera.GetComponent<Camera>().cullingMask = Camera.main.cullingMask;
+		
+		return sceneCamera.GetComponent<Camera>();
 	}
 }
