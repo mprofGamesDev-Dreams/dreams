@@ -23,7 +23,7 @@ public class ShipToFirstLevel : MonoBehaviour
 	private EAudioState myState = EAudioState.isWaiting;
 	private NarratorController narrator;
 
-	public ActivePowerManager activePower;
+	public AbilityBehaviours activePower;
 
 
 	private void Start()

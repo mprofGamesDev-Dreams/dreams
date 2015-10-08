@@ -92,6 +92,6 @@ public class ActivePowerManager : MonoBehaviour {
 	public ActivePower CurrentPower
 	{
 		get{return currentPower;}
-		set{currentPower = value;}
+		set{currentPower = value; Debug.Log(value + ", current" + currentPower);}
 	}
 }
