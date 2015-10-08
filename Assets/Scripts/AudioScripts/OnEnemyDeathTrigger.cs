@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class OnEnemyDeathTrigger : MonoBehaviour {
+public class OnEnemyDeathTrigger : MonoBehaviour, IDestroyAudioEvent {
 
 	[SerializeField] private EnemyScript enemyHealth;
 	OnCallPlayEventAudio myAudioEvent;
@@ -19,5 +19,10 @@ public class OnEnemyDeathTrigger : MonoBehaviour {
 			myAudioEvent.TriggerEvent = true;
 			Destroy(this);
 		}
+	}
+
+	public void DestroyAudioEvent()
+	{
+		Destroy(this);
 	}
 }

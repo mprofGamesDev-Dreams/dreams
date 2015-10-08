@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class EnemyCounterSingleton : MonoBehaviour 
+public class EnemyCounterSingleton : MonoBehaviour, IDestroyAudioEvent
 {
 	private static EnemyCounterSingleton instance; 
 	public static EnemyCounterSingleton Instance 
@@ -105,7 +105,7 @@ public class EnemyCounterSingleton : MonoBehaviour
 
 		yield return new WaitForSeconds(fadeinTime);
 
-		NarratorController.NarratorInstance.PlayNewClip(audioClips[0]);
+		NarratorController.NarratorInstance.PlayNewClip(audioClips[0], gameObject.GetInstanceID(), (IDestroyAudioEvent)this);
 
 		yield return new WaitForSeconds( audioClips[0].length + 1f );
 
@@ -114,14 +114,14 @@ public class EnemyCounterSingleton : MonoBehaviour
 
 	private IEnumerator CutscenePartII()
 	{
-		NarratorController.NarratorInstance.PlayNewClip(audioClips[1]);
+		NarratorController.NarratorInstance.PlayNewClip(audioClips[1], gameObject.GetInstanceID(), (IDestroyAudioEvent)this);
 		yield return new WaitForSeconds( audioClips[1].length + 1f );
 
 		// player touches
 
 		flash.FadeToWhite();
 
-		NarratorController.NarratorInstance.PlayNewClip(audioClips[2]);
+		NarratorController.NarratorInstance.PlayNewClip(audioClips[2], gameObject.GetInstanceID(), (IDestroyAudioEvent)this);
 		yield return new WaitForSeconds( audioClips[2].length + 1f );
 
 
@@ -163,5 +163,10 @@ public class EnemyCounterSingleton : MonoBehaviour
 		sceneCamera.GetComponent<Camera>().cullingMask = Camera.main.cullingMask;
 		
 		return sceneCamera.GetComponent<Camera>();
+	}
+
+	public void DestroyAudioEvent()
+	{
+		Destroy(this);
 	}
 }

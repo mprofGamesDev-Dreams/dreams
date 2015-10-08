@@ -3,7 +3,7 @@ using System.Collections;
 
 using UnityStandardAssets.CrossPlatformInput;
 
-public class ShipToFirstLevel : MonoBehaviour 
+public class ShipToFirstLevel : MonoBehaviour, IDestroyAudioEvent
 {
 	[SerializeField] private AudioClip[] audioClips;
 	private int audioClipIndex = 0;
@@ -38,7 +38,7 @@ public class ShipToFirstLevel : MonoBehaviour
 
 
 		narrator = NarratorController.NarratorInstance;
-		narrator.PlayNewClip(audioClips[audioClipIndex]);
+		narrator.PlayNewClip(audioClips[audioClipIndex], gameObject.GetInstanceID(), (IDestroyAudioEvent)this);
 
 		myState = EAudioState.isPlaying;
 
@@ -92,7 +92,7 @@ public class ShipToFirstLevel : MonoBehaviour
 				if(audioClipIndex == 1)
 				{
 					playerInputManager.ControllerConstraints = EControlConstraints.EnableAllExceptPowers;
-					narrator.PlayNewClip(audioClips[audioClipIndex]);
+					narrator.PlayNewClip(audioClips[audioClipIndex], gameObject.GetInstanceID(), (IDestroyAudioEvent)this);
 					myState = EAudioState.isPlaying;
 				}
 				
@@ -139,10 +139,15 @@ public class ShipToFirstLevel : MonoBehaviour
 
 	public void PlayClip(int i) // played after shooting
 	{
-		narrator.PlayNewClip(audioClips[i]);
+		narrator.PlayNewClip(audioClips[i], gameObject.GetInstanceID(), (IDestroyAudioEvent)this);
 		myState = EAudioState.isPlaying;
 		startTime = Time.time;
 		audioClipIndex++;
+	}
+
+	public void DestroyAudioEvent()
+	{
+		Destroy(this);
 	}
 
 }

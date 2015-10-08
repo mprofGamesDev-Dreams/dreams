@@ -9,7 +9,7 @@ public enum EAudioState
 	isFinished // Finished Playing All Clips
 }
 
-public class OnTriggerPlay : MonoBehaviour 
+public class OnTriggerPlay : MonoBehaviour, IDestroyAudioEvent
 {
 	[SerializeField] private AudioClip[] audioClip;
 	[SerializeField] private float waitTimeBetweenClips;
@@ -49,7 +49,7 @@ public class OnTriggerPlay : MonoBehaviour
 				{
 					myState = EAudioState.isPlaying;
 					startTime = Time.time;
-					narrator.PlayNewClip(audioClip[audioClipIndex]);
+					narrator.PlayNewClip(audioClip[audioClipIndex], gameObject.GetInstanceID(), (IDestroyAudioEvent)this);
 
 					return;
 				}
@@ -86,12 +86,17 @@ public class OnTriggerPlay : MonoBehaviour
 			myState = EAudioState.isPlaying;
 			startTime = Time.time;
 
-			narrator.PlayNewClip(audioClip[audioClipIndex]);
+			narrator.PlayNewClip(audioClip[audioClipIndex], gameObject.GetInstanceID(), (IDestroyAudioEvent)this);
 		}
 	}
 
 	public EAudioState CurrentState
 	{
 		get { return myState; }
+	}
+
+	public void DestroyAudioEvent()
+	{
+		Destroy(this);
 	}
 }

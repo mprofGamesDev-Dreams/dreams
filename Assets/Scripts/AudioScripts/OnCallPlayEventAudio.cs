@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-public class OnCallPlayEventAudio : MonoBehaviour 
+public class OnCallPlayEventAudio : MonoBehaviour, IDestroyAudioEvent
 {
 	[SerializeField] private AudioClip[] audioClip;
 	[SerializeField] private float waitTimeBetweenClips;
@@ -46,7 +46,7 @@ public class OnCallPlayEventAudio : MonoBehaviour
 				{
 					myState = EAudioState.isPlaying;
 					startTime = Time.time;
-					narrator.PlayNewClip(audioClip[audioClipIndex]);
+					narrator.PlayNewClip(audioClip[audioClipIndex], gameObject.GetInstanceID(), (IDestroyAudioEvent)this);
 					return;
 				}
 			}// If Timer Hasnt Finished Then Wait
@@ -89,7 +89,12 @@ public class OnCallPlayEventAudio : MonoBehaviour
 			myState = EAudioState.isPlaying;
 			startTime = Time.time;
 
-			narrator.PlayNewClip(audioClip[audioClipIndex]);
+			narrator.PlayNewClip(audioClip[audioClipIndex], gameObject.GetInstanceID(), (IDestroyAudioEvent)this);
 		}
+	}
+
+	public void DestroyAudioEvent()
+	{
+		Destroy(this);
 	}
 }

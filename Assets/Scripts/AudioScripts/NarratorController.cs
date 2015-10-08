@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using System.Collections.Generic;
 
 /// <summary>
 /// Narrator controller.
@@ -36,10 +37,26 @@ public class NarratorController
 			return narratorInstance;
 		} 
 	}
+	
+	int requestObjectID = -1;
+	IDestroyAudioEvent objReference = null;
 
 	// Plays A New Clip
-	public void PlayNewClip(AudioClip audioClip)
+	public void PlayNewClip(AudioClip audioClip, int objID, IDestroyAudioEvent objInterface)
 	{
+		Debug.Log(objID);
+
+		if( objID != requestObjectID )
+		{
+			if(objReference != null)
+			{
+				objReference.DestroyAudioEvent() ;
+			}
+			
+			requestObjectID = objID;
+			objReference = objInterface;
+		}
+
 		narrator.clip = audioClip;
 		narrator.Play();
 	}
