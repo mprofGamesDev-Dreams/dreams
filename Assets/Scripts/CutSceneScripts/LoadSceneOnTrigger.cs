@@ -32,6 +32,8 @@ public class LoadSceneOnTrigger : MonoBehaviour
 					sceneController.PlayClip(2);
 					lightSource.color = Color.green;
 					canTeleport = true;
+
+					GetComponent<AudioSource>().Play();
 				}
 			}
 		}
