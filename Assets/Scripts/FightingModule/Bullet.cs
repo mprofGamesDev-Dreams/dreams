@@ -85,12 +85,13 @@ public class Bullet : MonoBehaviour {
 	private void HitLogio(Collision collision)
 	{
 		collision.gameObject.GetComponent<EnemyScript>().TakeDamage(damage);
+		parentPlayer.GetComponent<PlayerStats> ().LogioHit ();
 	}
 
 	private void HitImagi(Collision collision)
 	{
 		collision.gameObject.GetComponent<EnemyScript>().TakeDamage(damage);
-		parentPlayer.GetComponent<PlayerStats> ().ImagiHit ();
+
 	}
 
 	private void HitVoid(Collision collision)
