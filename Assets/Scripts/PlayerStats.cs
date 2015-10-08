@@ -242,11 +242,12 @@ public class PlayerStats : MonoBehaviour
 	public void ModifyHealth(float amount)
 	{
 		currentHealth = Mathf.Clamp( currentHealth + amount, 0, maxHealth );
-		cameraShake.ShakeViewport();
         
         if(amount <0)
         {
             PlayHitSound();
+			cameraShake.ShakeViewport();
+
         }
 	}
 
