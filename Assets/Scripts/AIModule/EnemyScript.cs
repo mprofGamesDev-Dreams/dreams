@@ -7,7 +7,10 @@ using UnityEngine;
 using System.Collections;
 
 public class EnemyScript : MonoBehaviour {
-	
+
+	[SerializeField] private GameObject rigPrefab;
+	private Animator rigAnimation;
+
 	[SerializeField] private float maxHealth;
 	[SerializeField] private float health;
 	[SerializeField] private GameObject healthBar;
@@ -93,6 +96,18 @@ public class EnemyScript : MonoBehaviour {
 		{
 			Debug.Log("No audio source found on object");
 		}
+
+		// animation
+		if(!rigPrefab)
+		{
+			Debug.Log ("Rig Prefab not set");
+		}
+		
+		rigAnimation = rigPrefab.GetComponent<Animator>();
+		if(!rigAnimation)
+		{
+			Debug.Log ("Rig Animator not set");
+		}
 	}
 	
 	// Update is called once per frame
@@ -129,7 +144,9 @@ public class EnemyScript : MonoBehaviour {
 		int audioSampleNum = (int)Random.Range(0,audioClips.Length);
 		//audioSource.clip.Equals();
 		audioSource.PlayOneShot(audioClips[audioSampleNum]);
-		
+
+		// play animation
+		rigAnimation.SetTrigger( "Hurt" );
 	}
 	
 	private void ActivateHealthBar()

@@ -24,6 +24,11 @@ public class EnemyBehaviour : MonoBehaviour {
 	[SerializeField] private bool canSlow = false;
 
 	private Vector3 OldPosition;
+
+	
+	// Animator
+	[SerializeField] private GameObject rigPrefab;
+	private Animator rigAnimation;
 	
 	// Use this for initialization
     void Start()
@@ -33,6 +38,18 @@ public class EnemyBehaviour : MonoBehaviour {
         target = transform.position;
         original = transform.position;
 		OldPosition = transform.position;
+
+		// animation
+		if(!rigPrefab)
+		{
+			Debug.Log ("Rig Prefab not set");
+		}
+		
+		rigAnimation = rigPrefab.GetComponent<Animator>();
+		if(!rigAnimation)
+		{
+			Debug.Log ("Rig Animator not set");
+		}
     }
 
 	// Update is called once per frame
@@ -100,7 +117,9 @@ public class EnemyBehaviour : MonoBehaviour {
                 target = targetPlayer.transform.position;
 				if(agent.isOnNavMesh)
 					agent.SetDestination(target);
-                playerSeen = true;
+				playerSeen = true;
+
+				rigAnimation.SetBool("Attack", false);
                 
                 break;
 
@@ -120,7 +139,9 @@ public class EnemyBehaviour : MonoBehaviour {
                     {
                         currentPatrolNode = 0;
                     }
-                }
+				}
+
+				rigAnimation.SetBool("Attack", false);
 
                 playerSeen = false;
                 break;
@@ -130,6 +151,8 @@ public class EnemyBehaviour : MonoBehaviour {
                 	agent.SetDestination(original);
 
                 playerSeen = false;
+			
+				rigAnimation.SetBool("Attack", false);
                 break;
 
             case aiStates.attack:
@@ -138,7 +161,7 @@ public class EnemyBehaviour : MonoBehaviour {
 
                 if (attackTimer >= attackCooldown)
                 {
-					
+					rigAnimation.SetBool("Attack", true);
 					PlayerStats hitStats =  hit.transform.gameObject.GetComponent<PlayerStats>();
 					hitStats.SendMessage("ModifyHealth", -attackDamage);
 					if(canSlow)
@@ -147,7 +170,7 @@ public class EnemyBehaviour : MonoBehaviour {
                     attackTimer = 0.0f;
                 }
                 else
-                {
+				{
                     attackTimer += Time.deltaTime;
                 }
                 playerSeen = false;
