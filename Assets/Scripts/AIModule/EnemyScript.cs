@@ -182,7 +182,7 @@ public class EnemyScript : MonoBehaviour {
 		PickupOnTrigger obj;
 		
 		// Create ParticleDrop
-		switch (ActivePowerUI.instance.CurrentPower)
+		switch (ActivePowerManager.instance.CurrentPower)
 		{
 		case ActivePower.Imagi:
 			obj = (Instantiate(imagiPrefab, pos, Quaternion.identity) as GameObject).GetComponent<PickupOnTrigger>();
