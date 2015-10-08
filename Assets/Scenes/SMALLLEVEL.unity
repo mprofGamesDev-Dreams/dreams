@@ -2758,6 +2758,42 @@ Transform:
 Transform:
   m_PrefabParentObject: {fileID: 470286, guid: 410528a9ea19831428cf84e7a87271ef, type: 2}
   m_PrefabInternal: {fileID: 569202445}
+--- !u!1 &587141099 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 195500, guid: 30f77a23ae462e1408d520c7436769c0, type: 2}
+  m_PrefabInternal: {fileID: 1131605635}
+--- !u!114 &587141102 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 11415972, guid: 30f77a23ae462e1408d520c7436769c0,
+    type: 2}
+  m_PrefabInternal: {fileID: 1131605635}
+  m_Script: {fileID: 11500000, guid: 96617e146b5369844b7cb6aa7e9f6bc5, type: 3}
+--- !u!114 &587141107
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 587141099}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c753d2355719f514b914a3055c06db92, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemyHealth: {fileID: 587141102}
+--- !u!114 &587141108
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 587141099}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7b2d1652af2fb1647929b9703254758f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audioClip:
+  - {fileID: 8300000, guid: f310e83edb119944fb7e50f3c4ecf56b, type: 3}
+  waitTimeBetweenClips: 0
 --- !u!1001 &587162310
 Prefab:
   m_ObjectHideFlags: 0
@@ -10698,7 +10734,7 @@ MonoBehaviour:
   - {fileID: 696521134}
   targetIndex: 0
   isPathLooping: 1
-  MovementSpeed: 5
+  MovementSpeed: 3
   triggered: 0
 --- !u!114 &2110499240
 MonoBehaviour:

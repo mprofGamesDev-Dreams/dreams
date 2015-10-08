@@ -58,8 +58,6 @@ public class EnemyCounterSingleton : MonoBehaviour
 
 	private void Update()
 	{
-		if(Input.GetKeyDown(KeyCode.RightControl))
-			StartCutscene();
 
 		/*
 		if(Time.time < (startTime + waitTime))
