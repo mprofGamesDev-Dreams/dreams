@@ -3666,6 +3666,64 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1543228966}
   m_RootOrder: 0
+--- !u!1 &797466978
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 196824, guid: 2d5935d60c5968d488f8f5a3997504df, type: 2}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 797466979}
+  - 65: {fileID: 797466981}
+  - 114: {fileID: 797466980}
+  m_Layer: 0
+  m_Name: Island7 AudioTrigger
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &797466979
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 484540, guid: 2d5935d60c5968d488f8f5a3997504df, type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 797466978}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -26.0300007, y: 1.23000002, z: 39.0400009}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1764642082}
+  m_RootOrder: 3
+--- !u!114 &797466980
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 11427248, guid: 2d5935d60c5968d488f8f5a3997504df,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 797466978}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 43a885f6976ef1f4a98532ee3a990d3d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audioClip:
+  - {fileID: 8300000, guid: 98783c464915b9b4a882a5d5bfb6207f, type: 3}
+  - {fileID: 8300000, guid: 173156bf06a724647983a51f74ec3d0f, type: 3}
+  waitTimeBetweenClips: 0
+--- !u!65 &797466981
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 6533242, guid: 2d5935d60c5968d488f8f5a3997504df,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 797466978}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 5, y: 2, z: 5}
+  m_Center: {x: 0, y: 0, z: -2.6500001}
 --- !u!1 &817291279
 GameObject:
   m_ObjectHideFlags: 0
@@ -4517,6 +4575,65 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ebfa9124c9053ac49b054f9d945a5fa9, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &940819432
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 195662, guid: 2d5935d60c5968d488f8f5a3997504df, type: 2}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 940819433}
+  - 65: {fileID: 940819435}
+  - 114: {fileID: 940819434}
+  m_Layer: 0
+  m_Name: Island1 AudioTrigger
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &940819433
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 456910, guid: 2d5935d60c5968d488f8f5a3997504df, type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 940819432}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 6.26000023, y: 1.23000002, z: 2.6400001}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1764642082}
+  m_RootOrder: 0
+--- !u!114 &940819434
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 11474422, guid: 2d5935d60c5968d488f8f5a3997504df,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 940819432}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 43a885f6976ef1f4a98532ee3a990d3d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audioClip:
+  - {fileID: 8300000, guid: 2cd1ac2a241d5e548ba07d4041045192, type: 3}
+  - {fileID: 8300000, guid: 50ab5560e7c09964eaefcfc99478fb52, type: 3}
+  - {fileID: 8300000, guid: 3986e1f1a557d1949874c10a98d46cfc, type: 3}
+  waitTimeBetweenClips: .5
+--- !u!65 &940819435
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 6501676, guid: 2d5935d60c5968d488f8f5a3997504df,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 940819432}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 5, y: 2, z: 5}
+  m_Center: {x: 0, y: 0, z: -2.6500001}
 --- !u!1001 &944129472
 Prefab:
   m_ObjectHideFlags: 0
@@ -5012,6 +5129,63 @@ MonoBehaviour:
     type: 2}
   m_PrefabInternal: {fileID: 1243841210}
   m_Script: {fileID: 11500000, guid: 96617e146b5369844b7cb6aa7e9f6bc5, type: 3}
+--- !u!1 &1020147612
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 132590, guid: 2d5935d60c5968d488f8f5a3997504df, type: 2}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1020147613}
+  - 65: {fileID: 1020147615}
+  - 114: {fileID: 1020147614}
+  m_Layer: 0
+  m_Name: Island6 AudioTrigger
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1020147613
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 474794, guid: 2d5935d60c5968d488f8f5a3997504df, type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1020147612}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -18.1000004, y: 1.23000002, z: 14.4899998}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1764642082}
+  m_RootOrder: 2
+--- !u!114 &1020147614
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 11418018, guid: 2d5935d60c5968d488f8f5a3997504df,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1020147612}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 43a885f6976ef1f4a98532ee3a990d3d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audioClip:
+  - {fileID: 8300000, guid: 19a76c52d9c6ec64fa6abb376d830e5f, type: 3}
+  waitTimeBetweenClips: 0
+--- !u!65 &1020147615
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 6563404, guid: 2d5935d60c5968d488f8f5a3997504df,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1020147612}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 5, y: 2, z: 5}
+  m_Center: {x: 0, y: 0, z: -2.6500001}
 --- !u!4 &1026174891
 Transform:
   m_ObjectHideFlags: 0
@@ -6137,6 +6311,63 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1215171911}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &1217510393
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 103886, guid: 2d5935d60c5968d488f8f5a3997504df, type: 2}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1217510396}
+  - 65: {fileID: 1217510395}
+  - 114: {fileID: 1217510394}
+  m_Layer: 0
+  m_Name: Island13 AudioTrigger 2
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1217510394
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 11445206, guid: 2d5935d60c5968d488f8f5a3997504df,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1217510393}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 43a885f6976ef1f4a98532ee3a990d3d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audioClip:
+  - {fileID: 8300000, guid: fa04ee53d4d67aa428b66de46072c3fb, type: 3}
+  waitTimeBetweenClips: 0
+--- !u!65 &1217510395
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 6524258, guid: 2d5935d60c5968d488f8f5a3997504df,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1217510393}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 5, y: 2, z: 5}
+  m_Center: {x: 0, y: 0, z: -2.6500001}
+--- !u!4 &1217510396
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 454800, guid: 2d5935d60c5968d488f8f5a3997504df, type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1217510393}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -5.23000002, y: 6.67000008, z: 43.7000008}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1764642082}
+  m_RootOrder: 6
 --- !u!1 &1238371716
 GameObject:
   m_ObjectHideFlags: 0
@@ -6169,7 +6400,7 @@ MonoBehaviour:
   dreamer: {fileID: 1962275388}
   dreamerDestination: {fileID: 191114215}
   playerTransform: {fileID: 2037699220}
-  playerOffsetFromDreamer: {x: 1, y: 0, z: 0}
+  playerOffsetFromDreamer: {x: 3, y: 1, z: 0}
   audioClips:
   - {fileID: 8300000, guid: a15448985ba99e84691b763557de2d4b, type: 3}
   - {fileID: 8300000, guid: 47cdf121e9cc7eb42bc2fba1149f1961, type: 3}
@@ -6960,6 +7191,138 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1297782653}
   m_RootOrder: 2
+--- !u!1 &1352079787
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 131722, guid: 2d5935d60c5968d488f8f5a3997504df, type: 2}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1352079788}
+  - 65: {fileID: 1352079790}
+  - 114: {fileID: 1352079789}
+  m_Layer: 0
+  m_Name: Island4 AudioTrigger
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1352079788
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 452200, guid: 2d5935d60c5968d488f8f5a3997504df, type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1352079787}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -.0299999993, y: 1.23000002, z: 14.3800001}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1764642082}
+  m_RootOrder: 1
+--- !u!114 &1352079789
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 11406952, guid: 2d5935d60c5968d488f8f5a3997504df,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1352079787}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 43a885f6976ef1f4a98532ee3a990d3d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audioClip:
+  - {fileID: 8300000, guid: 193648aea912d6e4fb1e89b1b67d86cd, type: 3}
+  - {fileID: 8300000, guid: 6112899104786ee4fa7b0ef1482b1612, type: 3}
+  - {fileID: 8300000, guid: c518a0c29b5fdb4439667b07c27d0ae9, type: 3}
+  waitTimeBetweenClips: 0
+--- !u!65 &1352079790
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 6531834, guid: 2d5935d60c5968d488f8f5a3997504df,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1352079787}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 5, y: 2, z: 5}
+  m_Center: {x: 0, y: 0, z: -2.6500001}
+--- !u!1 &1352782358
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 190970, guid: 2d5935d60c5968d488f8f5a3997504df, type: 2}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1352782359}
+  - 65: {fileID: 1352782361}
+  - 114: {fileID: 1352782360}
+  - 114: {fileID: 1352782362}
+  m_Layer: 0
+  m_Name: Island12 AudioTrigger
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1352782359
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 487866, guid: 2d5935d60c5968d488f8f5a3997504df, type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1352782358}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -26.1989994, y: 1.10000002, z: 50.1870003}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1764642082}
+  m_RootOrder: 5
+--- !u!114 &1352782360
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 11486106, guid: 2d5935d60c5968d488f8f5a3997504df,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1352782358}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 43a885f6976ef1f4a98532ee3a990d3d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audioClip:
+  - {fileID: 8300000, guid: eba4b7919240e734eb9cd40d1801d451, type: 3}
+  - {fileID: 8300000, guid: 2ac2ecc068e99164c871313cd83890b5, type: 3}
+  - {fileID: 8300000, guid: a2e6d83c1500bed459cd626cb93960aa, type: 3}
+  waitTimeBetweenClips: .5
+--- !u!65 &1352782361
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 6587306, guid: 2d5935d60c5968d488f8f5a3997504df,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1352782358}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2, y: 2, z: 2}
+  m_Center: {x: 0, y: 0, z: -2.6500001}
+--- !u!114 &1352782362
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1352782358}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbbf8fa6a8b3dcb4d9ddc3639542f25f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dreamer: {fileID: 1962275388}
+  transitionTime: 0
 --- !u!4 &1356872765 stripped
 Transform:
   m_PrefabParentObject: {fileID: 470738, guid: 7a535363c9ffe2c4abbde8dab4caaa2c, type: 2}
@@ -8574,48 +8937,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rot: {x: 1, y: 3, z: 4}
---- !u!1001 &1673872889
-Prefab:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 422270, guid: 2d5935d60c5968d488f8f5a3997504df, type: 2}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 422270, guid: 2d5935d60c5968d488f8f5a3997504df, type: 2}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 422270, guid: 2d5935d60c5968d488f8f5a3997504df, type: 2}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 422270, guid: 2d5935d60c5968d488f8f5a3997504df, type: 2}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 422270, guid: 2d5935d60c5968d488f8f5a3997504df, type: 2}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 422270, guid: 2d5935d60c5968d488f8f5a3997504df, type: 2}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 422270, guid: 2d5935d60c5968d488f8f5a3997504df, type: 2}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 422270, guid: 2d5935d60c5968d488f8f5a3997504df, type: 2}
-      propertyPath: m_RootOrder
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_ParentPrefab: {fileID: 100100000, guid: 2d5935d60c5968d488f8f5a3997504df, type: 2}
-  m_IsPrefabParent: 0
 --- !u!1001 &1688996485
 Prefab:
   m_ObjectHideFlags: 0
@@ -9011,6 +9332,40 @@ Prefab:
 Transform:
   m_PrefabParentObject: {fileID: 401748, guid: 008817e3860607e49a35f1e23d65c5f5, type: 2}
   m_PrefabInternal: {fileID: 1762225972}
+--- !u!1 &1764642081
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 192960, guid: 2d5935d60c5968d488f8f5a3997504df, type: 2}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1764642082}
+  m_Layer: 0
+  m_Name: AudioTriggersAndEvents
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1764642082
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 422270, guid: 2d5935d60c5968d488f8f5a3997504df, type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1764642081}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 940819433}
+  - {fileID: 1352079788}
+  - {fileID: 1020147613}
+  - {fileID: 797466979}
+  - {fileID: 2034566463}
+  - {fileID: 1352782359}
+  - {fileID: 1217510396}
+  m_Father: {fileID: 0}
+  m_RootOrder: 2
 --- !u!4 &1784334400 stripped
 Transform:
   m_PrefabParentObject: {fileID: 470738, guid: 7a535363c9ffe2c4abbde8dab4caaa2c, type: 2}
@@ -9853,6 +10208,64 @@ Prefab:
 Transform:
   m_PrefabParentObject: {fileID: 470286, guid: 410528a9ea19831428cf84e7a87271ef, type: 2}
   m_PrefabInternal: {fileID: 519953011}
+--- !u!1 &2034566462
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 115846, guid: 2d5935d60c5968d488f8f5a3997504df, type: 2}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 2034566463}
+  - 65: {fileID: 2034566465}
+  - 114: {fileID: 2034566464}
+  m_Layer: 0
+  m_Name: Island8 AudioTrigger
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2034566463
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 488918, guid: 2d5935d60c5968d488f8f5a3997504df, type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2034566462}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -19.7999992, y: 1.23000002, z: 44.5299988}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1764642082}
+  m_RootOrder: 4
+--- !u!114 &2034566464
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 11406494, guid: 2d5935d60c5968d488f8f5a3997504df,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2034566462}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 43a885f6976ef1f4a98532ee3a990d3d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audioClip:
+  - {fileID: 8300000, guid: be464dfa8228e2f4ba44a3e54e72baba, type: 3}
+  - {fileID: 8300000, guid: 2c45c191841fd994b931292bbda6a068, type: 3}
+  waitTimeBetweenClips: 0
+--- !u!65 &2034566465
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 6542282, guid: 2d5935d60c5968d488f8f5a3997504df,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2034566462}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 5, y: 2, z: 5}
+  m_Center: {x: 0, y: 0, z: -2.6500001}
 --- !u!1001 &2036074355
 Prefab:
   m_ObjectHideFlags: 0
