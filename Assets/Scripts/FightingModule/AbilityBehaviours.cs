@@ -40,7 +40,7 @@ public class AbilityBehaviours : MonoBehaviour
 	private Transform myCameraTransform;
 	private InputHandler input;
 	private Color32 beamColor;
-	ActivePower currentPower; public ActivePower CurrentPower { get { return currentPower; } set{ currentPower = value; } }
+	[SerializeField] ActivePower currentPower; public ActivePower CurrentPower { get { return currentPower; } set{ currentPower = value; } }
 
     AudioSource audioSourceBullets;
     [SerializeField] private AudioClip logioClip;
