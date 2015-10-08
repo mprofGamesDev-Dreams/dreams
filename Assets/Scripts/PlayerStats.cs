@@ -173,7 +173,7 @@ public class PlayerStats : MonoBehaviour
 		currentLogio = Mathf.Clamp ( currentLogio += logioRegen * Time.deltaTime, 0 , maxLogio * 0.25f );
 	}
 
-	public void ImagiHit()
+	public void LogioHit()
 	{
 		buffTimer = buffDuration;
 		if (!buffed) 
