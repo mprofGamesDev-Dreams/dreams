@@ -17,7 +17,7 @@ public class LoadSceneOnTrigger : MonoBehaviour
 		if(activateFadeOut)
 		{
 			flashController.FadeToWhite();
-			StartCoroutine(WaitToLoadScene(2));
+            StartCoroutine(WaitToLoadScene(GetComponent<AudioSource>().clip.length));
 		}
 	}
 
@@ -42,6 +42,7 @@ public class LoadSceneOnTrigger : MonoBehaviour
 		if(obj.gameObject.CompareTag("Player") && canTeleport)
 		{
 			activateFadeOut = true;
+            GetComponent<AudioSource>().Play();
 		}
 	}
 
