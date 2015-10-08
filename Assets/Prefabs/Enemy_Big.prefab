@@ -31,6 +31,7 @@ GameObject:
   - 114: {fileID: 11405084}
   - 114: {fileID: 11418340}
   - 82: {fileID: 8296914}
+  - 114: {fileID: 11447412}
   m_Layer: 12
   m_Name: Enemy_Big
   m_TagString: Untagged
@@ -1103,13 +1104,15 @@ MonoBehaviour:
   imagiPrefab: {fileID: 156894, guid: c757713502107e84096f15d454be9304, type: 2}
   logioPrefab: {fileID: 107886, guid: 9ef5c66a8170b654da9e1af46fbbfcc4, type: 2}
   canSplit: 0
+  dyingAni: 0
+  dyingRotation: 400
   splitIntoEnemyPrefab: {fileID: 195500, guid: 30f77a23ae462e1408d520c7436769c0, type: 2}
   expDrop: 20
   audioClips:
   - {fileID: 8300000, guid: 106658d1dbf16a8458271bdfaaedc830, type: 3}
-  - {fileID: 8300000, guid: 00378c67794f00040ad06b78ad83604b, type: 3}
   - {fileID: 8300000, guid: 0b2ac8a79de42b6458f2b9f84f7cfa33, type: 3}
   - {fileID: 8300000, guid: 24724c4f85cb3694fa4bc19d64d12d63, type: 3}
+  - {fileID: 8300000, guid: 00378c67794f00040ad06b78ad83604b, type: 3}
 --- !u!114 &11425762
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1122,6 +1125,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Enemey: {fileID: 119840}
+--- !u!114 &11447412
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 119840}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0afcba84913f79e4497449a75e9f0f76, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  trigger: 0
+  shrinkSpeed: 1
 --- !u!114 &11468238
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1248,6 +1264,10 @@ Prefab:
       propertyPath: splitIntoEnemyPrefab
       value: 
       objectReference: {fileID: 195500, guid: 30f77a23ae462e1408d520c7436769c0, type: 2}
+    - target: {fileID: 0}
+      propertyPath: shrinkSpeed
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 119840}

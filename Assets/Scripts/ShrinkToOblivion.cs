@@ -7,7 +7,7 @@ public class ShrinkToOblivion : MonoBehaviour
 
 	public bool trigger;
 
-	public float shrinkSpeed;
+	public float shrinkSpeed = 1;
 
 	// Use this for initialization
 	void Start () 
