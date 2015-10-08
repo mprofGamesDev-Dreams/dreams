@@ -22,6 +22,9 @@ public class EnemyScript : MonoBehaviour {
 
 	[SerializeField] private float expDrop = 10;
 
+    private AudioSource audioSource;
+    [SerializeField] private AudioClip[] audioClips;
+    private bool dieing = false;
 	public float Health 
 	{
 		get
@@ -37,6 +40,7 @@ public class EnemyScript : MonoBehaviour {
 				Instantiate(splitIntoEnemyPrefab, pos, Quaternion.identity);
 				pos.x += 1f;
 				Instantiate(splitIntoEnemyPrefab, pos, Quaternion.identity);
+
 
 				if(EnemyCounterSingleton.Instance != null)
 					EnemyCounterSingleton.Instance.CurrentEnemyCount--;
@@ -76,48 +80,24 @@ public class EnemyScript : MonoBehaviour {
 		{
 			EnemyCounterSingleton.Instance.CurrentEnemyCount++;
 		}else Debug.Log("IzNull");
+
+        if (GetComponent<AudioSource>())
+        {
+            audioSource = GetComponent<AudioSource>();
+        }
+        else
+        {
+            Debug.Log("No audio source found on object");
+        }
 	}
 	
 	// Update is called once per frame
 	void Update () {
 		//If health is zero, be destroyed.
-		if (Health <= 0.0f) 
+		if (Health <= 0.0f && !dieing) 
 		{
-			PlayerStats stats = (GameObject.FindGameObjectWithTag("Player")).GetComponent<PlayerStats>();
-			Vector3 pos = transform.position;
-			pos.y += 0.5f;
-			PickupOnTrigger obj;
-
-			// Create ParticleDrop
-			switch (ActivePowerUI.instance.CurrentPower)
-			{
-			case ActivePower.Imagi:
-				obj = (Instantiate(imagiPrefab, pos, Quaternion.identity ) as GameObject).GetComponent<PickupOnTrigger>();
-				obj.StatModifyValue = stats.MaxImagi * 0.10f;
-				break;
-			case ActivePower.Void:
-				obj = (Instantiate(voidPrefab, pos, Quaternion.identity ) as GameObject).GetComponent<PickupOnTrigger>();
-				obj.StatModifyValue = stats.MaxVoid * 0.10f;
-				break;
-			case ActivePower.Logio:
-				obj = (Instantiate(logioPrefab, pos, Quaternion.identity ) as GameObject).GetComponent<PickupOnTrigger>();
-				obj.StatModifyValue = stats.MaxLogio * 0.10f;
-				break;
-			}
-
-			// Create EXP
-			pos.x += 0.5f;
-			obj = (Instantiate(expPrefab, pos, Quaternion.identity ) as GameObject).GetComponent<PickupOnTrigger>();
-			obj.StatModifyValue = expDrop;
-
-			// decrement the counter
-			if(EnemyCounterSingleton.Instance != null)
-			{
-				EnemyCounterSingleton.Instance.CurrentEnemyCount--;
-			}
-
-
-			Destroy(gameObject);
+             StartCoroutine(Die());
+			//Destroy(gameObject);
 		}
 	
 	}
@@ -137,6 +117,11 @@ public class EnemyScript : MonoBehaviour {
 	{
 		Health = Health - damage;
 		ActivateHealthBar ();
+
+        int audioSampleNum = (int)Random.Range(0,audioClips.Length);
+        //audioSource.clip.Equals();
+        audioSource.PlayOneShot(audioClips[audioSampleNum]);
+        
 	}
 
 	private void ActivateHealthBar()
@@ -149,4 +134,45 @@ public class EnemyScript : MonoBehaviour {
 			}
 		}
 	}
+
+    private IEnumerator Die()
+    {
+        dieing = true;
+        audioSource.PlayOneShot(audioClips[0]);
+        yield return new WaitForSeconds(audioClips[0].length);
+        PlayerStats stats = (GameObject.FindGameObjectWithTag("Player")).GetComponent<PlayerStats>();
+        Vector3 pos = transform.position;
+        pos.y += 0.5f;
+        PickupOnTrigger obj;
+
+        // Create ParticleDrop
+        switch (ActivePowerUI.instance.CurrentPower)
+        {
+            case ActivePower.Imagi:
+                obj = (Instantiate(imagiPrefab, pos, Quaternion.identity) as GameObject).GetComponent<PickupOnTrigger>();
+                obj.StatModifyValue = stats.MaxImagi * 0.10f;
+                break;
+            case ActivePower.Void:
+                obj = (Instantiate(voidPrefab, pos, Quaternion.identity) as GameObject).GetComponent<PickupOnTrigger>();
+                obj.StatModifyValue = stats.MaxVoid * 0.10f;
+                break;
+            case ActivePower.Logio:
+                obj = (Instantiate(logioPrefab, pos, Quaternion.identity) as GameObject).GetComponent<PickupOnTrigger>();
+                obj.StatModifyValue = stats.MaxLogio * 0.10f;
+                break;
+        }
+
+        // Create EXP
+        pos.x += 0.5f;
+        obj = (Instantiate(expPrefab, pos, Quaternion.identity) as GameObject).GetComponent<PickupOnTrigger>();
+        obj.StatModifyValue = expDrop;
+
+        // decrement the counter
+        if (EnemyCounterSingleton.Instance != null)
+        {
+            EnemyCounterSingleton.Instance.CurrentEnemyCount--;
+        }
+        Destroy(gameObject);
+        yield return null;
+    }
 }

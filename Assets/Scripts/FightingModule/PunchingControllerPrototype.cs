@@ -22,6 +22,10 @@ public class PunchingControllerPrototype : MonoBehaviour
 
 	private int lastInput = 0; public int LastInput { get { return lastInput; } set { lastInput = value; } }
 
+    private AudioSource audioSourcePunch;
+    [SerializeField] private AudioClip punchSwing;
+    [SerializeField] private AudioClip punchImpact;
+
 	private void Start () 
 	{
 		attTrig = Animator.StringToHash(attackTrigger);
@@ -35,6 +39,15 @@ public class PunchingControllerPrototype : MonoBehaviour
 		{
 			Debug.LogError("attackToNormalizedTime < attackFromNormalizedTime");
 		}
+
+        AudioSource[] audioSources = parent.GetComponentsInChildren<AudioSource>();
+        foreach (AudioSource temp in audioSources)
+        {
+            if (temp.name == "AudioSourcePunch")
+            {
+                audioSourcePunch = temp;
+            }
+        }
 	}
 	
 	private void Update () 
@@ -43,12 +56,15 @@ public class PunchingControllerPrototype : MonoBehaviour
 		{
 			lastInput = 1;
 			AttackEvent ();
+            Invoke("PunchAudio",0.4f);
 		}
 
 		if(animationController.GetCurrentAnimatorStateInfo(0).IsName("Punch") && canAttack)
 		{
-			if(animationController.GetCurrentAnimatorStateInfo(0).normalizedTime > attackFromNormalizedTime && animationController.GetCurrentAnimatorStateInfo(0).normalizedTime < attackToNormalizedTime )
-				Attack();
+            if (animationController.GetCurrentAnimatorStateInfo(0).normalizedTime > attackFromNormalizedTime && animationController.GetCurrentAnimatorStateInfo(0).normalizedTime < attackToNormalizedTime)
+            {
+                Attack();
+            }
 		}
 
 		if(!animationController.GetCurrentAnimatorStateInfo(0).IsName("Punch"))
@@ -56,6 +72,11 @@ public class PunchingControllerPrototype : MonoBehaviour
 			canAttack = true;
 		}
 	}
+
+    private void PunchAudio()
+    {
+        audioSourcePunch.PlayOneShot(punchSwing);
+    }
 
 	/// <summary>
 	/// Event called from the InputHandler script
@@ -65,6 +86,7 @@ public class PunchingControllerPrototype : MonoBehaviour
 		if(!animationController.GetCurrentAnimatorStateInfo(0).IsName("Punch"))
 		{
 			animationController.SetTrigger( attTrig );
+            
 		}
 	}
 
@@ -83,11 +105,15 @@ public class PunchingControllerPrototype : MonoBehaviour
 				if (parent.GetComponent<PlayerStats>().Buffed)
 				{
 					es.TakeDamage( 2 * parent.GetComponent<PlayerStats>().ImagiBuff);
+                    audioSourcePunch.PlayOneShot(punchImpact);
 				}
 				else
 				{
 					es.TakeDamage(2);
+                    audioSourcePunch.PlayOneShot(punchImpact);
 				}
+
+
 			}
 		}
 #if UNITY_EDITOR
