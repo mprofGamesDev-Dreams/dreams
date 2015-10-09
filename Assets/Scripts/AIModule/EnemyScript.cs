@@ -27,7 +27,7 @@ public class EnemyScript : MonoBehaviour {
 	[SerializeField] private float dyingRotation = 400;
 	[SerializeField] private GameObject splitIntoEnemyPrefab;
 	
-	[SerializeField] private float expDrop = 10;
+	//[SerializeField] private float expDrop = 10;
 	
 	private AudioSource audioSource;
 	[SerializeField] private AudioClip[] audioClips;

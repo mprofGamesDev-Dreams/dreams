@@ -26,9 +26,6 @@ public class OnCallPlayEventAudio : MonoBehaviour, IDestroyAudioEvent
 
 	private void Update()
 	{
-		if(Input.GetKeyDown(KeyCode.Space))
-			TriggerEvent = true;
-
 		if(myState == EAudioState.isWaiting || myState == EAudioState.isFinished || triggerEvent == false)
 			return;
 
