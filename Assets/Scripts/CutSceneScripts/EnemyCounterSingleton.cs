@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityStandardAssets.ImageEffects;
 
 public class EnemyCounterSingleton : MonoBehaviour, IDestroyAudioEvent
 {
@@ -175,7 +176,18 @@ public class EnemyCounterSingleton : MonoBehaviour, IDestroyAudioEvent
 		sceneCamera.parent = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
 		
 		sceneCamera.GetComponent<Camera>().cullingMask = Camera.main.cullingMask;
+
+		BloomOptimized sceneBloom = camObj.AddComponent<BloomOptimized>();
 		
+		BloomOptimized mainBloom = Camera.main.GetComponent<BloomOptimized>();
+		
+		sceneBloom.threshold = mainBloom.threshold;
+		sceneBloom.intensity = mainBloom.intensity;
+		sceneBloom.blurSize = mainBloom.blurSize;
+		sceneBloom.blurIterations = mainBloom.blurIterations;
+		sceneBloom.blurType = mainBloom.blurType;
+		sceneBloom.fastBloomShader = mainBloom.fastBloomShader;
+
 		return sceneCamera.GetComponent<Camera>();
 	}
 
