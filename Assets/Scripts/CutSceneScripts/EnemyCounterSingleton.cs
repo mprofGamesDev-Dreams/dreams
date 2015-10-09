@@ -39,7 +39,7 @@ public class EnemyCounterSingleton : MonoBehaviour, IDestroyAudioEvent
 	//private float startTime = 0;
 	//private float waitTime = 10;
 
-	private float fadeoutTime = 0;
+//	private float fadeoutTime = 0;
 	private float fadeinTime = 0;
 
 	[SerializeField] private AudioClip[] audioClips;
