@@ -59,17 +59,6 @@ public class EnemyCounterSingleton : MonoBehaviour, IDestroyAudioEvent
 
 	private void Update()
 	{
-		/*
-		if(forceFadeOut)
-		{
-			flash.fadeInSpeed = 2;
-			flash.FadeToWhite();
-		}*/
-
-		if(Input.GetKeyDown(KeyCode.RightControl))
-			StartCutscene();
-
-
 
 		/*
 		if(Time.time < (startTime + waitTime))
