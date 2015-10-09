@@ -336,6 +336,7 @@ GameObject:
   - 81: {fileID: 8195110}
   - 199: {fileID: 19937928}
   - 198: {fileID: 19846880}
+  - 114: {fileID: 11454686}
   m_Layer: 8
   m_Name: FirstPersonCharacter
   m_TagString: MainCamera
@@ -1407,6 +1408,22 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1 &187082
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 434134}
+  - 82: {fileID: 8233778}
+  m_Layer: 0
+  m_Name: Narator
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &192684
 GameObject:
   m_ObjectHideFlags: 0
@@ -2368,6 +2385,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 489378}
   m_RootOrder: 4
+
 --- !u!4 &471476
 Transform:
   m_ObjectHideFlags: 1
@@ -2733,6 +2751,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 489378}
   m_RootOrder: 6
+  m_RootOrder: 7
 --- !u!20 &2012422
 Camera:
   m_ObjectHideFlags: 1
@@ -3924,6 +3943,23 @@ MonoBehaviour:
   m_LandSound: {fileID: 8300000, guid: 3b09d59f4499d45428baa7a21e954296, type: 3}
   pauseManager: {fileID: 0}
   playerStats: {fileID: 0}
+--- !u!114 &11454686
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 121000}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4975a6e437fc3b149a8cd508ce5bdd69, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  threshold: .219999999
+  intensity: .25
+  blurSize: 2.20000005
+  blurIterations: 2
+  blurType: 0
+  fastBloomShader: {fileID: 4800000, guid: 68a00c837b82e4c6d92e7da765dc5f1d, type: 3}
 --- !u!114 &11473736
 MonoBehaviour:
   m_ObjectHideFlags: 1
