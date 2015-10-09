@@ -53,6 +53,12 @@ public class NarratorController
 			
 			requestObjectID = objID;
 			objReference = objInterface;
+
+			narrator.Stop();
+
+			narrator.clip = audioClip;
+			narrator.PlayDelayed(0.3f);
+			return;
 		}
 
 		narrator.clip = audioClip;
