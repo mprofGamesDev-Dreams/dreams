@@ -121,16 +121,13 @@ public class EnemyCounterSingleton : MonoBehaviour, IDestroyAudioEvent
 	private IEnumerator CutscenePartII()
 	{
 		NarratorController.NarratorInstance.PlayNewClip(audioClips[1], gameObject.GetInstanceID(), (IDestroyAudioEvent)this);
-		yield return new WaitForSeconds( audioClips[1].length + 1f );
+		
+        GameObject.FindGameObjectWithTag("Player").GetComponent<InputHandler>().PlayInteract();
 
-		// player touches
-
-		///
-		/// Add Final Animation Here
-		///
+        yield return new WaitForSeconds( audioClips[1].length + 1f );
 
 
-		flash.fadeInSpeed = 5f;
+		flash.fadeInSpeed = 7f;
 		flash.fadeOutSpeed = 0.0000000000001f;
 		flash.RequestFlash();
 

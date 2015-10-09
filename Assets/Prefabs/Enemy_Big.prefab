@@ -678,7 +678,7 @@ MonoBehaviour:
   patrolPoints: []
   masksToUse:
     serializedVersion: 2
-    m_Bits: 4294966271
+    m_Bits: 4294960127
   canSlow: 0
   rigPrefab: {fileID: 180356}
 --- !u!114 &11418340
@@ -703,7 +703,6 @@ MonoBehaviour:
   dyingAni: 0
   dyingRotation: 400
   splitIntoEnemyPrefab: {fileID: 195500, guid: 30f77a23ae462e1408d520c7436769c0, type: 2}
-  expDrop: 20
   audioClips:
   - {fileID: 8300000, guid: 106658d1dbf16a8458271bdfaaedc830, type: 3}
   - {fileID: 8300000, guid: 0b2ac8a79de42b6458f2b9f84f7cfa33, type: 3}
@@ -891,7 +890,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: masksToUse.m_Bits
-      value: 4294966271
+      value: 4294960127
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: canSplit
