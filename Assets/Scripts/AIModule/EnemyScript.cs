@@ -140,11 +140,13 @@ public class EnemyScript : MonoBehaviour {
 	{
 		Health = Health - damage;
 		ActivateHealthBar ();
-		
-		int audioSampleNum = (int)Random.Range(0,audioClips.Length);
-		//audioSource.clip.Equals();
-		audioSource.PlayOneShot(audioClips[audioSampleNum]);
 
+		if(audioSource != null && audioSource.enabled)
+		{
+			int audioSampleNum = (int)Random.Range(0,audioClips.Length);
+			//audioSource.clip.Equals();
+			audioSource.PlayOneShot(audioClips[audioSampleNum]);
+		}
 		// play animation
 		rigAnimation.SetTrigger( "Hurt" );
 	}
