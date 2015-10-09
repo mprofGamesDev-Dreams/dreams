@@ -36,7 +36,7 @@ public class AbilityBehaviours : MonoBehaviour
 	private bool isLogioAvailable = true;
 	private bool isImagiAvailable = true;
 	private bool isVoidAvailable = true;
-
+    private bool isFiring = false;
 	private Transform myCameraTransform;
 	private InputHandler input;
 	private Color32 beamColor;
@@ -46,6 +46,9 @@ public class AbilityBehaviours : MonoBehaviour
     [SerializeField] private AudioClip logioClip;
     [SerializeField] private AudioClip imagiClip;
     [SerializeField] private AudioClip voidClip;
+
+    [SerializeField] private GameObject Arms;
+    private Animator armAnimator;
 
 	private void Start () 
 	{
@@ -64,7 +67,8 @@ public class AbilityBehaviours : MonoBehaviour
                 audioSourceBullets = temp;
             }
         }
-            
+
+        armAnimator = Arms.GetComponent<Animator>();
 	}
 	
 	private void Update () 
@@ -119,9 +123,13 @@ public class AbilityBehaviours : MonoBehaviour
 		if (input.isShoot () && Time.timeScale != 0) 
 		{
 			if( canFire() )
-			{
-				HandleSkillCosts();
-				shootBullet();
+            {
+                if (!isFiring)
+                {
+                    armAnimator.SetTrigger("CastMagic");
+                    isFiring = true;
+                    StartCoroutine("WaitForSpell");
+                }
 			}
 		}
 	}
@@ -323,6 +331,14 @@ public class AbilityBehaviours : MonoBehaviour
 		get{return voidCD;}
 	}
 
+    IEnumerator WaitForSpell()
+    {
+        yield return new WaitForSeconds(0.7f);
+        HandleSkillCosts();
+        shootBullet();
+        isFiring = false;
+        yield return null;
+    }
 }
 
 

@@ -1,6 +1,6 @@
 fileFormatVersion: 2
-guid: 6de75f67465c9ae47ac2dbbe5711ba5e
-timeCreated: 1444395388
+guid: 89d2d8aba8cabd843b517d5f659a908e
+timeCreated: 1444395801
 licenseType: Free
 ModelImporter:
   serializedVersion: 18
@@ -166,6 +166,116 @@ ModelImporter:
     100316: Rgt_ThumbFinger_Tip_JNT
     100318: Rgt_Wrist_JNT
     100320: Root_Clavical_JNT
+    100322: Arm_BoneJoints1
+    100324: Arm_BoneJoints2
+    100326: ArmsMesh
+    100328: Lft_Albow_JNT 1
+    100330: Lft_Albow_JNT 2
+    100332: Lft_Arm_CTRL
+    100334: Lft_Arm_IK
+    100336: Lft_Arm_Locator
+    100338: Lft_Forearm_JNT 1
+    100340: Lft_Forearm_JNT 2
+    100342: Lft_IndexFinger_Bottom_JNT 1
+    100344: Lft_IndexFinger_Bottom_JNT 2
+    100346: Lft_IndexFinger_Middle_JNT 1
+    100348: Lft_IndexFinger_Middle_JNT 2
+    100350: Lft_IndexFinger_Nuckle_JNT 1
+    100352: Lft_IndexFinger_Nuckle_JNT 2
+    100354: Lft_IndexFinger_Tip_JNT 1
+    100356: Lft_IndexFinger_Tip_JNT 2
+    100358: Lft_MiddleFinger_Bottom_JNT 1
+    100360: Lft_MiddleFinger_Bottom_JNT 2
+    100362: Lft_MiddleFinger_Middlle_JNT 1
+    100364: Lft_MiddleFinger_Middlle_JNT 2
+    100366: Lft_MiddleFinger_Nuckle_JNT 1
+    100368: Lft_MiddleFinger_Nuckle_JNT 2
+    100370: Lft_MiddleFinger_Tip_JNT 1
+    100372: Lft_MiddleFinger_Tip_JNT 2
+    100374: Lft_PinkyFinger_Bottom_JNT 1
+    100376: Lft_PinkyFinger_Bottom_JNT 2
+    100378: Lft_PinkyFinger_Middle_JNT 1
+    100380: Lft_PinkyFinger_Middle_JNT 2
+    100382: Lft_PinkyFinger_Nuckle_JNT 1
+    100384: Lft_PinkyFinger_Nuckle_JNT 2
+    100386: Lft_PinkyFinger_Tip_JNT 1
+    100388: Lft_PinkyFinger_Tip_JNT 2
+    100390: Lft_RingFinger_Bottom_JNT 1
+    100392: Lft_RingFinger_Bottom_JNT 2
+    100394: Lft_RingFinger_Middle_JNT 1
+    100396: Lft_RingFinger_Middle_JNT 2
+    100398: Lft_RingFinger_Nuckle_JNT 1
+    100400: Lft_RingFinger_Nuckle_JNT 2
+    100402: Lft_RingFinger_Tip_JNT 1
+    100404: Lft_RingFinger_Tip_JNT 2
+    100406: Lft_Shoulder_JNT 1
+    100408: Lft_Shoulder_JNT 2
+    100410: Lft_ThumbFinger_Bottom_JNT 1
+    100412: Lft_ThumbFinger_Bottom_JNT 2
+    100414: Lft_ThumbFinger_Middle_JNT 1
+    100416: Lft_ThumbFinger_Middle_JNT 2
+    100418: Lft_ThumbFinger_Nuckle_JNT 1
+    100420: Lft_ThumbFinger_Nuckle_JNT 2
+    100422: Lft_ThumbFinger_Tip_JNT 1
+    100424: Lft_ThumbFinger_Tip_JNT 2
+    100426: Lft_Wrist_JNT 1
+    100428: Lft_Wrist_JNT 2
+    100430: Lgt_Hand_CTRL
+    100432: Rgt_Albow_JNT 1
+    100434: Rgt_Albow_JNT 2
+    100436: Rgt_Arm_CTRL
+    100438: Rgt_Arm_IK
+    100440: Rgt_Arm_Locator
+    100442: Rgt_Forearm_JNT 1
+    100444: Rgt_Forearm_JNT 2
+    100446: Rgt_Hand_CTRL
+    100448: Rgt_IndexFinger_Bottom_JNT 1
+    100450: Rgt_IndexFinger_Bottom_JNT 2
+    100452: Rgt_IndexFinger_Middle_JNT 1
+    100454: Rgt_IndexFinger_Middle_JNT 2
+    100456: Rgt_IndexFinger_Nuckle_JNT 1
+    100458: Rgt_IndexFinger_Nuckle_JNT 2
+    100460: Rgt_IndexFinger_Tip_JNT 1
+    100462: Rgt_IndexFinger_Tip_JNT 2
+    100464: Rgt_MiddleFinger_Bottom_JNT 1
+    100466: Rgt_MiddleFinger_Bottom_JNT 2
+    100468: Rgt_MiddleFinger_Middlle_JNT 1
+    100470: Rgt_MiddleFinger_Middlle_JNT 2
+    100472: Rgt_MiddleFinger_Nuckle_JNT 1
+    100474: Rgt_MiddleFinger_Nuckle_JNT 2
+    100476: Rgt_MiddleFinger_Tip_JNT 1
+    100478: Rgt_MiddleFinger_Tip_JNT 2
+    100480: Rgt_PinkyFinger_Bottom_JNT 1
+    100482: Rgt_PinkyFinger_Bottom_JNT 2
+    100484: Rgt_PinkyFinger_Middle_JNT 1
+    100486: Rgt_PinkyFinger_Middle_JNT 2
+    100488: Rgt_PinkyFinger_Nuckle_JNT 1
+    100490: Rgt_PinkyFinger_Nuckle_JNT 2
+    100492: Rgt_PinkyFinger_Tip_JNT 1
+    100494: Rgt_PinkyFinger_Tip_JNT 2
+    100496: Rgt_RingFinger_Bottom_JNT 1
+    100498: Rgt_RingFinger_Bottom_JNT 2
+    100500: Rgt_RingFinger_Middle_JNT 1
+    100502: Rgt_RingFinger_Middle_JNT 2
+    100504: Rgt_RingFinger_Nuckle_JNT 1
+    100506: Rgt_RingFinger_Nuckle_JNT 2
+    100508: Rgt_RingFinger_Tip_JNT 1
+    100510: Rgt_RingFinger_Tip_JNT 2
+    100512: Rgt_Shoulder_JNT 1
+    100514: Rgt_Shoulder_JNT 2
+    100516: Rgt_ThumbFinger_Bottom_JNT 1
+    100518: Rgt_ThumbFinger_Bottom_JNT 2
+    100520: Rgt_ThumbFinger_Middle_JNT 1
+    100522: Rgt_ThumbFinger_Middle_JNT 2
+    100524: Rgt_ThumbFinger_Nuckle_JNT 1
+    100526: Rgt_ThumbFinger_Nuckle_JNT 2
+    100528: Rgt_ThumbFinger_Tip_JNT 1
+    100530: Rgt_ThumbFinger_Tip_JNT 2
+    100532: Rgt_Wrist_JNT 1
+    100534: Rgt_Wrist_JNT 2
+    100536: Root_Clavical_JNT 1
+    100538: Root_Clavical_JNT 2
+    100540: Root_CTRL
     400000: Arm_BoneJoints
     400002: //RootNode
     400004: Arms_Rigged_Version1:Arm_BoneJoints
@@ -327,24 +437,136 @@ ModelImporter:
     400316: Rgt_ThumbFinger_Tip_JNT
     400318: Rgt_Wrist_JNT
     400320: Root_Clavical_JNT
+    400322: Arm_BoneJoints1
+    400324: Arm_BoneJoints2
+    400326: ArmsMesh
+    400328: Lft_Albow_JNT 1
+    400330: Lft_Albow_JNT 2
+    400332: Lft_Arm_CTRL
+    400334: Lft_Arm_IK
+    400336: Lft_Arm_Locator
+    400338: Lft_Forearm_JNT 1
+    400340: Lft_Forearm_JNT 2
+    400342: Lft_IndexFinger_Bottom_JNT 1
+    400344: Lft_IndexFinger_Bottom_JNT 2
+    400346: Lft_IndexFinger_Middle_JNT 1
+    400348: Lft_IndexFinger_Middle_JNT 2
+    400350: Lft_IndexFinger_Nuckle_JNT 1
+    400352: Lft_IndexFinger_Nuckle_JNT 2
+    400354: Lft_IndexFinger_Tip_JNT 1
+    400356: Lft_IndexFinger_Tip_JNT 2
+    400358: Lft_MiddleFinger_Bottom_JNT 1
+    400360: Lft_MiddleFinger_Bottom_JNT 2
+    400362: Lft_MiddleFinger_Middlle_JNT 1
+    400364: Lft_MiddleFinger_Middlle_JNT 2
+    400366: Lft_MiddleFinger_Nuckle_JNT 1
+    400368: Lft_MiddleFinger_Nuckle_JNT 2
+    400370: Lft_MiddleFinger_Tip_JNT 1
+    400372: Lft_MiddleFinger_Tip_JNT 2
+    400374: Lft_PinkyFinger_Bottom_JNT 1
+    400376: Lft_PinkyFinger_Bottom_JNT 2
+    400378: Lft_PinkyFinger_Middle_JNT 1
+    400380: Lft_PinkyFinger_Middle_JNT 2
+    400382: Lft_PinkyFinger_Nuckle_JNT 1
+    400384: Lft_PinkyFinger_Nuckle_JNT 2
+    400386: Lft_PinkyFinger_Tip_JNT 1
+    400388: Lft_PinkyFinger_Tip_JNT 2
+    400390: Lft_RingFinger_Bottom_JNT 1
+    400392: Lft_RingFinger_Bottom_JNT 2
+    400394: Lft_RingFinger_Middle_JNT 1
+    400396: Lft_RingFinger_Middle_JNT 2
+    400398: Lft_RingFinger_Nuckle_JNT 1
+    400400: Lft_RingFinger_Nuckle_JNT 2
+    400402: Lft_RingFinger_Tip_JNT 1
+    400404: Lft_RingFinger_Tip_JNT 2
+    400406: Lft_Shoulder_JNT 1
+    400408: Lft_Shoulder_JNT 2
+    400410: Lft_ThumbFinger_Bottom_JNT 1
+    400412: Lft_ThumbFinger_Bottom_JNT 2
+    400414: Lft_ThumbFinger_Middle_JNT 1
+    400416: Lft_ThumbFinger_Middle_JNT 2
+    400418: Lft_ThumbFinger_Nuckle_JNT 1
+    400420: Lft_ThumbFinger_Nuckle_JNT 2
+    400422: Lft_ThumbFinger_Tip_JNT 1
+    400424: Lft_ThumbFinger_Tip_JNT 2
+    400426: Lft_Wrist_JNT 1
+    400428: Lft_Wrist_JNT 2
+    400430: Lgt_Hand_CTRL
+    400432: Rgt_Albow_JNT 1
+    400434: Rgt_Albow_JNT 2
+    400436: Rgt_Arm_CTRL
+    400438: Rgt_Arm_IK
+    400440: Rgt_Arm_Locator
+    400442: Rgt_Forearm_JNT 1
+    400444: Rgt_Forearm_JNT 2
+    400446: Rgt_Hand_CTRL
+    400448: Rgt_IndexFinger_Bottom_JNT 1
+    400450: Rgt_IndexFinger_Bottom_JNT 2
+    400452: Rgt_IndexFinger_Middle_JNT 1
+    400454: Rgt_IndexFinger_Middle_JNT 2
+    400456: Rgt_IndexFinger_Nuckle_JNT 1
+    400458: Rgt_IndexFinger_Nuckle_JNT 2
+    400460: Rgt_IndexFinger_Tip_JNT 1
+    400462: Rgt_IndexFinger_Tip_JNT 2
+    400464: Rgt_MiddleFinger_Bottom_JNT 1
+    400466: Rgt_MiddleFinger_Bottom_JNT 2
+    400468: Rgt_MiddleFinger_Middlle_JNT 1
+    400470: Rgt_MiddleFinger_Middlle_JNT 2
+    400472: Rgt_MiddleFinger_Nuckle_JNT 1
+    400474: Rgt_MiddleFinger_Nuckle_JNT 2
+    400476: Rgt_MiddleFinger_Tip_JNT 1
+    400478: Rgt_MiddleFinger_Tip_JNT 2
+    400480: Rgt_PinkyFinger_Bottom_JNT 1
+    400482: Rgt_PinkyFinger_Bottom_JNT 2
+    400484: Rgt_PinkyFinger_Middle_JNT 1
+    400486: Rgt_PinkyFinger_Middle_JNT 2
+    400488: Rgt_PinkyFinger_Nuckle_JNT 1
+    400490: Rgt_PinkyFinger_Nuckle_JNT 2
+    400492: Rgt_PinkyFinger_Tip_JNT 1
+    400494: Rgt_PinkyFinger_Tip_JNT 2
+    400496: Rgt_RingFinger_Bottom_JNT 1
+    400498: Rgt_RingFinger_Bottom_JNT 2
+    400500: Rgt_RingFinger_Middle_JNT 1
+    400502: Rgt_RingFinger_Middle_JNT 2
+    400504: Rgt_RingFinger_Nuckle_JNT 1
+    400506: Rgt_RingFinger_Nuckle_JNT 2
+    400508: Rgt_RingFinger_Tip_JNT 1
+    400510: Rgt_RingFinger_Tip_JNT 2
+    400512: Rgt_Shoulder_JNT 1
+    400514: Rgt_Shoulder_JNT 2
+    400516: Rgt_ThumbFinger_Bottom_JNT 1
+    400518: Rgt_ThumbFinger_Bottom_JNT 2
+    400520: Rgt_ThumbFinger_Middle_JNT 1
+    400522: Rgt_ThumbFinger_Middle_JNT 2
+    400524: Rgt_ThumbFinger_Nuckle_JNT 1
+    400526: Rgt_ThumbFinger_Nuckle_JNT 2
+    400528: Rgt_ThumbFinger_Tip_JNT 1
+    400530: Rgt_ThumbFinger_Tip_JNT 2
+    400532: Rgt_Wrist_JNT 1
+    400534: Rgt_Wrist_JNT 2
+    400536: Root_Clavical_JNT 1
+    400538: Root_Clavical_JNT 2
+    400540: Root_CTRL
     4300000: Arms_Rigged_Version1:ArmsMesh
+    4300002: ArmsMesh
     7400000: Take 001
     9500000: //RootNode
     13700000: Arms_Rigged_Version1:ArmsMesh
+    13700002: ArmsMesh
   materials:
     importMaterials: 1
     materialName: 0
     materialSearch: 1
   animations:
     legacyGenerateAnimations: 4
-    bakeSimulation: 0
+    bakeSimulation: 1
     optimizeGameObjects: 0
     motionNodeName: 
     animationImportErrors: 
     animationImportWarnings: 
     animationRetargetingWarnings: 
     animationDoRetargetingWarnings: 0
-    animationCompression: 1
+    animationCompression: 0
     animationRotationError: .5
     animationPositionError: .5
     animationScaleError: .5

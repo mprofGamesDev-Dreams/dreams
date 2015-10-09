@@ -40,6 +40,7 @@ public class VoidPickup : MonoBehaviour {
 
     void PickUp()
     {
+        player.GetComponent<InputHandler>().PlayInteract();
         player.gameObject.GetComponent<PlayerStats>().ModifyVoid(resource);
 		if(audioEvent != null && audioEvent.enabled)	
 			audioEvent.TriggerEvent = true;

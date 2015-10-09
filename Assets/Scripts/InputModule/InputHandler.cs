@@ -28,6 +28,8 @@ public class InputHandler : MonoBehaviour
 	bool skip;
 	float dPadHorizontal;
 
+    public GameObject Arms;
+
 	private EControlConstraints controllerConstraints = EControlConstraints.EnableAll; public EControlConstraints ControllerConstraints { get { return controllerConstraints; } set { controllerConstraints = value; }  }
 
 	void Start()
@@ -196,5 +198,10 @@ public class InputHandler : MonoBehaviour
 	public bool isInteract(){
 		return interact;
 	}
+
+    public void PlayInteract()
+    {
+        Arms.GetComponent<Animator>().SetTrigger("Interact");
+    }
 }
 

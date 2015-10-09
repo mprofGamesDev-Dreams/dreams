@@ -31,7 +31,7 @@ public class PunchingControllerPrototype : MonoBehaviour
 		attTrig = Animator.StringToHash(attackTrigger);
 
 		cameraTransform = Camera.main.GetComponent<Transform>();
-		input = gameObject.GetComponent<InputHandler> ();
+        //input = gameObject.GetComponent<InputHandler> ();
 
 		input = parent.GetComponent<InputHandler>();
 
