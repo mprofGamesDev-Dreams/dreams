@@ -39,7 +39,7 @@ public class EnemyCounterSingleton : MonoBehaviour, IDestroyAudioEvent
 	//private float startTime = 0;
 	//private float waitTime = 10;
 
-	private float fadeoutTime = 0;
+//	private float fadeoutTime = 0;
 	private float fadeinTime = 0;
 
 	[SerializeField] private AudioClip[] audioClips;
@@ -59,6 +59,8 @@ public class EnemyCounterSingleton : MonoBehaviour, IDestroyAudioEvent
 
 	private void Update()
 	{
+		if(Input.GetKeyDown(KeyCode.RightControl))
+			StartCutscene();
 
 		/*
 		if(Time.time < (startTime + waitTime))
@@ -84,9 +86,11 @@ public class EnemyCounterSingleton : MonoBehaviour, IDestroyAudioEvent
 
 	private IEnumerator FinalCutscene()
 	{
-		flash.FadeToWhite();
+		flash.fadeInSpeed = 2;
+		flash.fadeOutSpeed = 2;
+		flash.RequestFlash();
 
-		yield return new WaitForSeconds(fadeoutTime);
+		yield return new WaitForSeconds( 3 );
 
 		dreamer.position = dreamerDestination.position;
 
@@ -102,7 +106,7 @@ public class EnemyCounterSingleton : MonoBehaviour, IDestroyAudioEvent
 
 		inputHandler.ControllerConstraints = EControlConstraints.DisableAllExceptChoice;
 
-		flash.FadeToClear();
+
 
 		yield return new WaitForSeconds(fadeinTime);
 

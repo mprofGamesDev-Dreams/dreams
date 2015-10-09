@@ -7,7 +7,7 @@ public class LoadSceneOnTrigger : MonoBehaviour
 	private bool activateFadeOut;
 	public string levelToLoad;
 	public WhiteFlash flashController;
-
+	public TriggerSky skyDoor;
 	public Light lightSource;
 
 	[SerializeField]private ShipToFirstLevel sceneController;
@@ -32,7 +32,7 @@ public class LoadSceneOnTrigger : MonoBehaviour
 					sceneController.PlayClip(2);
 					lightSource.color = Color.green;
 					canTeleport = true;
-
+					skyDoor.isTriggered = true;
 					GetComponent<AudioSource>().Play();
 				}
 			}
