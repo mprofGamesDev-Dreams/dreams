@@ -42,7 +42,10 @@ public class ResetOnPlayerDeath : MonoBehaviour
 			// Reset the gameobject
 			this.gameObject.transform.position = StartingPosition;
 			this.gameObject.GetComponent<TransformGeometry>().Reset();
-			this.gameObject.transform.FindChild("PlatformTarget").transform.position = TargetPosition;
+			if(this.gameObject.transform.FindChild("PlatformTarget") != null)
+			{
+				this.gameObject.transform.FindChild("PlatformTarget").transform.position = TargetPosition;
+			}
 		}
 	}
 }

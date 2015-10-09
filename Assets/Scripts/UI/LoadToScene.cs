@@ -12,7 +12,7 @@ public class LoadToScene : MonoBehaviour
 
 	private IEnumerator LoadSceneAfterFlash(string s)
 	{
-		flash.FadeToWhite();
+		flash.RequestFlash();
 
 		yield return new WaitForSeconds(3);
 
