@@ -48,6 +48,7 @@ public class EnemyCounterSingleton : MonoBehaviour, IDestroyAudioEvent
 	[SerializeField] private GameObject choicePrefab;
 
 	InputHandler inputHandler;
+
 	private void Awake()
 	{
 		instance = this;
@@ -58,6 +59,17 @@ public class EnemyCounterSingleton : MonoBehaviour, IDestroyAudioEvent
 
 	private void Update()
 	{
+		/*
+		if(forceFadeOut)
+		{
+			flash.fadeInSpeed = 2;
+			flash.FadeToWhite();
+		}*/
+
+		if(Input.GetKeyDown(KeyCode.RightControl))
+			StartCutscene();
+
+
 
 		/*
 		if(Time.time < (startTime + waitTime))
@@ -119,11 +131,20 @@ public class EnemyCounterSingleton : MonoBehaviour, IDestroyAudioEvent
 
 		// player touches
 
-		flash.FadeToWhite();
+		///
+		/// Add Final Animation Here
+		///
+
+
+		flash.fadeInSpeed = 5f;
+		flash.fadeOutSpeed = 0.0000000000001f;
+		flash.RequestFlash();
 
 		NarratorController.NarratorInstance.PlayNewClip(audioClips[2], gameObject.GetInstanceID(), (IDestroyAudioEvent)this);
 		yield return new WaitForSeconds( audioClips[2].length + 1f );
 
+		// Wait A 5 Beats As Requested
+		yield return new WaitForSeconds( 2.5f );
 
 		Application.LoadLevel("SHIP");
 	}
