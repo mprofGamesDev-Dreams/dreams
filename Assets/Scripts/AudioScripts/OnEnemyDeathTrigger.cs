@@ -16,7 +16,10 @@ public class OnEnemyDeathTrigger : MonoBehaviour, IDestroyAudioEvent {
 	void Update () {
 		if(enemyHealth.Health <= 0)
 		{
-			myAudioEvent.TriggerEvent = true;
+			if(myAudioEvent != null && myAudioEvent.enabled)
+			{
+				myAudioEvent.TriggerEvent = true;
+			}
 			Destroy(this);
 		}
 	}
