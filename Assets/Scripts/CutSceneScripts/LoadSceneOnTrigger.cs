@@ -33,7 +33,6 @@ public class LoadSceneOnTrigger : MonoBehaviour
 					lightSource.color = Color.green;
 					canTeleport = true;
 					skyDoor.isTriggered = true;
-					GetComponent<AudioSource>().Play();
 				}
 			}
 		}
