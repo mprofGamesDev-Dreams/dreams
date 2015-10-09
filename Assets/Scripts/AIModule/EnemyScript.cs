@@ -15,7 +15,7 @@ public class EnemyScript : MonoBehaviour {
 	[SerializeField] private float health;
 	[SerializeField] private GameObject healthBar;
 	
-	[SerializeField] private GameObject expPrefab;
+	//[SerializeField] private GameObject expPrefab;
 	[SerializeField] private GameObject voidPrefab;
 	[SerializeField] private GameObject imagiPrefab;
 	[SerializeField] private GameObject logioPrefab;
@@ -215,10 +215,10 @@ public class EnemyScript : MonoBehaviour {
 			break;
 		}
 		
-		// Create EXP
+		/* Create EXP
 		pos.x += 0.5f;
 		obj = (Instantiate(expPrefab, pos, Quaternion.identity) as GameObject).GetComponent<PickupOnTrigger>();
-		obj.StatModifyValue = expDrop;
+		obj.StatModifyValue = expDrop;*/
 		
 		// decrement the counter
 		if (EnemyCounterSingleton.Instance != null)
