@@ -6,19 +6,27 @@ public class Shield : MonoBehaviour
     public enum shieldOptions { Imagi, Logio, Void };
     
 	[SerializeField] private shieldOptions shieldType;
-    [SerializeField] private int shieldHealth = 20;
+	[SerializeField] private int shieldHealth = 20; public int ShieldHealth { get { return shieldHealth; } }
+
+	OnCallPlayEventAudio myAudioEvent;
+
 
     //private float scrollOffset = 0;
     //private float scrollSpeed = 0.003f;
 
     private void Start()
     {
+		myAudioEvent = GetComponent<OnCallPlayEventAudio>();
     }
 
 	private void Update () 
 	{
        if (shieldHealth <= 0)
         {
+			if(myAudioEvent != null && myAudioEvent.enabled)
+			{
+				myAudioEvent.TriggerEvent = true;
+			}
 			Destroy(gameObject);
         }
 
