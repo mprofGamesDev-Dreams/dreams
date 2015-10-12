@@ -367,6 +367,10 @@ Prefab:
       propertyPath: Arms
       value: 
       objectReference: {fileID: 1626005314}
+    - target: {fileID: 9504856, guid: 5131aeaeb69b99846b5c165c1394dfdf, type: 2}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 2900f36dac6e13344bcdc44729acd92e, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 5131aeaeb69b99846b5c165c1394dfdf, type: 2}
   m_IsPrefabParent: 0

@@ -1,0 +1,895 @@
+fileFormatVersion: 2
+guid: 9101ab7bd54eb954b86df3e0a4b38203
+timeCreated: 1444406944
+licenseType: Free
+ModelImporter:
+  serializedVersion: 18
+  fileIDToRecycleName:
+    100000: Arm_BoneJoints
+    100002: Arm_BoneJoints1
+    100004: Arm_BoneJoints2
+    100006: //RootNode
+    100008: ArmsMesh
+    100010: Lft_Albow_JNT
+    100012: Lft_Albow_JNT 1
+    100014: Lft_Albow_JNT 2
+    100016: Lft_Arm_CTRL
+    100018: Lft_Arm_IK
+    100020: Lft_Arm_Locator
+    100022: Lft_Forearm_JNT
+    100024: Lft_Forearm_JNT 1
+    100026: Lft_Forearm_JNT 2
+    100028: Lft_IndexFinger_Bottom_JNT
+    100030: Lft_IndexFinger_Bottom_JNT 1
+    100032: Lft_IndexFinger_Bottom_JNT 2
+    100034: Lft_IndexFinger_Middle_JNT
+    100036: Lft_IndexFinger_Middle_JNT 1
+    100038: Lft_IndexFinger_Middle_JNT 2
+    100040: Lft_IndexFinger_Nuckle_JNT
+    100042: Lft_IndexFinger_Nuckle_JNT 1
+    100044: Lft_IndexFinger_Nuckle_JNT 2
+    100046: Lft_IndexFinger_Tip_JNT
+    100048: Lft_IndexFinger_Tip_JNT 1
+    100050: Lft_IndexFinger_Tip_JNT 2
+    100052: Lft_MiddleFinger_Bottom_JNT
+    100054: Lft_MiddleFinger_Bottom_JNT 1
+    100056: Lft_MiddleFinger_Bottom_JNT 2
+    100058: Lft_MiddleFinger_Middlle_JNT
+    100060: Lft_MiddleFinger_Middlle_JNT 1
+    100062: Lft_MiddleFinger_Middlle_JNT 2
+    100064: Lft_MiddleFinger_Nuckle_JNT
+    100066: Lft_MiddleFinger_Nuckle_JNT 1
+    100068: Lft_MiddleFinger_Nuckle_JNT 2
+    100070: Lft_MiddleFinger_Tip_JNT
+    100072: Lft_MiddleFinger_Tip_JNT 1
+    100074: Lft_MiddleFinger_Tip_JNT 2
+    100076: Lft_PinkyFinger_Bottom_JNT
+    100078: Lft_PinkyFinger_Bottom_JNT 1
+    100080: Lft_PinkyFinger_Bottom_JNT 2
+    100082: Lft_PinkyFinger_Middle_JNT
+    100084: Lft_PinkyFinger_Middle_JNT 1
+    100086: Lft_PinkyFinger_Middle_JNT 2
+    100088: Lft_PinkyFinger_Nuckle_JNT
+    100090: Lft_PinkyFinger_Nuckle_JNT 1
+    100092: Lft_PinkyFinger_Nuckle_JNT 2
+    100094: Lft_PinkyFinger_Tip_JNT
+    100096: Lft_PinkyFinger_Tip_JNT 1
+    100098: Lft_PinkyFinger_Tip_JNT 2
+    100100: Lft_RingFinger_Bottom_JNT
+    100102: Lft_RingFinger_Bottom_JNT 1
+    100104: Lft_RingFinger_Bottom_JNT 2
+    100106: Lft_RingFinger_Middle_JNT
+    100108: Lft_RingFinger_Middle_JNT 1
+    100110: Lft_RingFinger_Middle_JNT 2
+    100112: Lft_RingFinger_Nuckle_JNT
+    100114: Lft_RingFinger_Nuckle_JNT 1
+    100116: Lft_RingFinger_Nuckle_JNT 2
+    100118: Lft_RingFinger_Tip_JNT
+    100120: Lft_RingFinger_Tip_JNT 1
+    100122: Lft_RingFinger_Tip_JNT 2
+    100124: Lft_Shoulder_JNT
+    100126: Lft_Shoulder_JNT 1
+    100128: Lft_Shoulder_JNT 2
+    100130: Lft_ThumbFinger_Bottom_JNT
+    100132: Lft_ThumbFinger_Bottom_JNT 1
+    100134: Lft_ThumbFinger_Bottom_JNT 2
+    100136: Lft_ThumbFinger_Middle_JNT
+    100138: Lft_ThumbFinger_Middle_JNT 1
+    100140: Lft_ThumbFinger_Middle_JNT 2
+    100142: Lft_ThumbFinger_Nuckle_JNT
+    100144: Lft_ThumbFinger_Nuckle_JNT 1
+    100146: Lft_ThumbFinger_Nuckle_JNT 2
+    100148: Lft_ThumbFinger_Tip_JNT
+    100150: Lft_ThumbFinger_Tip_JNT 1
+    100152: Lft_ThumbFinger_Tip_JNT 2
+    100154: Lft_Wrist_JNT
+    100156: Lft_Wrist_JNT 1
+    100158: Lft_Wrist_JNT 2
+    100160: Lgt_Hand_CTRL
+    100162: Rgt_Albow_JNT
+    100164: Rgt_Albow_JNT 1
+    100166: Rgt_Albow_JNT 2
+    100168: Rgt_Arm_CTRL
+    100170: Rgt_Arm_IK
+    100172: Rgt_Arm_Locator
+    100174: Rgt_Forearm_JNT
+    100176: Rgt_Forearm_JNT 1
+    100178: Rgt_Forearm_JNT 2
+    100180: Rgt_Hand_CTRL
+    100182: Rgt_IndexFinger_Bottom_JNT
+    100184: Rgt_IndexFinger_Bottom_JNT 1
+    100186: Rgt_IndexFinger_Bottom_JNT 2
+    100188: Rgt_IndexFinger_Middle_JNT
+    100190: Rgt_IndexFinger_Middle_JNT 1
+    100192: Rgt_IndexFinger_Middle_JNT 2
+    100194: Rgt_IndexFinger_Nuckle_JNT
+    100196: Rgt_IndexFinger_Nuckle_JNT 1
+    100198: Rgt_IndexFinger_Nuckle_JNT 2
+    100200: Rgt_IndexFinger_Tip_JNT
+    100202: Rgt_IndexFinger_Tip_JNT 1
+    100204: Rgt_IndexFinger_Tip_JNT 2
+    100206: Rgt_MiddleFinger_Bottom_JNT
+    100208: Rgt_MiddleFinger_Bottom_JNT 1
+    100210: Rgt_MiddleFinger_Bottom_JNT 2
+    100212: Rgt_MiddleFinger_Middlle_JNT
+    100214: Rgt_MiddleFinger_Middlle_JNT 1
+    100216: Rgt_MiddleFinger_Middlle_JNT 2
+    100218: Rgt_MiddleFinger_Nuckle_JNT
+    100220: Rgt_MiddleFinger_Nuckle_JNT 1
+    100222: Rgt_MiddleFinger_Nuckle_JNT 2
+    100224: Rgt_MiddleFinger_Tip_JNT
+    100226: Rgt_MiddleFinger_Tip_JNT 1
+    100228: Rgt_MiddleFinger_Tip_JNT 2
+    100230: Rgt_PinkyFinger_Bottom_JNT
+    100232: Rgt_PinkyFinger_Bottom_JNT 1
+    100234: Rgt_PinkyFinger_Bottom_JNT 2
+    100236: Rgt_PinkyFinger_Middle_JNT
+    100238: Rgt_PinkyFinger_Middle_JNT 1
+    100240: Rgt_PinkyFinger_Middle_JNT 2
+    100242: Rgt_PinkyFinger_Nuckle_JNT
+    100244: Rgt_PinkyFinger_Nuckle_JNT 1
+    100246: Rgt_PinkyFinger_Nuckle_JNT 2
+    100248: Rgt_PinkyFinger_Tip_JNT
+    100250: Rgt_PinkyFinger_Tip_JNT 1
+    100252: Rgt_PinkyFinger_Tip_JNT 2
+    100254: Rgt_RingFinger_Bottom_JNT
+    100256: Rgt_RingFinger_Bottom_JNT 1
+    100258: Rgt_RingFinger_Bottom_JNT 2
+    100260: Rgt_RingFinger_Middle_JNT
+    100262: Rgt_RingFinger_Middle_JNT 1
+    100264: Rgt_RingFinger_Middle_JNT 2
+    100266: Rgt_RingFinger_Nuckle_JNT
+    100268: Rgt_RingFinger_Nuckle_JNT 1
+    100270: Rgt_RingFinger_Nuckle_JNT 2
+    100272: Rgt_RingFinger_Tip_JNT
+    100274: Rgt_RingFinger_Tip_JNT 1
+    100276: Rgt_RingFinger_Tip_JNT 2
+    100278: Rgt_Shoulder_JNT
+    100280: Rgt_Shoulder_JNT 1
+    100282: Rgt_Shoulder_JNT 2
+    100284: Rgt_ThumbFinger_Bottom_JNT
+    100286: Rgt_ThumbFinger_Bottom_JNT 1
+    100288: Rgt_ThumbFinger_Bottom_JNT 2
+    100290: Rgt_ThumbFinger_Middle_JNT
+    100292: Rgt_ThumbFinger_Middle_JNT 1
+    100294: Rgt_ThumbFinger_Middle_JNT 2
+    100296: Rgt_ThumbFinger_Nuckle_JNT
+    100298: Rgt_ThumbFinger_Nuckle_JNT 1
+    100300: Rgt_ThumbFinger_Nuckle_JNT 2
+    100302: Rgt_ThumbFinger_Tip_JNT
+    100304: Rgt_ThumbFinger_Tip_JNT 1
+    100306: Rgt_ThumbFinger_Tip_JNT 2
+    100308: Rgt_Wrist_JNT
+    100310: Rgt_Wrist_JNT 1
+    100312: Rgt_Wrist_JNT 2
+    100314: Root_Clavical_JNT
+    100316: Root_Clavical_JNT 1
+    100318: Root_Clavical_JNT 2
+    100320: Root_CTRL
+    400000: Arm_BoneJoints
+    400002: Arm_BoneJoints1
+    400004: Arm_BoneJoints2
+    400006: //RootNode
+    400008: ArmsMesh
+    400010: Lft_Albow_JNT
+    400012: Lft_Albow_JNT 1
+    400014: Lft_Albow_JNT 2
+    400016: Lft_Arm_CTRL
+    400018: Lft_Arm_IK
+    400020: Lft_Arm_Locator
+    400022: Lft_Forearm_JNT
+    400024: Lft_Forearm_JNT 1
+    400026: Lft_Forearm_JNT 2
+    400028: Lft_IndexFinger_Bottom_JNT
+    400030: Lft_IndexFinger_Bottom_JNT 1
+    400032: Lft_IndexFinger_Bottom_JNT 2
+    400034: Lft_IndexFinger_Middle_JNT
+    400036: Lft_IndexFinger_Middle_JNT 1
+    400038: Lft_IndexFinger_Middle_JNT 2
+    400040: Lft_IndexFinger_Nuckle_JNT
+    400042: Lft_IndexFinger_Nuckle_JNT 1
+    400044: Lft_IndexFinger_Nuckle_JNT 2
+    400046: Lft_IndexFinger_Tip_JNT
+    400048: Lft_IndexFinger_Tip_JNT 1
+    400050: Lft_IndexFinger_Tip_JNT 2
+    400052: Lft_MiddleFinger_Bottom_JNT
+    400054: Lft_MiddleFinger_Bottom_JNT 1
+    400056: Lft_MiddleFinger_Bottom_JNT 2
+    400058: Lft_MiddleFinger_Middlle_JNT
+    400060: Lft_MiddleFinger_Middlle_JNT 1
+    400062: Lft_MiddleFinger_Middlle_JNT 2
+    400064: Lft_MiddleFinger_Nuckle_JNT
+    400066: Lft_MiddleFinger_Nuckle_JNT 1
+    400068: Lft_MiddleFinger_Nuckle_JNT 2
+    400070: Lft_MiddleFinger_Tip_JNT
+    400072: Lft_MiddleFinger_Tip_JNT 1
+    400074: Lft_MiddleFinger_Tip_JNT 2
+    400076: Lft_PinkyFinger_Bottom_JNT
+    400078: Lft_PinkyFinger_Bottom_JNT 1
+    400080: Lft_PinkyFinger_Bottom_JNT 2
+    400082: Lft_PinkyFinger_Middle_JNT
+    400084: Lft_PinkyFinger_Middle_JNT 1
+    400086: Lft_PinkyFinger_Middle_JNT 2
+    400088: Lft_PinkyFinger_Nuckle_JNT
+    400090: Lft_PinkyFinger_Nuckle_JNT 1
+    400092: Lft_PinkyFinger_Nuckle_JNT 2
+    400094: Lft_PinkyFinger_Tip_JNT
+    400096: Lft_PinkyFinger_Tip_JNT 1
+    400098: Lft_PinkyFinger_Tip_JNT 2
+    400100: Lft_RingFinger_Bottom_JNT
+    400102: Lft_RingFinger_Bottom_JNT 1
+    400104: Lft_RingFinger_Bottom_JNT 2
+    400106: Lft_RingFinger_Middle_JNT
+    400108: Lft_RingFinger_Middle_JNT 1
+    400110: Lft_RingFinger_Middle_JNT 2
+    400112: Lft_RingFinger_Nuckle_JNT
+    400114: Lft_RingFinger_Nuckle_JNT 1
+    400116: Lft_RingFinger_Nuckle_JNT 2
+    400118: Lft_RingFinger_Tip_JNT
+    400120: Lft_RingFinger_Tip_JNT 1
+    400122: Lft_RingFinger_Tip_JNT 2
+    400124: Lft_Shoulder_JNT
+    400126: Lft_Shoulder_JNT 1
+    400128: Lft_Shoulder_JNT 2
+    400130: Lft_ThumbFinger_Bottom_JNT
+    400132: Lft_ThumbFinger_Bottom_JNT 1
+    400134: Lft_ThumbFinger_Bottom_JNT 2
+    400136: Lft_ThumbFinger_Middle_JNT
+    400138: Lft_ThumbFinger_Middle_JNT 1
+    400140: Lft_ThumbFinger_Middle_JNT 2
+    400142: Lft_ThumbFinger_Nuckle_JNT
+    400144: Lft_ThumbFinger_Nuckle_JNT 1
+    400146: Lft_ThumbFinger_Nuckle_JNT 2
+    400148: Lft_ThumbFinger_Tip_JNT
+    400150: Lft_ThumbFinger_Tip_JNT 1
+    400152: Lft_ThumbFinger_Tip_JNT 2
+    400154: Lft_Wrist_JNT
+    400156: Lft_Wrist_JNT 1
+    400158: Lft_Wrist_JNT 2
+    400160: Lgt_Hand_CTRL
+    400162: Rgt_Albow_JNT
+    400164: Rgt_Albow_JNT 1
+    400166: Rgt_Albow_JNT 2
+    400168: Rgt_Arm_CTRL
+    400170: Rgt_Arm_IK
+    400172: Rgt_Arm_Locator
+    400174: Rgt_Forearm_JNT
+    400176: Rgt_Forearm_JNT 1
+    400178: Rgt_Forearm_JNT 2
+    400180: Rgt_Hand_CTRL
+    400182: Rgt_IndexFinger_Bottom_JNT
+    400184: Rgt_IndexFinger_Bottom_JNT 1
+    400186: Rgt_IndexFinger_Bottom_JNT 2
+    400188: Rgt_IndexFinger_Middle_JNT
+    400190: Rgt_IndexFinger_Middle_JNT 1
+    400192: Rgt_IndexFinger_Middle_JNT 2
+    400194: Rgt_IndexFinger_Nuckle_JNT
+    400196: Rgt_IndexFinger_Nuckle_JNT 1
+    400198: Rgt_IndexFinger_Nuckle_JNT 2
+    400200: Rgt_IndexFinger_Tip_JNT
+    400202: Rgt_IndexFinger_Tip_JNT 1
+    400204: Rgt_IndexFinger_Tip_JNT 2
+    400206: Rgt_MiddleFinger_Bottom_JNT
+    400208: Rgt_MiddleFinger_Bottom_JNT 1
+    400210: Rgt_MiddleFinger_Bottom_JNT 2
+    400212: Rgt_MiddleFinger_Middlle_JNT
+    400214: Rgt_MiddleFinger_Middlle_JNT 1
+    400216: Rgt_MiddleFinger_Middlle_JNT 2
+    400218: Rgt_MiddleFinger_Nuckle_JNT
+    400220: Rgt_MiddleFinger_Nuckle_JNT 1
+    400222: Rgt_MiddleFinger_Nuckle_JNT 2
+    400224: Rgt_MiddleFinger_Tip_JNT
+    400226: Rgt_MiddleFinger_Tip_JNT 1
+    400228: Rgt_MiddleFinger_Tip_JNT 2
+    400230: Rgt_PinkyFinger_Bottom_JNT
+    400232: Rgt_PinkyFinger_Bottom_JNT 1
+    400234: Rgt_PinkyFinger_Bottom_JNT 2
+    400236: Rgt_PinkyFinger_Middle_JNT
+    400238: Rgt_PinkyFinger_Middle_JNT 1
+    400240: Rgt_PinkyFinger_Middle_JNT 2
+    400242: Rgt_PinkyFinger_Nuckle_JNT
+    400244: Rgt_PinkyFinger_Nuckle_JNT 1
+    400246: Rgt_PinkyFinger_Nuckle_JNT 2
+    400248: Rgt_PinkyFinger_Tip_JNT
+    400250: Rgt_PinkyFinger_Tip_JNT 1
+    400252: Rgt_PinkyFinger_Tip_JNT 2
+    400254: Rgt_RingFinger_Bottom_JNT
+    400256: Rgt_RingFinger_Bottom_JNT 1
+    400258: Rgt_RingFinger_Bottom_JNT 2
+    400260: Rgt_RingFinger_Middle_JNT
+    400262: Rgt_RingFinger_Middle_JNT 1
+    400264: Rgt_RingFinger_Middle_JNT 2
+    400266: Rgt_RingFinger_Nuckle_JNT
+    400268: Rgt_RingFinger_Nuckle_JNT 1
+    400270: Rgt_RingFinger_Nuckle_JNT 2
+    400272: Rgt_RingFinger_Tip_JNT
+    400274: Rgt_RingFinger_Tip_JNT 1
+    400276: Rgt_RingFinger_Tip_JNT 2
+    400278: Rgt_Shoulder_JNT
+    400280: Rgt_Shoulder_JNT 1
+    400282: Rgt_Shoulder_JNT 2
+    400284: Rgt_ThumbFinger_Bottom_JNT
+    400286: Rgt_ThumbFinger_Bottom_JNT 1
+    400288: Rgt_ThumbFinger_Bottom_JNT 2
+    400290: Rgt_ThumbFinger_Middle_JNT
+    400292: Rgt_ThumbFinger_Middle_JNT 1
+    400294: Rgt_ThumbFinger_Middle_JNT 2
+    400296: Rgt_ThumbFinger_Nuckle_JNT
+    400298: Rgt_ThumbFinger_Nuckle_JNT 1
+    400300: Rgt_ThumbFinger_Nuckle_JNT 2
+    400302: Rgt_ThumbFinger_Tip_JNT
+    400304: Rgt_ThumbFinger_Tip_JNT 1
+    400306: Rgt_ThumbFinger_Tip_JNT 2
+    400308: Rgt_Wrist_JNT
+    400310: Rgt_Wrist_JNT 1
+    400312: Rgt_Wrist_JNT 2
+    400314: Root_Clavical_JNT
+    400316: Root_Clavical_JNT 1
+    400318: Root_Clavical_JNT 2
+    400320: Root_CTRL
+    4300000: ArmsMesh
+    7400000: SpellBegin
+    9500000: //RootNode
+    13700000: ArmsMesh
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: SpellBegin
+      takeName: Take 001
+      firstFrame: 10
+      lastFrame: 24
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Arm_BoneJoints
+        weight: 1
+      - path: Arm_BoneJoints/Root_Clavical_JNT
+        weight: 1
+      - path: Arm_BoneJoints/Root_Clavical_JNT/Lft_Shoulder_JNT
+        weight: 1
+      - path: Arm_BoneJoints/Root_Clavical_JNT/Lft_Shoulder_JNT/Lft_Albow_JNT
+        weight: 1
+      - path: Arm_BoneJoints/Root_Clavical_JNT/Lft_Shoulder_JNT/Lft_Albow_JNT/Lft_Forearm_JNT
+        weight: 1
+      - path: Arm_BoneJoints/Root_Clavical_JNT/Lft_Shoulder_JNT/Lft_Albow_JNT/Lft_Forearm_JNT/Lft_Wrist_JNT
+        weight: 1
+      - path: Arm_BoneJoints/Root_Clavical_JNT/Lft_Shoulder_JNT/Lft_Albow_JNT/Lft_Forearm_JNT/Lft_Wrist_JNT/Lft_IndexFinger_Nuckle_JNT
+        weight: 1
+      - path: Arm_BoneJoints/Root_Clavical_JNT/Lft_Shoulder_JNT/Lft_Albow_JNT/Lft_Forearm_JNT/Lft_Wrist_JNT/Lft_IndexFinger_Nuckle_JNT/Lft_IndexFinger_Bottom_JNT
+        weight: 1
+      - path: Arm_BoneJoints/Root_Clavical_JNT/Lft_Shoulder_JNT/Lft_Albow_JNT/Lft_Forearm_JNT/Lft_Wrist_JNT/Lft_IndexFinger_Nuckle_JNT/Lft_IndexFinger_Bottom_JNT/Lft_IndexFinger_Middle_JNT
+        weight: 1
+      - path: Arm_BoneJoints/Root_Clavical_JNT/Lft_Shoulder_JNT/Lft_Albow_JNT/Lft_Forearm_JNT/Lft_Wrist_JNT/Lft_IndexFinger_Nuckle_JNT/Lft_IndexFinger_Bottom_JNT/Lft_IndexFinger_Middle_JNT/Lft_IndexFinger_Tip_JNT
+        weight: 1
+      - path: Arm_BoneJoints/Root_Clavical_JNT/Lft_Shoulder_JNT/Lft_Albow_JNT/Lft_Forearm_JNT/Lft_Wrist_JNT/Lft_MiddleFinger_Nuckle_JNT
+        weight: 1
+      - path: Arm_BoneJoints/Root_Clavical_JNT/Lft_Shoulder_JNT/Lft_Albow_JNT/Lft_Forearm_JNT/Lft_Wrist_JNT/Lft_MiddleFinger_Nuckle_JNT/Lft_MiddleFinger_Bottom_JNT
+        weight: 1
+      - path: Arm_BoneJoints/Root_Clavical_JNT/Lft_Shoulder_JNT/Lft_Albow_JNT/Lft_Forearm_JNT/Lft_Wrist_JNT/Lft_MiddleFinger_Nuckle_JNT/Lft_MiddleFinger_Bottom_JNT/Lft_MiddleFinger_Middlle_JNT
+        weight: 1
+      - path: Arm_BoneJoints/Root_Clavical_JNT/Lft_Shoulder_JNT/Lft_Albow_JNT/Lft_Forearm_JNT/Lft_Wrist_JNT/Lft_MiddleFinger_Nuckle_JNT/Lft_MiddleFinger_Bottom_JNT/Lft_MiddleFinger_Middlle_JNT/Lft_MiddleFinger_Tip_JNT
+        weight: 1
+      - path: Arm_BoneJoints/Root_Clavical_JNT/Lft_Shoulder_JNT/Lft_Albow_JNT/Lft_Forearm_JNT/Lft_Wrist_JNT/Lft_PinkyFinger_Nuckle_JNT
+        weight: 1
+      - path: Arm_BoneJoints/Root_Clavical_JNT/Lft_Shoulder_JNT/Lft_Albow_JNT/Lft_Forearm_JNT/Lft_Wrist_JNT/Lft_PinkyFinger_Nuckle_JNT/Lft_PinkyFinger_Bottom_JNT
+        weight: 1
+      - path: Arm_BoneJoints/Root_Clavical_JNT/Lft_Shoulder_JNT/Lft_Albow_JNT/Lft_Forearm_JNT/Lft_Wrist_JNT/Lft_PinkyFinger_Nuckle_JNT/Lft_PinkyFinger_Bottom_JNT/Lft_PinkyFinger_Middle_JNT
+        weight: 1
+      - path: Arm_BoneJoints/Root_Clavical_JNT/Lft_Shoulder_JNT/Lft_Albow_JNT/Lft_Forearm_JNT/Lft_Wrist_JNT/Lft_PinkyFinger_Nuckle_JNT/Lft_PinkyFinger_Bottom_JNT/Lft_PinkyFinger_Middle_JNT/Lft_PinkyFinger_Tip_JNT
+        weight: 1
+      - path: Arm_BoneJoints/Root_Clavical_JNT/Lft_Shoulder_JNT/Lft_Albow_JNT/Lft_Forearm_JNT/Lft_Wrist_JNT/Lft_RingFinger_Nuckle_JNT
+        weight: 1
+      - path: Arm_BoneJoints/Root_Clavical_JNT/Lft_Shoulder_JNT/Lft_Albow_JNT/Lft_Forearm_JNT/Lft_Wrist_JNT/Lft_RingFinger_Nuckle_JNT/Lft_RingFinger_Bottom_JNT
+        weight: 1
+      - path: Arm_BoneJoints/Root_Clavical_JNT/Lft_Shoulder_JNT/Lft_Albow_JNT/Lft_Forearm_JNT/Lft_Wrist_JNT/Lft_RingFinger_Nuckle_JNT/Lft_RingFinger_Bottom_JNT/Lft_RingFinger_Middle_JNT
+        weight: 1
+      - path: Arm_BoneJoints/Root_Clavical_JNT/Lft_Shoulder_JNT/Lft_Albow_JNT/Lft_Forearm_JNT/Lft_Wrist_JNT/Lft_RingFinger_Nuckle_JNT/Lft_RingFinger_Bottom_JNT/Lft_RingFinger_Middle_JNT/Lft_RingFinger_Tip_JNT
+        weight: 1
+      - path: Arm_BoneJoints/Root_Clavical_JNT/Lft_Shoulder_JNT/Lft_Albow_JNT/Lft_Forearm_JNT/Lft_Wrist_JNT/Lft_ThumbFinger_Nuckle_JNT
+        weight: 1
+      - path: Arm_BoneJoints/Root_Clavical_JNT/Lft_Shoulder_JNT/Lft_Albow_JNT/Lft_Forearm_JNT/Lft_Wrist_JNT/Lft_ThumbFinger_Nuckle_JNT/Lft_ThumbFinger_Bottom_JNT
+        weight: 1
+      - path: Arm_BoneJoints/Root_Clavical_JNT/Lft_Shoulder_JNT/Lft_Albow_JNT/Lft_Forearm_JNT/Lft_Wrist_JNT/Lft_ThumbFinger_Nuckle_JNT/Lft_ThumbFinger_Bottom_JNT/Lft_ThumbFinger_Middle_JNT
+        weight: 1
+      - path: Arm_BoneJoints/Root_Clavical_JNT/Lft_Shoulder_JNT/Lft_Albow_JNT/Lft_Forearm_JNT/Lft_Wrist_JNT/Lft_ThumbFinger_Nuckle_JNT/Lft_ThumbFinger_Bottom_JNT/Lft_ThumbFinger_Middle_JNT/Lft_ThumbFinger_Tip_JNT
+        weight: 1
+      - path: Arm_BoneJoints/Root_Clavical_JNT/Rgt_Shoulder_JNT
+        weight: 1
+      - path: Arm_BoneJoints/Root_Clavical_JNT/Rgt_Shoulder_JNT/Rgt_Albow_JNT
+        weight: 1
+      - path: Arm_BoneJoints/Root_Clavical_JNT/Rgt_Shoulder_JNT/Rgt_Albow_JNT/Rgt_Forearm_JNT
+        weight: 1
+      - path: Arm_BoneJoints/Root_Clavical_JNT/Rgt_Shoulder_JNT/Rgt_Albow_JNT/Rgt_Forearm_JNT/Rgt_Wrist_JNT
+        weight: 1
+      - path: Arm_BoneJoints/Root_Clavical_JNT/Rgt_Shoulder_JNT/Rgt_Albow_JNT/Rgt_Forearm_JNT/Rgt_Wrist_JNT/Rgt_IndexFinger_Nuckle_JNT
+        weight: 1
+      - path: Arm_BoneJoints/Root_Clavical_JNT/Rgt_Shoulder_JNT/Rgt_Albow_JNT/Rgt_Forearm_JNT/Rgt_Wrist_JNT/Rgt_IndexFinger_Nuckle_JNT/Rgt_IndexFinger_Bottom_JNT
+        weight: 1
+      - path: Arm_BoneJoints/Root_Clavical_JNT/Rgt_Shoulder_JNT/Rgt_Albow_JNT/Rgt_Forearm_JNT/Rgt_Wrist_JNT/Rgt_IndexFinger_Nuckle_JNT/Rgt_IndexFinger_Bottom_JNT/Rgt_IndexFinger_Middle_JNT
+        weight: 1
+      - path: Arm_BoneJoints/Root_Clavical_JNT/Rgt_Shoulder_JNT/Rgt_Albow_JNT/Rgt_Forearm_JNT/Rgt_Wrist_JNT/Rgt_IndexFinger_Nuckle_JNT/Rgt_IndexFinger_Bottom_JNT/Rgt_IndexFinger_Middle_JNT/Rgt_IndexFinger_Tip_JNT
+        weight: 1
+      - path: Arm_BoneJoints/Root_Clavical_JNT/Rgt_Shoulder_JNT/Rgt_Albow_JNT/Rgt_Forearm_JNT/Rgt_Wrist_JNT/Rgt_MiddleFinger_Nuckle_JNT
+        weight: 1
+      - path: Arm_BoneJoints/Root_Clavical_JNT/Rgt_Shoulder_JNT/Rgt_Albow_JNT/Rgt_Forearm_JNT/Rgt_Wrist_JNT/Rgt_MiddleFinger_Nuckle_JNT/Rgt_MiddleFinger_Bottom_JNT
+        weight: 1
+      - path: Arm_BoneJoints/Root_Clavical_JNT/Rgt_Shoulder_JNT/Rgt_Albow_JNT/Rgt_Forearm_JNT/Rgt_Wrist_JNT/Rgt_MiddleFinger_Nuckle_JNT/Rgt_MiddleFinger_Bottom_JNT/Rgt_MiddleFinger_Middlle_JNT
+        weight: 1
+      - path: Arm_BoneJoints/Root_Clavical_JNT/Rgt_Shoulder_JNT/Rgt_Albow_JNT/Rgt_Forearm_JNT/Rgt_Wrist_JNT/Rgt_MiddleFinger_Nuckle_JNT/Rgt_MiddleFinger_Bottom_JNT/Rgt_MiddleFinger_Middlle_JNT/Rgt_MiddleFinger_Tip_JNT
+        weight: 1
+      - path: Arm_BoneJoints/Root_Clavical_JNT/Rgt_Shoulder_JNT/Rgt_Albow_JNT/Rgt_Forearm_JNT/Rgt_Wrist_JNT/Rgt_PinkyFinger_Nuckle_JNT
+        weight: 1
+      - path: Arm_BoneJoints/Root_Clavical_JNT/Rgt_Shoulder_JNT/Rgt_Albow_JNT/Rgt_Forearm_JNT/Rgt_Wrist_JNT/Rgt_PinkyFinger_Nuckle_JNT/Rgt_PinkyFinger_Bottom_JNT
+        weight: 1
+      - path: Arm_BoneJoints/Root_Clavical_JNT/Rgt_Shoulder_JNT/Rgt_Albow_JNT/Rgt_Forearm_JNT/Rgt_Wrist_JNT/Rgt_PinkyFinger_Nuckle_JNT/Rgt_PinkyFinger_Bottom_JNT/Rgt_PinkyFinger_Middle_JNT
+        weight: 1
+      - path: Arm_BoneJoints/Root_Clavical_JNT/Rgt_Shoulder_JNT/Rgt_Albow_JNT/Rgt_Forearm_JNT/Rgt_Wrist_JNT/Rgt_PinkyFinger_Nuckle_JNT/Rgt_PinkyFinger_Bottom_JNT/Rgt_PinkyFinger_Middle_JNT/Rgt_PinkyFinger_Tip_JNT
+        weight: 1
+      - path: Arm_BoneJoints/Root_Clavical_JNT/Rgt_Shoulder_JNT/Rgt_Albow_JNT/Rgt_Forearm_JNT/Rgt_Wrist_JNT/Rgt_RingFinger_Nuckle_JNT
+        weight: 1
+      - path: Arm_BoneJoints/Root_Clavical_JNT/Rgt_Shoulder_JNT/Rgt_Albow_JNT/Rgt_Forearm_JNT/Rgt_Wrist_JNT/Rgt_RingFinger_Nuckle_JNT/Rgt_RingFinger_Bottom_JNT
+        weight: 1
+      - path: Arm_BoneJoints/Root_Clavical_JNT/Rgt_Shoulder_JNT/Rgt_Albow_JNT/Rgt_Forearm_JNT/Rgt_Wrist_JNT/Rgt_RingFinger_Nuckle_JNT/Rgt_RingFinger_Bottom_JNT/Rgt_RingFinger_Middle_JNT
+        weight: 1
+      - path: Arm_BoneJoints/Root_Clavical_JNT/Rgt_Shoulder_JNT/Rgt_Albow_JNT/Rgt_Forearm_JNT/Rgt_Wrist_JNT/Rgt_RingFinger_Nuckle_JNT/Rgt_RingFinger_Bottom_JNT/Rgt_RingFinger_Middle_JNT/Rgt_RingFinger_Tip_JNT
+        weight: 1
+      - path: Arm_BoneJoints/Root_Clavical_JNT/Rgt_Shoulder_JNT/Rgt_Albow_JNT/Rgt_Forearm_JNT/Rgt_Wrist_JNT/Rgt_ThumbFinger_Nuckle_JNT
+        weight: 1
+      - path: Arm_BoneJoints/Root_Clavical_JNT/Rgt_Shoulder_JNT/Rgt_Albow_JNT/Rgt_Forearm_JNT/Rgt_Wrist_JNT/Rgt_ThumbFinger_Nuckle_JNT/Rgt_ThumbFinger_Bottom_JNT
+        weight: 1
+      - path: Arm_BoneJoints/Root_Clavical_JNT/Rgt_Shoulder_JNT/Rgt_Albow_JNT/Rgt_Forearm_JNT/Rgt_Wrist_JNT/Rgt_ThumbFinger_Nuckle_JNT/Rgt_ThumbFinger_Bottom_JNT/Rgt_ThumbFinger_Middle_JNT
+        weight: 1
+      - path: Arm_BoneJoints/Root_Clavical_JNT/Rgt_Shoulder_JNT/Rgt_Albow_JNT/Rgt_Forearm_JNT/Rgt_Wrist_JNT/Rgt_ThumbFinger_Nuckle_JNT/Rgt_ThumbFinger_Bottom_JNT/Rgt_ThumbFinger_Middle_JNT/Rgt_ThumbFinger_Tip_JNT
+        weight: 1
+      - path: Arm_BoneJoints1
+        weight: 1
+      - path: Arm_BoneJoints1/Root_Clavical_JNT 1
+        weight: 1
+      - path: Arm_BoneJoints1/Root_Clavical_JNT 1/Lft_Shoulder_JNT 1
+        weight: 1
+      - path: Arm_BoneJoints1/Root_Clavical_JNT 1/Lft_Shoulder_JNT 1/Lft_Albow_JNT
+          1
+        weight: 1
+      - path: Arm_BoneJoints1/Root_Clavical_JNT 1/Lft_Shoulder_JNT 1/Lft_Albow_JNT
+          1/Lft_Forearm_JNT 1
+        weight: 1
+      - path: Arm_BoneJoints1/Root_Clavical_JNT 1/Lft_Shoulder_JNT 1/Lft_Albow_JNT
+          1/Lft_Forearm_JNT 1/Lft_Wrist_JNT 1
+        weight: 1
+      - path: Arm_BoneJoints1/Root_Clavical_JNT 1/Lft_Shoulder_JNT 1/Lft_Albow_JNT
+          1/Lft_Forearm_JNT 1/Lft_Wrist_JNT 1/Lft_IndexFinger_Nuckle_JNT 1
+        weight: 1
+      - path: Arm_BoneJoints1/Root_Clavical_JNT 1/Lft_Shoulder_JNT 1/Lft_Albow_JNT
+          1/Lft_Forearm_JNT 1/Lft_Wrist_JNT 1/Lft_IndexFinger_Nuckle_JNT 1/Lft_IndexFinger_Bottom_JNT
+          1
+        weight: 1
+      - path: Arm_BoneJoints1/Root_Clavical_JNT 1/Lft_Shoulder_JNT 1/Lft_Albow_JNT
+          1/Lft_Forearm_JNT 1/Lft_Wrist_JNT 1/Lft_IndexFinger_Nuckle_JNT 1/Lft_IndexFinger_Bottom_JNT
+          1/Lft_IndexFinger_Middle_JNT 1
+        weight: 1
+      - path: Arm_BoneJoints1/Root_Clavical_JNT 1/Lft_Shoulder_JNT 1/Lft_Albow_JNT
+          1/Lft_Forearm_JNT 1/Lft_Wrist_JNT 1/Lft_IndexFinger_Nuckle_JNT 1/Lft_IndexFinger_Bottom_JNT
+          1/Lft_IndexFinger_Middle_JNT 1/Lft_IndexFinger_Tip_JNT 1
+        weight: 1
+      - path: Arm_BoneJoints1/Root_Clavical_JNT 1/Lft_Shoulder_JNT 1/Lft_Albow_JNT
+          1/Lft_Forearm_JNT 1/Lft_Wrist_JNT 1/Lft_MiddleFinger_Nuckle_JNT 1
+        weight: 1
+      - path: Arm_BoneJoints1/Root_Clavical_JNT 1/Lft_Shoulder_JNT 1/Lft_Albow_JNT
+          1/Lft_Forearm_JNT 1/Lft_Wrist_JNT 1/Lft_MiddleFinger_Nuckle_JNT 1/Lft_MiddleFinger_Bottom_JNT
+          1
+        weight: 1
+      - path: Arm_BoneJoints1/Root_Clavical_JNT 1/Lft_Shoulder_JNT 1/Lft_Albow_JNT
+          1/Lft_Forearm_JNT 1/Lft_Wrist_JNT 1/Lft_MiddleFinger_Nuckle_JNT 1/Lft_MiddleFinger_Bottom_JNT
+          1/Lft_MiddleFinger_Middlle_JNT 1
+        weight: 1
+      - path: Arm_BoneJoints1/Root_Clavical_JNT 1/Lft_Shoulder_JNT 1/Lft_Albow_JNT
+          1/Lft_Forearm_JNT 1/Lft_Wrist_JNT 1/Lft_MiddleFinger_Nuckle_JNT 1/Lft_MiddleFinger_Bottom_JNT
+          1/Lft_MiddleFinger_Middlle_JNT 1/Lft_MiddleFinger_Tip_JNT 1
+        weight: 1
+      - path: Arm_BoneJoints1/Root_Clavical_JNT 1/Lft_Shoulder_JNT 1/Lft_Albow_JNT
+          1/Lft_Forearm_JNT 1/Lft_Wrist_JNT 1/Lft_PinkyFinger_Nuckle_JNT 1
+        weight: 1
+      - path: Arm_BoneJoints1/Root_Clavical_JNT 1/Lft_Shoulder_JNT 1/Lft_Albow_JNT
+          1/Lft_Forearm_JNT 1/Lft_Wrist_JNT 1/Lft_PinkyFinger_Nuckle_JNT 1/Lft_PinkyFinger_Bottom_JNT
+          1
+        weight: 1
+      - path: Arm_BoneJoints1/Root_Clavical_JNT 1/Lft_Shoulder_JNT 1/Lft_Albow_JNT
+          1/Lft_Forearm_JNT 1/Lft_Wrist_JNT 1/Lft_PinkyFinger_Nuckle_JNT 1/Lft_PinkyFinger_Bottom_JNT
+          1/Lft_PinkyFinger_Middle_JNT 1
+        weight: 1
+      - path: Arm_BoneJoints1/Root_Clavical_JNT 1/Lft_Shoulder_JNT 1/Lft_Albow_JNT
+          1/Lft_Forearm_JNT 1/Lft_Wrist_JNT 1/Lft_PinkyFinger_Nuckle_JNT 1/Lft_PinkyFinger_Bottom_JNT
+          1/Lft_PinkyFinger_Middle_JNT 1/Lft_PinkyFinger_Tip_JNT 1
+        weight: 1
+      - path: Arm_BoneJoints1/Root_Clavical_JNT 1/Lft_Shoulder_JNT 1/Lft_Albow_JNT
+          1/Lft_Forearm_JNT 1/Lft_Wrist_JNT 1/Lft_RingFinger_Nuckle_JNT 1
+        weight: 1
+      - path: Arm_BoneJoints1/Root_Clavical_JNT 1/Lft_Shoulder_JNT 1/Lft_Albow_JNT
+          1/Lft_Forearm_JNT 1/Lft_Wrist_JNT 1/Lft_RingFinger_Nuckle_JNT 1/Lft_RingFinger_Bottom_JNT
+          1
+        weight: 1
+      - path: Arm_BoneJoints1/Root_Clavical_JNT 1/Lft_Shoulder_JNT 1/Lft_Albow_JNT
+          1/Lft_Forearm_JNT 1/Lft_Wrist_JNT 1/Lft_RingFinger_Nuckle_JNT 1/Lft_RingFinger_Bottom_JNT
+          1/Lft_RingFinger_Middle_JNT 1
+        weight: 1
+      - path: Arm_BoneJoints1/Root_Clavical_JNT 1/Lft_Shoulder_JNT 1/Lft_Albow_JNT
+          1/Lft_Forearm_JNT 1/Lft_Wrist_JNT 1/Lft_RingFinger_Nuckle_JNT 1/Lft_RingFinger_Bottom_JNT
+          1/Lft_RingFinger_Middle_JNT 1/Lft_RingFinger_Tip_JNT 1
+        weight: 1
+      - path: Arm_BoneJoints1/Root_Clavical_JNT 1/Lft_Shoulder_JNT 1/Lft_Albow_JNT
+          1/Lft_Forearm_JNT 1/Lft_Wrist_JNT 1/Lft_ThumbFinger_Nuckle_JNT 1
+        weight: 1
+      - path: Arm_BoneJoints1/Root_Clavical_JNT 1/Lft_Shoulder_JNT 1/Lft_Albow_JNT
+          1/Lft_Forearm_JNT 1/Lft_Wrist_JNT 1/Lft_ThumbFinger_Nuckle_JNT 1/Lft_ThumbFinger_Bottom_JNT
+          1
+        weight: 1
+      - path: Arm_BoneJoints1/Root_Clavical_JNT 1/Lft_Shoulder_JNT 1/Lft_Albow_JNT
+          1/Lft_Forearm_JNT 1/Lft_Wrist_JNT 1/Lft_ThumbFinger_Nuckle_JNT 1/Lft_ThumbFinger_Bottom_JNT
+          1/Lft_ThumbFinger_Middle_JNT 1
+        weight: 1
+      - path: Arm_BoneJoints1/Root_Clavical_JNT 1/Lft_Shoulder_JNT 1/Lft_Albow_JNT
+          1/Lft_Forearm_JNT 1/Lft_Wrist_JNT 1/Lft_ThumbFinger_Nuckle_JNT 1/Lft_ThumbFinger_Bottom_JNT
+          1/Lft_ThumbFinger_Middle_JNT 1/Lft_ThumbFinger_Tip_JNT 1
+        weight: 1
+      - path: Arm_BoneJoints1/Root_Clavical_JNT 1/Rgt_Shoulder_JNT 1
+        weight: 1
+      - path: Arm_BoneJoints1/Root_Clavical_JNT 1/Rgt_Shoulder_JNT 1/Rgt_Albow_JNT
+          1
+        weight: 1
+      - path: Arm_BoneJoints1/Root_Clavical_JNT 1/Rgt_Shoulder_JNT 1/Rgt_Albow_JNT
+          1/Rgt_Forearm_JNT 1
+        weight: 1
+      - path: Arm_BoneJoints1/Root_Clavical_JNT 1/Rgt_Shoulder_JNT 1/Rgt_Albow_JNT
+          1/Rgt_Forearm_JNT 1/Rgt_Wrist_JNT 1
+        weight: 1
+      - path: Arm_BoneJoints1/Root_Clavical_JNT 1/Rgt_Shoulder_JNT 1/Rgt_Albow_JNT
+          1/Rgt_Forearm_JNT 1/Rgt_Wrist_JNT 1/Rgt_IndexFinger_Nuckle_JNT 1
+        weight: 1
+      - path: Arm_BoneJoints1/Root_Clavical_JNT 1/Rgt_Shoulder_JNT 1/Rgt_Albow_JNT
+          1/Rgt_Forearm_JNT 1/Rgt_Wrist_JNT 1/Rgt_IndexFinger_Nuckle_JNT 1/Rgt_IndexFinger_Bottom_JNT
+          1
+        weight: 1
+      - path: Arm_BoneJoints1/Root_Clavical_JNT 1/Rgt_Shoulder_JNT 1/Rgt_Albow_JNT
+          1/Rgt_Forearm_JNT 1/Rgt_Wrist_JNT 1/Rgt_IndexFinger_Nuckle_JNT 1/Rgt_IndexFinger_Bottom_JNT
+          1/Rgt_IndexFinger_Middle_JNT 1
+        weight: 1
+      - path: Arm_BoneJoints1/Root_Clavical_JNT 1/Rgt_Shoulder_JNT 1/Rgt_Albow_JNT
+          1/Rgt_Forearm_JNT 1/Rgt_Wrist_JNT 1/Rgt_IndexFinger_Nuckle_JNT 1/Rgt_IndexFinger_Bottom_JNT
+          1/Rgt_IndexFinger_Middle_JNT 1/Rgt_IndexFinger_Tip_JNT 1
+        weight: 1
+      - path: Arm_BoneJoints1/Root_Clavical_JNT 1/Rgt_Shoulder_JNT 1/Rgt_Albow_JNT
+          1/Rgt_Forearm_JNT 1/Rgt_Wrist_JNT 1/Rgt_MiddleFinger_Nuckle_JNT 1
+        weight: 1
+      - path: Arm_BoneJoints1/Root_Clavical_JNT 1/Rgt_Shoulder_JNT 1/Rgt_Albow_JNT
+          1/Rgt_Forearm_JNT 1/Rgt_Wrist_JNT 1/Rgt_MiddleFinger_Nuckle_JNT 1/Rgt_MiddleFinger_Bottom_JNT
+          1
+        weight: 1
+      - path: Arm_BoneJoints1/Root_Clavical_JNT 1/Rgt_Shoulder_JNT 1/Rgt_Albow_JNT
+          1/Rgt_Forearm_JNT 1/Rgt_Wrist_JNT 1/Rgt_MiddleFinger_Nuckle_JNT 1/Rgt_MiddleFinger_Bottom_JNT
+          1/Rgt_MiddleFinger_Middlle_JNT 1
+        weight: 1
+      - path: Arm_BoneJoints1/Root_Clavical_JNT 1/Rgt_Shoulder_JNT 1/Rgt_Albow_JNT
+          1/Rgt_Forearm_JNT 1/Rgt_Wrist_JNT 1/Rgt_MiddleFinger_Nuckle_JNT 1/Rgt_MiddleFinger_Bottom_JNT
+          1/Rgt_MiddleFinger_Middlle_JNT 1/Rgt_MiddleFinger_Tip_JNT 1
+        weight: 1
+      - path: Arm_BoneJoints1/Root_Clavical_JNT 1/Rgt_Shoulder_JNT 1/Rgt_Albow_JNT
+          1/Rgt_Forearm_JNT 1/Rgt_Wrist_JNT 1/Rgt_PinkyFinger_Nuckle_JNT 1
+        weight: 1
+      - path: Arm_BoneJoints1/Root_Clavical_JNT 1/Rgt_Shoulder_JNT 1/Rgt_Albow_JNT
+          1/Rgt_Forearm_JNT 1/Rgt_Wrist_JNT 1/Rgt_PinkyFinger_Nuckle_JNT 1/Rgt_PinkyFinger_Bottom_JNT
+          1
+        weight: 1
+      - path: Arm_BoneJoints1/Root_Clavical_JNT 1/Rgt_Shoulder_JNT 1/Rgt_Albow_JNT
+          1/Rgt_Forearm_JNT 1/Rgt_Wrist_JNT 1/Rgt_PinkyFinger_Nuckle_JNT 1/Rgt_PinkyFinger_Bottom_JNT
+          1/Rgt_PinkyFinger_Middle_JNT 1
+        weight: 1
+      - path: Arm_BoneJoints1/Root_Clavical_JNT 1/Rgt_Shoulder_JNT 1/Rgt_Albow_JNT
+          1/Rgt_Forearm_JNT 1/Rgt_Wrist_JNT 1/Rgt_PinkyFinger_Nuckle_JNT 1/Rgt_PinkyFinger_Bottom_JNT
+          1/Rgt_PinkyFinger_Middle_JNT 1/Rgt_PinkyFinger_Tip_JNT 1
+        weight: 1
+      - path: Arm_BoneJoints1/Root_Clavical_JNT 1/Rgt_Shoulder_JNT 1/Rgt_Albow_JNT
+          1/Rgt_Forearm_JNT 1/Rgt_Wrist_JNT 1/Rgt_RingFinger_Nuckle_JNT 1
+        weight: 1
+      - path: Arm_BoneJoints1/Root_Clavical_JNT 1/Rgt_Shoulder_JNT 1/Rgt_Albow_JNT
+          1/Rgt_Forearm_JNT 1/Rgt_Wrist_JNT 1/Rgt_RingFinger_Nuckle_JNT 1/Rgt_RingFinger_Bottom_JNT
+          1
+        weight: 1
+      - path: Arm_BoneJoints1/Root_Clavical_JNT 1/Rgt_Shoulder_JNT 1/Rgt_Albow_JNT
+          1/Rgt_Forearm_JNT 1/Rgt_Wrist_JNT 1/Rgt_RingFinger_Nuckle_JNT 1/Rgt_RingFinger_Bottom_JNT
+          1/Rgt_RingFinger_Middle_JNT 1
+        weight: 1
+      - path: Arm_BoneJoints1/Root_Clavical_JNT 1/Rgt_Shoulder_JNT 1/Rgt_Albow_JNT
+          1/Rgt_Forearm_JNT 1/Rgt_Wrist_JNT 1/Rgt_RingFinger_Nuckle_JNT 1/Rgt_RingFinger_Bottom_JNT
+          1/Rgt_RingFinger_Middle_JNT 1/Rgt_RingFinger_Tip_JNT 1
+        weight: 1
+      - path: Arm_BoneJoints1/Root_Clavical_JNT 1/Rgt_Shoulder_JNT 1/Rgt_Albow_JNT
+          1/Rgt_Forearm_JNT 1/Rgt_Wrist_JNT 1/Rgt_ThumbFinger_Nuckle_JNT 1
+        weight: 1
+      - path: Arm_BoneJoints1/Root_Clavical_JNT 1/Rgt_Shoulder_JNT 1/Rgt_Albow_JNT
+          1/Rgt_Forearm_JNT 1/Rgt_Wrist_JNT 1/Rgt_ThumbFinger_Nuckle_JNT 1/Rgt_ThumbFinger_Bottom_JNT
+          1
+        weight: 1
+      - path: Arm_BoneJoints1/Root_Clavical_JNT 1/Rgt_Shoulder_JNT 1/Rgt_Albow_JNT
+          1/Rgt_Forearm_JNT 1/Rgt_Wrist_JNT 1/Rgt_ThumbFinger_Nuckle_JNT 1/Rgt_ThumbFinger_Bottom_JNT
+          1/Rgt_ThumbFinger_Middle_JNT 1
+        weight: 1
+      - path: Arm_BoneJoints1/Root_Clavical_JNT 1/Rgt_Shoulder_JNT 1/Rgt_Albow_JNT
+          1/Rgt_Forearm_JNT 1/Rgt_Wrist_JNT 1/Rgt_ThumbFinger_Nuckle_JNT 1/Rgt_ThumbFinger_Bottom_JNT
+          1/Rgt_ThumbFinger_Middle_JNT 1/Rgt_ThumbFinger_Tip_JNT 1
+        weight: 1
+      - path: Arm_BoneJoints2
+        weight: 1
+      - path: Arm_BoneJoints2/Root_Clavical_JNT 2
+        weight: 1
+      - path: Arm_BoneJoints2/Root_Clavical_JNT 2/Lft_Shoulder_JNT 2
+        weight: 1
+      - path: Arm_BoneJoints2/Root_Clavical_JNT 2/Lft_Shoulder_JNT 2/Lft_Albow_JNT
+          2
+        weight: 1
+      - path: Arm_BoneJoints2/Root_Clavical_JNT 2/Lft_Shoulder_JNT 2/Lft_Albow_JNT
+          2/Lft_Forearm_JNT 2
+        weight: 1
+      - path: Arm_BoneJoints2/Root_Clavical_JNT 2/Lft_Shoulder_JNT 2/Lft_Albow_JNT
+          2/Lft_Forearm_JNT 2/Lft_Wrist_JNT 2
+        weight: 1
+      - path: Arm_BoneJoints2/Root_Clavical_JNT 2/Lft_Shoulder_JNT 2/Lft_Albow_JNT
+          2/Lft_Forearm_JNT 2/Lft_Wrist_JNT 2/Lft_IndexFinger_Nuckle_JNT 2
+        weight: 1
+      - path: Arm_BoneJoints2/Root_Clavical_JNT 2/Lft_Shoulder_JNT 2/Lft_Albow_JNT
+          2/Lft_Forearm_JNT 2/Lft_Wrist_JNT 2/Lft_IndexFinger_Nuckle_JNT 2/Lft_IndexFinger_Bottom_JNT
+          2
+        weight: 1
+      - path: Arm_BoneJoints2/Root_Clavical_JNT 2/Lft_Shoulder_JNT 2/Lft_Albow_JNT
+          2/Lft_Forearm_JNT 2/Lft_Wrist_JNT 2/Lft_IndexFinger_Nuckle_JNT 2/Lft_IndexFinger_Bottom_JNT
+          2/Lft_IndexFinger_Middle_JNT 2
+        weight: 1
+      - path: Arm_BoneJoints2/Root_Clavical_JNT 2/Lft_Shoulder_JNT 2/Lft_Albow_JNT
+          2/Lft_Forearm_JNT 2/Lft_Wrist_JNT 2/Lft_IndexFinger_Nuckle_JNT 2/Lft_IndexFinger_Bottom_JNT
+          2/Lft_IndexFinger_Middle_JNT 2/Lft_IndexFinger_Tip_JNT 2
+        weight: 1
+      - path: Arm_BoneJoints2/Root_Clavical_JNT 2/Lft_Shoulder_JNT 2/Lft_Albow_JNT
+          2/Lft_Forearm_JNT 2/Lft_Wrist_JNT 2/Lft_MiddleFinger_Nuckle_JNT 2
+        weight: 1
+      - path: Arm_BoneJoints2/Root_Clavical_JNT 2/Lft_Shoulder_JNT 2/Lft_Albow_JNT
+          2/Lft_Forearm_JNT 2/Lft_Wrist_JNT 2/Lft_MiddleFinger_Nuckle_JNT 2/Lft_MiddleFinger_Bottom_JNT
+          2
+        weight: 1
+      - path: Arm_BoneJoints2/Root_Clavical_JNT 2/Lft_Shoulder_JNT 2/Lft_Albow_JNT
+          2/Lft_Forearm_JNT 2/Lft_Wrist_JNT 2/Lft_MiddleFinger_Nuckle_JNT 2/Lft_MiddleFinger_Bottom_JNT
+          2/Lft_MiddleFinger_Middlle_JNT 2
+        weight: 1
+      - path: Arm_BoneJoints2/Root_Clavical_JNT 2/Lft_Shoulder_JNT 2/Lft_Albow_JNT
+          2/Lft_Forearm_JNT 2/Lft_Wrist_JNT 2/Lft_MiddleFinger_Nuckle_JNT 2/Lft_MiddleFinger_Bottom_JNT
+          2/Lft_MiddleFinger_Middlle_JNT 2/Lft_MiddleFinger_Tip_JNT 2
+        weight: 1
+      - path: Arm_BoneJoints2/Root_Clavical_JNT 2/Lft_Shoulder_JNT 2/Lft_Albow_JNT
+          2/Lft_Forearm_JNT 2/Lft_Wrist_JNT 2/Lft_PinkyFinger_Nuckle_JNT 2
+        weight: 1
+      - path: Arm_BoneJoints2/Root_Clavical_JNT 2/Lft_Shoulder_JNT 2/Lft_Albow_JNT
+          2/Lft_Forearm_JNT 2/Lft_Wrist_JNT 2/Lft_PinkyFinger_Nuckle_JNT 2/Lft_PinkyFinger_Bottom_JNT
+          2
+        weight: 1
+      - path: Arm_BoneJoints2/Root_Clavical_JNT 2/Lft_Shoulder_JNT 2/Lft_Albow_JNT
+          2/Lft_Forearm_JNT 2/Lft_Wrist_JNT 2/Lft_PinkyFinger_Nuckle_JNT 2/Lft_PinkyFinger_Bottom_JNT
+          2/Lft_PinkyFinger_Middle_JNT 2
+        weight: 1
+      - path: Arm_BoneJoints2/Root_Clavical_JNT 2/Lft_Shoulder_JNT 2/Lft_Albow_JNT
+          2/Lft_Forearm_JNT 2/Lft_Wrist_JNT 2/Lft_PinkyFinger_Nuckle_JNT 2/Lft_PinkyFinger_Bottom_JNT
+          2/Lft_PinkyFinger_Middle_JNT 2/Lft_PinkyFinger_Tip_JNT 2
+        weight: 1
+      - path: Arm_BoneJoints2/Root_Clavical_JNT 2/Lft_Shoulder_JNT 2/Lft_Albow_JNT
+          2/Lft_Forearm_JNT 2/Lft_Wrist_JNT 2/Lft_RingFinger_Nuckle_JNT 2
+        weight: 1
+      - path: Arm_BoneJoints2/Root_Clavical_JNT 2/Lft_Shoulder_JNT 2/Lft_Albow_JNT
+          2/Lft_Forearm_JNT 2/Lft_Wrist_JNT 2/Lft_RingFinger_Nuckle_JNT 2/Lft_RingFinger_Bottom_JNT
+          2
+        weight: 1
+      - path: Arm_BoneJoints2/Root_Clavical_JNT 2/Lft_Shoulder_JNT 2/Lft_Albow_JNT
+          2/Lft_Forearm_JNT 2/Lft_Wrist_JNT 2/Lft_RingFinger_Nuckle_JNT 2/Lft_RingFinger_Bottom_JNT
+          2/Lft_RingFinger_Middle_JNT 2
+        weight: 1
+      - path: Arm_BoneJoints2/Root_Clavical_JNT 2/Lft_Shoulder_JNT 2/Lft_Albow_JNT
+          2/Lft_Forearm_JNT 2/Lft_Wrist_JNT 2/Lft_RingFinger_Nuckle_JNT 2/Lft_RingFinger_Bottom_JNT
+          2/Lft_RingFinger_Middle_JNT 2/Lft_RingFinger_Tip_JNT 2
+        weight: 1
+      - path: Arm_BoneJoints2/Root_Clavical_JNT 2/Lft_Shoulder_JNT 2/Lft_Albow_JNT
+          2/Lft_Forearm_JNT 2/Lft_Wrist_JNT 2/Lft_ThumbFinger_Nuckle_JNT 2
+        weight: 1
+      - path: Arm_BoneJoints2/Root_Clavical_JNT 2/Lft_Shoulder_JNT 2/Lft_Albow_JNT
+          2/Lft_Forearm_JNT 2/Lft_Wrist_JNT 2/Lft_ThumbFinger_Nuckle_JNT 2/Lft_ThumbFinger_Bottom_JNT
+          2
+        weight: 1
+      - path: Arm_BoneJoints2/Root_Clavical_JNT 2/Lft_Shoulder_JNT 2/Lft_Albow_JNT
+          2/Lft_Forearm_JNT 2/Lft_Wrist_JNT 2/Lft_ThumbFinger_Nuckle_JNT 2/Lft_ThumbFinger_Bottom_JNT
+          2/Lft_ThumbFinger_Middle_JNT 2
+        weight: 1
+      - path: Arm_BoneJoints2/Root_Clavical_JNT 2/Lft_Shoulder_JNT 2/Lft_Albow_JNT
+          2/Lft_Forearm_JNT 2/Lft_Wrist_JNT 2/Lft_ThumbFinger_Nuckle_JNT 2/Lft_ThumbFinger_Bottom_JNT
+          2/Lft_ThumbFinger_Middle_JNT 2/Lft_ThumbFinger_Tip_JNT 2
+        weight: 1
+      - path: Arm_BoneJoints2/Root_Clavical_JNT 2/Rgt_Shoulder_JNT 2
+        weight: 1
+      - path: Arm_BoneJoints2/Root_Clavical_JNT 2/Rgt_Shoulder_JNT 2/Rgt_Albow_JNT
+          2
+        weight: 1
+      - path: Arm_BoneJoints2/Root_Clavical_JNT 2/Rgt_Shoulder_JNT 2/Rgt_Albow_JNT
+          2/Rgt_Forearm_JNT 2
+        weight: 1
+      - path: Arm_BoneJoints2/Root_Clavical_JNT 2/Rgt_Shoulder_JNT 2/Rgt_Albow_JNT
+          2/Rgt_Forearm_JNT 2/Rgt_Wrist_JNT 2
+        weight: 1
+      - path: Arm_BoneJoints2/Root_Clavical_JNT 2/Rgt_Shoulder_JNT 2/Rgt_Albow_JNT
+          2/Rgt_Forearm_JNT 2/Rgt_Wrist_JNT 2/Rgt_IndexFinger_Nuckle_JNT 2
+        weight: 1
+      - path: Arm_BoneJoints2/Root_Clavical_JNT 2/Rgt_Shoulder_JNT 2/Rgt_Albow_JNT
+          2/Rgt_Forearm_JNT 2/Rgt_Wrist_JNT 2/Rgt_IndexFinger_Nuckle_JNT 2/Rgt_IndexFinger_Bottom_JNT
+          2
+        weight: 1
+      - path: Arm_BoneJoints2/Root_Clavical_JNT 2/Rgt_Shoulder_JNT 2/Rgt_Albow_JNT
+          2/Rgt_Forearm_JNT 2/Rgt_Wrist_JNT 2/Rgt_IndexFinger_Nuckle_JNT 2/Rgt_IndexFinger_Bottom_JNT
+          2/Rgt_IndexFinger_Middle_JNT 2
+        weight: 1
+      - path: Arm_BoneJoints2/Root_Clavical_JNT 2/Rgt_Shoulder_JNT 2/Rgt_Albow_JNT
+          2/Rgt_Forearm_JNT 2/Rgt_Wrist_JNT 2/Rgt_IndexFinger_Nuckle_JNT 2/Rgt_IndexFinger_Bottom_JNT
+          2/Rgt_IndexFinger_Middle_JNT 2/Rgt_IndexFinger_Tip_JNT 2
+        weight: 1
+      - path: Arm_BoneJoints2/Root_Clavical_JNT 2/Rgt_Shoulder_JNT 2/Rgt_Albow_JNT
+          2/Rgt_Forearm_JNT 2/Rgt_Wrist_JNT 2/Rgt_MiddleFinger_Nuckle_JNT 2
+        weight: 1
+      - path: Arm_BoneJoints2/Root_Clavical_JNT 2/Rgt_Shoulder_JNT 2/Rgt_Albow_JNT
+          2/Rgt_Forearm_JNT 2/Rgt_Wrist_JNT 2/Rgt_MiddleFinger_Nuckle_JNT 2/Rgt_MiddleFinger_Bottom_JNT
+          2
+        weight: 1
+      - path: Arm_BoneJoints2/Root_Clavical_JNT 2/Rgt_Shoulder_JNT 2/Rgt_Albow_JNT
+          2/Rgt_Forearm_JNT 2/Rgt_Wrist_JNT 2/Rgt_MiddleFinger_Nuckle_JNT 2/Rgt_MiddleFinger_Bottom_JNT
+          2/Rgt_MiddleFinger_Middlle_JNT 2
+        weight: 1
+      - path: Arm_BoneJoints2/Root_Clavical_JNT 2/Rgt_Shoulder_JNT 2/Rgt_Albow_JNT
+          2/Rgt_Forearm_JNT 2/Rgt_Wrist_JNT 2/Rgt_MiddleFinger_Nuckle_JNT 2/Rgt_MiddleFinger_Bottom_JNT
+          2/Rgt_MiddleFinger_Middlle_JNT 2/Rgt_MiddleFinger_Tip_JNT 2
+        weight: 1
+      - path: Arm_BoneJoints2/Root_Clavical_JNT 2/Rgt_Shoulder_JNT 2/Rgt_Albow_JNT
+          2/Rgt_Forearm_JNT 2/Rgt_Wrist_JNT 2/Rgt_PinkyFinger_Nuckle_JNT 2
+        weight: 1
+      - path: Arm_BoneJoints2/Root_Clavical_JNT 2/Rgt_Shoulder_JNT 2/Rgt_Albow_JNT
+          2/Rgt_Forearm_JNT 2/Rgt_Wrist_JNT 2/Rgt_PinkyFinger_Nuckle_JNT 2/Rgt_PinkyFinger_Bottom_JNT
+          2
+        weight: 1
+      - path: Arm_BoneJoints2/Root_Clavical_JNT 2/Rgt_Shoulder_JNT 2/Rgt_Albow_JNT
+          2/Rgt_Forearm_JNT 2/Rgt_Wrist_JNT 2/Rgt_PinkyFinger_Nuckle_JNT 2/Rgt_PinkyFinger_Bottom_JNT
+          2/Rgt_PinkyFinger_Middle_JNT 2
+        weight: 1
+      - path: Arm_BoneJoints2/Root_Clavical_JNT 2/Rgt_Shoulder_JNT 2/Rgt_Albow_JNT
+          2/Rgt_Forearm_JNT 2/Rgt_Wrist_JNT 2/Rgt_PinkyFinger_Nuckle_JNT 2/Rgt_PinkyFinger_Bottom_JNT
+          2/Rgt_PinkyFinger_Middle_JNT 2/Rgt_PinkyFinger_Tip_JNT 2
+        weight: 1
+      - path: Arm_BoneJoints2/Root_Clavical_JNT 2/Rgt_Shoulder_JNT 2/Rgt_Albow_JNT
+          2/Rgt_Forearm_JNT 2/Rgt_Wrist_JNT 2/Rgt_RingFinger_Nuckle_JNT 2
+        weight: 1
+      - path: Arm_BoneJoints2/Root_Clavical_JNT 2/Rgt_Shoulder_JNT 2/Rgt_Albow_JNT
+          2/Rgt_Forearm_JNT 2/Rgt_Wrist_JNT 2/Rgt_RingFinger_Nuckle_JNT 2/Rgt_RingFinger_Bottom_JNT
+          2
+        weight: 1
+      - path: Arm_BoneJoints2/Root_Clavical_JNT 2/Rgt_Shoulder_JNT 2/Rgt_Albow_JNT
+          2/Rgt_Forearm_JNT 2/Rgt_Wrist_JNT 2/Rgt_RingFinger_Nuckle_JNT 2/Rgt_RingFinger_Bottom_JNT
+          2/Rgt_RingFinger_Middle_JNT 2
+        weight: 1
+      - path: Arm_BoneJoints2/Root_Clavical_JNT 2/Rgt_Shoulder_JNT 2/Rgt_Albow_JNT
+          2/Rgt_Forearm_JNT 2/Rgt_Wrist_JNT 2/Rgt_RingFinger_Nuckle_JNT 2/Rgt_RingFinger_Bottom_JNT
+          2/Rgt_RingFinger_Middle_JNT 2/Rgt_RingFinger_Tip_JNT 2
+        weight: 1
+      - path: Arm_BoneJoints2/Root_Clavical_JNT 2/Rgt_Shoulder_JNT 2/Rgt_Albow_JNT
+          2/Rgt_Forearm_JNT 2/Rgt_Wrist_JNT 2/Rgt_ThumbFinger_Nuckle_JNT 2
+        weight: 1
+      - path: Arm_BoneJoints2/Root_Clavical_JNT 2/Rgt_Shoulder_JNT 2/Rgt_Albow_JNT
+          2/Rgt_Forearm_JNT 2/Rgt_Wrist_JNT 2/Rgt_ThumbFinger_Nuckle_JNT 2/Rgt_ThumbFinger_Bottom_JNT
+          2
+        weight: 1
+      - path: Arm_BoneJoints2/Root_Clavical_JNT 2/Rgt_Shoulder_JNT 2/Rgt_Albow_JNT
+          2/Rgt_Forearm_JNT 2/Rgt_Wrist_JNT 2/Rgt_ThumbFinger_Nuckle_JNT 2/Rgt_ThumbFinger_Bottom_JNT
+          2/Rgt_ThumbFinger_Middle_JNT 2
+        weight: 1
+      - path: Arm_BoneJoints2/Root_Clavical_JNT 2/Rgt_Shoulder_JNT 2/Rgt_Albow_JNT
+          2/Rgt_Forearm_JNT 2/Rgt_Wrist_JNT 2/Rgt_ThumbFinger_Nuckle_JNT 2/Rgt_ThumbFinger_Bottom_JNT
+          2/Rgt_ThumbFinger_Middle_JNT 2/Rgt_ThumbFinger_Tip_JNT 2
+        weight: 1
+      - path: ArmsMesh
+        weight: 1
+      - path: Root_CTRL
+        weight: 1
+      - path: Root_CTRL/Lft_Arm_CTRL
+        weight: 1
+      - path: Root_CTRL/Lft_Arm_CTRL/Lft_Arm_IK
+        weight: 1
+      - path: Root_CTRL/Lft_Arm_CTRL/Lgt_Hand_CTRL
+        weight: 1
+      - path: Root_CTRL/Lft_Arm_Locator
+        weight: 1
+      - path: Root_CTRL/Rgt_Arm_CTRL
+        weight: 1
+      - path: Root_CTRL/Rgt_Arm_CTRL/Rgt_Arm_IK
+        weight: 1
+      - path: Root_CTRL/Rgt_Arm_CTRL/Rgt_Hand_CTRL
+        weight: 1
+      - path: Root_CTRL/Rgt_Arm_Locator
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
