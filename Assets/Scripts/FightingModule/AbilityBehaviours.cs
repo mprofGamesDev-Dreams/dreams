@@ -120,15 +120,55 @@ public class AbilityBehaviours : MonoBehaviour
 		}
 
 		// time scale to stop you shooting while pause menu is active
-		if (input.isShoot () && Time.timeScale != 0) 
-		{
-			if( canFire() )
+        if (input.isShoot() && Time.timeScale != 0)
+        {
+            if (!canFire())
+                return;
+
+            if (isFiring)
             {
-                HandleSkillCosts();
-                shootBullet();
-			}
-		}
+                Fire();
+            }
+            else
+            {
+                if(!isFiring)
+                    armAnimator.SetBool("SpellBegin", true);
+
+                StartCoroutine("WaitForSpell");
+            }
+        }
+        else if (!input.isShoot())
+        {
+            if (isFiring)
+            {
+                armAnimator.SetBool("SpellBegin", false);
+                armAnimator.SetTrigger("SpellStop");
+                isFiring = false;
+            }
+        }
 	}
+	
+	private void Fire()
+    {
+        HandleSkillCosts();
+        shootBullet();
+    }
+	
+	IEnumerator WaitForSpell()
+    {
+        yield return new WaitForSeconds(.8f);
+
+        if (input.isShoot())
+        {
+            isFiring = true;
+        }
+        else
+        {
+            isFiring = false;
+        }
+
+        yield return null;
+    }
 
 	private bool canFire()
 	{
@@ -326,15 +366,6 @@ public class AbilityBehaviours : MonoBehaviour
 	{
 		get{return voidCD;}
 	}
-
-    //IEnumerator WaitForSpell()
-    //{
-        //yield return new WaitForSeconds(0.7f);
-       // HandleSkillCosts();
-       // shootBullet();
-       // isFiring = false;
-       // yield return null;
-    //}
 }
 
 
