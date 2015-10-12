@@ -31,6 +31,8 @@ public class VoidPickup : MonoBehaviour {
             
             if (player.GetComponent<InputHandler>().isInteract() && resource > 0)
             {
+                player.GetComponent<InputHandler>().PlayInteract();
+                StartCoroutine("wait");
                 Invoke("PickUp", audioClip.length);
                 audioSource.PlayOneShot(audioClip);
             }
@@ -40,10 +42,15 @@ public class VoidPickup : MonoBehaviour {
 
     void PickUp()
     {
-        player.GetComponent<InputHandler>().PlayInteract();
+       
         player.gameObject.GetComponent<PlayerStats>().ModifyVoid(resource);
 		if(audioEvent != null && audioEvent.enabled)	
 			audioEvent.TriggerEvent = true;
         Destroy(gameObject);
+    }
+
+    IEnumerator wait()
+    {
+        yield return new WaitForSeconds(2.0f);
     }
 }

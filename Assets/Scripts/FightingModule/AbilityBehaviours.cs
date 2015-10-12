@@ -124,12 +124,8 @@ public class AbilityBehaviours : MonoBehaviour
 		{
 			if( canFire() )
             {
-                if (!isFiring)
-                {
-                    armAnimator.SetTrigger("CastMagic");
-                    isFiring = true;
-                    StartCoroutine("WaitForSpell");
-                }
+                HandleSkillCosts();
+                shootBullet();
 			}
 		}
 	}
@@ -331,14 +327,14 @@ public class AbilityBehaviours : MonoBehaviour
 		get{return voidCD;}
 	}
 
-    IEnumerator WaitForSpell()
-    {
-        yield return new WaitForSeconds(0.7f);
-        HandleSkillCosts();
-        shootBullet();
-        isFiring = false;
-        yield return null;
-    }
+    //IEnumerator WaitForSpell()
+    //{
+        //yield return new WaitForSeconds(0.7f);
+       // HandleSkillCosts();
+       // shootBullet();
+       // isFiring = false;
+       // yield return null;
+    //}
 }
 
 
