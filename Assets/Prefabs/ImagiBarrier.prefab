@@ -237,15 +237,15 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 1bac218ff007b0a4cbde351fe6cd899e, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 4f1c402b6c9dc8241a5ae4e2b9334a9e, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: .51700002
-  m_Pitch: 1
+  m_Volume: .931999981
+  m_Pitch: .639999986
   Loop: 1
   Mute: 0
   Priority: 128
   DopplerLevel: 1
-  MinDistance: 1
+  MinDistance: 10
   MaxDistance: 500
   Pan2D: 0
   rolloffMode: 0
@@ -401,18 +401,34 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: m_audioClip
       value: 
-      objectReference: {fileID: 8300000, guid: 1bac218ff007b0a4cbde351fe6cd899e, type: 3}
+      objectReference: {fileID: 8300000, guid: 4f1c402b6c9dc8241a5ae4e2b9334a9e, type: 3}
     - target: {fileID: 0}
       propertyPath: Loop
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: m_Volume
-      value: .51700002
+      value: .931999981
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: panLevelCustomCurve.m_Curve.Array.data[0].value
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: Priority
+      value: 209
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_Pitch
+      value: .639999986
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: MinDistance
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}

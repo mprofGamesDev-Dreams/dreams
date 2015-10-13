@@ -8,7 +8,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 453840}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Rgt_ThumbFinger_Bottom_JNT 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -23,7 +23,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 409768}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Lft_PinkyFinger_Middle_JNT 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -38,7 +38,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 440820}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Rgt_Albow_JNT
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -53,7 +53,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 491096}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Rgt_MiddleFinger_Middlle_JNT
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -68,7 +68,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 403386}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Rgt_RingFinger_Tip_JNT
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -83,7 +83,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 440850}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Lft_IndexFinger_Nuckle_JNT 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -98,7 +98,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 469886}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Rgt_RingFinger_Middle_JNT
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -113,7 +113,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 403666}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Rgt_RingFinger_Middle_JNT 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -128,7 +128,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 434758}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Rgt_RingFinger_Bottom_JNT 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -143,7 +143,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 425898}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Lft_MiddleFinger_Nuckle_JNT 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -158,7 +158,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 436354}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Root_CTRL
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -173,7 +173,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 497690}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Rgt_PinkyFinger_Bottom_JNT
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -188,7 +188,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 415724}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Lft_ThumbFinger_Nuckle_JNT 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -204,7 +204,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 426664}
   - 82: {fileID: 8277298}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: AudioSourcePunch
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -219,7 +219,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 461698}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Lft_PinkyFinger_Nuckle_JNT
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -234,7 +234,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 420460}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Rgt_MiddleFinger_Tip_JNT
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -249,7 +249,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 465420}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Lft_MiddleFinger_Middlle_JNT 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -264,7 +264,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 410210}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Lft_PinkyFinger_Tip_JNT 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -279,7 +279,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 480562}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Lft_PinkyFinger_Bottom_JNT 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -294,7 +294,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 433042}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Root_Clavical_JNT 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -309,7 +309,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 472966}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Lft_IndexFinger_Tip_JNT
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -324,7 +324,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 415898}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Root_Clavical_JNT
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -339,7 +339,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 418670}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Lft_MiddleFinger_Tip_JNT 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -354,7 +354,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 434516}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Rgt_RingFinger_Middle_JNT 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -369,7 +369,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 465476}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Lft_ThumbFinger_Nuckle_JNT 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -384,7 +384,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 402450}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Lft_PinkyFinger_Tip_JNT
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -399,7 +399,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 493066}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Lft_RingFinger_Bottom_JNT 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -414,7 +414,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 474278}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Arm_BoneJoints
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -429,7 +429,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 404250}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Rgt_ThumbFinger_Tip_JNT 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -444,7 +444,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 465862}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Rgt_IndexFinger_Tip_JNT 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -459,7 +459,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 415492}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Rgt_IndexFinger_Nuckle_JNT 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -474,7 +474,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 439608}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Rgt_MiddleFinger_Bottom_JNT
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -489,7 +489,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 473440}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Rgt_MiddleFinger_Nuckle_JNT
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -505,7 +505,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 441536}
   - 82: {fileID: 8254426}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: AudioSourceBullet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -520,7 +520,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 473398}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Rgt_PinkyFinger_Nuckle_JNT 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -539,7 +539,7 @@ GameObject:
   - 65: {fileID: 6521462}
   - 23: {fileID: 2360808}
   - 114: {fileID: 11496922}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: PlayerTrigger
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -554,7 +554,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 458652}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Rgt_RingFinger_Tip_JNT 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -569,7 +569,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 485148}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Lft_Shoulder_JNT 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -604,7 +604,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 438424}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Lft_RingFinger_Bottom_JNT
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -619,7 +619,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 451324}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Rgt_RingFinger_Nuckle_JNT 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -634,7 +634,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 484962}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Lft_RingFinger_Middle_JNT
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -649,7 +649,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 475298}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Rgt_PinkyFinger_Middle_JNT 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -664,7 +664,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 422928}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Lft_RingFinger_Middle_JNT 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -679,7 +679,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 405236}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Rgt_PinkyFinger_Tip_JNT 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -694,7 +694,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 461618}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Lft_ThumbFinger_Bottom_JNT
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -709,7 +709,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 410396}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Lft_PinkyFinger_Nuckle_JNT 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -724,7 +724,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 429816}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Rgt_IndexFinger_Middle_JNT 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -739,7 +739,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 403028}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Lft_PinkyFinger_Bottom_JNT
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -754,7 +754,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 478724}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Rgt_Forearm_JNT
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -769,7 +769,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 417030}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Lft_ThumbFinger_Middle_JNT 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -784,7 +784,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 495910}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Rgt_ThumbFinger_Nuckle_JNT
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -799,7 +799,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 454804}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Root_Clavical_JNT 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -814,7 +814,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 431980}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Lft_ThumbFinger_Bottom_JNT 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -829,7 +829,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 406090}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Lft_IndexFinger_Tip_JNT 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -844,7 +844,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 451532}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Rgt_RingFinger_Nuckle_JNT 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -859,7 +859,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 420378}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Rgt_ThumbFinger_Middle_JNT
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -874,7 +874,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 459566}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Lft_Shoulder_JNT 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -890,8 +890,24 @@ GameObject:
   m_Component:
   - 4: {fileID: 479858}
   - 82: {fileID: 8243276}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: AudioSourcePlayerDamage
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!1 &132286
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 450526}
+  - 82: {fileID: 8286364}
+  m_Layer: 8
+  m_Name: AudioSourcePickup
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -905,7 +921,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 434152}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Rgt_RingFinger_Nuckle_JNT
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -920,7 +936,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 494872}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Lft_RingFinger_Tip_JNT
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -935,7 +951,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 471780}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Lft_MiddleFinger_Nuckle_JNT 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -950,7 +966,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 481638}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Rgt_Wrist_JNT 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -965,7 +981,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 472322}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Rgt_MiddleFinger_Nuckle_JNT 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -980,7 +996,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 406894}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Rgt_IndexFinger_Bottom_JNT 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -995,7 +1011,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 423620}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Lft_ThumbFinger_Middle_JNT 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1010,7 +1026,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 496954}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Rgt_RingFinger_Bottom_JNT
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1025,7 +1041,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 456252}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Lft_Arm_IK
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1040,7 +1056,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 469174}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Lft_ThumbFinger_Bottom_JNT 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1055,7 +1071,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 433524}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Lft_Forearm_JNT 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1070,7 +1086,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 472008}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Rgt_IndexFinger_Tip_JNT 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1085,7 +1101,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 489648}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Rgt_ThumbFinger_Tip_JNT
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1116,7 +1132,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 472540}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Lft_ThumbFinger_Tip_JNT
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1131,7 +1147,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 498820}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Rgt_Arm_CTRL
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1146,7 +1162,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 409598}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Lft_PinkyFinger_Bottom_JNT 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1161,7 +1177,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 403282}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Lft_IndexFinger_Tip_JNT 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1176,7 +1192,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 461828}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Rgt_Wrist_JNT
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1191,7 +1207,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 432380}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Rgt_MiddleFinger_Bottom_JNT 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1206,7 +1222,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 467828}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Rgt_IndexFinger_Middle_JNT 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1221,7 +1237,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 482370}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Rgt_ThumbFinger_Nuckle_JNT 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1236,7 +1252,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 469966}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Lft_IndexFinger_Middle_JNT 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1251,7 +1267,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 453358}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Rgt_ThumbFinger_Nuckle_JNT 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1266,7 +1282,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 494062}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Lft_MiddleFinger_Bottom_JNT
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1281,7 +1297,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 411282}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Lft_Forearm_JNT
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1296,7 +1312,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 405642}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Lft_Forearm_JNT 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1311,7 +1327,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 474832}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Lft_Albow_JNT 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1326,7 +1342,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 497640}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Lft_PinkyFinger_Middle_JNT 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1341,7 +1357,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 409964}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Lft_IndexFinger_Nuckle_JNT 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1356,7 +1372,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 451556}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Rgt_PinkyFinger_Tip_JNT
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1371,7 +1387,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 448928}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Rgt_ThumbFinger_Tip_JNT 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1386,7 +1402,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 439716}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Lft_MiddleFinger_Nuckle_JNT
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1425,7 +1441,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 405980}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Rgt_IndexFinger_Bottom_JNT
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1440,7 +1456,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 421312}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Lft_Albow_JNT 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1455,7 +1471,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 421972}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Rgt_IndexFinger_Middle_JNT
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1470,7 +1486,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 439442}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Lft_MiddleFinger_Middlle_JNT 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1489,7 +1505,7 @@ GameObject:
   - 65: {fileID: 6534492}
   - 23: {fileID: 2372110}
   - 114: {fileID: 11405558}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1504,7 +1520,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 415660}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Rgt_Albow_JNT 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1519,7 +1535,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 495200}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Rgt_Shoulder_JNT
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1536,7 +1552,7 @@ GameObject:
   - 4: {fileID: 483590}
   - 95: {fileID: 9504856}
   - 114: {fileID: 11457332}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Arms
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1551,7 +1567,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 419822}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Rgt_MiddleFinger_Tip_JNT 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1566,7 +1582,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 405992}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Rgt_PinkyFinger_Bottom_JNT 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1581,7 +1597,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 401088}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Rgt_Hand_CTRL
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1596,7 +1612,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 439920}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Lft_RingFinger_Tip_JNT 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1611,7 +1627,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 481208}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Rgt_RingFinger_Tip_JNT 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1626,7 +1642,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 431964}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Rgt_MiddleFinger_Middlle_JNT 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1641,7 +1657,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 488006}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Rgt_PinkyFinger_Nuckle_JNT
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1656,7 +1672,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 450022}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Rgt_ThumbFinger_Bottom_JNT 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1671,7 +1687,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 458854}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Lft_MiddleFinger_Bottom_JNT 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1686,7 +1702,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 485144}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Lft_ThumbFinger_Tip_JNT 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1701,7 +1717,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 450626}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Rgt_IndexFinger_Nuckle_JNT
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1716,7 +1732,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 401740}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Arm_BoneJoints1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1731,7 +1747,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 459970}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Rgt_PinkyFinger_Tip_JNT 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1747,7 +1763,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 421880}
   - 137: {fileID: 13704982}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: ArmsMesh
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1762,7 +1778,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 421088}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Lft_IndexFinger_Middle_JNT
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1777,7 +1793,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 486858}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Rgt_PinkyFinger_Nuckle_JNT 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1792,7 +1808,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 439596}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Lft_MiddleFinger_Bottom_JNT 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1807,7 +1823,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 404208}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Rgt_PinkyFinger_Middle_JNT 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1822,7 +1838,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 402552}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Lft_ThumbFinger_Nuckle_JNT
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1837,7 +1853,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 406662}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Lft_RingFinger_Bottom_JNT 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1852,7 +1868,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 494866}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Lft_Albow_JNT
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1867,7 +1883,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 412502}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Lgt_Hand_CTRL
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1882,7 +1898,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 412240}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Rgt_MiddleFinger_Middlle_JNT 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1897,7 +1913,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 434012}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Rgt_IndexFinger_Bottom_JNT 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1912,7 +1928,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 428548}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Lft_PinkyFinger_Tip_JNT 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1927,7 +1943,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 489672}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Lft_RingFinger_Nuckle_JNT
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1942,7 +1958,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 485282}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Lft_PinkyFinger_Middle_JNT
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1957,7 +1973,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 403108}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Rgt_ThumbFinger_Middle_JNT 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1972,7 +1988,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 444634}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Rgt_Forearm_JNT 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1987,7 +2003,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 452240}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Lft_MiddleFinger_Middlle_JNT
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2002,7 +2018,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 411980}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Rgt_PinkyFinger_Middle_JNT
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2017,7 +2033,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 441120}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Rgt_Wrist_JNT 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2032,7 +2048,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 462270}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Lft_Shoulder_JNT
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2047,7 +2063,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 435954}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Lft_Wrist_JNT 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2062,7 +2078,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 457864}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Lft_RingFinger_Middle_JNT 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2077,7 +2093,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 468506}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Rgt_IndexFinger_Tip_JNT
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2092,7 +2108,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 412306}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Lft_Wrist_JNT 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2107,7 +2123,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 432594}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Rgt_ThumbFinger_Bottom_JNT
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2122,7 +2138,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 492756}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Rgt_Shoulder_JNT 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2137,7 +2153,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 404524}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Lft_RingFinger_Nuckle_JNT 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2152,7 +2168,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 437676}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Rgt_MiddleFinger_Nuckle_JNT 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2168,7 +2184,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 459838}
   - 82: {fileID: 8265246}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Narator
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2183,7 +2199,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 434982}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Rgt_Arm_IK
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2198,7 +2214,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 477226}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Lft_IndexFinger_Nuckle_JNT
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2213,7 +2229,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 490366}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Lft_RingFinger_Tip_JNT 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2228,7 +2244,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 475712}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Lft_IndexFinger_Bottom_JNT 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2243,7 +2259,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 408174}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Rgt_PinkyFinger_Bottom_JNT 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2258,7 +2274,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 487724}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Lft_ThumbFinger_Tip_JNT 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2273,7 +2289,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 411938}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Lft_Arm_Locator
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2288,7 +2304,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 422296}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Lft_Arm_CTRL
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2303,7 +2319,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 479326}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Lft_ThumbFinger_Middle_JNT
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2318,7 +2334,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 471732}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Rgt_IndexFinger_Nuckle_JNT 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2333,7 +2349,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 499066}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Rgt_MiddleFinger_Tip_JNT 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2348,7 +2364,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 453092}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Rgt_RingFinger_Bottom_JNT 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2363,7 +2379,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 490996}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Lft_MiddleFinger_Tip_JNT 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2378,7 +2394,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 457990}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Rgt_ThumbFinger_Middle_JNT 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2393,7 +2409,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 444638}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Arm_BoneJoints2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2408,7 +2424,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 472458}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Rgt_Arm_Locator
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2423,7 +2439,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 421672}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Rgt_Forearm_JNT 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2438,7 +2454,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 461246}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Lft_IndexFinger_Middle_JNT 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2453,7 +2469,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 469752}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Rgt_MiddleFinger_Bottom_JNT 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2468,7 +2484,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 492258}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Rgt_Shoulder_JNT 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2483,7 +2499,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 452750}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Lft_IndexFinger_Bottom_JNT 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2498,7 +2514,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 427152}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Lft_Wrist_JNT
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2513,7 +2529,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 489866}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Lft_MiddleFinger_Tip_JNT
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2528,7 +2544,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 481270}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Lft_PinkyFinger_Nuckle_JNT 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2543,7 +2559,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 427414}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Rgt_Albow_JNT 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2558,7 +2574,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 432072}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Lft_IndexFinger_Bottom_JNT
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2573,7 +2589,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 440880}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Lft_RingFinger_Nuckle_JNT 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3674,6 +3690,18 @@ Transform:
   - {fileID: 403108}
   m_Father: {fileID: 453358}
   m_RootOrder: 0
+--- !u!4 &450526
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 132286}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 474050}
+  m_RootOrder: 6
 --- !u!4 &450626
 Transform:
   m_ObjectHideFlags: 1
@@ -4242,6 +4270,7 @@ Transform:
   - {fileID: 479858}
   - {fileID: 441536}
   - {fileID: 426664}
+  - {fileID: 450526}
   m_Father: {fileID: 0}
   m_RootOrder: 0
 --- !u!4 &474278
@@ -4477,7 +4506,7 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 121510}
-  m_LocalRotation: {x: .526671648, y: .74942863, z: .278005272, w: .289286643}
+  m_LocalRotation: {x: .526671708, y: .749428689, z: .278005302, w: .289286673}
   m_LocalPosition: {x: 21.2970619, y: -1.0428896, z: 2.6081379e-15}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -4838,7 +4867,7 @@ Camera:
     y: 0
     width: 1
     height: 1
-  near clip plane: .300000012
+  near clip plane: .00999999978
   far clip plane: 1000
   field of view: 60
   orthographic: 0
@@ -5250,6 +5279,75 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+--- !u!82 &8286364
+AudioSource:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 132286}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
