@@ -57,7 +57,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 107886}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 25.2880001, y: 6.03131866, z: 46.0550003}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: .5, y: .5, z: .5}
   m_Children:
   - {fileID: 454840}
@@ -167,6 +167,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   statRecoveryType: 0
   statModifyValue: 0
+  pickupSound: {fileID: 8300000, guid: d969c43abc2392541b1bb75b2c47ed51, type: 3}
+  playerEffect: {fileID: 0}
 --- !u!135 &13548590
 SphereCollider:
   m_ObjectHideFlags: 1
