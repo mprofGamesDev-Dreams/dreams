@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using UnityStandardAssets.ImageEffects;
+using UnityStandardAssets.Characters.FirstPerson;
 
 public class EnemyCounterSingleton : MonoBehaviour, IDestroyAudioEvent
 {
@@ -98,6 +99,8 @@ public class EnemyCounterSingleton : MonoBehaviour, IDestroyAudioEvent
 		playerTransform.position = dreamer.position - playerOffsetFromDreamer;
 
 		Transform sceneCamera = TurnOnSceneCamera(true);
+
+		playerTransform.GetComponent<FirstPersonController>().enabled = false;
 
 		sceneCamera.LookAt(dreamer.position);
 
