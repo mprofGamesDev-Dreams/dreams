@@ -119,30 +119,36 @@ public class AbilityBehaviours : MonoBehaviour
 			currentPower = ActivePower.Void;
 		}
 
-		// time scale to stop you shooting while pause menu is active
+        // If we want to shoot and we can
         if (input.isShoot() && Time.timeScale != 0)
         {
-            if (!canFire())
-                return;
-
-            if (isFiring)
+            // If we are in the correct animation state
+            if (armAnimator.GetCurrentAnimatorStateInfo(0).IsName("Casting"))
             {
-                Fire();
+                // If we can fire a bullet
+                if (canFire())
+                {
+                    Fire();
+                }
             }
             else
             {
-                if(!isFiring)
-                    armAnimator.SetBool("SpellBegin", true);
-
-                StartCoroutine("WaitForSpell");
+                // If we want to fire but haven't started yet
+                if (armAnimator.GetCurrentAnimatorStateInfo(0).IsName("Idle") && !isFiring)
+                {
+                    // Start the casting animation
+                    armAnimator.SetTrigger("StartCasting");
+                    isFiring = true;
+                }
             }
         }
-        else if (!input.isShoot())
+        else
         {
-            if (isFiring)
+            // If we are currently casting
+            if (armAnimator.GetCurrentAnimatorStateInfo(0).IsName("Casting") && isFiring)
             {
-                armAnimator.SetBool("SpellBegin", false);
-                armAnimator.SetTrigger("SpellStop");
+                // Start the arm down animation
+                armAnimator.SetTrigger("StopCasting");
                 isFiring = false;
             }
         }
