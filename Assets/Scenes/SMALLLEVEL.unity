@@ -77,7 +77,7 @@ NavMeshSettings:
   m_ObjectHideFlags: 0
   m_BuildSettings:
     serializedVersion: 2
-    agentRadius: 1
+    agentRadius: .600000024
     agentHeight: 2
     agentSlope: 21.2999992
     agentClimb: .400000006
@@ -85,7 +85,7 @@ NavMeshSettings:
     maxJumpAcrossDistance: 0
     accuratePlacement: 0
     minRegionArea: 2
-    cellSize: .333333343
+    cellSize: .200000003
     manualCellSize: 0
   m_NavMeshData: {fileID: 23800000, guid: 09d28756e1d9d6a41b1f20ab0b7485bb, type: 2}
 --- !u!4 &20306452 stripped
@@ -225,6 +225,14 @@ Prefab:
       propertyPath: m_LocalScale.z
       value: .546246648
       objectReference: {fileID: 0}
+    - target: {fileID: 159966, guid: 008817e3860607e49a35f1e23d65c5f5, type: 2}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 159966, guid: 008817e3860607e49a35f1e23d65c5f5, type: 2}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 008817e3860607e49a35f1e23d65c5f5, type: 2}
   m_IsPrefabParent: 0
@@ -254,7 +262,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 51099995}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -6.96000004, y: -14.6599998, z: 20.5100002}
+  m_LocalPosition: {x: -6.96000004, y: -5.32999992, z: 13.0600004}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 853751086}
@@ -773,6 +781,10 @@ MonoBehaviour:
   EnemyToSpawn: {fileID: 119840, guid: fb0416c772e5e4744b3f12a43388a173, type: 2}
   PositionOffset: {x: 0, y: 1.5, z: 0}
   WaypointID: 0
+  islandStart: {fileID: 479843319}
+  enemyTrigger: {fileID: 0}
+  EnemyContainer: {fileID: 0}
+  HasEnemy: 0
   Enemy: {fileID: 0}
 --- !u!114 &149979565
 MonoBehaviour:
@@ -1796,6 +1808,14 @@ Prefab:
       propertyPath: m_Name
       value: Tree1 (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 195698, guid: a48fdcc25ba543942a9df161efc5c154, type: 2}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 195698, guid: a48fdcc25ba543942a9df161efc5c154, type: 2}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: a48fdcc25ba543942a9df161efc5c154, type: 2}
   m_IsPrefabParent: 0
@@ -1845,6 +1865,14 @@ Prefab:
     - target: {fileID: 125324, guid: 0395a3d6b2e7e6d4fb7120c3e0ae0fa6, type: 2}
       propertyPath: m_Name
       value: Tree3 (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 126102, guid: 0395a3d6b2e7e6d4fb7120c3e0ae0fa6, type: 2}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 126102, guid: 0395a3d6b2e7e6d4fb7120c3e0ae0fa6, type: 2}
+      propertyPath: m_NavMeshLayer
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 0395a3d6b2e7e6d4fb7120c3e0ae0fa6, type: 2}
@@ -2238,6 +2266,10 @@ MonoBehaviour:
   EnemyToSpawn: {fileID: 195500, guid: 30f77a23ae462e1408d520c7436769c0, type: 2}
   PositionOffset: {x: 0, y: 1.5, z: 0}
   WaypointID: 0
+  islandStart: {fileID: 1466969477}
+  enemyTrigger: {fileID: 0}
+  EnemyContainer: {fileID: 0}
+  HasEnemy: 0
   Enemy: {fileID: 0}
 --- !u!114 &465765792
 MonoBehaviour:
@@ -2615,6 +2647,14 @@ Prefab:
     - target: {fileID: 418812, guid: e65f519324a3dc1409536798ebf622a4, type: 2}
       propertyPath: m_LocalScale.z
       value: .654639363
+      objectReference: {fileID: 0}
+    - target: {fileID: 181420, guid: e65f519324a3dc1409536798ebf622a4, type: 2}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 181420, guid: e65f519324a3dc1409536798ebf622a4, type: 2}
+      propertyPath: m_NavMeshLayer
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: e65f519324a3dc1409536798ebf622a4, type: 2}
@@ -3331,6 +3371,14 @@ Prefab:
       propertyPath: m_LocalScale.z
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 116042, guid: 0bd7e6d4120c8c040927b65c9656103c, type: 2}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 116042, guid: 0bd7e6d4120c8c040927b65c9656103c, type: 2}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 0bd7e6d4120c8c040927b65c9656103c, type: 2}
   m_IsPrefabParent: 0
@@ -3401,6 +3449,10 @@ MonoBehaviour:
   EnemyToSpawn: {fileID: 195500, guid: 30f77a23ae462e1408d520c7436769c0, type: 2}
   PositionOffset: {x: 0, y: 1.5, z: 0}
   WaypointID: 0
+  islandStart: {fileID: 968644201}
+  enemyTrigger: {fileID: 0}
+  EnemyContainer: {fileID: 0}
+  HasEnemy: 0
   Enemy: {fileID: 0}
 --- !u!114 &639484734
 MonoBehaviour:
@@ -3752,6 +3804,10 @@ MonoBehaviour:
   EnemyToSpawn: {fileID: 195500, guid: 30f77a23ae462e1408d520c7436769c0, type: 2}
   PositionOffset: {x: 0, y: 1.5, z: 0}
   WaypointID: 0
+  islandStart: {fileID: 852406187}
+  enemyTrigger: {fileID: 0}
+  EnemyContainer: {fileID: 0}
+  HasEnemy: 0
   Enemy: {fileID: 0}
 --- !u!114 &722619172
 MonoBehaviour:
@@ -4429,6 +4485,10 @@ MonoBehaviour:
   EnemyToSpawn: {fileID: 195500, guid: 30f77a23ae462e1408d520c7436769c0, type: 2}
   PositionOffset: {x: 0, y: 1.5, z: 0}
   WaypointID: 0
+  islandStart: {fileID: 51099996}
+  enemyTrigger: {fileID: 0}
+  EnemyContainer: {fileID: 0}
+  HasEnemy: 0
   Enemy: {fileID: 0}
 --- !u!114 &853751089
 MonoBehaviour:
@@ -5489,6 +5549,10 @@ MonoBehaviour:
   EnemyToSpawn: {fileID: 119840, guid: fb0416c772e5e4744b3f12a43388a173, type: 2}
   PositionOffset: {x: 0, y: 1.5, z: 0}
   WaypointID: 0
+  islandStart: {fileID: 2049423989}
+  enemyTrigger: {fileID: 0}
+  EnemyContainer: {fileID: 0}
+  HasEnemy: 0
   Enemy: {fileID: 0}
 --- !u!114 &982331566
 MonoBehaviour:
@@ -6102,6 +6166,10 @@ MonoBehaviour:
   EnemyToSpawn: {fileID: 119840, guid: dba5c6de232c87742bb352ddb8cdb78d, type: 2}
   PositionOffset: {x: 0, y: 1.5, z: 0}
   WaypointID: 0
+  islandStart: {fileID: 947311839}
+  enemyTrigger: {fileID: 0}
+  EnemyContainer: {fileID: 0}
+  HasEnemy: 0
   Enemy: {fileID: 0}
 --- !u!114 &1093570946
 MonoBehaviour:
@@ -6542,6 +6610,10 @@ MonoBehaviour:
   EnemyToSpawn: {fileID: 195500, guid: 30f77a23ae462e1408d520c7436769c0, type: 2}
   PositionOffset: {x: 0, y: 1.5, z: 0}
   WaypointID: 0
+  islandStart: {fileID: 1739671742}
+  enemyTrigger: {fileID: 0}
+  EnemyContainer: {fileID: 0}
+  HasEnemy: 0
   Enemy: {fileID: 0}
 --- !u!114 &1139600051
 MonoBehaviour:
@@ -6837,6 +6909,14 @@ Prefab:
     - target: {fileID: 112264, guid: 2bcc1e7d724051445912952cb9219c43, type: 2}
       propertyPath: m_Name
       value: Tree2 (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 156522, guid: 2bcc1e7d724051445912952cb9219c43, type: 2}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 156522, guid: 2bcc1e7d724051445912952cb9219c43, type: 2}
+      propertyPath: m_NavMeshLayer
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 2bcc1e7d724051445912952cb9219c43, type: 2}
@@ -7327,6 +7407,14 @@ Prefab:
     - target: {fileID: 117700, guid: a48fdcc25ba543942a9df161efc5c154, type: 2}
       propertyPath: m_Name
       value: Tree1 (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 195698, guid: a48fdcc25ba543942a9df161efc5c154, type: 2}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 195698, guid: a48fdcc25ba543942a9df161efc5c154, type: 2}
+      propertyPath: m_NavMeshLayer
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: a48fdcc25ba543942a9df161efc5c154, type: 2}
@@ -9160,6 +9248,10 @@ MonoBehaviour:
   EnemyToSpawn: {fileID: 119840, guid: fb0416c772e5e4744b3f12a43388a173, type: 2}
   PositionOffset: {x: 0, y: 1.5, z: 0}
   WaypointID: 0
+  islandStart: {fileID: 794376119}
+  enemyTrigger: {fileID: 0}
+  EnemyContainer: {fileID: 0}
+  HasEnemy: 0
   Enemy: {fileID: 0}
 --- !u!114 &1543228969
 MonoBehaviour:
@@ -9804,6 +9896,14 @@ Prefab:
     - target: {fileID: 117700, guid: a48fdcc25ba543942a9df161efc5c154, type: 2}
       propertyPath: m_Name
       value: Tree1 (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 195698, guid: a48fdcc25ba543942a9df161efc5c154, type: 2}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 195698, guid: a48fdcc25ba543942a9df161efc5c154, type: 2}
+      propertyPath: m_NavMeshLayer
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: a48fdcc25ba543942a9df161efc5c154, type: 2}

@@ -13,6 +13,7 @@ public class IslandInit : MonoBehaviour {
 	void Start ()
 	{
 		// Translate children by start offset
+		/*Debug.Log (gameObject.name + gameObject.transform.position);
 		Transform EndPos = this.gameObject.transform.GetChild(1);
 		EndPos.position -= islandStart.localPosition;
 		
@@ -25,7 +26,7 @@ public class IslandInit : MonoBehaviour {
 
 		// Flag we had an enemy at creation
 		if (enemyTrigger)
-			HasEnemy = true;
+			HasEnemy = true;*/
 	}
 	
 	// Update is called once per frame
