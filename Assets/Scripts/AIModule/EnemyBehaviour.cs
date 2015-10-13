@@ -115,8 +115,10 @@ public class EnemyBehaviour : MonoBehaviour {
         {
             case aiStates.follow:
                 target = targetPlayer.transform.position;
-				if(agent.isOnNavMesh)
+				if(agent.isOnNavMesh){
 					agent.SetDestination(target);
+				}
+					
 				playerSeen = true;
 
 				rigAnimation.SetBool("Attack", false);
