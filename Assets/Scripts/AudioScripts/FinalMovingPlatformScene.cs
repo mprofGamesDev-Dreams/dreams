@@ -8,7 +8,7 @@ public class FinalMovingPlatformScene : MonoBehaviour
 	[SerializeField] private Transform dreamer;
 	[SerializeField] private float transitionTime;
 	
-	private InputHandler playerInput;
+	//private InputHandler playerInput;
 	//private Transform cameraTransform;
 	
 	private bool triggerEvent = true; public bool TriggerEvent { set { triggerEvent = true; } }
@@ -23,7 +23,7 @@ public class FinalMovingPlatformScene : MonoBehaviour
 	{
 		player = GameObject.FindGameObjectWithTag("Player");
 		
-		playerInput = player.GetComponent<InputHandler>();
+		//playerInput = player.GetComponent<InputHandler>();
 		//cameraTransform = player.GetComponent<Transform>();
 		//cameraTransform = player.GetComponent<Transform>().GetChild(0).GetComponent<Transform>();
 		audioEvent = GetComponent<OnTriggerPlay>();
