@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using UnityStandardAssets.ImageEffects;
+using UnityStandardAssets.Characters.FirstPerson;
 
 public class FinalMovingPlatformScene : MonoBehaviour 
 {
@@ -32,17 +33,14 @@ public class FinalMovingPlatformScene : MonoBehaviour
 	
 	private void Update () 
 	{
-		
-		
-		
 		if( audioEvent.CurrentState != EAudioState.isWaiting && triggerEvent )
 		{
-			playerInput.ControllerConstraints = EControlConstraints.DisableAll;
-			
 			triggerEvent = false;
 			
 			rotateControl = true;
 			mainCamera = Camera.main.transform;
+
+			player.GetComponent<FirstPersonController>().enabled = false;
 		}
 		
 		if( rotateControl )
@@ -56,14 +54,18 @@ public class FinalMovingPlatformScene : MonoBehaviour
 		if( audioEvent.CurrentState == EAudioState.isFinished )
 		{
 			rotateControl = false;
-			if(Quaternion.LookRotation(SceneCamera.forward) != Quaternion.LookRotation(mainCamera.forward))
-			{
-				SceneCamera.rotation = Quaternion.Lerp( SceneCamera.rotation, mainCamera.rotation, Time.deltaTime * 3 );
-				return;
-			}
-			
-			playerInput.ControllerConstraints = EControlConstraints.EnableAll;
-			
+
+				Vector3 dir = SceneCamera.forward;
+
+			player.GetComponent<Transform>().forward = new Vector3( dir.x, 0, dir.z );
+			mainCamera.forward = new Vector3( dir.x, dir.y, dir.z );
+
+			player.GetComponent<FirstPersonController>().mouseLook.Init(player.GetComponent<Transform>(), mainCamera);
+
+			//SceneCamera.rotation = Quaternion.Lerp( SceneCamera.rotation, mainCamera.rotation, Time.deltaTime * 3 );
+
+			player.GetComponent<FirstPersonController>().enabled = true;
+
 			TurnOnSceneCamera(false);
 
 			Destroy(this);
@@ -76,7 +78,7 @@ public class FinalMovingPlatformScene : MonoBehaviour
 		Quaternion rot = Quaternion.LookRotation( dreamer.position - SceneCamera.position );
 		
 		// Vectors Not Similar Enough Then They Will Lerp Instead Of Fix On Position
-		if(Vector3.Dot( SceneCamera.forward, rot * Vector3.forward  ) <= 0.99)
+		if(Vector3.Dot( SceneCamera.forward, rot * Vector3.forward  ) <= 1)
 		{
 			SceneCamera.rotation = Quaternion.Lerp( SceneCamera.rotation, rot, Time.deltaTime * 3 );
 			return;
