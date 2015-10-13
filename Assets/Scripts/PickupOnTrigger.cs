@@ -12,7 +12,18 @@ public class PickupOnTrigger : MonoBehaviour
 	}
 	[SerializeField] private PickupType statRecoveryType; 
 	[SerializeField] private float statModifyValue;
+	[SerializeField] private AudioClip pickupSound;
+	[SerializeField] private GameObject playerEffect;
 
+	private void Start () 
+	{
+		GameObject player = GameObject.FindGameObjectWithTag ("Player");
+
+		playerEffect = player.transform.Find ("AudioSourcePickup").gameObject;
+		if (!playerEffect) {
+			Debug.Log("Someone changed the pickup audio source. Please view PickupOnTrigger.cs Stert()");
+		}
+	}
 	private void OnTriggerEnter(Collider c)
 	{
 		if (c.gameObject.CompareTag ("Player")) 
@@ -31,7 +42,7 @@ public class PickupOnTrigger : MonoBehaviour
 				case PickupType.EXP: // not doing anything yet
 					break;
 			}
-
+			playerEffect.GetComponent<AudioSource>().PlayOneShot(pickupSound,1.0f);
 			gameObject.SetActive(false);
 			//Destroy(this.gameObject);
 		}
