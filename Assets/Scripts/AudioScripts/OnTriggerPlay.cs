@@ -26,8 +26,6 @@ public class OnTriggerPlay : MonoBehaviour, IDestroyAudioEvent
 	
 	private EAudioState myState = EAudioState.isWaiting;
 	
-	
-	
 	private void Start()
 	{
 		narrator = NarratorController.NarratorInstance;

@@ -9,6 +9,7 @@ TagManager:
   - Bullet
   - SceneCamera
   - Targeter
+  - EventSystem
   layers:
   - Default
   - TransparentFX

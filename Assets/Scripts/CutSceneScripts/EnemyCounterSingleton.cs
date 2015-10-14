@@ -1,5 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.UI;
+using UnityEngine.EventSystems;
 using UnityStandardAssets.ImageEffects;
 using UnityStandardAssets.Characters.FirstPerson;
 
@@ -38,6 +40,8 @@ public class EnemyCounterSingleton : MonoBehaviour, IDestroyAudioEvent
 	[SerializeField] private Transform playerTransform;
 	[SerializeField] private Vector3 playerOffsetFromDreamer;
 
+	[SerializeField] private GameObject ChoiceObject;
+
 	//private float startTime = 0;
 	//private float waitTime = 10;
 
@@ -47,7 +51,6 @@ public class EnemyCounterSingleton : MonoBehaviour, IDestroyAudioEvent
 	[SerializeField] private AudioClip[] audioClips;
 	private bool choice = false;
 
-	[SerializeField] private GameObject choicePrefab;
 
 	InputHandler inputHandler;
 
@@ -106,13 +109,13 @@ public class EnemyCounterSingleton : MonoBehaviour, IDestroyAudioEvent
 
 		//playerTransform.forward = (dreamer.position - playerTransform.position).normalized;;
 
-		Instantiate( choicePrefab, Vector3.zero, Quaternion.identity );
+		//Instantiate( choicePrefab, Vector3.zero, Quaternion.identity );
 
 		inputHandler.ControllerConstraints = EControlConstraints.DisableAllExceptChoice;
 
 
-
 		yield return new WaitForSeconds(fadeinTime);
+		ChoiceObject.SetActive(true);
 
 		NarratorController.NarratorInstance.PlayNewClip(audioClips[0], gameObject.GetInstanceID(), (IDestroyAudioEvent)this);
 

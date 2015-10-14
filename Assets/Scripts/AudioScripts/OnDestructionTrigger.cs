@@ -7,6 +7,9 @@ public class OnDestructionTrigger : MonoBehaviour, IDestroyAudioEvent {
 	private Shield shieldScript;
 	private OnCallPlayEventAudio myAudioEvent;
 
+	[Tooltip("Objects To Destroy In Case This Gets Triggered First")]
+	[SerializeField] private GameObject dependencies;
+
 	// Use this for initialization
 	void Start () {
 
@@ -35,13 +38,14 @@ public class OnDestructionTrigger : MonoBehaviour, IDestroyAudioEvent {
 				{
 					myAudioEvent.TriggerEvent = true;
 				}
-				Destroy(this);
+				DestroyAudioEvent();
 			}
 		}
 	}
 
 	public void DestroyAudioEvent()
 	{
+		Destroy(dependencies);
 		Destroy(this);
 	}
 }
