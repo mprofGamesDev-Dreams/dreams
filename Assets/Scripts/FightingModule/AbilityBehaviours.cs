@@ -36,7 +36,6 @@ public class AbilityBehaviours : MonoBehaviour
 	private bool isLogioAvailable = true;
 	private bool isImagiAvailable = true;
 	private bool isVoidAvailable = true;
-    private bool isFiring = false;
 	private Transform myCameraTransform;
 	private InputHandler input;
 	private Color32 beamColor;
@@ -49,6 +48,8 @@ public class AbilityBehaviours : MonoBehaviour
 
     [SerializeField] private GameObject Arms;
     private Animator armAnimator;
+    private bool isCasting;
+    private bool cantCast;
 
 	private void Start () 
 	{
@@ -69,36 +70,43 @@ public class AbilityBehaviours : MonoBehaviour
         }
 
         armAnimator = Arms.GetComponent<Animator>();
+
+        isCasting = false;
+        cantCast = false;
 	}
 	
 	private void Update () 
 	{
 		//Switches for next and previous powers
-		if (input.isPrevPower ()) {
-			switch(currentPower){
-			case ActivePower.Logio:
-				currentPower = ActivePower.Void;
-				break;
-			case ActivePower.Imagi:
-				currentPower = ActivePower.Logio;
-				break;
-			case ActivePower.Void:
-				currentPower = ActivePower.Imagi;
-				break;
+		if (input.isPrevPower ())
+        {
+			switch(currentPower)
+            {
+			    case ActivePower.Logio:
+				    currentPower = ActivePower.Void;
+				    break;
+			    case ActivePower.Imagi:
+				    currentPower = ActivePower.Logio;
+				    break;
+			    case ActivePower.Void:
+				    currentPower = ActivePower.Imagi;
+				    break;
 			}
 		}
 
-		if (input.isNextPower ()) {
-			switch(currentPower){
-			case ActivePower.Logio:
-				currentPower = ActivePower.Imagi;
-				break;
-			case ActivePower.Imagi:
-				currentPower = ActivePower.Void;
-				break;
-			case ActivePower.Void:
-				currentPower = ActivePower.Logio;
-				break;
+		if (input.isNextPower ())
+        {
+			switch(currentPower)
+            {
+			    case ActivePower.Logio:
+				    currentPower = ActivePower.Imagi;
+				    break;
+			    case ActivePower.Imagi:
+				    currentPower = ActivePower.Void;
+				    break;
+			    case ActivePower.Void:
+				    currentPower = ActivePower.Logio;
+				    break;
 			}
 		}
 
@@ -109,8 +117,6 @@ public class AbilityBehaviours : MonoBehaviour
 
 		if (CrossPlatformInputManager.GetButtonDown ("Fire2"))//IMAGI
 		{
-			//playerStats.CurrentImagi -= ( playerStats.MaxImagi * imagiPercent );
-
 			currentPower = ActivePower.Imagi;
 		}
 
@@ -119,61 +125,95 @@ public class AbilityBehaviours : MonoBehaviour
 			currentPower = ActivePower.Void;
 		}
 
-        // If we want to shoot and we can
-        if (input.isShoot() && Time.timeScale != 0)
+        // Check if we can shoot
+        // Providing we have pressed the button, arent paused, 
+        //arent casting or waiting for cooldown and have the resources to do so
+        if (input.isShoot() && Time.timeScale != 0 && !isCasting && !cantCast && canFire())
         {
-            // If we are in the correct animation state
-            if (armAnimator.GetCurrentAnimatorStateInfo(0).IsName("Casting"))
-            {
-                // If we can fire a bullet
-                if (canFire())
-                {
-                    Fire();
-                }
-            }
-            else
-            {
-                // If we want to fire but haven't started yet
-                if (armAnimator.GetCurrentAnimatorStateInfo(0).IsName("Idle") && !isFiring)
-                {
-                    // Start the casting animation
-                    armAnimator.SetTrigger("StartCasting");
-                    isFiring = true;
-                }
-            }
-        }
-        else
-        {
-            // If we are currently casting
-            if (armAnimator.GetCurrentAnimatorStateInfo(0).IsName("Casting") && isFiring)
-            {
-                // Start the arm down animation
-                armAnimator.SetTrigger("StopCasting");
-                isFiring = false;
-            }
+            Debug.Log("Cast button pressed");
+            StartCoroutine(Cast());
         }
 	}
-	
-	private void Fire()
+
+    public IEnumerator Cast()
     {
-        HandleSkillCosts();
+        Debug.Log("Casting begun");
+
+        isCasting = true;
+
+        // Make sure we can actually cast before continuing
+        while (cantCast)
+        {
+            yield return null;
+        }
+
+        // Play the arm animator
+        armAnimator.SetTrigger("Spell");
+        
+        float START_FRAME = 0;
+        float FIRE_FRAME = 30;
+        float TOTAL_FRAMES = 60;
+        float NO_OF_FRAMES = TOTAL_FRAMES - START_FRAME;
+        float FPS = 30;
+        float ANIMATION_SPEED = 2;
+        float TOTAL_TIME = ((1 / FPS) * NO_OF_FRAMES) / ANIMATION_SPEED;
+
+        // Calculate how long to delay until we reach the 
+        float spellDelay = ((1 / FPS) * FIRE_FRAME) / ANIMATION_SPEED;
+
+        // Wait for the clip (castAnimation.clip.length)
+        yield return new WaitForSeconds(spellDelay);
+
+        // Create the spell bullet
         shootBullet();
-    }
-	
-	IEnumerator WaitForSpell()
-    {
-        yield return new WaitForSeconds(.8f);
 
-        if (input.isShoot())
+        // Flag we are not casting
+        isCasting = false;
+
+        // Flag that we are on cooldown
+        cantCast = true;
+        Debug.Log("Done casting");
+
+        // Look at our current power and reduce resources
+        // Also invoke cooldown
+        switch (currentPower)
         {
-            isFiring = true;
-        }
-        else
-        {
-            isFiring = false;
+            case ActivePower.Imagi:
+                playerStats.CurrentImagi -= (playerStats.MaxImagi * imagiPercent);
+                isImagiAvailable = false;
+                yield return new WaitForSeconds(imagiCD);
+                break;
+
+            case ActivePower.Logio:
+                playerStats.CurrentLogio -= (playerStats.MaxLogio * logioPercent);
+                isLogioAvailable = false;
+                yield return new WaitForSeconds(logioCD);
+                break;
+
+            case ActivePower.Void:
+                playerStats.CurrentVoid -= (playerStats.MaxVoid * voidPercent);
+                isVoidAvailable = false;
+                yield return new WaitForSeconds(voidCD);
+                break;
         }
 
-        yield return null;
+        // Check our current power and flag we can use again
+        switch (currentPower)
+        {
+            case ActivePower.Imagi:
+                isImagiAvailable = true;
+                break;
+            case ActivePower.Logio:
+                isLogioAvailable = true;
+                break;
+            case ActivePower.Void:
+                isVoidAvailable = true;
+                break;
+        }
+
+        // Reset everything
+        cantCast = false;
+        Debug.Log("Ability now up again!");
     }
 
 	private bool canFire()
@@ -194,78 +234,6 @@ public class AbilityBehaviours : MonoBehaviour
 		}
 
 		return false;
-	}
-
-	private void HandleSkillCosts()
-	{
-		switch (currentPower) 
-		{
-		case ActivePower.Imagi:
-			playerStats.CurrentImagi -= ( playerStats.MaxImagi * imagiPercent );
-			StartCoroutine( CooldownCounter( imagiCD ) );
-			break;
-		case ActivePower.Logio:
-			playerStats.CurrentLogio -= ( playerStats.MaxLogio * logioPercent );
-			StartCoroutine( CooldownCounter( logioCD ) );
-			break;
-		case ActivePower.Void:
-			playerStats.CurrentVoid -= ( playerStats.MaxVoid * voidPercent );
-			StartCoroutine( CooldownCounter( voidCD ) );
-			break;
-		}
-	}
-
-	private IEnumerator CooldownCounter( float timeToWait )
-	{
-		ActivePower power = currentPower;
-
-		switch (power) 
-		{
-		case ActivePower.Imagi:
-			isImagiAvailable = false;
-			while(imagiTimer < imagiCD)
-			{
-				imagiTimer += Time.deltaTime;
-				yield return null;
-			}
-			imagiTimer = 0;
-			break;
-		case ActivePower.Logio:
-			isLogioAvailable = false;
-			while(logioTimer < logioCD)
-			{
-				logioTimer += Time.deltaTime;
-				yield return null;
-			}
-			logioTimer = 0;
-			break;
-		case ActivePower.Void:
-			isVoidAvailable = false;
-			while(voidTimer < voidCD)
-			{
-				voidTimer += Time.deltaTime;
-				yield return null;
-			}
-			voidTimer = 0;
-			break;
-		}
-
-		//yield return new WaitForSeconds (timeToWait);
-
-		switch (power) 
-		{
-		case ActivePower.Imagi:
-			isImagiAvailable = true;
-			break;
-		case ActivePower.Logio:
-			isLogioAvailable = true;
-			break;
-		case ActivePower.Void:
-			isVoidAvailable = true;
-			break;
-		}
-
-
 	}
 
 	public void setActivePower(ActivePower ap)
@@ -344,7 +312,8 @@ public class AbilityBehaviours : MonoBehaviour
         
 	}
 
-	public ActivePower getCurrentPower(){
+	public ActivePower getCurrentPower()
+    {
 		return currentPower;
 	}
 
