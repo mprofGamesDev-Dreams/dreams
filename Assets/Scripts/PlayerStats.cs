@@ -152,7 +152,8 @@ public class PlayerStats : MonoBehaviour
 			{
 				currentStamina = Mathf.Clamp( currentStamina + staminaRegen * 0.5f * Time.deltaTime, 0, maxStamina );
 			}
-			else // sprinting
+			else if(Player.GetComponent<InputHandler>().ControllerConstraints == EControlConstraints.EnableAll ||
+			        Player.GetComponent<InputHandler>().ControllerConstraints == EControlConstraints.EnableAllExceptPowers)// sprinting
 			{
 				currentStamina = Mathf.Clamp( currentStamina - staminaRegen * Time.deltaTime, 0, maxStamina );
 			}
