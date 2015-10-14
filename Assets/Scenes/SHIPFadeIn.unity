@@ -766,6 +766,10 @@ Prefab:
       propertyPath: m_Pivot.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 11490778, guid: 7ae9089a76975c64b870eb2693e8a4e6, type: 2}
+      propertyPath: m_Color.a
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 7ae9089a76975c64b870eb2693e8a4e6, type: 2}
   m_IsPrefabParent: 0
@@ -1419,7 +1423,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 318371ccb73582145b953a2f7f65cc25, type: 3}
   - {fileID: 8300000, guid: 99b8b9da173d57f4f923c96148ee27b4, type: 3}
   trigger: {fileID: 1460698125}
-  waitTimeBetweenClips: .600000024
+  waitTimeBetweenClips: 0
   activePower: {fileID: 1319709849}
 --- !u!4 &472337035
 Transform:
@@ -1432,7 +1436,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 33
+  m_RootOrder: 34
 --- !u!4 &511498946 stripped
 Transform:
   m_PrefabParentObject: {fileID: 400002, guid: 354e746494e09a44f87bfcf1815c2590, type: 3}
@@ -1975,7 +1979,7 @@ Transform:
   - {fileID: 1315673140}
   - {fileID: 431722602}
   m_Father: {fileID: 0}
-  m_RootOrder: 25
+  m_RootOrder: 26
 --- !u!95 &987440683
 Animator:
   serializedVersion: 3
@@ -2035,19 +2039,39 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 485148, guid: 5131aeaeb69b99846b5c165c1394dfdf, type: 2}
       propertyPath: m_LocalRotation.x
-      value: .526671648
+      value: .526671708
       objectReference: {fileID: 0}
     - target: {fileID: 485148, guid: 5131aeaeb69b99846b5c165c1394dfdf, type: 2}
       propertyPath: m_LocalRotation.y
-      value: .74942863
+      value: .749428689
       objectReference: {fileID: 0}
     - target: {fileID: 485148, guid: 5131aeaeb69b99846b5c165c1394dfdf, type: 2}
       propertyPath: m_LocalRotation.z
-      value: .278005272
+      value: .278005302
       objectReference: {fileID: 0}
     - target: {fileID: 485148, guid: 5131aeaeb69b99846b5c165c1394dfdf, type: 2}
       propertyPath: m_LocalRotation.w
-      value: .289286643
+      value: .289286673
+      objectReference: {fileID: 0}
+    - target: {fileID: 474050, guid: 5131aeaeb69b99846b5c165c1394dfdf, type: 2}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 474050, guid: 5131aeaeb69b99846b5c165c1394dfdf, type: 2}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 474050, guid: 5131aeaeb69b99846b5c165c1394dfdf, type: 2}
+      propertyPath: m_LocalScale.z
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11444708, guid: 5131aeaeb69b99846b5c165c1394dfdf, type: 2}
+      propertyPath: m_UseFovKick
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 11444708, guid: 5131aeaeb69b99846b5c165c1394dfdf, type: 2}
+      propertyPath: m_JumpSpeed
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 5131aeaeb69b99846b5c165c1394dfdf, type: 2}
@@ -3155,6 +3179,22 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 29
+--- !u!1 &1617744478 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 149264, guid: 7ae9089a76975c64b870eb2693e8a4e6, type: 2}
+  m_PrefabInternal: {fileID: 258515191}
+--- !u!114 &1617744480
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1617744478}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f9dd022bf9b3ac345b8db2d915a825b9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  waitTime: 0
 --- !u!1001 &1627163028
 Prefab:
   m_ObjectHideFlags: 0

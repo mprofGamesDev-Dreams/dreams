@@ -5,7 +5,8 @@ public class Billboard : MonoBehaviour {
 	private Transform mainCameraTransform;
 	// Use this for initialization
 	void Start () {
-		mainCameraTransform = Camera.main.transform;
+		// Make Sure main Camera is The First Child
+		mainCameraTransform = GameObject.FindGameObjectWithTag("Player").transform.GetChild(0).transform;
 	}
 	
 	// Update is called once per frame
