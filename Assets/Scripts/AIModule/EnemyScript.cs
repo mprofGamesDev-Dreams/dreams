@@ -15,7 +15,7 @@ public class EnemyScript : MonoBehaviour {
 	[SerializeField] private float health;
 	[SerializeField] private GameObject healthBar;
 	
-	[SerializeField] private GameObject expPrefab;
+	//[SerializeField] private GameObject expPrefab;
 	[SerializeField] private GameObject voidPrefab;
 	[SerializeField] private GameObject imagiPrefab;
 	[SerializeField] private GameObject logioPrefab;
@@ -27,7 +27,7 @@ public class EnemyScript : MonoBehaviour {
 	[SerializeField] private float dyingRotation = 400;
 	[SerializeField] private GameObject splitIntoEnemyPrefab;
 	
-	[SerializeField] private float expDrop = 10;
+	//[SerializeField] private float expDrop = 10;
 	
 	private AudioSource audioSource;
 	[SerializeField] private AudioClip[] audioClips;
@@ -140,11 +140,13 @@ public class EnemyScript : MonoBehaviour {
 	{
 		Health = Health - damage;
 		ActivateHealthBar ();
-		
-		int audioSampleNum = (int)Random.Range(0,audioClips.Length);
-		//audioSource.clip.Equals();
-		audioSource.PlayOneShot(audioClips[audioSampleNum]);
 
+		if(audioSource != null && audioSource.enabled)
+		{
+			int audioSampleNum = (int)Random.Range(0,audioClips.Length);
+			//audioSource.clip.Equals();
+			audioSource.PlayOneShot(audioClips[audioSampleNum]);
+		}
 		// play animation
 		rigAnimation.SetTrigger( "Hurt" );
 	}
@@ -215,10 +217,10 @@ public class EnemyScript : MonoBehaviour {
 			break;
 		}
 		
-		// Create EXP
+		/* Create EXP
 		pos.x += 0.5f;
 		obj = (Instantiate(expPrefab, pos, Quaternion.identity) as GameObject).GetComponent<PickupOnTrigger>();
-		obj.StatModifyValue = expDrop;
+		obj.StatModifyValue = expDrop;*/
 		
 		// decrement the counter
 		if (EnemyCounterSingleton.Instance != null)

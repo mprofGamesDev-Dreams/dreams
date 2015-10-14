@@ -8,6 +8,8 @@ TagManager:
   - PauseButton
   - Bullet
   - SceneCamera
+  - Targeter
+  - EventSystem
   layers:
   - Default
   - TransparentFX

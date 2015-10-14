@@ -58,7 +58,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 126410}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 25.3309994, y: 6.03131866, z: 46.7669983}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: .5, y: .5, z: .5}
   m_Children:
   - {fileID: 409184}
@@ -179,6 +179,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   statRecoveryType: 2
   statModifyValue: 0
+  pickupSound: {fileID: 8300000, guid: d969c43abc2392541b1bb75b2c47ed51, type: 3}
+  playerEffect: {fileID: 0}
 --- !u!135 &13598828
 SphereCollider:
   m_ObjectHideFlags: 1
@@ -213,6 +215,18 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: m_LocalScale.z
       value: .5
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_LocalPosition.z
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}

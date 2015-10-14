@@ -332,8 +332,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 147336}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -12.0999928, y: 0, z: .689999998}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: -1.60500002, y: -0, z: -.0399999991}
+  m_LocalScale: {x: 1.01097894, y: .973257065, z: .826284409}
   m_Children: []
   m_Father: {fileID: 415312}
   m_RootOrder: 0
@@ -357,7 +357,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 157918}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 12.3100004, y: 0, z: 0}
+  m_LocalPosition: {x: 1.40699995, y: 0, z: -0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 411066}
@@ -386,8 +386,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 142940}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.78900003, z: 0}
-  m_LocalScale: {x: .0488478951, y: .0547223873, z: .0974357054}
+  m_LocalPosition: {x: .056499999, y: 1.80509996, z: 0}
+  m_LocalScale: {x: .301409215, y: .397787392, z: .359855086}
   m_Children:
   - {fileID: 415312}
   m_Father: {fileID: 455654}
@@ -399,7 +399,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 105492}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 2.05999994, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1.17071068, y: 3.82308245, z: 1.17071068}
   m_Children: []
   m_Father: {fileID: 455654}
@@ -446,8 +446,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 195500}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: 0, y: .848014176, z: 0, w: .529973567}
+  m_LocalPosition: {x: 18.2900009, y: 5.76131487, z: 40.9500008}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 436038}
@@ -569,7 +569,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: .51700002
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -680,7 +680,7 @@ MonoBehaviour:
   patrolPoints: []
   masksToUse:
     serializedVersion: 2
-    m_Bits: 4294966271
+    m_Bits: 4294960127
   canSlow: 0
   rigPrefab: {fileID: 152476}
 --- !u!114 &11411066
@@ -709,7 +709,6 @@ MonoBehaviour:
   maxHealth: 4
   health: 0
   healthBar: {fileID: 142940}
-  expPrefab: {fileID: 106138, guid: e6c82dd1d87137b47a29e24f308655ee, type: 2}
   voidPrefab: {fileID: 126410, guid: 5e083007b6431394b91caac977761437, type: 2}
   imagiPrefab: {fileID: 156894, guid: c757713502107e84096f15d454be9304, type: 2}
   logioPrefab: {fileID: 107886, guid: 9ef5c66a8170b654da9e1af46fbbfcc4, type: 2}
@@ -717,7 +716,6 @@ MonoBehaviour:
   dyingAni: 0
   dyingRotation: 400
   splitIntoEnemyPrefab: {fileID: 195500}
-  expDrop: 10
   audioClips:
   - {fileID: 8300000, guid: 106658d1dbf16a8458271bdfaaedc830, type: 3}
   - {fileID: 8300000, guid: 0b2ac8a79de42b6458f2b9f84f7cfa33, type: 3}
@@ -855,9 +853,9 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
-  m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 45b79abf4ac5b9d4ca65a5e3cc0e75e2, type: 3}
-  m_Color: {r: 1, g: 0, b: 0, a: 1}
+  m_SortingOrder: 1
+  m_Sprite: {fileID: 21300000, guid: da4dc8b0b8396f24ca147131b8a34f15, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!212 &21296414
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -881,9 +879,9 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
-  m_SortingOrder: 1
-  m_Sprite: {fileID: 21300000, guid: 45b79abf4ac5b9d4ca65a5e3cc0e75e2, type: 3}
-  m_Color: {r: 0, g: 1, b: .296551704, a: 1}
+  m_SortingOrder: 0
+  m_Sprite: {fileID: 21300000, guid: a53c5a250fb2d394294fdbd8928cd866, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1
@@ -933,7 +931,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: masksToUse.m_Bits
-      value: 4294966271
+      value: 4294960127
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: splitIntoEnemyPrefab

@@ -153,8 +153,8 @@ public class FinalFightScript : MonoBehaviour {
 		yield return new WaitForSeconds (clip1.length);
 
 		//FLASH
-		flash.GetComponent<WhiteFlash> ().RequestFlash();
-		yield return new WaitForSeconds (2);
+		//flash.GetComponent<WhiteFlash> ().RequestFlash();
+		//yield return new WaitForSeconds (2);
 		//TRIGGER END CUTSCENE
 		gameObject.GetComponent<EnemyCounterSingleton> ().StartCutscene ();
 		yield return null;

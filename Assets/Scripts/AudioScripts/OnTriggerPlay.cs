@@ -13,29 +13,31 @@ public class OnTriggerPlay : MonoBehaviour, IDestroyAudioEvent
 {
 	[SerializeField] private AudioClip[] audioClip;
 	[SerializeField] private float waitTimeBetweenClips;
-
+	[SerializeField] private bool hasDelay = false;
+	[SerializeField] private float delayTime;
+	
 	private NarratorController narrator = null;
-
+	
 	private float startTime;
-
+	
 	private int audioClipIndex = 0;
 	
 	private InputHandler inputHandler;
 	
 	private EAudioState myState = EAudioState.isWaiting;
-
+	
 	private void Start()
 	{
 		narrator = NarratorController.NarratorInstance;
-
+		
 		inputHandler = GameObject.FindGameObjectWithTag("Player").GetComponent<InputHandler>();
 	}
-
+	
 	private void Update()
 	{
 		if(myState == EAudioState.isWaiting || myState == EAudioState.isFinished)
 			return;
-
+		
 		if(myState == EAudioState.isPaused)
 		{
 			if( Time.time > (startTime + waitTimeBetweenClips))
@@ -50,12 +52,12 @@ public class OnTriggerPlay : MonoBehaviour, IDestroyAudioEvent
 					myState = EAudioState.isPlaying;
 					startTime = Time.time;
 					narrator.PlayNewClip(audioClip[audioClipIndex], gameObject.GetInstanceID(), (IDestroyAudioEvent)this);
-
+					
 					return;
 				}
 			}// If Timer Hasnt Finished Then Wait
 		}
-
+		
 		if(myState == EAudioState.isPlaying)
 		{
 			if(Time.time < (startTime + audioClip[audioClipIndex].length))
@@ -70,7 +72,7 @@ public class OnTriggerPlay : MonoBehaviour, IDestroyAudioEvent
 				}
 				
 			}
-
+			
 			if(Time.time > (startTime + audioClip[audioClipIndex].length))
 			{
 				startTime = Time.time;
@@ -78,23 +80,40 @@ public class OnTriggerPlay : MonoBehaviour, IDestroyAudioEvent
 			}
 		}
 	}
-
+	
 	private void OnTriggerEnter(Collider obj)
 	{
 		if(obj.gameObject.CompareTag("Player") && myState == EAudioState.isWaiting )
 		{
-			myState = EAudioState.isPlaying;
-			startTime = Time.time;
-
-			narrator.PlayNewClip(audioClip[audioClipIndex], gameObject.GetInstanceID(), (IDestroyAudioEvent)this);
+			if(hasDelay)
+			{
+				StartCoroutine(TriggerAfter());
+			}
+			else
+			{
+				myState = EAudioState.isPlaying;
+				startTime = Time.time;
+				
+				narrator.PlayNewClip(audioClip[audioClipIndex], gameObject.GetInstanceID(), (IDestroyAudioEvent)this);
+			}
 		}
 	}
-
+	
+	private IEnumerator TriggerAfter()
+	{
+		yield return new WaitForSeconds(delayTime);
+		
+		myState = EAudioState.isPlaying;
+		startTime = Time.time;
+		
+		narrator.PlayNewClip(audioClip[audioClipIndex], gameObject.GetInstanceID(), (IDestroyAudioEvent)this);
+	}
+	
 	public EAudioState CurrentState
 	{
 		get { return myState; }
 	}
-
+	
 	public void DestroyAudioEvent()
 	{
 		Destroy(this);

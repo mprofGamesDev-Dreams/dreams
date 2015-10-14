@@ -1,5 +1,9 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.UI;
+using UnityEngine.EventSystems;
+using UnityStandardAssets.ImageEffects;
+using UnityStandardAssets.Characters.FirstPerson;
 
 public class EnemyCounterSingleton : MonoBehaviour, IDestroyAudioEvent
 {
@@ -36,18 +40,20 @@ public class EnemyCounterSingleton : MonoBehaviour, IDestroyAudioEvent
 	[SerializeField] private Transform playerTransform;
 	[SerializeField] private Vector3 playerOffsetFromDreamer;
 
+	[SerializeField] private GameObject ChoiceObject;
+
 	//private float startTime = 0;
 	//private float waitTime = 10;
 
-	private float fadeoutTime = 0;
+//	private float fadeoutTime = 0;
 	private float fadeinTime = 0;
 
 	[SerializeField] private AudioClip[] audioClips;
 	private bool choice = false;
 
-	[SerializeField] private GameObject choicePrefab;
 
 	InputHandler inputHandler;
+
 	private void Awake()
 	{
 		instance = this;
@@ -58,6 +64,8 @@ public class EnemyCounterSingleton : MonoBehaviour, IDestroyAudioEvent
 
 	private void Update()
 	{
+		if(Input.GetKeyDown(KeyCode.RightControl))
+			StartCutscene();
 
 		/*
 		if(Time.time < (startTime + waitTime))
@@ -83,9 +91,11 @@ public class EnemyCounterSingleton : MonoBehaviour, IDestroyAudioEvent
 
 	private IEnumerator FinalCutscene()
 	{
-		flash.FadeToWhite();
+		flash.fadeInSpeed = 2;
+		flash.fadeOutSpeed = 2;
+		flash.RequestFlash();
 
-		yield return new WaitForSeconds(fadeoutTime);
+		yield return new WaitForSeconds( 3 );
 
 		dreamer.position = dreamerDestination.position;
 
@@ -93,17 +103,19 @@ public class EnemyCounterSingleton : MonoBehaviour, IDestroyAudioEvent
 
 		Transform sceneCamera = TurnOnSceneCamera(true);
 
+		playerTransform.GetComponent<FirstPersonController>().enabled = false;
+
 		sceneCamera.LookAt(dreamer.position);
 
 		//playerTransform.forward = (dreamer.position - playerTransform.position).normalized;;
 
-		Instantiate( choicePrefab, Vector3.zero, Quaternion.identity );
+		//Instantiate( choicePrefab, Vector3.zero, Quaternion.identity );
 
 		inputHandler.ControllerConstraints = EControlConstraints.DisableAllExceptChoice;
 
-		flash.FadeToClear();
 
 		yield return new WaitForSeconds(fadeinTime);
+		ChoiceObject.SetActive(true);
 
 		NarratorController.NarratorInstance.PlayNewClip(audioClips[0], gameObject.GetInstanceID(), (IDestroyAudioEvent)this);
 
@@ -115,15 +127,21 @@ public class EnemyCounterSingleton : MonoBehaviour, IDestroyAudioEvent
 	private IEnumerator CutscenePartII()
 	{
 		NarratorController.NarratorInstance.PlayNewClip(audioClips[1], gameObject.GetInstanceID(), (IDestroyAudioEvent)this);
-		yield return new WaitForSeconds( audioClips[1].length + 1f );
+		
+        GameObject.FindGameObjectWithTag("Player").GetComponent<InputHandler>().PlayInteract();
 
-		// player touches
+        yield return new WaitForSeconds( audioClips[1].length + 1f );
 
-		flash.FadeToWhite();
+
+		flash.fadeInSpeed = 7f;
+		flash.fadeOutSpeed = 0.0000000000001f;
+		flash.RequestFlash();
 
 		NarratorController.NarratorInstance.PlayNewClip(audioClips[2], gameObject.GetInstanceID(), (IDestroyAudioEvent)this);
 		yield return new WaitForSeconds( audioClips[2].length + 1f );
 
+		// Wait A 5 Beats As Requested
+		yield return new WaitForSeconds( 2.5f );
 
 		Application.LoadLevel("SHIP");
 	}
@@ -161,7 +179,18 @@ public class EnemyCounterSingleton : MonoBehaviour, IDestroyAudioEvent
 		sceneCamera.parent = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
 		
 		sceneCamera.GetComponent<Camera>().cullingMask = Camera.main.cullingMask;
+
+		BloomOptimized sceneBloom = camObj.AddComponent<BloomOptimized>();
 		
+		BloomOptimized mainBloom = Camera.main.GetComponent<BloomOptimized>();
+		
+		sceneBloom.threshold = mainBloom.threshold;
+		sceneBloom.intensity = mainBloom.intensity;
+		sceneBloom.blurSize = mainBloom.blurSize;
+		sceneBloom.blurIterations = mainBloom.blurIterations;
+		sceneBloom.blurType = mainBloom.blurType;
+		sceneBloom.fastBloomShader = mainBloom.fastBloomShader;
+
 		return sceneCamera.GetComponent<Camera>();
 	}
 
