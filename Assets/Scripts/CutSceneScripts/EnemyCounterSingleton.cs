@@ -70,9 +70,14 @@ public class EnemyCounterSingleton : MonoBehaviour, IDestroyAudioEvent
 		if(Time.time < (startTime + waitTime))
 			return;
 */
-		if(choice == true && inputHandler.DPadHorizontal != 0)
+		if(choice == true && inputHandler.DPadHorizontal != 0 || inputHandler.HorizontalAxis != 0)
 		{
-			if(inputHandler.DPadHorizontal == 1)
+			float dir = 0;
+			if(inputHandler.DPadHorizontal != 0)
+				dir = inputHandler.DPadHorizontal;
+			else dir = inputHandler.HorizontalAxis;
+
+			if(dir >= 0)
 			{
 				if(currentlySelectedButton != ChoiceObject.GetComponent<RectTransform>().GetChild(0).GetComponent<Button>())
 				{
@@ -81,7 +86,7 @@ public class EnemyCounterSingleton : MonoBehaviour, IDestroyAudioEvent
 				}
 			}
 
-			if(inputHandler.DPadHorizontal == -1)
+			if(dir <= 0)
 			{
 				if(currentlySelectedButton != ChoiceObject.GetComponent<RectTransform>().GetChild(1).GetComponent<Button>())
 				{
@@ -97,7 +102,7 @@ public class EnemyCounterSingleton : MonoBehaviour, IDestroyAudioEvent
 			*/
 		}
 
-		if(inputHandler.isInteract() && currentlySelectedButton != null)
+		if(choice == true && inputHandler.isInteract() && currentlySelectedButton != null)
 		{
 			StartCoroutine( CutscenePartII() );
 			ChoiceObject.SetActive(false);
@@ -226,6 +231,6 @@ public class EnemyCounterSingleton : MonoBehaviour, IDestroyAudioEvent
 
 	public void DestroyAudioEvent()
 	{
-		Destroy(this);
+
 	}
 }
