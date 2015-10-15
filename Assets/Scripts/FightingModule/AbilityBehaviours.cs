@@ -39,17 +39,29 @@ public class AbilityBehaviours : MonoBehaviour
 	private Transform myCameraTransform;
 	private InputHandler input;
 	private Color32 beamColor;
-	[SerializeField] ActivePower currentPower; public ActivePower CurrentPower { get { return currentPower; } set{ currentPower = value; } }
+    [SerializeField]
+    ActivePower currentPower; public ActivePower CurrentPower { get { return currentPower; } set { currentPower = value; } }
+    [SerializeField] private bool logioLock = false;
+    [SerializeField] private bool imagiLock = false;
+    [SerializeField] private bool voidLock = false;
 
     AudioSource audioSourceBullets;
     [SerializeField] private AudioClip logioClip;
     [SerializeField] private AudioClip imagiClip;
     [SerializeField] private AudioClip voidClip;
 
+    // Spellcasting Animation
+    [Header("Spell Casting")]
     [SerializeField] private GameObject Arms;
     private Animator armAnimator;
     private bool isCasting;
     private bool cantCast;
+    [SerializeField] private string TriggerName = "Spell";
+    [SerializeField] private float animationStartFrame = 0;
+    [SerializeField] private float animationCastFrame = 30;
+    [SerializeField] private float framesInAnimation = 60;
+    [SerializeField] private float framesPerSecond = 30;
+    [SerializeField] private float animationPlaySpeed = 2;
 
 	private void Start () 
 	{
@@ -110,17 +122,17 @@ public class AbilityBehaviours : MonoBehaviour
 			}
 		}
 
-		if (CrossPlatformInputManager.GetButtonDown ("Fire1"))//LOGIO
+		if (CrossPlatformInputManager.GetButtonDown ("Fire1") && !logioLock)//LOGIO
 		{
 			currentPower = ActivePower.Logio;
 		}
 
-		if (CrossPlatformInputManager.GetButtonDown ("Fire2"))//IMAGI
+		if (CrossPlatformInputManager.GetButtonDown ("Fire2") && !imagiLock)//IMAGI
 		{
 			currentPower = ActivePower.Imagi;
 		}
 
-		if (CrossPlatformInputManager.GetButtonDown ("Fire3"))//VOID
+		if (CrossPlatformInputManager.GetButtonDown ("Fire3") && !voidLock)//VOID
 		{
 			currentPower = ActivePower.Void;
 		}
@@ -148,18 +160,10 @@ public class AbilityBehaviours : MonoBehaviour
         }
 
         // Play the arm animator
-        armAnimator.SetTrigger("Spell");
-        
-        float START_FRAME = 0;
-        float FIRE_FRAME = 30;
-        float TOTAL_FRAMES = 60;
-        float NO_OF_FRAMES = TOTAL_FRAMES - START_FRAME;
-        float FPS = 30;
-        float ANIMATION_SPEED = 2;
-        float TOTAL_TIME = ((1 / FPS) * NO_OF_FRAMES) / ANIMATION_SPEED;
+        armAnimator.SetTrigger(TriggerName);
 
         // Calculate how long to delay until we reach the 
-        float spellDelay = ((1 / FPS) * FIRE_FRAME) / ANIMATION_SPEED;
+        float spellDelay = ((1 / framesPerSecond) * animationCastFrame) / animationPlaySpeed;
 
         // Wait for the clip (castAnimation.clip.length)
         yield return new WaitForSeconds(spellDelay);
