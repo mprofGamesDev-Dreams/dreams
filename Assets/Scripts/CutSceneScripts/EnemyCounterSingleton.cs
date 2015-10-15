@@ -156,6 +156,8 @@ public class EnemyCounterSingleton : MonoBehaviour, IDestroyAudioEvent
 
 	private IEnumerator CutscenePartII()
 	{
+
+		ChoiceObject.SetActive(false);
 		NarratorController.NarratorInstance.PlayNewClip(audioClips[1], gameObject.GetInstanceID(), (IDestroyAudioEvent)this);
 		
         GameObject.FindGameObjectWithTag("Player").GetComponent<InputHandler>().PlayInteract();
