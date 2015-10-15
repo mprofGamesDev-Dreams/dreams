@@ -179,21 +179,31 @@ public class AbilityBehaviours : MonoBehaviour
         switch (currentPower)
         {
             case ActivePower.Imagi:
-                playerStats.CurrentImagi -= (playerStats.MaxImagi * imagiPercent);
                 isImagiAvailable = false;
-                yield return new WaitForSeconds(imagiCD);
+                while (imagiTimer < imagiCD)
+                {
+                    imagiTimer += Time.deltaTime;
+                    yield return null;
+                }
+                imagiTimer = 0;
                 break;
-
             case ActivePower.Logio:
-                playerStats.CurrentLogio -= (playerStats.MaxLogio * logioPercent);
                 isLogioAvailable = false;
-                yield return new WaitForSeconds(logioCD);
+                while (logioTimer < logioCD)
+                {
+                    logioTimer += Time.deltaTime;
+                    yield return null;
+                }
+                logioTimer = 0;
                 break;
-
             case ActivePower.Void:
-                playerStats.CurrentVoid -= (playerStats.MaxVoid * voidPercent);
                 isVoidAvailable = false;
-                yield return new WaitForSeconds(voidCD);
+                while (voidTimer < voidCD)
+                {
+                    voidTimer += Time.deltaTime;
+                    yield return null;
+                }
+                voidTimer = 0;
                 break;
         }
 

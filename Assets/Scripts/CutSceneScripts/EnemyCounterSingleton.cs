@@ -74,6 +74,7 @@ public class EnemyCounterSingleton : MonoBehaviour, IDestroyAudioEvent
 		if(choice == true && inputHandler.DPadHorizontal != 0)
 		{
 			StartCoroutine( CutscenePartII() );
+			ChoiceObject.SetActive(false);
 			choice = false;
 		}
 
