@@ -1058,7 +1058,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 191114214}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 7.61000013, y: 8.56000042, z: 42}
+  m_LocalPosition: {x: 7.61000013, y: 7.44999981, z: 42}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -1463,6 +1463,10 @@ Prefab:
     - target: {fileID: 439556, guid: 30f77a23ae462e1408d520c7436769c0, type: 2}
       propertyPath: m_LocalPosition.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 19568414, guid: 30f77a23ae462e1408d520c7436769c0, type: 2}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 30f77a23ae462e1408d520c7436769c0, type: 2}
@@ -3660,7 +3664,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 22467046, guid: b4082bd72b6a977428ecfb55d127863c, type: 2}
       propertyPath: m_LocalPosition.z
-      value: -3
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 22467046, guid: b4082bd72b6a977428ecfb55d127863c, type: 2}
       propertyPath: m_LocalRotation.x
@@ -3726,8 +3730,8 @@ Prefab:
       propertyPath: flash
       value: 
       objectReference: {fileID: 2024720855}
-    - target: {fileID: 11481980, guid: b4082bd72b6a977428ecfb55d127863c, type: 2}
-      propertyPath: m_Colors.m_ColorMultiplier
+    - target: {fileID: 181892, guid: b4082bd72b6a977428ecfb55d127863c, type: 2}
+      propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -4091,19 +4095,19 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 485148, guid: 5131aeaeb69b99846b5c165c1394dfdf, type: 2}
       propertyPath: m_LocalRotation.x
-      value: .526671648
+      value: .526671708
       objectReference: {fileID: 0}
     - target: {fileID: 485148, guid: 5131aeaeb69b99846b5c165c1394dfdf, type: 2}
       propertyPath: m_LocalRotation.y
-      value: .74942863
+      value: .749428689
       objectReference: {fileID: 0}
     - target: {fileID: 485148, guid: 5131aeaeb69b99846b5c165c1394dfdf, type: 2}
       propertyPath: m_LocalRotation.z
-      value: .278005272
+      value: .278005302
       objectReference: {fileID: 0}
     - target: {fileID: 485148, guid: 5131aeaeb69b99846b5c165c1394dfdf, type: 2}
       propertyPath: m_LocalRotation.w
-      value: .289286643
+      value: .289286673
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 5131aeaeb69b99846b5c165c1394dfdf, type: 2}
@@ -5242,8 +5246,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   audioClip:
   - {fileID: 8300000, guid: 2cd1ac2a241d5e548ba07d4041045192, type: 3}
-  - {fileID: 8300000, guid: 50ab5560e7c09964eaefcfc99478fb52, type: 3}
-  waitTimeBetweenClips: .5
+  waitTimeBetweenClips: 1
   hasDelay: 0
   delayTime: 0
 --- !u!65 &940819435
@@ -6769,6 +6772,10 @@ Prefab:
     - target: {fileID: 439556, guid: 30f77a23ae462e1408d520c7436769c0, type: 2}
       propertyPath: m_LocalPosition.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 19568414, guid: 30f77a23ae462e1408d520c7436769c0, type: 2}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 30f77a23ae462e1408d520c7436769c0, type: 2}
@@ -8491,7 +8498,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   audioClip:
   - {fileID: 8300000, guid: 193648aea912d6e4fb1e89b1b67d86cd, type: 3}
-  - {fileID: 8300000, guid: 6112899104786ee4fa7b0ef1482b1612, type: 3}
   waitTimeBetweenClips: 0
   hasDelay: 0
   delayTime: 0
@@ -8552,7 +8558,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   audioClip:
   - {fileID: 8300000, guid: 2ac2ecc068e99164c871313cd83890b5, type: 3}
-  - {fileID: 8300000, guid: a2e6d83c1500bed459cd626cb93960aa, type: 3}
   waitTimeBetweenClips: .5
   hasDelay: 0
   delayTime: 0
@@ -11648,7 +11653,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &2034566463
 Transform:
   m_ObjectHideFlags: 0
@@ -12420,7 +12425,7 @@ MonoBehaviour:
   - {fileID: 696521134}
   targetIndex: 0
   isPathLooping: 1
-  MovementSpeed: 3
+  MovementSpeed: 6
   triggered: 0
 --- !u!114 &2110499240
 MonoBehaviour:

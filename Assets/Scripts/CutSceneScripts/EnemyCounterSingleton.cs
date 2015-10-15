@@ -45,6 +45,8 @@ public class EnemyCounterSingleton : MonoBehaviour, IDestroyAudioEvent
 	//private float startTime = 0;
 	//private float waitTime = 10;
 
+	private Button currentlySelectedButton;
+
 //	private float fadeoutTime = 0;
 	private float fadeinTime = 0;
 
@@ -72,6 +74,33 @@ public class EnemyCounterSingleton : MonoBehaviour, IDestroyAudioEvent
 			return;
 */
 		if(choice == true && inputHandler.DPadHorizontal != 0)
+		{
+			if(inputHandler.DPadHorizontal == 1)
+			{
+				if(currentlySelectedButton != ChoiceObject.GetComponent<RectTransform>().GetChild(0).GetComponent<Button>())
+				{
+					currentlySelectedButton = ChoiceObject.GetComponent<RectTransform>().GetChild(0).GetComponent<Button>();
+					currentlySelectedButton.Select();
+				}
+			}
+
+			if(inputHandler.DPadHorizontal == -1)
+			{
+				if(currentlySelectedButton != ChoiceObject.GetComponent<RectTransform>().GetChild(1).GetComponent<Button>())
+				{
+					currentlySelectedButton = ChoiceObject.GetComponent<RectTransform>().GetChild(1).GetComponent<Button>();
+					currentlySelectedButton.Select();
+				}
+			}
+
+			/*
+			StartCoroutine( CutscenePartII() );
+			ChoiceObject.SetActive(false);
+			choice = false;
+			*/
+		}
+
+		if(inputHandler.isInteract())
 		{
 			StartCoroutine( CutscenePartII() );
 			ChoiceObject.SetActive(false);
@@ -144,7 +173,8 @@ public class EnemyCounterSingleton : MonoBehaviour, IDestroyAudioEvent
 		// Wait A 5 Beats As Requested
 		yield return new WaitForSeconds( 2.5f );
 
-		Application.LoadLevel("SHIP");
+		currentlySelectedButton.onClick.Invoke();
+		//currentlySelectedButton..Invoke();
 	}
 
 

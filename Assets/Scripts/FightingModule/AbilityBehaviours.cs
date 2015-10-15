@@ -57,9 +57,7 @@ public class AbilityBehaviours : MonoBehaviour
     private bool isCasting;
     private bool cantCast;
     [SerializeField] private string TriggerName = "Spell";
-    [SerializeField] private float animationStartFrame = 0;
     [SerializeField] private float animationCastFrame = 30;
-    [SerializeField] private float framesInAnimation = 60;
     [SerializeField] private float framesPerSecond = 30;
     [SerializeField] private float animationPlaySpeed = 2;
 

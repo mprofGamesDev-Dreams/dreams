@@ -8,4 +8,6 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/SHIP.unity
   - enabled: 1
+    path: Assets/Scenes/SHIPFadeIn.unity
+  - enabled: 1
     path: Assets/Scenes/SMALLLEVEL.unity

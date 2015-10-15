@@ -5,18 +5,31 @@ public class LoadToScene : MonoBehaviour
 {
 	[SerializeField] private WhiteFlash flash;
 
-	public void OnClickLoadScene(string s)
+	public void OnClickLoadSceneByString(string s)
 	{
-		StartCoroutine(LoadSceneAfterFlash(s));
+		StartCoroutine(LoadSceneAfterFlashUsingString(s));
 	}
 
-	private IEnumerator LoadSceneAfterFlash(string s)
+	public void OnClickLoadSceneBySceneID(int i)
+	{
+		StartCoroutine(LoadSceneAfterFlashUsingInt(i));
+	}
+
+	private IEnumerator LoadSceneAfterFlashUsingString(string s)
 	{
 		flash.RequestFlash();
-
-		yield return new WaitForSeconds(3);
-
+		
+		yield return new WaitForSeconds(2);
+		
 		Application.LoadLevel(s);
+	}
 
+	private IEnumerator LoadSceneAfterFlashUsingInt(int i)
+	{
+		flash.RequestFlash();
+		
+		yield return new WaitForSeconds(2);
+
+		Application.LoadLevel(i);
 	}
 }

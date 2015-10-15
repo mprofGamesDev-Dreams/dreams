@@ -259,7 +259,7 @@ MonoBehaviour:
     m_HighlightedColor: {r: .507352948, g: .507352948, b: .507352948, a: 1}
     m_PressedColor: {r: .757352948, g: .757352948, b: .757352948, a: 1}
     m_DisabledColor: {r: .784313738, g: .784313738, b: .784313738, a: 1}
-    m_ColorMultiplier: 5
+    m_ColorMultiplier: 1
     m_FadeDuration: .100000001
   m_SpriteState:
     m_HighlightedSprite: {fileID: 0}
@@ -276,16 +276,16 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 11403624}
-        m_MethodName: OnClickLoadScene
-        m_Mode: 5
+        m_MethodName: OnClickLoadSceneBySceneID
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 1
           m_FloatArgument: 0
           m_StringArgument: SHIPFadeIn
           m_BoolArgument: 0
-        m_CallState: 0
+        m_CallState: 1
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &11491316
@@ -328,16 +328,16 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 11403624}
-        m_MethodName: OnClickLoadScene
-        m_Mode: 5
+        m_MethodName: OnClickLoadSceneBySceneID
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 1
           m_FloatArgument: 0
           m_StringArgument: SHIPFadeIn
           m_BoolArgument: 0
-        m_CallState: 0
+        m_CallState: 1
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!222 &22212330

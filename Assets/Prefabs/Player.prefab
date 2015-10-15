@@ -4506,7 +4506,7 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 121510}
-  m_LocalRotation: {x: .526671708, y: .749428689, z: .278005302, w: .289286673}
+  m_LocalRotation: {x: .526671648, y: .74942863, z: .278005272, w: .289286643}
   m_LocalPosition: {x: 21.2970619, y: -1.0428896, z: 2.6081379e-15}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -5458,9 +5458,9 @@ MonoBehaviour:
   imagiCD: .200000003
   voidCD: 2
   currentPower: 0
-  logioClip: {fileID: 8300000, guid: 70a629b65049fda428a8c2c1046be5a5, type: 3}
-  imagiClip: {fileID: 8300000, guid: a53c32e728177c4448cc7a9da317d8dd, type: 3}
-  voidClip: {fileID: 8300000, guid: ffd458755c87f984fb8ad7164949b54b, type: 3}
+  logioClip: {fileID: 8300000, guid: 84912c4d1604c9142a415dd8e76b0e67, type: 3}
+  imagiClip: {fileID: 8300000, guid: 89ee4e7abee881446bdfb901072fa05e, type: 3}
+  voidClip: {fileID: 8300000, guid: c96e8a56ea98cf74bbdfb47e15ef2dc9, type: 3}
   Arms: {fileID: 160038}
 --- !u!114 &11444708
 MonoBehaviour:

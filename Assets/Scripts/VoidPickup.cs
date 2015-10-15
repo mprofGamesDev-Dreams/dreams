@@ -11,7 +11,9 @@ public class VoidPickup : MonoBehaviour {
     [SerializeField] private AudioClip audioClip;
 
     private GameObject player;
-	
+
+	private bool isUsed = false;
+
 	// Use this for initialization
 	void Start () {
 		audioEvent = GetComponent<OnCallPlayEventAudio>();
@@ -25,12 +27,13 @@ public class VoidPickup : MonoBehaviour {
 
     void OnTriggerStay(Collider col)
     {
-        if (col.gameObject.CompareTag("Player"))
+        if (col.gameObject.CompareTag("Player") && !isUsed)
         {
             player = col.gameObject;            
             
             if (player.GetComponent<InputHandler>().isInteract() && resource > 0)
             {
+				isUsed = !isUsed;
                 player.GetComponent<InputHandler>().PlayInteract();
                 StartCoroutine("wait");
                 Invoke("PickUp", audioClip.length);
