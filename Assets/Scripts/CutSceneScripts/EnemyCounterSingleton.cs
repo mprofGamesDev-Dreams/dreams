@@ -66,9 +66,6 @@ public class EnemyCounterSingleton : MonoBehaviour, IDestroyAudioEvent
 
 	private void Update()
 	{
-		if(Input.GetKeyDown(KeyCode.RightControl))
-			StartCutscene();
-
 		/*
 		if(Time.time < (startTime + waitTime))
 			return;
