@@ -178,6 +178,7 @@ public class AbilityBehaviours : MonoBehaviour
         switch (currentPower)
         {
             case ActivePower.Imagi:
+                playerStats.CurrentImagi -= (playerStats.MaxImagi * imagiPercent);
                 isImagiAvailable = false;
                 while (imagiTimer < imagiCD)
                 {
@@ -185,8 +186,10 @@ public class AbilityBehaviours : MonoBehaviour
                     yield return null;
                 }
                 imagiTimer = 0;
+                isImagiAvailable = true;
                 break;
             case ActivePower.Logio:
+                playerStats.CurrentLogio -= (playerStats.MaxLogio * logioPercent);
                 isLogioAvailable = false;
                 while (logioTimer < logioCD)
                 {
@@ -194,8 +197,10 @@ public class AbilityBehaviours : MonoBehaviour
                     yield return null;
                 }
                 logioTimer = 0;
+                isLogioAvailable = true;
                 break;
             case ActivePower.Void:
+                playerStats.CurrentVoid -= (playerStats.MaxVoid * voidPercent);
                 isVoidAvailable = false;
                 while (voidTimer < voidCD)
                 {
@@ -203,24 +208,11 @@ public class AbilityBehaviours : MonoBehaviour
                     yield return null;
                 }
                 voidTimer = 0;
-                break;
-        }
-
-        // Check our current power and flag we can use again
-        switch (currentPower)
-        {
-            case ActivePower.Imagi:
-                isImagiAvailable = true;
-                break;
-            case ActivePower.Logio:
-                isLogioAvailable = true;
-                break;
-            case ActivePower.Void:
                 isVoidAvailable = true;
                 break;
         }
 
-        // Reset everything
+        // Allow for casting again
         cantCast = false;
     }
 
