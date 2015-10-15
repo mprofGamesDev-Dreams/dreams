@@ -20,7 +20,9 @@ public class EnemyBehaviour : MonoBehaviour {
     private bool playerSeen = false;
 
     public LayerMask masksToUse;
-	
+
+	public bool isBig;
+
 	[SerializeField] private bool canSlow = false;
 
 	private Vector3 OldPosition;
@@ -158,8 +160,12 @@ public class EnemyBehaviour : MonoBehaviour {
                 break;
 
             case aiStates.attack:
-				if(agent.isOnNavMesh)
-                	agent.SetDestination(transform.position);
+				
+				if(!isBig)
+				{
+					if(agent.isOnNavMesh)
+                		agent.SetDestination(transform.position);
+				}
 
                 if (attackTimer >= attackCooldown)
                 {
