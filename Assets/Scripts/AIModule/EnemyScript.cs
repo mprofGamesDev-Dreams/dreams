@@ -168,6 +168,7 @@ public class EnemyScript : MonoBehaviour {
 			Destroy (gameObject.transform.FindChild("Healthbar").gameObject);
 			gameObject.GetComponent<NavMeshAgent>().enabled = false;
 			gameObject.GetComponent<EnemyBehaviour>().enabled = false;
+			gameObject.GetComponent<AudioSource>().enabled = false;
 		}
 		
 		if(gameObject.GetComponent<ShrinkToOblivion>() != null)
