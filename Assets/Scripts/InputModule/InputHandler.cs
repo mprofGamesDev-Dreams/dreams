@@ -28,6 +28,9 @@ public class InputHandler : MonoBehaviour
 	bool skip;
 	float dPadHorizontal;
 
+	float horizontalAxis;
+	float verticalAxis;
+
     public GameObject Arms;
 
 	private EControlConstraints controllerConstraints = EControlConstraints.EnableAll; public EControlConstraints ControllerConstraints { get { return controllerConstraints; } set { controllerConstraints = value; }  }
@@ -48,6 +51,9 @@ public class InputHandler : MonoBehaviour
 		skip = false;
 		dPadHorizontal = 0;
 
+
+		horizontalAxis = CrossPlatformInputManager.GetAxis("Horizontal");
+		verticalAxis = CrossPlatformInputManager.GetAxis("Vertical");
 
 		if(CrossPlatformInputManager.GetButton("Skip"))
 		{
@@ -168,6 +174,16 @@ public class InputHandler : MonoBehaviour
 	public float DPadHorizontal
 	{
 		get { return dPadHorizontal; }
+	}	
+
+	public float HorizontalAxis
+	{
+		get { return horizontalAxis; }
+	}	
+
+	public float VerticalAxis
+	{
+		get { return verticalAxis; }
 	}
 
 	public bool isSkip
