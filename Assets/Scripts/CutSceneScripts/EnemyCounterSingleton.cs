@@ -104,8 +104,9 @@ public class EnemyCounterSingleton : MonoBehaviour, IDestroyAudioEvent
 
 		if(choice == true && inputHandler.isInteract() && currentlySelectedButton != null)
 		{
-			StartCoroutine( CutscenePartII() );
 			ChoiceObject.SetActive(false);
+			StartCoroutine( CutscenePartII() );
+
 			choice = false;
 		}
 

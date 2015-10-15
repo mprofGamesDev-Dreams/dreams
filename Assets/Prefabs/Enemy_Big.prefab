@@ -673,12 +673,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   lineOfSightRange: 30
   attackDamage: 25
-  attackRange: 1
+  attackRange: 4
   attackCooldown: 2
   patrolPoints: []
   masksToUse:
     serializedVersion: 2
     m_Bits: 4294960127
+  isBig: 1
   canSlow: 0
   rigPrefab: {fileID: 180356}
 --- !u!114 &11418340
@@ -910,6 +911,10 @@ Prefab:
       objectReference: {fileID: 9100000, guid: df466a431e5e757448dd034820ef3a3c, type: 2}
     - target: {fileID: 0}
       propertyPath: attackRange
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: isBig
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []

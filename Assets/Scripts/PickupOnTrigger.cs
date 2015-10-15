@@ -42,7 +42,7 @@ public class PickupOnTrigger : MonoBehaviour
 				case PickupType.EXP: // not doing anything yet
 					break;
 			}
-			playerEffect.GetComponent<AudioSource>().PlayOneShot(pickupSound,1.0f);
+			playerEffect.GetComponent<AudioSource>().PlayOneShot(pickupSound,0.5f);
 			gameObject.SetActive(false);
 			//Destroy(this.gameObject);
 		}
