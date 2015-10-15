@@ -140,14 +140,12 @@ public class AbilityBehaviours : MonoBehaviour
         //arent casting or waiting for cooldown and have the resources to do so
         if (input.isShoot() && Time.timeScale != 0 && !isCasting && !cantCast && canFire())
         {
-            Debug.Log("Cast button pressed");
             StartCoroutine(Cast());
         }
 	}
 
     public IEnumerator Cast()
     {
-        Debug.Log("Casting begun");
 
         isCasting = true;
 
@@ -174,13 +172,13 @@ public class AbilityBehaviours : MonoBehaviour
 
         // Flag that we are on cooldown
         cantCast = true;
-        Debug.Log("Done casting");
 
         // Look at our current power and reduce resources
         // Also invoke cooldown
         switch (currentPower)
         {
             case ActivePower.Imagi:
+                playerStats.CurrentImagi -= (playerStats.MaxImagi * imagiPercent);
                 isImagiAvailable = false;
                 while (imagiTimer < imagiCD)
                 {
@@ -188,8 +186,10 @@ public class AbilityBehaviours : MonoBehaviour
                     yield return null;
                 }
                 imagiTimer = 0;
+                isImagiAvailable = true;
                 break;
             case ActivePower.Logio:
+                playerStats.CurrentLogio -= (playerStats.MaxLogio * logioPercent);
                 isLogioAvailable = false;
                 while (logioTimer < logioCD)
                 {
@@ -197,8 +197,10 @@ public class AbilityBehaviours : MonoBehaviour
                     yield return null;
                 }
                 logioTimer = 0;
+                isLogioAvailable = true;
                 break;
             case ActivePower.Void:
+                playerStats.CurrentVoid -= (playerStats.MaxVoid * voidPercent);
                 isVoidAvailable = false;
                 while (voidTimer < voidCD)
                 {
@@ -206,26 +208,12 @@ public class AbilityBehaviours : MonoBehaviour
                     yield return null;
                 }
                 voidTimer = 0;
-                break;
-        }
-
-        // Check our current power and flag we can use again
-        switch (currentPower)
-        {
-            case ActivePower.Imagi:
-                isImagiAvailable = true;
-                break;
-            case ActivePower.Logio:
-                isLogioAvailable = true;
-                break;
-            case ActivePower.Void:
                 isVoidAvailable = true;
                 break;
         }
 
-        // Reset everything
+        // Allow for casting again
         cantCast = false;
-        Debug.Log("Ability now up again!");
     }
 
 	private bool canFire()
