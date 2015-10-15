@@ -370,7 +370,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: af3315f4bc8a8a747b0ac4349256698c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  clip: {fileID: 8300000, guid: fe6dc9c9a08bd7649b32bc54e5c28308, type: 3}
+  clip: {fileID: 8300000, guid: c474f0b780f1990419b98e2137ba4ad7, type: 3}
   sfxSource: {fileID: 8222478}
 --- !u!114 &11442420
 MonoBehaviour:
@@ -470,7 +470,7 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: clip
       value: 
-      objectReference: {fileID: 8300000, guid: fe6dc9c9a08bd7649b32bc54e5c28308, type: 3}
+      objectReference: {fileID: 8300000, guid: c474f0b780f1990419b98e2137ba4ad7, type: 3}
     - target: {fileID: 0}
       propertyPath: sfxSource
       value: 
