@@ -7,7 +7,7 @@ public class SpawnAnimation : MonoBehaviour {
 
 	//Scaling variables
 	private Vector3 targetScale;
-	private float growSpeed = 0.5f;
+	private float growSpeed = 1.0f;
 
 	//Position variables
 	private Vector3 pos;
