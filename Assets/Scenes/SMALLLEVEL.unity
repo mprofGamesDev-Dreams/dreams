@@ -4105,46 +4105,6 @@ Prefab:
       propertyPath: m_LocalRotation.w
       value: .289286643
       objectReference: {fileID: 0}
-    - target: {fileID: 11456558, guid: 5131aeaeb69b99846b5c165c1394dfdf, type: 2}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 11456558, guid: 5131aeaeb69b99846b5c165c1394dfdf, type: 2}
-      propertyPath: threshold
-      value: .25
-      objectReference: {fileID: 0}
-    - target: {fileID: 11456558, guid: 5131aeaeb69b99846b5c165c1394dfdf, type: 2}
-      propertyPath: intensity
-      value: .75
-      objectReference: {fileID: 0}
-    - target: {fileID: 11456558, guid: 5131aeaeb69b99846b5c165c1394dfdf, type: 2}
-      propertyPath: blurSize
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 11456558, guid: 5131aeaeb69b99846b5c165c1394dfdf, type: 2}
-      propertyPath: blurIterations
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 11456558, guid: 5131aeaeb69b99846b5c165c1394dfdf, type: 2}
-      propertyPath: fastBloomShader
-      value: 
-      objectReference: {fileID: 4800000, guid: 7856cbff0a0ca45c787d5431eb805bb0, type: 3}
-    - target: {fileID: 14349190, guid: 5131aeaeb69b99846b5c165c1394dfdf, type: 2}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 13670634, guid: 5131aeaeb69b99846b5c165c1394dfdf, type: 2}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5434030, guid: 5131aeaeb69b99846b5c165c1394dfdf, type: 2}
-      propertyPath: m_CollisionDetection
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5434030, guid: 5131aeaeb69b99846b5c165c1394dfdf, type: 2}
-      propertyPath: m_IsKinematic
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 5131aeaeb69b99846b5c165c1394dfdf, type: 2}
   m_IsPrefabParent: 0
@@ -5016,7 +4976,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 149264, guid: 7ae9089a76975c64b870eb2693e8a4e6, type: 2}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 7ae9089a76975c64b870eb2693e8a4e6, type: 2}
@@ -7759,8 +7719,8 @@ MonoBehaviour:
   - {fileID: 149979562}
   - {fileID: 465765788}
   - {fileID: 1543228965}
-  clip1: {fileID: 8300000, guid: ef61d20e1527f1f4e8a2f5bef14a6bae, type: 3}
-  clip2: {fileID: 8300000, guid: 666cd03746b93844ea434f23d1eb8b92, type: 3}
+  clip1: {fileID: 8300000, guid: 666cd03746b93844ea434f23d1eb8b92, type: 3}
+  clip2: {fileID: 8300000, guid: ef61d20e1527f1f4e8a2f5bef14a6bae, type: 3}
   narator: {fileID: 924676734}
   flash: {fileID: 920913091}
 --- !u!1001 &1239187045
