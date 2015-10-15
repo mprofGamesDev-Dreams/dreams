@@ -140,14 +140,12 @@ public class AbilityBehaviours : MonoBehaviour
         //arent casting or waiting for cooldown and have the resources to do so
         if (input.isShoot() && Time.timeScale != 0 && !isCasting && !cantCast && canFire())
         {
-            Debug.Log("Cast button pressed");
             StartCoroutine(Cast());
         }
 	}
 
     public IEnumerator Cast()
     {
-        Debug.Log("Casting begun");
 
         isCasting = true;
 
@@ -174,7 +172,6 @@ public class AbilityBehaviours : MonoBehaviour
 
         // Flag that we are on cooldown
         cantCast = true;
-        Debug.Log("Done casting");
 
         // Look at our current power and reduce resources
         // Also invoke cooldown
@@ -225,7 +222,6 @@ public class AbilityBehaviours : MonoBehaviour
 
         // Reset everything
         cantCast = false;
-        Debug.Log("Ability now up again!");
     }
 
 	private bool canFire()
