@@ -45,7 +45,7 @@ public class EnemyCounterSingleton : MonoBehaviour, IDestroyAudioEvent
 	//private float startTime = 0;
 	//private float waitTime = 10;
 
-	private Button currentlySelectedButton;
+	private Button currentlySelectedButton = null;
 
 //	private float fadeoutTime = 0;
 	private float fadeinTime = 0;
@@ -100,7 +100,7 @@ public class EnemyCounterSingleton : MonoBehaviour, IDestroyAudioEvent
 			*/
 		}
 
-		if(inputHandler.isInteract())
+		if(inputHandler.isInteract() && currentlySelectedButton != null)
 		{
 			StartCoroutine( CutscenePartII() );
 			ChoiceObject.SetActive(false);
