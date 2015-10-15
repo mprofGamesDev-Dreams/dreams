@@ -132,6 +132,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
             m_MoveDir.x = desiredMove.x*speed;
             m_MoveDir.z = desiredMove.z*speed;
 
+			/*
             if (m_CharacterController.isGrounded)
             {
                 m_MoveDir.y = -m_StickToGroundForce;
@@ -145,9 +146,9 @@ namespace UnityStandardAssets.Characters.FirstPerson
                 }
             }
             else
-            {
+            {*/
                 m_MoveDir += Physics.gravity*m_GravityMultiplier*Time.fixedDeltaTime;
-            }
+            //}
 
 			// Invisible Walls Code - TEMP DISABLED 5/10/15 LD
 			//if( !CheckNextStepGrounded(m_MoveDir) )
