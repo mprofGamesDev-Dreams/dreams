@@ -4261,7 +4261,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 155628}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -209.850006, y: 110.744003, z: -169.304993}
+  m_LocalPosition: {x: 5.96999979, y: 1.38999999, z: .550000012}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 482838}
@@ -4506,7 +4506,7 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 121510}
-  m_LocalRotation: {x: .526671708, y: .749428689, z: .278005302, w: .289286673}
+  m_LocalRotation: {x: .526671648, y: .74942863, z: .278005272, w: .289286643}
   m_LocalPosition: {x: 21.2970619, y: -1.0428896, z: 2.6081379e-15}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -4960,7 +4960,7 @@ Rigidbody:
   m_IsKinematic: 1
   m_Interpolate: 0
   m_Constraints: 0
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
 --- !u!65 &6521462
 BoxCollider:
   m_ObjectHideFlags: 1
@@ -5415,7 +5415,7 @@ Animator:
   m_GameObject: {fileID: 160038}
   m_Enabled: 1
   m_Avatar: {fileID: 9000000, guid: 4e90e2824fac761439e5977c40f128f4, type: 3}
-  m_Controller: {fileID: 9100000, guid: 2900f36dac6e13344bcdc44729acd92e, type: 2}
+  m_Controller: {fileID: 9100000, guid: 2a9f210a018a1884c8fdbc187b32cc8f, type: 2}
   m_CullingMode: 1
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -5568,17 +5568,17 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 123554}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4975a6e437fc3b149a8cd508ce5bdd69, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  threshold: .219999999
-  intensity: .25
-  blurSize: 2.20000005
-  blurIterations: 2
+  threshold: .25
+  intensity: .75
+  blurSize: 1
+  blurIterations: 1
   blurType: 0
-  fastBloomShader: {fileID: 4800000, guid: 68a00c837b82e4c6d92e7da765dc5f1d, type: 3}
+  fastBloomShader: {fileID: 4800000, guid: 7856cbff0a0ca45c787d5431eb805bb0, type: 3}
 --- !u!114 &11457332
 MonoBehaviour:
   m_ObjectHideFlags: 1
