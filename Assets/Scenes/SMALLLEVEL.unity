@@ -7393,7 +7393,7 @@ Transform:
   m_GameObject: {fileID: 1215171911}
   m_LocalRotation: {x: .0192524549, y: .159066409, z: .118604757, w: .979928672}
   m_LocalPosition: {x: -12.8470001, y: 5.15999985, z: 41.4160004}
-  m_LocalScale: {x: 54.7155037, y: 8.64793396, z: 8}
+  m_LocalScale: {x: 54.7155037, y: 8.64793396, z: 9.60915565}
   m_Children: []
   m_Father: {fileID: 1922695318}
   m_RootOrder: 0
@@ -7510,7 +7510,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1764642082}
-  m_RootOrder: 7
+  m_RootOrder: 6
 --- !u!1001 &1222913288
 Prefab:
   m_ObjectHideFlags: 0
@@ -8540,79 +8540,6 @@ CapsuleCollider:
   m_Height: 0
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
---- !u!1 &1352782358
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 190970, guid: 2d5935d60c5968d488f8f5a3997504df, type: 2}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 4
-  m_Component:
-  - 4: {fileID: 1352782359}
-  - 65: {fileID: 1352782361}
-  - 114: {fileID: 1352782360}
-  - 114: {fileID: 1352782362}
-  m_Layer: 0
-  m_Name: Island12 AudioTrigger
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1352782359
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 487866, guid: 2d5935d60c5968d488f8f5a3997504df, type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1352782358}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -26.1989994, y: 1.10000002, z: 50.1870003}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 1764642082}
-  m_RootOrder: 6
---- !u!114 &1352782360
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 11486106, guid: 2d5935d60c5968d488f8f5a3997504df,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1352782358}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 43a885f6976ef1f4a98532ee3a990d3d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  audioClip:
-  - {fileID: 8300000, guid: 2ac2ecc068e99164c871313cd83890b5, type: 3}
-  waitTimeBetweenClips: .5
-  hasDelay: 0
-  delayTime: 0
---- !u!65 &1352782361
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 6587306, guid: 2d5935d60c5968d488f8f5a3997504df,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1352782358}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 2, y: 2, z: 2}
-  m_Center: {x: 0, y: 0, z: -2.6500001}
---- !u!114 &1352782362
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1352782358}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bbbf8fa6a8b3dcb4d9ddc3639542f25f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  dreamer: {fileID: 1962275388}
-  transitionTime: 0
 --- !u!4 &1356872765 stripped
 Transform:
   m_PrefabParentObject: {fileID: 470738, guid: 7a535363c9ffe2c4abbde8dab4caaa2c, type: 2}
@@ -10460,6 +10387,9 @@ GameObject:
   - 33: {fileID: 1731680849}
   - 135: {fileID: 1731680848}
   - 114: {fileID: 1731680847}
+  - 114: {fileID: 1731680852}
+  - 114: {fileID: 1731680851}
+  - 114: {fileID: 1731680850}
   m_Layer: 0
   m_Name: Sphere (1)
   m_TagString: Untagged
@@ -10510,6 +10440,47 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1731680845}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1731680850
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1731680845}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 06ff6f1fd0c056641a5476b8270591ab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  checkpoint: {fileID: 1215171911}
+--- !u!114 &1731680851
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1731680845}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbbf8fa6a8b3dcb4d9ddc3639542f25f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dreamer: {fileID: 1962275388}
+  transitionTime: 0
+--- !u!114 &1731680852
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1731680845}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 43a885f6976ef1f4a98532ee3a990d3d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audioClip:
+  - {fileID: 8300000, guid: 2ac2ecc068e99164c871313cd83890b5, type: 3}
+  waitTimeBetweenClips: .5
+  hasDelay: 0
+  delayTime: 0
 --- !u!1 &1739671741
 GameObject:
   m_ObjectHideFlags: 0
@@ -10734,7 +10705,6 @@ Transform:
   - {fileID: 1020147613}
   - {fileID: 797466979}
   - {fileID: 2034566463}
-  - {fileID: 1352782359}
   - {fileID: 1217510396}
   m_Father: {fileID: 0}
   m_RootOrder: 9
