@@ -119,8 +119,9 @@ public class InputHandler : MonoBehaviour
 				return;			
 			case EControlConstraints.DisableAllExceptChoice:
 				dPadHorizontal = CrossPlatformInputManager.GetAxis("D-Pad X Axis");
+                interact = CrossPlatformInputManager.GetButtonDown("Interact");
 				return;
-			case EControlConstraints.DisableAllExceptCamera: // camera isnt dependant on this calss
+			case EControlConstraints.DisableAllExceptCamera: // camera isnt dependant on this class
 
 				return;
 			case EControlConstraints.EnableAllExceptPowers:
