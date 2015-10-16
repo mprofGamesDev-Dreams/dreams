@@ -103,7 +103,6 @@ public class EnemyCounterSingleton : MonoBehaviour, IDestroyAudioEvent
 		}
 
 
-        Debug.Log( choice + ", " + inputHandler.isInteract() + ", " + currentlySelectedButton );
 
 		if(choice == true && inputHandler.isInteract() && currentlySelectedButton != null)
 		{

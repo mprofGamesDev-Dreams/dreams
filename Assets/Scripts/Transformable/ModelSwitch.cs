@@ -13,8 +13,8 @@ public class ModelSwitch : MonoBehaviour {
     public GameObject modelToSwap;
     private GameObject newObject;
 
-	private bool triggered = false; public bool IsTriggered { get{ return triggered; } }
-    private bool switching = false;
+	private bool triggered = false; 
+	private bool switching = false; public bool IsTriggered { get{ return switching; } }
 
     public float switchDuration = 1.0f;
     public AnimationCurve switchCurve;
@@ -50,7 +50,7 @@ public class ModelSwitch : MonoBehaviour {
 
 	}
 
-    void Trigger()
+    public void Trigger()
     {
         triggered = true;
     }
