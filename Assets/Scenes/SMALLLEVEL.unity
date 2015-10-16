@@ -2533,7 +2533,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c74d12bba7f7c864b91f248fc09ddc01, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  resource: 50
+  resource: 100
   audioClip: {fileID: 8300000, guid: 28d60de86cf43b7429265c38040e3010, type: 3}
 --- !u!1 &487622501
 GameObject:
