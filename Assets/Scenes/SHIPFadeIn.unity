@@ -1424,6 +1424,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 99b8b9da173d57f4f923c96148ee27b4, type: 3}
   trigger: {fileID: 1460698125}
   waitTimeBetweenClips: 0
+  waitAtStart: 1
   activePower: {fileID: 1319709849}
 --- !u!4 &472337035
 Transform:

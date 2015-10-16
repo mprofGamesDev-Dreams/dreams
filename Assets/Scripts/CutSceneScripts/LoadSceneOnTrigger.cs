@@ -16,7 +16,7 @@ public class LoadSceneOnTrigger : MonoBehaviour
 	{
 		if(activateFadeOut)
 		{
-			flashController.FadeToWhite();
+			flashController.RequestFlash();
             StartCoroutine(WaitToLoadScene(GetComponent<AudioSource>().clip.length));
 		}
 	}
@@ -36,6 +36,13 @@ public class LoadSceneOnTrigger : MonoBehaviour
 				}
 			}
 		}
+		/*
+		else if(obj.gameObject.CompareTag("Player") && canTeleport)
+		{
+			activateFadeOut = true;
+			GetComponent<AudioSource>().Play();
+			obj.gameObject.GetComponent<InputHandler>().ControllerConstraints = EControlConstraints.DisableAll;
+		}*/
 	}
 
 	private void OnTriggerEnter(Collider obj)
@@ -44,6 +51,7 @@ public class LoadSceneOnTrigger : MonoBehaviour
 		{
 			activateFadeOut = true;
             GetComponent<AudioSource>().Play();
+			obj.gameObject.GetComponent<InputHandler>().ControllerConstraints = EControlConstraints.DisableAll;
 		}
 	}
 

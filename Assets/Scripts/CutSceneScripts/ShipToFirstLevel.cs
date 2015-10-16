@@ -19,6 +19,9 @@ public class ShipToFirstLevel : MonoBehaviour, IDestroyAudioEvent
 	private bool terminate;
 	private float startTime;
 	[SerializeField]private float waitTimeBetweenClips;
+	[SerializeField]private float waitAtStart;
+
+	private bool triggered = false;
 
 	private EAudioState myState = EAudioState.isWaiting;
 	private NarratorController narrator;
@@ -36,13 +39,12 @@ public class ShipToFirstLevel : MonoBehaviour, IDestroyAudioEvent
 		playerObject.GetComponent<AbilityBehaviours>().CurrentPower = ActivePower.Logio;
 
 
-
+		/*
 		narrator = NarratorController.NarratorInstance;
 		narrator.PlayNewClip(audioClips[audioClipIndex], gameObject.GetInstanceID(), (IDestroyAudioEvent)this);
 
 		myState = EAudioState.isPlaying;
-
-		startTime = Time.time;
+*/
 
 		inputHandler = GameObject.FindGameObjectWithTag("Player").GetComponent<InputHandler>();
 
@@ -58,6 +60,20 @@ public class ShipToFirstLevel : MonoBehaviour, IDestroyAudioEvent
 		{
 			activePower.CurrentPower = ActivePower.Logio;
 		}
+
+		waitAtStart -= Time.deltaTime;
+		if (waitAtStart <= 0 && !triggered) 
+		{
+			narrator = NarratorController.NarratorInstance;
+			narrator.PlayNewClip(audioClips[audioClipIndex], gameObject.GetInstanceID(), (IDestroyAudioEvent)this);
+
+			myState = EAudioState.isPlaying;
+
+			startTime = Time.time;
+			triggered = true;
+
+		}
+
 
 		if(myState == EAudioState.isWaiting)
 			return;
