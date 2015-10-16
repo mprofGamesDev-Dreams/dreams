@@ -127,7 +127,7 @@ public class AbilityBehaviours : MonoBehaviour
         {
             StartCoroutine(Cast());
         }
-        else if(!input.isShoot() && !isCasting)
+        if(!input.isShoot() && !isCasting)
         {
             // Check for power switching
             if (CrossPlatformInputManager.GetButtonDown("Fire1") && !logioLock)//LOGIO
@@ -170,8 +170,7 @@ public class AbilityBehaviours : MonoBehaviour
         // Create the spell bullet
         shootBullet();
 
-        // Flag we are not casting
-        isCasting = false;
+      
 
         // Flag that we are on cooldown
         cantCast = true;
@@ -217,6 +216,8 @@ public class AbilityBehaviours : MonoBehaviour
 
         // Allow for casting again
         cantCast = false;
+		// Flag we are not casting
+		isCasting = false;
     }
 
 	private bool canFire()
