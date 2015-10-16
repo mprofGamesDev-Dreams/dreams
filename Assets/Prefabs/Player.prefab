@@ -4465,7 +4465,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 160038}
   m_LocalRotation: {x: -.186259225, y: 0, z: 0, w: .982500672}
-  m_LocalPosition: {x: 0, y: -.453999996, z: .0859999955}
+  m_LocalPosition: {x: 0, y: -.507000029, z: .111000001}
   m_LocalScale: {x: .00781715661, y: .00781715661, z: .00781715661}
   m_Children:
   - {fileID: 474278}
@@ -4506,7 +4506,7 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 121510}
-  m_LocalRotation: {x: .526671708, y: .749428689, z: .278005302, w: .289286673}
+  m_LocalRotation: {x: .526671648, y: .74942863, z: .278005272, w: .289286643}
   m_LocalPosition: {x: 21.2970619, y: -1.0428896, z: 2.6081379e-15}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -5451,9 +5451,9 @@ MonoBehaviour:
   voidBullet: {fileID: 119562, guid: b9d0134dda1fb7d4f9641be60fe6459f, type: 2}
   myParticleSystem: {fileID: 19879822}
   playerStats: {fileID: 11466778}
-  logioPercent: .100000001
+  logioPercent: .200000003
   voidPercent: .100000001
-  imagiPercent: .0199999996
+  imagiPercent: .100000001
   logioCD: 1
   imagiCD: .200000003
   voidCD: 2
@@ -5598,7 +5598,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   attackTrigger: Attack
-  attackRange: 3
+  attackRange: 4
   attackFromNormalizedTime: .400000006
   attackToNormalizedTime: .600000024
   animationController: {fileID: 9504856}
@@ -5656,7 +5656,7 @@ MonoBehaviour:
   maxLogio: 100
   logioRegen: 10
   voidRegen: 10
-  imagiBuff: 1.25
+  imagiBuff: 1.5
   buffDuration: 10
   buffed: 0
   debuffed: 0

@@ -120,27 +120,30 @@ public class AbilityBehaviours : MonoBehaviour
 			}
 		}
 
-		if (CrossPlatformInputManager.GetButtonDown ("Fire1") && !logioLock)//LOGIO
-		{
-			currentPower = ActivePower.Logio;
-		}
-
-		if (CrossPlatformInputManager.GetButtonDown ("Fire2") && !imagiLock)//IMAGI
-		{
-			currentPower = ActivePower.Imagi;
-		}
-
-		if (CrossPlatformInputManager.GetButtonDown ("Fire3") && !voidLock)//VOID
-		{
-			currentPower = ActivePower.Void;
-		}
-
         // Check if we can shoot
         // Providing we have pressed the button, arent paused, 
         //arent casting or waiting for cooldown and have the resources to do so
         if (input.isShoot() && Time.timeScale != 0 && !isCasting && !cantCast && canFire())
         {
             StartCoroutine(Cast());
+        }
+        else if(!input.isShoot() && !isCasting)
+        {
+            // Check for power switching
+            if (CrossPlatformInputManager.GetButtonDown("Fire1") && !logioLock)//LOGIO
+            {
+                currentPower = ActivePower.Logio;
+            }
+
+            if (CrossPlatformInputManager.GetButtonDown("Fire2") && !imagiLock)//IMAGI
+            {
+                currentPower = ActivePower.Imagi;
+            }
+
+            if (CrossPlatformInputManager.GetButtonDown("Fire3") && !voidLock)//VOID
+            {
+                currentPower = ActivePower.Void;
+            }
         }
 	}
 
