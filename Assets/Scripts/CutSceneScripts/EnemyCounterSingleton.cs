@@ -183,7 +183,7 @@ public class EnemyCounterSingleton : MonoBehaviour, IDestroyAudioEvent
 		// Wait A 5 Beats As Requested
 		yield return new WaitForSeconds( 2.5f );
 
-        ChoiceObject.transform.parent.GetComponent<LoadToScene>().OnClickLoadSceneByString("SHIPFadeIn");
+        ChoiceObject.GetComponent<RectTransform>().parent.GetComponent<LoadToScene>().OnClickLoadSceneByString("SHIPFadeIn");
 		//currentlySelectedButton.onClick.Invoke();
 		//currentlySelectedButton..Invoke();
 	}
