@@ -77,7 +77,7 @@ public class EnemyCounterSingleton : MonoBehaviour, IDestroyAudioEvent
 				dir = inputHandler.DPadHorizontal;
 			else dir = inputHandler.HorizontalAxis;
 
-			if(dir >= 0)
+			if(dir > 0)
 			{
 				if(currentlySelectedButton != ChoiceObject.GetComponent<RectTransform>().GetChild(0).GetComponent<Button>())
 				{
@@ -86,7 +86,7 @@ public class EnemyCounterSingleton : MonoBehaviour, IDestroyAudioEvent
 				}
 			}
 
-			if(dir <= 0)
+			if(dir < 0)
 			{
 				if(currentlySelectedButton != ChoiceObject.GetComponent<RectTransform>().GetChild(1).GetComponent<Button>())
 				{
@@ -101,6 +101,9 @@ public class EnemyCounterSingleton : MonoBehaviour, IDestroyAudioEvent
 			choice = false;
 			*/
 		}
+
+
+        Debug.Log( choice + ", " + inputHandler.isInteract() + ", " + currentlySelectedButton );
 
 		if(choice == true && inputHandler.isInteract() && currentlySelectedButton != null)
 		{
@@ -163,7 +166,10 @@ public class EnemyCounterSingleton : MonoBehaviour, IDestroyAudioEvent
 		ChoiceObject.SetActive(false);
 		NarratorController.NarratorInstance.PlayNewClip(audioClips[1], gameObject.GetInstanceID(), (IDestroyAudioEvent)this);
 		
-        GameObject.FindGameObjectWithTag("Player").GetComponent<InputHandler>().PlayInteract();
+       
+        GameObject tempPlayer = GameObject.FindGameObjectWithTag("Player");
+        tempPlayer.GetComponent<InputHandler>().PlayInteract();
+
 
         yield return new WaitForSeconds( audioClips[1].length + 1f );
 
@@ -178,7 +184,8 @@ public class EnemyCounterSingleton : MonoBehaviour, IDestroyAudioEvent
 		// Wait A 5 Beats As Requested
 		yield return new WaitForSeconds( 2.5f );
 
-		currentlySelectedButton.onClick.Invoke();
+        ChoiceObject.transform.parent.GetComponent<LoadToScene>().OnClickLoadSceneByString("SHIPFadeIn");
+		//currentlySelectedButton.onClick.Invoke();
 		//currentlySelectedButton..Invoke();
 	}
 
