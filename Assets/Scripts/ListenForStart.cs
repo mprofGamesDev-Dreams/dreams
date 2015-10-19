@@ -12,7 +12,7 @@ public class ListenForStart : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
-		if(Input.GetKey(KeyCode.Joystick1Button7))
+		if(Input.GetKey(KeyCode.Joystick1Button7)||Input.GetKey(KeyCode.Return))
 		{
 			if(triggered == false)
 			{
